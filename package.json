@@ -1,6 +1,6 @@
 {
   "name": "free-cities",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A Svelte port of Free Cities with TypeScript and Snowpack",
   "main": "index.js",
   "author": "dicoded <dicoded@email.com>",
