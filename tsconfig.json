@@ -1,0 +1,23 @@
+{
+	"include": [
+		"src"
+	],
+	"exclude": [
+		"node_modules/*"
+	],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"app": ["src/*"],
+			"components": ["src/components"],
+		},
+		"target": "es2019",
+		"types": [
+			"svelte",
+			"jest"
+		],
+		"moduleResolution": "node",
+		"strict": true,
+		"resolveJsonModule": true
+	},
+}

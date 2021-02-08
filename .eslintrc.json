@@ -1,0 +1,60 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "airbnb-base",
+        "plugin:jest/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "svelte3",
+        "jest"
+    ],
+    "overrides": [
+        {
+            "files": ["*.svelte"],
+            "processor": "svelte3/svelte3"
+        },
+        {
+            "files": ["*.extension.*"],
+            "rules": {
+                "@typescript-eslint/no-unused-vars": "off"
+            }
+        }
+    ],
+    "rules": {
+        "class-methods-use-this": [
+            "error",
+            {
+                "exceptMethods": [
+                    "clamp"
+                ]
+            }
+        ],
+        "no-extend-native": "off",
+        "no-plusplus": "off",
+        "no-shadow": "off",
+        "no-unused-vars": "off",
+        "max-len": [
+            "warn",
+            { "code": 120 }
+        ],
+
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-shadow": "error"
+    }
+}

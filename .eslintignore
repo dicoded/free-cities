@@ -1,0 +1,3 @@
+build/**
+# JavaScript files are assumed to be either config or compiled
+*.js

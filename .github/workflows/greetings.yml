@@ -1,0 +1,13 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Thank you for contributing! Please make sure you have read the [contributing guide](https://github.com/dicoded/free-cities/blob/master/docs/CONTRIBUTING.md).'
+        pr-message: 'Thank you for contributing! Please make sure you have read the [contributing guide](https://github.com/dicoded/free-cities/blob/master/docs/CONTRIBUTING.md).'

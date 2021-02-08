@@ -1,0 +1,82 @@
+
+@font-face {
+	font-family: "Lato";
+	src: url("./fonts/lato/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Lato-Black";
+	src: url("./fonts/lato/Lato-Black.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Lato-Bold";
+	src: url("./fonts/lato/Lato-Bold.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Lato-Light";
+	src: url("./fonts/lato/Lato-Light.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Lato-Thin";
+	src: url("./fonts/lato/Lato-Thin.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Lato-Italic";
+	src: url("./fonts/lato/Lato-Italic.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url("./fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Montserrat-Black";
+	src: url("./fonts/montserrat/Montserrat-Black.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Montserrat-ExtraBold";
+	src: url("./fonts/montserrat/Montserrat-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Montserrat-Bold";
+	src: url("./fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Montserrat-SemiBold";
+	src: url("./fonts/montserrat/Montserrat-SemiBold.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Montserrat-Medium";
+	src: url("./fonts/montserrat/Montserrat-Medium.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Montserrat-Light";
+	src: url("./fonts/montserrat/Montserrat-Light.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Montserrat-Thin";
+	src: url("./fonts/montserrat/Montserrat-Thin.ttf") format("truetype");
+}
+
+* {
+	font-family: Lato, Arial, Helvetica, sans-serif;
+	line-height: 1.75;
+}
+
+.font-title {
+	font-family: 'Lato-Thin', Arial, Helvetica, sans-serif;
+	font-size: larger;
+}
+
+.font-note {
+	font-family: 'Lato-Light', Arial, Helvetica, sans-serif;
+	font-size: medium;
+	font-style: italic;
+}
+
+.font-montserrat {
+	font-family: 'Montserrat-Light', Arial, Helvetica, sans-serif;
+}
+
+/* short for "response-bold" */
+.rb {
+	font-family: 'Montserrat-Bold', Arial, Helvetica, sans-serif;
+}

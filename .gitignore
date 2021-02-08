@@ -1,0 +1,12 @@
+.build
+build
+web_modules
+node_modules
+.vscode/*
+yarn-error.log
+*.icloud
+* 2.*
+*.todo
+*.outline
+yarn.lock
+.DS_Store
