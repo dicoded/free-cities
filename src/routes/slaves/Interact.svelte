@@ -4,6 +4,8 @@
 
 	import Slave from '../../ts/classes/slave/Slave';
 
+	import View from './View.svelte';
+
 	import { link, defaultLink } from '../../stores/nav.store'
 	import activeSlave from '../../stores/active.store';
 
@@ -13,5 +15,5 @@
 </script>
 
 <Body>
-	<Header>{slave.name.full}</Header>
+	<View slave={slave}/>
 </Body>
