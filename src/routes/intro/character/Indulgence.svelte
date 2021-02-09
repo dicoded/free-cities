@@ -5,7 +5,7 @@
 	import Response from '../../../components/ui/Response.svelte';
 	import Section from '../../../components/ui/Section.svelte';
 
-	import PC from '../../../stores/player';
+	import PC from '../../../stores/player.store';
 
 	// TODO: all of this
 </script>
