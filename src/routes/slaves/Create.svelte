@@ -15,8 +15,8 @@
   import Slave from '../../ts/classes/slave/Slave';
 
   import Cash from './StartingCash.svelte';
-  import ViewSlave from './ViewSlave.svelte';
-  import EditSlave from './EditSlave.svelte';
+  import View from './View.svelte';
+  import Edit from './Edit.svelte';
 
   let slave: Slave = generateSlave();
 
@@ -73,6 +73,6 @@
     </div>
   </div>
 
-  <ViewSlave slave={slave} />
-  <EditSlave />
+  <View slave={slave} />
+  <Edit />
 </Body>

@@ -1,9 +1,11 @@
 <script lang="ts">
 	import arcology from '../stores/arcology.store';
+	import { slaves } from '../stores/actors.store';
 	import { link, components } from '../stores/nav.store';
 	import { week } from '../stores/global.store';
 
 	import Facilities from './facilities/Facilities.svelte';
+	import Slaves from './slaves/Slaves.svelte';
 
 	import Header from '../components/ui/Header.svelte';
 	import Body from '../components/ui/Body.svelte';
@@ -26,4 +28,5 @@
 <Body>
 	<Header>{$arcology.name}</Header>
 	<Facilities />
+	<Slaves />
 </Body>
