@@ -12,7 +12,7 @@ export interface ILink {
  *
  * Use `null` for no link.
  */
-export const defaultLink: ILink | null = {
+export const defaultLink: ILink = {
   href: 'main',
   text: 'Back to Main',
   handler: null,

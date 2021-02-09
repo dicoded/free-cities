@@ -6,6 +6,7 @@ import Start from './Start.svelte';
 import Event from './events/Event.svelte';
 import CreateSlave from './slaves/Create.svelte';
 import Acquisition from './slaves/Acquisition.svelte';
+import SlaveInteract from './slaves/Interact.svelte';
 
 import Arcade from './facilities/Arcade.svelte';
 import Armory from './facilities/Armory.svelte';
@@ -28,6 +29,7 @@ const views = [
   ['event', Event],
   ['new-slave', CreateSlave],
   ['acquisition', Acquisition],
+  ['slave-interact', SlaveInteract],
 
   ['arcade', Arcade],
   ['armory', Armory],

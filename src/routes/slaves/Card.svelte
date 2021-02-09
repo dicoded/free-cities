@@ -3,13 +3,16 @@
 
 	import Link from '../../components/ui/Link.svelte'
 
+	import { link, defaultLink } from '../../stores/nav.store'
+	import activeSlave from '../../stores/active.store';
+
+	$link = defaultLink;
+
 	export let slave: Slave;
 </script>
 
 <div class="flex">
-	<div class="btn">
-		<div class="text-2xl">
-			{slave.name.full}
-		</div>
-	</div>
+	<Link to="slave-interact" handler={() => { $activeSlave = slave; }}>
+		{slave.name.full}
+	</Link>
 </div>

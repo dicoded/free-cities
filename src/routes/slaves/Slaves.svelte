@@ -15,11 +15,15 @@
 	}
 </script>
 
-<Button handler={() => {
-	const slave = generateSlave();
+<div class="flex">
+	<Button handler={() => {
+		const slave = generateSlave();
 
-	addSlave(slave);
-}}>New Slave</Button>
+		addSlave(slave);
+	}}>
+		New Slave
+	</Button>
+</div>
 
 {#each $slaves as slave}
 	<Card slave={slave} />

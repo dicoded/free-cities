@@ -2,7 +2,7 @@
 	import view from '../../stores/view.store';
 
 	export let to: string;
-	export let handler: () => any | null = null;
+	export let handler: (() => any) | null = null;
 </script>
 
 <button class="btn"
