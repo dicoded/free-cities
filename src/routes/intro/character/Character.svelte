@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '../../../components/ui/Button.svelte';
   import Header from '../../../components/ui/Header.svelte';
-  import Main from '../../../components/ui/Main.svelte';
+  import Body from '../../../components/ui/Body.svelte';
   import Link from '../../../components/ui/Link.svelte'
 
   import Acquisition from './Acquisition.svelte';
@@ -26,7 +26,7 @@
 </script>
 
 {#if $see.character}
-  <Main>
+  <Body>
     <Button handler={() => { $see.difficulty = true }}>Skip</Button>
 
     <Link to="main" handler={() => {
@@ -69,5 +69,5 @@
         <!-- {/if} -->
       {/if}
     {/if}
-  </Main>
+  </Body>
 {/if}

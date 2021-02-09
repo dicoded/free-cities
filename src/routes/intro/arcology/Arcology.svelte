@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Link from '../../../components/ui/Link.svelte';
 	import Header from '../../../components/ui/Header.svelte';
-	import Main from '../../../components/ui/Main.svelte';
+	import Body from '../../../components/ui/Body.svelte';
 
 	import FutureSocieties from './FutureSocieties.svelte';
 	import Language from './Language.svelte';
@@ -17,7 +17,7 @@
 </script>
 
 {#if $see.arcology}
-		<Main>
+		<Body>
 			<Header>Arcology</Header>
 
 			<Target />
@@ -43,5 +43,5 @@
 					{/if}
 				{/if}
 			{/if}
-		</Main>
+		</Body>
 {/if}

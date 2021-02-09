@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '../../../components/ui/Button.svelte';
   import Header from '../../../components/ui/Header.svelte';
-  import Main from '../../../components/ui/Main.svelte';
+  import Body from '../../../components/ui/Body.svelte';
 
   import Age from './Age.svelte';
   import Gender from './Gender.svelte';
@@ -13,7 +13,7 @@
 </script>
 
 {#if $see.content}
-  <Main>
+  <Body>
     <Button handler={() => { $see.arcology = true }}>Skip</Button>
 
     <Header>Content</Header>
@@ -33,5 +33,5 @@
         {/if}
       {/if}
     {/if}
-  </Main>
+  </Body>
 {/if}

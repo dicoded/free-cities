@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Main from '../../components/ui/Main.svelte';
+  import Body from '../../components/ui/Body.svelte';
   import Link from '../../components/ui/Link.svelte';
 
 	import arcology from '../../stores/arcology.store';
@@ -7,7 +7,7 @@
 	import { link, defaultLink } from '../../stores/nav.store';
 </script>
 
-<Main>
+<Body>
 	<p class="my-4">
 		You've done it.
 	</p>
@@ -29,4 +29,4 @@
 	</p>
 
 	<Link to="main">Continue</Link>
-</Main>
+</Body>

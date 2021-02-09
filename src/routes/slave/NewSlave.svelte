@@ -1,6 +1,6 @@
 <script lang="ts">
   import Header from '../../components/ui/Header.svelte';
-  import Main from '../../components/ui/Main.svelte';
+  import Body from '../../components/ui/Body.svelte';
   import Button from '../../components/ui/Button.svelte';
   import Link from '../../components/ui/Link.svelte';
 
@@ -26,7 +26,7 @@
   ];
 </script>
 
-<Main>
+<Body>
   <Header>Slave Customization</Header>
 
   <p class="my-4">
@@ -75,4 +75,4 @@
 
   <ViewSlave slave={slave} />
   <EditSlave />
-</Main>
+</Body>
