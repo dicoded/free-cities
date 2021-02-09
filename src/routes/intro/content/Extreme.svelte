@@ -18,14 +18,6 @@
 	<div>
 		<div class="flex">
 			<Button
-				selected={$see.extreme === false && $see.hyperpreg === false}
-				handler={() => {
-					$see.extreme = false;
-					$see.hyperpreg = false;
-			}}>
-				Forbidding
-			</Button>
-			<Button
 				selected={$see.extreme === true && $see.hyperpreg === false}
 				handler={() => {
 					$see.extreme = true;
@@ -33,17 +25,17 @@
 			}}>
 				Accepting
 			</Button>
+			<Button
+				selected={$see.extreme === false && $see.hyperpreg === false}
+				handler={() => {
+					$see.extreme = false;
+					$see.hyperpreg = false;
+			}}>
+				Forbidding
+			</Button>
 		</div>
 
 		<div class="flex">
-			<Button
-				selected={$see.extreme === false && $see.hyperpreg === true}
-				handler={() => {
-					$see.extreme = false;
-					$see.hyperpreg = true;
-			}}>
-				Forbidding but creative
-			</Button>
 			<Button
 				selected={$see.extreme === true && $see.hyperpreg === true}
 				handler={() => {
@@ -51,6 +43,14 @@
 					$see.hyperpreg = true;
 			}}>
 				Accepting and creative
+			</Button>
+			<Button
+				selected={$see.extreme === false && $see.hyperpreg === true}
+				handler={() => {
+					$see.extreme = false;
+					$see.hyperpreg = true;
+			}}>
+				Forbidding but creative
 			</Button>
 		</div>
 	</div>
