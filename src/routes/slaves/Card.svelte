@@ -12,7 +12,7 @@
 </script>
 
 <div class="flex">
-	<Link to="slave-interact" handler={() => { $activeSlave = slave; }}>
+	<Link to="slave-interact" handler={() => { $activeSlave = slave }}>
 		{slave.name.full}
 	</Link>
 </div>
