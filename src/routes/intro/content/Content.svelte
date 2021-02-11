@@ -8,8 +8,8 @@
   import Extreme from './Extreme.svelte';
   import Other from './other/Other.svelte';
 
-  import see from '../../../stores/see.store';
-  import { minimumAge } from '../../../stores/global.store';
+  import see from 'stores/see.store';
+  import { minimumAge } from 'stores/global.store';
 </script>
 
 {#if $see.content}

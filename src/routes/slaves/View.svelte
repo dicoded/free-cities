@@ -1,17 +1,17 @@
 <script lang="ts">
-  import Slave from '../../ts/classes/slave/Slave';
+  import type Slave from 'classes/slave/Slave';
 
-  import Header from '../../components/ui/Header.svelte';
-  import devotion, { devotionColor } from '../../ts/util/slave/desc/devotion';
-  import trust, { trustColor } from '../../ts/util/slave/desc/trust';
-  import name from '../../ts/util/slave/desc/name';
-  import age from '../../ts/util/slave/desc/age';
-  import health, { healthColor } from '../../ts/util/slave/desc/health';
-  import mind from '../../ts/util/slave/desc/mind';
-  import relationRival from '../../ts/util/slave/desc/relationRival';
-  import career from '../../ts/util/slave/desc/career';
-  import prestige from '../../ts/util/slave/desc/prestige';
-  import size from '../../ts/util/slave/desc/size';
+  import Header from 'components/ui/Header.svelte';
+  import devotion, { devotionColor } from 'util/slave/desc/devotion';
+  import trust, { trustColor } from 'util/slave/desc/trust';
+  import name from 'util/slave/desc/name';
+  import age from 'util/slave/desc/age';
+  import health, { healthColor } from 'util/slave/desc/health';
+  import mind from 'util/slave/desc/mind';
+  import relationRival from 'util/slave/desc/relationRival';
+  import career from 'util/slave/desc/career';
+  import prestige from 'util/slave/desc/prestige';
+  import size from 'util/slave/desc/size';
 
   export let slave: Slave;
 </script>

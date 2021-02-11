@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { link, components, props} from '../../stores/nav.store';
-	import see from '../../stores/see.store';
+	import { link, components, props} from 'stores/nav.store';
+	import see from 'stores/see.store';
 
 	import Body from '../../components/ui/Body.svelte';
 	import Header from '../../components/ui/Header.svelte';

@@ -4,7 +4,7 @@
 	import Response from '../../../../components/ui/Response.svelte';
 	import Section from '../../../../components/ui/Section.svelte';
 
-	import see from '../../../../stores/see.store';
+	import see from 'stores/see.store';
 </script>
 
 <Section>

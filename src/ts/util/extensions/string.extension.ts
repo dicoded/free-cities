@@ -1,3 +1,4 @@
+// @ts-ignore TODO:
 interface String {
   /**
    * Capitalizes the first letter of the given string.

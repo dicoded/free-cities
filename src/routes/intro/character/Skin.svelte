@@ -7,7 +7,7 @@
 	import Markings from './Markings.svelte';
 	import { SkinColor } from '../../../ts/util/color';
 
-	import PC from '../../../stores/player.store';
+	import PC from 'stores/player.store';
 </script>
 
 <Section>

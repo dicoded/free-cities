@@ -1,6 +1,7 @@
+import { SkinColor } from 'util/color';
+
 import Scars from './Scars';
 import Markings from './Markings';
-import { SkinColor } from '../../../../util/color';
 
 interface ISkin {
   /** The body's skin color. */

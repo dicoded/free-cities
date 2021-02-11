@@ -1,6 +1,6 @@
-import Slave from '../../classes/slave/Slave';
+import type Slave from 'classes/slave/Slave';
 
-import '../extensions/array.extension';
+import '../../util/extensions/array.extension';
 
 function damage(slave: Slave): string {
   const { he } = slave.pronouns;

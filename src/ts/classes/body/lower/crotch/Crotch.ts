@@ -1,5 +1,5 @@
-import Penis from './Penis';
-import Vagina from './Vagina';
+import type Penis from './Penis';
+import type Vagina from './Vagina';
 import Anus from './Anus';
 
 interface ICrotch {

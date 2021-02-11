@@ -5,7 +5,7 @@
 
   import Attitude from './Attitude.svelte';
 
-	import see from '../../../stores/see.store';
+	import see from 'stores/see.store';
 </script>
 
 {#if $see.trade}

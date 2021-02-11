@@ -1,7 +1,7 @@
-import { name as fuckdollName } from '../fuckdoll';
+import type Actor from 'classes/actor/Actor';
+import Slave from 'classes/slave/Slave';
 
-import Actor from '../../../classes/actor/Actor';
-import Slave from '../../../classes/slave/Slave';
+import { name as fuckdollName } from '../fuckdoll';
 
 export default function name(actor: Actor): string {
   const { He, he, his } = actor.pronouns;

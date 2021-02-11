@@ -2,9 +2,9 @@
   import Body from '../../components/ui/Body.svelte';
   import Link from '../../components/ui/Link.svelte';
 
-	import arcology from '../../stores/arcology.store';
-	import player from '../../stores/player.store';
-	import { link, defaultLink } from '../../stores/nav.store';
+	import arcology from 'stores/arcology.store';
+	import player from 'stores/player.store';
+	import { link, defaultLink } from 'stores/nav.store';
 </script>
 
 <Body>

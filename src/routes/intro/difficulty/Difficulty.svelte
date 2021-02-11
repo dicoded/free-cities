@@ -7,7 +7,7 @@
   import Rate from './Rate.svelte';
   import Income from './Income.svelte';
 
-  import see from '../../../stores/see.store';
+  import see from 'stores/see.store';
 </script>
 
 {#if $see.difficulty}

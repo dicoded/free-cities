@@ -1,11 +1,11 @@
 import Body from '../body/Body';
-import Entity from '../entity/Entity';
+import type Entity from '../entity/Entity';
 import Pronouns from './Pronouns';
 import Name from './Name';
 import Personality from './Personality';
 import Quirks from './quirks/Quirks';
 import Flaws from './flaws/Flaws';
-import Fetish from './Fetish';
+import type Fetish from './Fetish';
 import Attraction from './Attraction';
 import Family from './Family';
 import Relationship from './Relationship';
@@ -13,7 +13,7 @@ import Rivalry from './Rivalry';
 
 import { Sex } from '../body/nonphysical/Nonphysical';
 
-import { getActor } from '../../util/slave/util';
+import { getActor } from 'util/slave/util';
 
 interface IActor extends Entity, Body {
 /**

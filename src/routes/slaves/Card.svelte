@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Slave from '../../ts/classes/slave/Slave';
+	import Slave from 'classes/slave/Slave';
 
-	import Link from '../../components/ui/Link.svelte'
+	import Link from 'components/ui/Link.svelte'
 
-	import { link, defaultLink } from '../../stores/nav.store'
-	import activeSlave from '../../stores/active.store';
+	import { link, defaultLink } from 'stores/nav.store'
+	import activeSlave from 'stores/active.store';
 
 	$link = defaultLink;
 

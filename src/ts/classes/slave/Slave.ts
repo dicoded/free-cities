@@ -1,4 +1,4 @@
-import { generateID } from '../../util/slave/generate';
+import { generateID } from 'util/slave/generate';
 
 import Actor from '../actor/Actor';
 import Skills from './Skills';

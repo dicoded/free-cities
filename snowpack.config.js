@@ -20,5 +20,9 @@ module.exports = {
 		"~": "./src",
 		"~/public": "./public",
 		"components": "./src/components",
+		"classes": "./src/ts/classes",
+		"util": "./src/ts/util",
+		"stores": "./src/stores",
+		"extensions": "./src/ts/util/extensions",
 	},
 };
