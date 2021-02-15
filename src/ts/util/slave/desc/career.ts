@@ -1,4 +1,4 @@
-import Actor from '../../../classes/actor/Actor';
+import type Actor from 'classes/actor/Actor';
 
 export default function career(actor: Actor): string {
   const text: string[] = [];

@@ -1,3 +1,6 @@
+import { formatDate } from 'util/date';
+import type { EyeColor } from 'util/color';
+
 import Abstract, { Sex } from './nonphysical/Nonphysical';
 import Upper from './upper/UpperBody';
 import Lower from './lower/LowerBody';
@@ -9,10 +12,7 @@ import {
 import { ShouldersType } from '../body/upper/Shoulders';
 import { HipSize } from '../body/lower/Hips';
 import { TesticlesType } from '../body/lower/crotch/Testicles';
-import { LabiaType } from '../body/lower/crotch/Vagina';
-
-import { formatDate } from '../../util/date';
-import { EyeColor } from '../../util/color';
+import type { LabiaType } from '../body/lower/crotch/Vagina';
 
 export enum Alteration {
   NARROW = 'narrow',

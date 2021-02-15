@@ -1,5 +1,5 @@
-import Behavioral from './Behavioral';
-import Sexual from './Sexual';
+import type Behavioral from './Behavioral';
+import type Sexual from './Sexual';
 
 interface IFlaws {
   /** Any behavioral flaws the actor has. */

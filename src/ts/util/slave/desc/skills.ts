@@ -1,4 +1,4 @@
-import Slave from '../../../classes/slave/Slave';
+import type Slave from 'classes/slave/Slave';
 
 export default function skills(slave: Slave): string {
   const { He, girl } = slave.pronouns;

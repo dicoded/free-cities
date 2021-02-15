@@ -1,6 +1,6 @@
-import Slave from '../../../classes/slave/Slave';
+import type Slave from 'classes/slave/Slave';
 
-import { MarkingsType } from '../../../classes/body/nonphysical/skin/Markings';
+import { MarkingsType } from 'classes/body/nonphysical/skin/Markings';
 
 export default function prestige(slave: Slave): string {
   const {

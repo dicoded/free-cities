@@ -1,3 +1,4 @@
+// @ts-ignore TODO:
 interface Array<T> {
   /**
    * Returns a random member from the given array.

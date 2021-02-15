@@ -1,5 +1,5 @@
-import Piercings from './Piercings';
-import Tattoos from './Tattoos';
+import type Piercings from './Piercings';
+import type Tattoos from './Tattoos';
 
 export enum Eyewear {
 

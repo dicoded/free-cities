@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '../../ts/util/extensions/number.extension';
 
-	import { slaves } from '../../stores/actors.store';
-	import { week, cash, upkeep, reputation } from '../../stores/global.store';
+	import { slaves } from 'stores/actors.store';
+	import { week, cash, upkeep, reputation } from 'stores/global.store';
 
 	import Item from './SidebarItem.svelte';
 </script>

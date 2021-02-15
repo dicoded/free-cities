@@ -1,4 +1,4 @@
-import Pregnancy from '../../actor/Pregnancy';
+import type Pregnancy from '../../actor/Pregnancy';
 
 interface IBelly {
   /**

@@ -1,3 +1,4 @@
+// @ts-ignore TODO:
 interface Number {
   /**
    * Returns whether a number is between two other numbers.

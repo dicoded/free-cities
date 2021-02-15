@@ -1,6 +1,6 @@
-import { HipSize } from '../../../classes/body/lower/Hips';
+import type Slave from 'classes/slave/Slave';
 
-import Slave from '../../../classes/slave/Slave';
+import { HipSize } from 'classes/body/lower/Hips';
 
 // TODO:
 // function height(slave: Slave): string {

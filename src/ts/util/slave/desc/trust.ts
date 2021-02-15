@@ -1,4 +1,4 @@
-import Slave from '../../../classes/slave/Slave';
+import type Slave from 'classes/slave/Slave';
 
 /** Returns a string description of the slave's trust. */
 export default function trust(slave: Slave): string {

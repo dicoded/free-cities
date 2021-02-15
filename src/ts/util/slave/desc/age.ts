@@ -1,9 +1,9 @@
 import { get } from 'svelte/store';
 
-import Actor from '../../../classes/actor/Actor';
-import Slave from '../../../classes/slave/Slave';
+import type Actor from 'classes/actor/Actor';
+import Slave from 'classes/slave/Slave';
 
-import purchased from '../../../../stores/purchased.store';
+import purchased from 'stores/purchased.store';
 
 function NCS(actor: Actor): string {
   const {

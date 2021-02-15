@@ -1,8 +1,8 @@
-import Actor from '../../../classes/actor/Actor';
-import { RelationshipType } from '../../../classes/actor/Relationship';
-import { RivalryType } from '../../../classes/actor/Rivalry';
+import { getActor } from 'util/slave/util';
 
-import { getActor } from '../../../util/slave/util';
+import type Actor from 'classes/actor/Actor';
+import { RelationshipType } from 'classes/actor/Relationship';
+import { RivalryType } from 'classes/actor/Rivalry';
 
 function relative(actor: Actor): string {
   const { He, his } = actor.pronouns;

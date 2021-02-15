@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Link from '../ui/Link.svelte';
 
-	import type { ILink } from '../../stores/nav.store';
-	import { defaultLink } from '../../stores/nav.store';
+	import type { ILink } from 'stores/nav.store';
+	import { defaultLink } from 'stores/nav.store';
 
 	interface IProp {
 		key: string;

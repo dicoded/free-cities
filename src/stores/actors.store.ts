@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
-import Actor from '../ts/classes/actor/Actor';
-import Slave from '../ts/classes/slave/Slave';
+import type Actor from 'classes/actor/Actor';
+import type Slave from 'classes/slave/Slave';
 
 const arrActor: Actor[] = [];
 const arrSlave: Slave[] = [];

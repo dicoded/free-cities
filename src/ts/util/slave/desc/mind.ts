@@ -1,20 +1,21 @@
 /* eslint-disable max-len */
 import { get } from 'svelte/store';
 
+import { Sex } from 'classes/body/nonphysical/Nonphysical';
+
+import player from 'stores/player.store';
+
+import BehavioralQuirks from 'classes/actor/quirks/Behavioral';
+import SexualQuirks from 'classes/actor/quirks/Sexual';
+
+import BehavioralFlaws from 'classes/actor/flaws/Behavioral';
+import SexualFlaws from 'classes/actor/flaws/Sexual';
+import { FetishType } from 'classes/actor/Fetish';
+
+import type Actor from 'classes/actor/Actor';
+import Slave from 'classes/slave/Slave';
+
 import eyes from './eyes';
-
-import BehavioralQuirks from '../../../classes/actor/quirks/Behavioral';
-import SexualQuirks from '../../../classes/actor/quirks/Sexual';
-
-import BehavioralFlaws from '../../../classes/actor/flaws/Behavioral';
-import SexualFlaws from '../../../classes/actor/flaws/Sexual';
-import { FetishType } from '../../../classes/actor/Fetish';
-
-import Actor from '../../../classes/actor/Actor';
-import Slave from '../../../classes/slave/Slave';
-
-import player from '../../../../stores/player.store';
-import { Sex } from '../../../classes/body/nonphysical/Nonphysical';
 
 const PC = get(player);
 

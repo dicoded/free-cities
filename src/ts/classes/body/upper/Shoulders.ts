@@ -1,4 +1,4 @@
-import Alteration from '../Body';
+import type Alteration from '../Body';
 
 export enum ShouldersType {
   VERY_NARROW = 'very narrow',

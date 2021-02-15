@@ -1,5 +1,5 @@
-import Behavioral from './Behavioral';
-import Sexual from './Sexual';
+import type Behavioral from './Behavioral';
+import type Sexual from './Sexual';
 
 interface IQuirks {
   /** Any behavioral quirks the actor has. */

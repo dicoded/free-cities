@@ -1,23 +1,46 @@
 {
 	"include": [
-		"src"
+		"src/**/*.ts",
 	],
 	"exclude": [
-		"node_modules/*"
+		"node_modules/*",
 	],
 	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"app": ["src/*"],
-			"components": ["src/components"],
-		},
-		"target": "es2019",
-		"types": [
+		"module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "importsNotUsedAsValues": "error",
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "useDefineForClassFields": true,
+
+		/* noEmit - We only use TypeScript for type checking. */
+    // "noEmit": true,
+    /* more strict checking for errors that per-file transpilers like `esbuild` would crash */
+    "isolatedModules": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["./src/*"],
+      "~/public/*": ["./public/*"],
+			"classes/*": ["./src/ts/classes/*"],
+			"components/*": ["./src/components/*"],
+			"util/*": ["./src/ts/util/*"],
+			"stores/*": ["./src/stores/*"],
+      "extensions/*": ["./src/ts/util/extensions/*"],
+    },
+    "types": [
 			"svelte",
-			"jest"
+			"jest",
 		],
-		"moduleResolution": "node",
-		"strict": true,
-		"resolveJsonModule": true
 	},
 }

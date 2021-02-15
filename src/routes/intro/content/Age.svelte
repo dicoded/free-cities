@@ -5,7 +5,7 @@
 	import Response from '../../../components/ui/Response.svelte';
 	import Section from '../../../components/ui/Section.svelte';
 
-	import { minimumAge } from '../../../stores/global.store';
+	import { minimumAge } from 'stores/global.store';
 </script>
 
 <Section>

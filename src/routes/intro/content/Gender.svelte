@@ -4,8 +4,8 @@
 	import Response from '../../../components/ui/Response.svelte';
 	import Section from '../../../components/ui/Section.svelte';
 
-	import see from '../../../stores/see.store';
-	import { makeDicks } from '../../../stores/global.store';
+	import see from 'stores/see.store';
+	import { makeDicks } from 'stores/global.store';
 </script>
 
 <Section>
