@@ -11,15 +11,14 @@
   export let closeButton = true;
   export let closeOnEsc = true;
   export let closeOnOuterClick = true;
-  export let styleBg = { top: 0, left: 0, 'background-color': 'background-color: rgba(17, 24, 39, 1)' };
-  export let styleWindow = {};
-  export let styleContent = {};
-	export let styleCloseButton = {};
   export let setContext = baseSetContext;
   export let transitionBg = fade;
-  export let transitionBgProps = { duration: 250 };
   export let transitionWindow = transitionBg;
-  export let transitionWindowProps = transitionBgProps;
+
+  const styleBg = { top: 0, left: 0, 'background-color': 'background-color: rgba(17, 24, 39, 1)' };
+  const styleWindow = {};
+  const styleContent = {};
+	const styleCloseButton = {};
 
   const defaultState = {
     closeButton,
@@ -30,9 +29,7 @@
     styleContent,
 		styleCloseButton,
     transitionBg,
-    transitionBgProps,
     transitionWindow,
-    transitionWindowProps,
   };
   let state = { ...defaultState };
 
@@ -138,7 +135,7 @@
         role="dialog"
         aria-modal="true"
         bind:this={modalWindow}
-        transition:currentTransitionWindow={state.transitionWindowProps}
+        transition:currentTransitionWindow={{ duration: 250 }}
         on:introstart={onOpen}
         on:outrostart={onClose}
         on:introend={onOpened}
