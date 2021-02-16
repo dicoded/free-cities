@@ -11,25 +11,12 @@
   export let closeButton = true;
   export let closeOnEsc = true;
   export let closeOnOuterClick = true;
-  export let setContext = baseSetContext;
-  export let transitionBg = fade;
-  export let transitionWindow = transitionBg;
-
-  const styleBg = { top: 0, left: 0, 'background-color': 'background-color: rgba(17, 24, 39, 1)' };
-  const styleWindow = {};
-  const styleContent = {};
-	const styleCloseButton = {};
+  export let setContext = baseSetContext
 
   const defaultState = {
     closeButton,
     closeOnEsc,
-    closeOnOuterClick,
-    styleBg,
-    styleWindow,
-    styleContent,
-		styleCloseButton,
-    transitionBg,
-    transitionWindow,
+    closeOnOuterClick
   };
   let state = { ...defaultState };
 
@@ -40,20 +27,7 @@
   let wrap;
   let modalWindow;
 
-  const camelCaseToDash = str => str
-    .replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase();
-
-  const toCssString = (props) => Object.keys(props)
-    .reduce((str, key) => `${str}; ${camelCaseToDash(key)}: ${props[key]}`, '');
-
 	const isSvelteComponent = component => SvelteComponent && SvelteComponent.isPrototypeOf(component);
-
-  $: cssBg = toCssString(state.styleBg);
-  $: cssWindow = toCssString(state.styleWindow);
-  $: cssContent = toCssString(state.styleContent);
-	$: cssCloseButton = toCssString(state.styleCloseButton);
-  $: currentTransitionBg = state.transitionBg;
-  $: currentTransitionWindow = state.transitionWindow;
 
   const toVoid = () => {};
   let onOpen = toVoid;
@@ -126,8 +100,7 @@
     class="bg"
     on:click={handleOuterClick}
     bind:this={background}
-    transition:currentTransitionBg={state.transitionBgProps}
-    style={cssBg}
+    transition:fade
   >
     <div class="window-wrap" bind:this={wrap}>
       <div
@@ -135,21 +108,20 @@
         role="dialog"
         aria-modal="true"
         bind:this={modalWindow}
-        transition:currentTransitionWindow={{ duration: 250 }}
+        transition:fade
         on:introstart={onOpen}
         on:outrostart={onClose}
         on:introend={onOpened}
         on:outroend={onClosed}
-        style={cssWindow}
       >
         {#if state.closeButton}
 					{#if isSvelteComponent(state.closeButton)}
 						<svelte:component this={state.closeButton} onClose={close} />
 					{:else}
-						<button on:click={close} class="close" style={cssCloseButton} />
+						<button on:click={close} class="close" />
 					{/if}
         {/if}
-        <div class="content" style={cssContent}>
+        <div class="content">
           <svelte:component this={Component} {...props} />
         </div>
       </div>
@@ -173,6 +145,9 @@
 	  height: 100vh;
 	  background: rgba(31, 41, 55, 0.75);
     backdrop-filter: blur(10px);
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 24, 39, 0.5);
 	}
 
 	.window-wrap {
