@@ -60,24 +60,9 @@
 		<div class="backdrop" on:click={close} />
 
 		<div class="content-wrapper">
-			<slot name="header" {store}>
-				<!-- fallback -->
-				<div>
-					<h1>Your Modal Heading Goes Here...</h1>
-				</div>
-			</slot>
-
 			<div class="content">
 				<slot name="content" {store} />
 			</div>
-
-			<slot name="footer" {store}>
-				<!-- fallback -->
-				<div>
-					<h1>Your Modal Footer Goes Here...</h1>
-					<button on:click={close}>Close</button>
-				</div>
-			</slot>
 		</div>
 	</div>
 {/if}
@@ -109,7 +94,7 @@
 		z-index: 10;
 		max-width: 70vw;
 		border-radius: 0.3rem;
-		background-color: white;
+		background-color: black;
 		overflow: hidden;
 	}
 	@media (max-width: 767px) {
@@ -120,8 +105,5 @@
 	div.content {
 		max-height: 50vh;
 		overflow: auto;
-	}
-	h1 {
-		opacity: 0.5;
 	}
 </style>
