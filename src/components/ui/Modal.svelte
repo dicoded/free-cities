@@ -1,238 +1,127 @@
-<script>
-  // TODO: refactor all of this
-	// From https://github.com/flekschas/svelte-simple-modal
-  import * as svelte from 'svelte';
-  import { fade } from 'svelte/transition';
+<script context="module" lang="ts">
+	// From https://rb.gy/ldlme5
 
-	const setContext = svelte.setContext;
-	const SvelteComponent = svelte.SvelteComponent;
-
-  const key = 'modal';
-  const closeButton = true;
-
-  const defaultState = {
-    closeButton,
-  };
-  let state = { ...defaultState };
-
-  let Component = null;
-  let props = null;
-
-  let background;
-  let wrap;
-  let modalWindow;
-
-	const isSvelteComponent = component => SvelteComponent && SvelteComponent.isPrototypeOf(component);
-
-  const toVoid = () => {};
-  let onOpen = toVoid;
-  let onClose = toVoid;
-  let onOpened = toVoid;
-  let onClosed = toVoid;
-
-  const open = (
-    NewComponent,
-    newProps = {},
-    options = {},
-    callback = {}
-  ) => {
-    Component = NewComponent;
-    props = newProps;
-    state = { ...defaultState, ...options };
-    onOpen = callback.onOpen || toVoid;
-    onClose = callback.onClose || toVoid;
-    onOpened = callback.onOpened || toVoid;
-    onClosed = callback.onClosed || toVoid;
-  };
-
-  const close = (callback = {}) => {
-    onClose = callback.onClose || onClose;
-    onClosed = callback.onClosed || onClosed;
-    Component = null;
-    props = null;
-  };
-
-  const handleKeydown = (event) => {
-    if (Component && event.key === 'Escape') {
-      event.preventDefault();
-      close();
-    }
-
-    if (Component && event.key === 'Tab') {
-      // trap focus
-      const nodes = modalWindow.querySelectorAll('*');
-      const tabbable = Array.from(nodes).filter(node => node.tabIndex >= 0);
-
-      let index = tabbable.indexOf(document.activeElement);
-      if (index === -1 && event.shiftKey) index = 0;
-
-      index += tabbable.length + (event.shiftKey ? -1 : 1);
-      index %= tabbable.length;
-
-      tabbable[index].focus();
-      event.preventDefault();
-    }
-  };
-
-  const handleOuterClick = (event) => {
-    if (
-			event.target === background || event.target === wrap
-    ) {
-      event.preventDefault();
-      close();
-    }
-  };
-
-  setContext(key, { open, close });
+	// for passing focus on to the next Modal in the queue.
+	// A module context level object is shared among all its component instances.
+	// [Read More Here](https://svelte.dev/tutorial/sharing-code)
+	const modalList: HTMLElement[] = [];
 </script>
 
-<svelte:window on:keydown={handleKeydown}/>
+<script lang="ts">
+	import modalStore from '../../stores/modal.store';
 
-{#if Component}
-  <div
-    class="bg"
-    on:click={handleOuterClick}
-    bind:this={background}
-    transition:fade
-  >
-    <div class="window-wrap" bind:this={wrap}>
-      <div
-        class="window"
-        role="dialog"
-        aria-modal="true"
-        bind:this={modalWindow}
-        transition:fade
-        on:introstart={onOpen}
-        on:outrostart={onClose}
-        on:introend={onOpened}
-        on:outroend={onClosed}
-      >
-				{#if isSvelteComponent(state.closeButton)}
-					<svelte:component this={state.closeButton} onClose={close} />
-				{:else}
-					<button on:click={close} class="close" />
-				{/if}
-        <div class="content">
-          <svelte:component this={Component} {...props} />
-        </div>
-      </div>
-    </div>
-  </div>
+	const store = modalStore(false);
+	const { isOpen, open, close } = store;
+	function keydown(e: KeyboardEvent) {
+		e.stopPropagation();
+		if (e.key === 'Escape') {
+			close();
+		}
+	}
+
+	function transitionend(e: TransitionEvent) {
+		const node = e.target as HTMLElement;
+		node.focus();
+	}
+
+	function modalAction(node: HTMLElement) {
+		const returnFn = [];
+		// for accessibility
+		if (document.body.style.overflow !== 'hidden') {
+			const original = document.body.style.overflow;
+			document.body.style.overflow = 'hidden';
+			returnFn.push(() => {
+				document.body.style.overflow = original;
+			});
+		}
+		node.addEventListener('keydown', keydown);
+		node.addEventListener('transitionend', transitionend);
+		node.focus();
+		modalList.push(node);
+		returnFn.push(() => {
+			node.removeEventListener('keydown', keydown);
+			node.removeEventListener('transitionend', transitionend);
+			modalList.pop();
+			// Optional chaining to guard against empty array.
+			modalList[modalList.length - 1]?.focus();
+		});
+		return {
+			destroy: () => returnFn.forEach((fn) => fn()),
+		};
+	}
+</script>
+
+<slot name="trigger" {open}>
+	<!-- fallback trigger to open the modal -->
+	<button on:click={open}>Open</button>
+</slot>
+{#if $isOpen}
+	<div class="modal" use:modalAction tabindex="0">
+		<div class="backdrop" on:click={close} />
+
+		<div class="content-wrapper">
+			<slot name="header" {store}>
+				<!-- fallback -->
+				<div>
+					<h1>Your Modal Heading Goes Here...</h1>
+				</div>
+			</slot>
+
+			<div class="content">
+				<slot name="content" {store} />
+			</div>
+
+			<slot name="footer" {store}>
+				<!-- fallback -->
+				<div>
+					<h1>Your Modal Footer Goes Here...</h1>
+					<button on:click={close}>Close</button>
+				</div>
+			</slot>
+		</div>
+	</div>
 {/if}
-<slot></slot>
 
 <style>
-	* {
-	  box-sizing: border-box;
-	}
+	div.modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
 
-	.bg {
-	  position: fixed;
-	  z-index: 1000;
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  width: 100vw;
-	  height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: rgba(17, 24, 39, 0.5);
-    backdrop-filter: blur(10px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 1;
 	}
-
-	.window-wrap {
-	  position: relative;
-	  margin: 2rem;
-	  max-height: 100%;
+	div.modal:not(:focus-within) {
+		transition: opacity 0.1ms;
+		opacity: 0.99;
 	}
-
-	.window {
-	  position: relative;
-	  width: 60%;
-	  max-width: 100%;
-	  max-height: 100%;
-	  margin: 2rem auto;
-	  color: white;
-	  border-radius: 0.5rem;
-	  background: rgb(17, 24, 39,);
+	div.backdrop {
+		background-color: rgba(0, 0, 0, 0.4);
+		position: absolute;
+		width: 100%;
+		height: 100%;
 	}
-
-	.content {
-	  position: relative;
-	  padding: 1rem;
-	  max-height: calc(100vh - 4rem);
-	  overflow: auto;
+	div.content-wrapper {
+		z-index: 10;
+		max-width: 70vw;
+		border-radius: 0.3rem;
+		background-color: white;
+		overflow: hidden;
 	}
-
-	.close {
-	  display: block;
-	  box-sizing: border-box;
-	  position: absolute;
-	  z-index: 1000;
-	  top: 1rem;
-	  right: 1rem;
-	  margin: 0;
-	  padding: 0;
-	  width: 1.5rem;
-	  height: 1.5rem;
-	  border: 0;
-	  color: black;
-	  border-radius: 1.5rem;
-	  background: white;
-	  box-shadow: 0 0 0 1px black;
-	  transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1),
-				  background 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-	  -webkit-appearance: none;
+	@media (max-width: 767px) {
+		div.content-wrapper {
+			max-width: 100vw;
+		}
 	}
-
-	.close:before, .close:after {
-	  content: '';
-	  display: block;
-	  box-sizing: border-box;
-	  position: absolute;
-	  top: 50%;
-	  width: 1rem;
-	  height: 1px;
-	  background: black;
-	  transform-origin: center;
-	  transition: height 0.2s cubic-bezier(0.25, 0.1, 0.25, 1),
-				  background 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+	div.content {
+		max-height: 50vh;
+		overflow: auto;
 	}
-
-	.close:before {
-	  -webkit-transform: translate(0, -50%) rotate(45deg);
-	  -moz-transform: translate(0, -50%) rotate(45deg);
-	  transform: translate(0, -50%) rotate(45deg);
-	  left: 0.25rem;
+	h1 {
+		opacity: 0.5;
 	}
-
-	.close:after {
-	  -webkit-transform: translate(0, -50%) rotate(-45deg);
-	  -moz-transform: translate(0, -50%) rotate(-45deg);
-	  transform: translate(0, -50%) rotate(-45deg);
-	  left: 0.25rem;
-	}
-
-	.close:hover {
-	  background: black;
-	}
-
-	.close:hover:before, .close:hover:after {
-	  height: 2px;
-	  background: white;
-	}
-
-	.close:focus {
-	  border-color: #3399ff;
-	  box-shadow: 0 0 0 2px #3399ff;
-	}
-
-	.close:active {
-	  transform: scale(0.9);
-	}
-
-	.close:hover, .close:focus, .close:active {
-	  outline: none;
-	}
-  </style>
-
+</style>

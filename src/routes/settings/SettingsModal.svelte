@@ -2,7 +2,6 @@
 	import { getContext } from 'svelte';
 	import see from '../../stores/see.store';
 
-
 	import Button from '../../components/ui/Button.svelte';
 	import Settings from './Settings.svelte';
 
