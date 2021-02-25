@@ -11,7 +11,7 @@
 
 	export let open: boolean = false;
 	export let link: ILink = defaultLink;
-	export let components = [];
+	export let components: any = [];
 	export let props: IProp[] = [];
 
 	const handleOuterClick = () => open = false;

@@ -4,19 +4,14 @@
   import * as svelte from 'svelte';
   import { fade } from 'svelte/transition';
 
-	const baseSetContext = svelte.setContext;
+	const setContext = svelte.setContext;
 	const SvelteComponent = svelte.SvelteComponent;
 
-  export let key = 'modal';
-  export let closeButton = true;
-  export let closeOnEsc = true;
-  export let closeOnOuterClick = true;
-  export let setContext = baseSetContext
+  const key = 'modal';
+  const closeButton = true;
 
   const defaultState = {
     closeButton,
-    closeOnEsc,
-    closeOnOuterClick
   };
   let state = { ...defaultState };
 
@@ -58,7 +53,7 @@
   };
 
   const handleKeydown = (event) => {
-    if (state.closeOnEsc && Component && event.key === 'Escape') {
+    if (Component && event.key === 'Escape') {
       event.preventDefault();
       close();
     }
@@ -81,9 +76,7 @@
 
   const handleOuterClick = (event) => {
     if (
-      state.closeOnOuterClick && (
-        event.target === background || event.target === wrap
-      )
+			event.target === background || event.target === wrap
     ) {
       event.preventDefault();
       close();
@@ -114,13 +107,11 @@
         on:introend={onOpened}
         on:outroend={onClosed}
       >
-        {#if state.closeButton}
-					{#if isSvelteComponent(state.closeButton)}
-						<svelte:component this={state.closeButton} onClose={close} />
-					{:else}
-						<button on:click={close} class="close" />
-					{/if}
-        {/if}
+				{#if isSvelteComponent(state.closeButton)}
+					<svelte:component this={state.closeButton} onClose={close} />
+				{:else}
+					<button on:click={close} class="close" />
+				{/if}
         <div class="content">
           <svelte:component this={Component} {...props} />
         </div>
@@ -143,11 +134,10 @@
 	  justify-content: center;
 	  width: 100vw;
 	  height: 100vh;
-	  background: rgba(31, 41, 55, 0.75);
-    backdrop-filter: blur(10px);
     top: 0;
     left: 0;
     background-color: rgba(17, 24, 39, 0.5);
+    backdrop-filter: blur(10px);
 	}
 
 	.window-wrap {
