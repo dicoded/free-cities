@@ -7,11 +7,11 @@
 <script lang="ts">
 	import modalStore from '../../stores/modal.store';
 
-	import Body from './Body.svelte';
 	import Button from './Button.svelte';
 
 	const store = modalStore(false);
 	const { isOpen, open, close } = store;
+
 	function keydown(e: KeyboardEvent) {
 		e.stopPropagation();
 		if (e.key === 'Escape') {
@@ -26,25 +26,33 @@
 
 	function modalAction(node: HTMLElement) {
 		const returnFn: { (): void; (): void; }[] = [];
+
 		// for accessibility
 		if (document.body.style.overflow !== 'hidden') {
 			const original = document.body.style.overflow;
+
 			document.body.style.overflow = 'hidden';
+
 			returnFn.push(() => {
 				document.body.style.overflow = original;
 			});
 		}
+
 		node.addEventListener('keydown', keydown);
 		node.addEventListener('transitionend', transitionend);
 		node.focus();
+
 		modalList.push(node);
+
 		returnFn.push(() => {
 			node.removeEventListener('keydown', keydown);
 			node.removeEventListener('transitionend', transitionend);
 			modalList.pop();
-			// Optional chaining to guard against empty array.
+
+			// optional chaining to guard against empty array
 			modalList[modalList.length - 1]?.focus();
 		});
+
 		return {
 			destroy: () => returnFn.forEach((fn) => fn()),
 		};
@@ -55,6 +63,7 @@
 	<!-- fallback trigger to open the modal -->
 	<Button handler={() => open()}>Open</Button>
 </slot>
+
 {#if $isOpen}
 	<div class="modal" use:modalAction tabindex="0">
 		<div class="backdrop" on:click={close} />
@@ -85,16 +94,19 @@
 		align-items: center;
 		opacity: 1;
 	}
+
 	div.modal:not(:focus-within) {
 		transition: opacity 0.1ms;
 		opacity: 0.99;
 	}
+
 	div.backdrop {
 		background-color: rgba(0, 0, 0, 0.4);
 		position: absolute;
 		width: 100%;
 		height: 100%;
 	}
+
 	div.content-wrapper {
 		z-index: 10;
 		max-width: 70vw;
@@ -102,13 +114,10 @@
 		background-color: black;
 		overflow: hidden;
 	}
+
 	@media (max-width: 767px) {
 		div.content-wrapper {
 			max-width: 100vw;
 		}
-	}
-	div.content {
-		max-height: 50vh;
-		overflow: auto;
 	}
 </style>
