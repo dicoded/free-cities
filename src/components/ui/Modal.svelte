@@ -1,14 +1,14 @@
 <script context="module" lang="ts">
 	// From https://rb.gy/ldlme5
 
-	// for passing focus on to the next Modal in the queue.
-	// A module context level object is shared among all its component instances.
-	// [Read More Here](https://svelte.dev/tutorial/sharing-code)
 	const modalList: HTMLElement[] = [];
 </script>
 
 <script lang="ts">
 	import modalStore from '../../stores/modal.store';
+
+	import Body from './Body.svelte';
+	import Button from './Button.svelte';
 
 	const store = modalStore(false);
 	const { isOpen, open, close } = store;
@@ -25,7 +25,7 @@
 	}
 
 	function modalAction(node: HTMLElement) {
-		const returnFn = [];
+		const returnFn: { (): void; (): void; }[] = [];
 		// for accessibility
 		if (document.body.style.overflow !== 'hidden') {
 			const original = document.body.style.overflow;
@@ -53,15 +53,20 @@
 
 <slot name="trigger" {open}>
 	<!-- fallback trigger to open the modal -->
-	<button on:click={open}>Open</button>
+	<Button handler={() => open()}>Open</Button>
 </slot>
 {#if $isOpen}
 	<div class="modal" use:modalAction tabindex="0">
 		<div class="backdrop" on:click={close} />
 
 		<div class="content-wrapper">
-			<div class="content">
+			<div class="items-center bg-gray-900 border-gray-800 p-8 rounded-lg border-2">
 				<slot name="content" {store} />
+
+				<slot name="footer" {store}>
+				<!-- fallback -->
+				<Button handler={() => close()}>Close</Button>
+			</slot>
 			</div>
 		</div>
 	</div>

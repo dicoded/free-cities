@@ -7,13 +7,10 @@
 
 <Modal>
   <div slot="trigger" let:open>
-    <Button handler={() => open()}>Open Modal</Button>
-  </div>
-  <div slot="content">
-		<Settings />
+    <Button handler={() => open()}>Settings</Button>
   </div>
 
-  <div slot="footer" let:store={{close}}>
-    <button on:click={close}>Close First Modal</button>
+  <div slot="content" let:store={{close}}>
+		<Settings />
   </div>
 </Modal>
