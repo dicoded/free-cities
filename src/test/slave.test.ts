@@ -233,7 +233,7 @@ describe('generateLegs', () => {
 
 describe('generateRace', () => {
   it('returns a race based on the given body\'s properties', () => {
-    expect(generateRace()).toBeTruthy();
+    expect(generateRace(new Slave())).toBeTruthy();
   });
 });
 

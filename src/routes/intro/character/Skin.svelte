@@ -47,7 +47,8 @@
 		<div class="flex">
 			<Button
 				selected={$PC.skin.color === SkinColor.PALE}
-				handler={() => { $PC.skin.color = SkinColor.PALE }}>				Pale
+				handler={() => { $PC.skin.color = SkinColor.PALE }}>
+				Pale
 			</Button>
 			<Button
 				selected={$PC.skin.color === SkinColor.EXTREMELY_FAIR}
@@ -93,9 +94,9 @@
 				Bronze
 			</Button>
 			<Button
-				selected={$PC.skin.color === SkinColor.DARK}
-				handler={() => { $PC.skin.color = SkinColor.DARK }}>
-				Dark
+				selected={$PC.skin.color === SkinColor.DARK_OLIVE}
+				handler={() => { $PC.skin.color = SkinColor.DARK_OLIVE }}>
+				Dark Olive
 			</Button>
 		</div>
 

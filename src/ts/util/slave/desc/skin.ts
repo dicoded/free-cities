@@ -1,11 +1,22 @@
 import Actor from '../../../classes/actor/Actor';
 import Slave from '../../../classes/slave/Slave';
+
+import { getMelaninLevel } from '../../../classes/body/nonphysical/skin/Skin';
 import Tan from '../../../classes/body/nonphysical/skin/Tan';
 import { MarkingsType } from '../../../classes/body/nonphysical/skin/Markings';
 
+import { HairColor } from '../../../util/color';
+
 function freckled(actor: Actor): string {
-  if (actor.markings.face === MarkingsType.HEAVILY_FRECKLED) return `${actor.skin.color} and heavily freckled.`;
-  if (actor.skin.freckled) return `${actor.skin.color} and freckled.`;
+  const attractive = getMelaninLevel(actor.skin.color).between(5, 10) && actor.hair.color === HairColor.RED
+    ? ', an attractive combination'
+    : '';
+
+  if (actor.skin.freckled) {
+    return `${actor.skin.color} and ${actor.markings.face === MarkingsType.HEAVILY_FRECKLED
+      ? 'heavily '
+      : ''}freckled${attractive}.`;
+  }
 
   return `${actor.skin.color}.`;
 }
