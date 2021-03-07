@@ -1,5 +1,7 @@
 import Scars from './Scars';
 import Markings from './Markings';
+import Tan from './Tan';
+
 import { SkinColor } from '../../../../util/color';
 
 interface ISkin {
@@ -11,6 +13,9 @@ interface ISkin {
 
   /** Any minor markings on the body's skin. */
   markings: Markings;
+
+  /** Any tan the body's skin might have. */
+  tan: Tan | null;
 }
 
 export default class Skin implements ISkin {
@@ -20,9 +25,17 @@ export default class Skin implements ISkin {
 
   markings: Markings;
 
+  tan: Tan | null;
+
   constructor() {
     this.color = SkinColor.WHITE;
     this.scars = new Scars();
     this.markings = new Markings();
+    this.tan = null;
+  }
+
+  // TODO: this might need to be reworked
+  get freckled() {
+    return this.markings.face?.includes('freckled');
   }
 }
