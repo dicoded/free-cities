@@ -40,6 +40,7 @@ import { entityID, min, max } from '../../../stores/global.store';
 import see from '../../../stores/see.store';
 
 import { SkinColor, HairColor, EyeColor } from '../color';
+import nationalities from '../../../data/nationalities/nationality';
 
 // TODO: add in better range distribution (bell curve?)
 
@@ -189,7 +190,7 @@ export function generateEyes(actor: Actor): Eyes {
   const eyes = new Eyes();
 
   switch (actor.race) {
-    case Race.EUROPEAN:
+    case Race.SOUTHERN_EUROPEAN:
       eyes.left.color.original = EyeColor.GREEN;
       eyes.right.color.original = EyeColor.GREEN;
       break;
@@ -326,7 +327,7 @@ export function generateRace(): Race {
   if (roll < 12) return Race.MALAY;
   if (roll < 14) return Race.INDO_ARYAN;
   if (roll < 17) return Race.BLACK;
-  if (roll < 18) return Race.EUROPEAN;
+  if (roll < 18) return Race.SOUTHERN_EUROPEAN;
   if (roll < 19) return Race.WHITE;
   if (roll < 21) return Race.SEMITIC;
   if (roll < 26) return Race.MIDDLE_EASTERN;
@@ -391,7 +392,7 @@ export function generateSkin(actor: Actor): Skin {
     case Race.BLACK:
       skin.color = SkinColor.BLACK;
       break;
-    case Race.EUROPEAN:
+    case Race.SOUTHERN_EUROPEAN:
       skin.color = SkinColor.WHITE;
       break;
     case Race.INDO_ARYAN:
@@ -421,12 +422,50 @@ export function generateSkin(actor: Actor): Skin {
 }
 
 export function generateNationality(actor: Actor): string {
+  let race: number = 0;
+
   switch (actor.race) {
     case Race.AMERINDIAN:
-      return '';
+      race = 0;
+      break;
+    case Race.ASIAN:
+      race = 1;
+      break;
+    case Race.BLACK:
+      race = 2;
+      break;
+    case Race.INDO_ARYAN:
+      race = 3;
+      break;
+    case Race.LATIN_AMERICAN:
+      race = 4;
+      break;
+    case Race.MALAY:
+      race = 5;
+      break;
+    case Race.MIDDLE_EASTERN:
+      race = 6;
+      break;
+    case Race.MIXED_RACE:
+      race = 7;
+      break;
+    case Race.PACIFIC_ISLANDER:
+      race = 8;
+      break;
+    case Race.SEMITIC:
+      race = 9;
+      break;
+    case Race.SOUTHERN_EUROPEAN:
+      race = 10;
+      break;
+    case Race.WHITE:
+      race = 11;
+      break;
     default:
-      return 'Test';
+      break;
   }
+
+  return nationalities[race][Number().random(0, nationalities[race].length)];
 }
 
 export function generateAge(): Age {
