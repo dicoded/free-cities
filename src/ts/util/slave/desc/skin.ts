@@ -1,6 +1,8 @@
 import Actor from '../../../classes/actor/Actor';
 import Slave from '../../../classes/slave/Slave';
 
+import nationality from './nationality';
+
 import { getMelaninLevel } from '../../../classes/body/nonphysical/skin/Skin';
 import Tan from '../../../classes/body/nonphysical/skin/Tan';
 import { MarkingsType } from '../../../classes/body/nonphysical/skin/Markings';
@@ -43,6 +45,13 @@ export default function skin(actor: Actor): string {
 
     return text.join(' ');
   }
+
+  text.push(
+    nationality(actor),
+    freckled(actor),
+  );
+
+  if (actor.skin.tan) text.push(tanned(actor));
 
   return text.join(' ');
 }

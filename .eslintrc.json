@@ -31,6 +31,12 @@
             "rules": {
                 "@typescript-eslint/no-unused-vars": "off"
             }
+            },
+        {
+            "files": ["/src/ts/util/slave/desc/*"],
+            "rules": {
+                "max-len": "off"
+            }
         }
     ],
     "rules": {
