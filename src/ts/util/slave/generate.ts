@@ -318,7 +318,27 @@ export function generateLegs(): Legs {
   return legs;
 }
 
-export function generateRace(): Race {
+function getRaceFromNationality(nationality: string): Race {
+  if (nationalities[0].includes(nationality)) return Race.AMERINDIAN;
+  if (nationalities[1].includes(nationality)) return Race.ASIAN;
+  if (nationalities[2].includes(nationality)) return Race.LATIN_AMERICAN;
+  if (nationalities[3].includes(nationality)) return Race.PACIFIC_ISLANDER;
+  if (nationalities[4].includes(nationality)) return Race.MALAY;
+  if (nationalities[5].includes(nationality)) return Race.INDO_ARYAN;
+  if (nationalities[6].includes(nationality)) return Race.BLACK;
+  if (nationalities[7].includes(nationality)) return Race.SOUTHERN_EUROPEAN;
+  if (nationalities[8].includes(nationality)) return Race.WHITE;
+  if (nationalities[9].includes(nationality)) return Race.SEMITIC;
+  if (nationalities[10].includes(nationality)) return Race.MIDDLE_EASTERN;
+
+  return Race.INDO_ARYAN;
+}
+
+export function generateRace(actor: Actor): Race {
+  if (actor.nationality) {
+    return getRaceFromNationality(actor.nationality);
+  }
+
   const roll = Number().random(1, 100);
 
   if (roll < 5) return Race.AMERINDIAN;
@@ -424,46 +444,17 @@ export function generateSkin(actor: Actor): Skin {
 export function generateNationality(actor: Actor): string {
   let race: number = 0;
 
-  switch (actor.race) {
-    case Race.AMERINDIAN:
-      race = 0;
-      break;
-    case Race.ASIAN:
-      race = 1;
-      break;
-    case Race.BLACK:
-      race = 2;
-      break;
-    case Race.INDO_ARYAN:
-      race = 3;
-      break;
-    case Race.LATIN_AMERICAN:
-      race = 4;
-      break;
-    case Race.MALAY:
-      race = 5;
-      break;
-    case Race.MIDDLE_EASTERN:
-      race = 6;
-      break;
-    case Race.MIXED_RACE:
-      race = 7;
-      break;
-    case Race.PACIFIC_ISLANDER:
-      race = 8;
-      break;
-    case Race.SEMITIC:
-      race = 9;
-      break;
-    case Race.SOUTHERN_EUROPEAN:
-      race = 10;
-      break;
-    case Race.WHITE:
-      race = 11;
-      break;
-    default:
-      break;
-  }
+  if (actor.race === Race.ASIAN) race = 1;
+  if (actor.race === Race.BLACK) race = 2;
+  if (actor.race === Race.INDO_ARYAN) race = 3;
+  if (actor.race === Race.LATIN_AMERICAN) race = 4;
+  if (actor.race === Race.MALAY) race = 5;
+  if (actor.race === Race.MIDDLE_EASTERN) race = 6;
+  if (actor.race === Race.MIXED_RACE) race = 7;
+  if (actor.race === Race.PACIFIC_ISLANDER) race = 8;
+  if (actor.race === Race.SEMITIC) race = 9;
+  if (actor.race === Race.SOUTHERN_EUROPEAN) race = 10;
+  if (actor.race === Race.WHITE) race = 11;
 
   return nationalities[race][Number().random(0, nationalities[race].length)];
 }
@@ -535,7 +526,7 @@ export function generateAbstract(actor: Actor): Abstract {
   abstract.sex = generateSex();
   abstract.genes = generateGenes(actor);
   abstract.genetics = generateGenetics();
-  abstract.race = generateRace();
+  abstract.race = generateRace(actor);
   abstract.skin = generateSkin(actor);
   abstract.age = generateAge();
   abstract.health = generateHealth();
