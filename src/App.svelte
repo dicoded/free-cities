@@ -42,6 +42,10 @@
     @apply bg-gray-700;
   }
 
+  .disabled {
+    @apply cursor-not-allowed;
+  }
+
   @layer components {
     .btn {
       @apply bg-gray-800 border-2 border-gray-700 w-full h-auto m-2 p-2 rounded-lg text-center;

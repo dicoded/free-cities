@@ -15,6 +15,7 @@
 	<div class="flex">
 		<Button
 			selected={ $difficulty.rate === 1 }
+			disabled={ $difficulty.rate === 1 }
 			handler={() => {
 				$difficulty.rate -= 1;
 				$difficulty.rate = $difficulty.rate.clamp(1, 4);
@@ -23,6 +24,7 @@
 		</Button>
 		<Button
 			selected={ $difficulty.rate === 4 }
+			disabled={ $difficulty.rate === 4 }
 			handler={() => {
 				$difficulty.rate += 1;
 				$difficulty.rate = $difficulty.rate.clamp(1, 4);
