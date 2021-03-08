@@ -5,7 +5,6 @@ export enum MarkingsType {
   HEAVILY_FRECKLED = 'heavily freckled',
 }
 
-// TODO: expand this to include different parts of the body
 interface IMarkings {
   /** Any markings on the body's face. */
   face: MarkingsType | null;

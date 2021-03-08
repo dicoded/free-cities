@@ -129,7 +129,7 @@ export default class Actor extends Body implements IActor {
     this.name = new Name();
     this.intelligence = 0;
     this.education = 0;
-    this.nationality = 'American';
+    this.nationality = '';
     this.partners = new Set();
     this.personality = new Personality();
     this.quirks = new Quirks();

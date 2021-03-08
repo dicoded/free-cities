@@ -40,6 +40,7 @@ import { entityID, min, max } from '../../../stores/global.store';
 import see from '../../../stores/see.store';
 
 import { SkinColor, HairColor, EyeColor } from '../color';
+import nationalities from '../../../data/nationalities/nationality';
 
 // TODO: add in better range distribution (bell curve?)
 
@@ -189,7 +190,7 @@ export function generateEyes(actor: Actor): Eyes {
   const eyes = new Eyes();
 
   switch (actor.race) {
-    case Race.EUROPEAN:
+    case Race.SOUTHERN_EUROPEAN:
       eyes.left.color.original = EyeColor.GREEN;
       eyes.right.color.original = EyeColor.GREEN;
       break;
@@ -317,7 +318,27 @@ export function generateLegs(): Legs {
   return legs;
 }
 
-export function generateRace(): Race {
+function getRaceFromNationality(nationality: string): Race {
+  if (nationalities[0].includes(nationality)) return Race.AMERINDIAN;
+  if (nationalities[1].includes(nationality)) return Race.ASIAN;
+  if (nationalities[2].includes(nationality)) return Race.LATIN_AMERICAN;
+  if (nationalities[3].includes(nationality)) return Race.PACIFIC_ISLANDER;
+  if (nationalities[4].includes(nationality)) return Race.MALAY;
+  if (nationalities[5].includes(nationality)) return Race.INDO_ARYAN;
+  if (nationalities[6].includes(nationality)) return Race.BLACK;
+  if (nationalities[7].includes(nationality)) return Race.SOUTHERN_EUROPEAN;
+  if (nationalities[8].includes(nationality)) return Race.WHITE;
+  if (nationalities[9].includes(nationality)) return Race.SEMITIC;
+  if (nationalities[10].includes(nationality)) return Race.MIDDLE_EASTERN;
+
+  return Race.INDO_ARYAN;
+}
+
+export function generateRace(actor: Actor): Race {
+  // if (actor.nationality) {
+  //   return getRaceFromNationality(actor.nationality);
+  // }
+
   const roll = Number().random(1, 100);
 
   if (roll < 5) return Race.AMERINDIAN;
@@ -326,7 +347,7 @@ export function generateRace(): Race {
   if (roll < 12) return Race.MALAY;
   if (roll < 14) return Race.INDO_ARYAN;
   if (roll < 17) return Race.BLACK;
-  if (roll < 18) return Race.EUROPEAN;
+  if (roll < 18) return Race.SOUTHERN_EUROPEAN;
   if (roll < 19) return Race.WHITE;
   if (roll < 21) return Race.SEMITIC;
   if (roll < 26) return Race.MIDDLE_EASTERN;
@@ -391,7 +412,7 @@ export function generateSkin(actor: Actor): Skin {
     case Race.BLACK:
       skin.color = SkinColor.BLACK;
       break;
-    case Race.EUROPEAN:
+    case Race.SOUTHERN_EUROPEAN:
       skin.color = SkinColor.WHITE;
       break;
     case Race.INDO_ARYAN:
@@ -421,12 +442,23 @@ export function generateSkin(actor: Actor): Skin {
 }
 
 export function generateNationality(actor: Actor): string {
-  switch (actor.race) {
-    case Race.AMERINDIAN:
-      return '';
-    default:
-      return 'Test';
-  }
+  const index = {
+    Amerindian: 0,
+    Asian: 1,
+    black: 2,
+    'Indo-Aryan': 3,
+    'Latin American': 4,
+    Malay: 5,
+    'Middle Eastern': 6,
+    'mixed race': 7,
+    'Pacific Islander': 8,
+    Semitic: 9,
+    'Southern European': 10,
+    white: 11,
+  };
+  const race = index[actor.race];
+
+  return nationalities[race][Number().random(0, Object.keys(index).length - 1)];
 }
 
 export function generateAge(): Age {
@@ -496,7 +528,7 @@ export function generateAbstract(actor: Actor): Abstract {
   abstract.sex = generateSex();
   abstract.genes = generateGenes(actor);
   abstract.genetics = generateGenetics();
-  abstract.race = generateRace();
+  abstract.race = generateRace(actor);
   abstract.skin = generateSkin(actor);
   abstract.age = generateAge();
   abstract.health = generateHealth();

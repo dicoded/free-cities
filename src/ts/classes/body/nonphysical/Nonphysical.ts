@@ -26,18 +26,18 @@ export enum Genes {
 }
 
 export enum Race {
-  WHITE = 'white',
-  ASIAN = 'Asian',
-  LATIN_AMERICAN = 'Latin American',
-  MIDDLE_EASTERN = 'Middle Eastern',
-  BLACK = 'black',
-  SEMITIC = 'Semitic',
-  EUROPEAN = 'European',
-  INDO_ARYAN = 'Indo-Aryan',
   AMERINDIAN = 'Amerindian',
-  PACIFIC_ISLANDER = 'Pacific Islander',
+  ASIAN = 'Asian',
+  BLACK = 'black',
+  INDO_ARYAN = 'Indo-Aryan',
+  LATIN_AMERICAN = 'Latin American',
   MALAY = 'Malay',
+  MIDDLE_EASTERN = 'Middle Eastern',
   MIXED_RACE = 'mixed race',
+  PACIFIC_ISLANDER = 'Pacific Islander',
+  SEMITIC = 'Semitic',
+  SOUTHERN_EUROPEAN = 'Southern European',
+  WHITE = 'white',
 }
 
 // some of the below are physical traits, but don't belong in either upper or lower
