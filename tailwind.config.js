@@ -10,6 +10,11 @@ module.exports = {
         'note': ['Lato-Italic', 'Arial', 'sans-serif'],
         'montserrat': ['Montserrat-Light', 'Arial', 'sans-serif'],
       },
+      screens: {
+        dark: {
+          raw: '(prefers-color-scheme: dark)'
+        },
+      },
     },
     minHeight: {
     '0': '0',
