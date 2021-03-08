@@ -39,20 +39,37 @@
   @tailwind utilities;
 
   .selected {
-    @apply bg-gray-700;
+    @apply bg-gray-400;
   }
 
   .disabled {
     @apply cursor-not-allowed;
   }
 
+  @screen dark {
+    .selected {
+      @apply bg-gray-700;
+    }
+  }
+
   @layer components {
     .btn {
-      @apply bg-gray-800 border-2 border-gray-700 w-full h-auto m-2 p-2 rounded-lg text-center;
+      @apply bg-gray-300 border-gray-400;
+      @apply border-2 w-full h-auto m-2 p-2 rounded-lg text-center;
     }
 
     .btn:hover {
-      @apply bg-gray-600;
+        @apply bg-gray-100;
+      }
+
+    @screen dark {
+      .btn {
+          @apply bg-gray-800 border-gray-700;
+      }
+
+      .btn:hover {
+        @apply bg-gray-600;
+      }
     }
   }
 </style>
