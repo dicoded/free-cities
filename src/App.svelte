@@ -55,7 +55,7 @@
   @layer components {
     .item {
       @apply bg-gray-300 border-gray-400;
-      @apply border-2 w-full h-auto m-2 p-2 rounded-lg text-center;
+      @apply border-2 w-full h-auto rounded-lg text-center m-2 p-2;
     }
 
     .item:hover {
@@ -64,6 +64,14 @@
 
     .bg {
       @apply bg-gray-200 border-gray-300;
+    }
+
+    .rounded {
+      @apply rounded-lg;
+    }
+
+    .bordered {
+      @apply border-2;
     }
 
     @screen dark {
