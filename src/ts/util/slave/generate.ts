@@ -443,19 +443,19 @@ export function generateSkin(actor: Actor): Skin {
 
 export function generateNationality(actor: Actor): string {
   const index = {
-    'Amerindian': 0,
-    'Asian': 1,
-    'black': 2,
+    Amerindian: 0,
+    Asian: 1,
+    black: 2,
     'Indo-Aryan': 3,
     'Latin American': 4,
-    'Malay': 5,
+    Malay: 5,
     'Middle Eastern': 6,
     'mixed race': 7,
     'Pacific Islander': 8,
-    'Semitic': 9,
+    Semitic: 9,
     'Southern European': 10,
-    'white': 11,
-  }
+    white: 11,
+  };
   const race = index[actor.race];
 
   return nationalities[race][Number().random(0, Object.keys(index).length - 1)];
