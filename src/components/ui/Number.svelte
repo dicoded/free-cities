@@ -6,7 +6,7 @@
 </script>
 
 <input
-	class="btn"
+	class="item"
 	type="number"
 	bind:value={value}
 	{placeholder}

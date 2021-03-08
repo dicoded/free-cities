@@ -254,7 +254,7 @@
 </script>
 
 <div
-  class="datepicker btn"
+  class="datepicker item"
   class:open="{isOpen}"
   class:closing="{isClosing}"
 >

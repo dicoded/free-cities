@@ -53,22 +53,30 @@
   }
 
   @layer components {
-    .btn {
+    .item {
       @apply bg-gray-300 border-gray-400;
       @apply border-2 w-full h-auto m-2 p-2 rounded-lg text-center;
     }
 
-    .btn:hover {
+    .item:hover {
         @apply bg-gray-100;
       }
 
+    .bg {
+      @apply bg-gray-200 border-gray-300;
+    }
+
     @screen dark {
-      .btn {
+      .item {
           @apply bg-gray-800 border-gray-700;
       }
 
-      .btn:hover {
+      .item:hover {
         @apply bg-gray-600;
+      }
+
+      .bg {
+        @apply bg-gray-900 border-gray-800;
       }
     }
   }
