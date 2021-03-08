@@ -11,7 +11,7 @@ interface Array<T> {
 }
 
 Array.prototype.random = function random(this: Array<any>): any {
-  return this[Math.floor((Math.random() * this.length))];
+  return this[Math.floor(Math.random() * this.length)];
 };
 
 Array.prototype.toSentence = function toSentence(this: Array<string>): string {
