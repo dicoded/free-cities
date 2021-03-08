@@ -23,5 +23,14 @@
 
 <span class="font-bold">{slave.name.full}</span> is a <span class={devotionColor(slave.devotion)}>{devotion(slave)},</span>
 <span class={trustColor(slave.trust)}>{trust(slave)}</span> <span class="text-red-400 font-bold">{slave.title}.</span>
-{name(slave)} {age(slave)} {health(slave)} {mind(slave)} {relationRival(slave)} {career(slave)} {prestige(slave)}
-{size(slave)} {skin(slave)}
+
+{name(slave)}
+{age(slave)}
+{health(slave)}
+{mind(slave)}
+{relationRival(slave)}
+{career(slave)}
+{prestige(slave)}
+{size(slave)}
+{skin(slave)}
+
