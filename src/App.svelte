@@ -58,9 +58,9 @@
       @apply border-2 w-full h-auto rounded-lg text-center m-2 p-2;
     }
 
-    .item:hover {
-        @apply bg-gray-100;
-      }
+    .hover:hover {
+      @apply bg-gray-100;
+    }
 
     .bg {
       @apply bg-gray-200 border-gray-300;
@@ -79,7 +79,7 @@
           @apply bg-gray-800 border-gray-700;
       }
 
-      .item:hover {
+      .hover:hover {
         @apply bg-gray-600;
       }
 

@@ -254,7 +254,7 @@
 </script>
 
 <div
-  class="datepicker item"
+  class="datepicker item hover"
   class:open="{isOpen}"
   class:closing="{isClosing}"
 >

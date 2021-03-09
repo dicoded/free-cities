@@ -7,6 +7,6 @@
 <button on:click={handler}
 	class:selected="{selected}"
 	class:disabled="{disabled}"
-	class="item">
+	class="item hover">
 	<slot></slot>
 </button>

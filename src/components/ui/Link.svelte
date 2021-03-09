@@ -5,7 +5,7 @@
 	export let handler: (() => any) | null = null;
 </script>
 
-<button class="item"
+<button class="item hover"
 	on:click={() => {
 		$view = to || $view;
 
