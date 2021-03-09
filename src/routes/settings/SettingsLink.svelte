@@ -6,7 +6,7 @@
 </script>
 
 <Modal>
-  <div slot="trigger" let:open>
+  <div class="flex my-8" slot="trigger" let:open>
     <Button handler={() => open()}>Settings</Button>
   </div>
 
