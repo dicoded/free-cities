@@ -39,20 +39,53 @@
   @tailwind utilities;
 
   .selected {
-    @apply bg-gray-700;
+    @apply bg-gray-400;
   }
 
   .disabled {
     @apply cursor-not-allowed;
   }
 
+  @screen dark {
+    .selected {
+      @apply bg-gray-700;
+    }
+  }
+
   @layer components {
-    .btn {
-      @apply bg-gray-800 border-2 border-gray-700 w-full h-auto m-2 p-2 rounded-lg text-center;
+    .item {
+      @apply bg-gray-300 border-gray-400;
+      @apply border-2 w-full h-auto rounded-lg text-center m-2 p-2;
     }
 
-    .btn:hover {
-      @apply bg-gray-600;
+    .hover:hover {
+      @apply bg-gray-100;
+    }
+
+    .bg {
+      @apply bg-gray-200 border-gray-300;
+    }
+
+    .rounded {
+      @apply rounded-lg;
+    }
+
+    .bordered {
+      @apply border-2;
+    }
+
+    @screen dark {
+      .item {
+          @apply bg-gray-800 border-gray-700;
+      }
+
+      .hover:hover {
+        @apply bg-gray-600;
+      }
+
+      .bg {
+        @apply bg-gray-900 border-gray-800;
+      }
     }
   }
 </style>

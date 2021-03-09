@@ -4,7 +4,7 @@
 </script>
 
 <input
-	class="btn"
+	class="item hover"
 	bind:value={value}
 	placeholder={placeholder}
 />

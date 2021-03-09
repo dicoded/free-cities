@@ -8,7 +8,7 @@
 </script>
 
 <div class="mx-3 flex">
-	<div class="w-full p-2 bg-gray-800 rounded-lg border-gray-700 border-2">
+	<div class="w-full p-2 item">
 		<p class="text-center p-6 text-lg font-bold">
 			Week {$week}
 		</p>
