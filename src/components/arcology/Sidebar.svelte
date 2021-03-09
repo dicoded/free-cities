@@ -7,7 +7,7 @@
 	import Item from './SidebarItem.svelte';
 </script>
 
-<div class="mx-3 flex">
+<div class="flex">
 	<div class="w-full p-2 item">
 		<p class="text-center p-6 text-lg font-bold">
 			Week {$week}
