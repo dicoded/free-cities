@@ -22,9 +22,10 @@ const componentArr: any[] = [];
 const propArr: any[] = [];
 
 /** The link to display in the sidebar. */
-export const link = writable(defaultLink);
+export const link = writable<ILink|null>(defaultLink);
 
 /** Any additional components to display in the sidebar. */
 export const components = writable(componentArr);
+
 /** Any properties for the components in the sidebar. */
 export const props = writable(propArr);

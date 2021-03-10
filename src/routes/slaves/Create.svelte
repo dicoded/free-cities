@@ -14,7 +14,7 @@
   import { Career } from '../../ts/classes/player/Player';
   import Slave from '../../ts/classes/slave/Slave';
 
-  import Cash from './StartingCash.svelte';
+  import Cash from './Cash.svelte';
   import View from './View.svelte';
   import Edit from './Edit.svelte';
 
