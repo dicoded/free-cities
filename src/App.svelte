@@ -63,15 +63,7 @@
     }
 
     .bg {
-      @apply bg-gray-200 border-gray-300;
-    }
-
-    .rounded {
-      @apply rounded-lg;
-    }
-
-    .bordered {
-      @apply border-2;
+      @apply bg-gray-200 border-gray-300 border-2;
     }
 
     @screen dark {

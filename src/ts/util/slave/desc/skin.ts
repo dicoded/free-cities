@@ -4,8 +4,8 @@ import Slave from '../../../classes/slave/Slave';
 import nationality from './nationality';
 
 import { getMelaninLevel } from '../../../classes/body/nonphysical/skin/Skin';
-import Tan from '../../../classes/body/nonphysical/skin/Tan';
 import { MarkingsType } from '../../../classes/body/nonphysical/skin/Markings';
+import Tan from '../../../classes/body/nonphysical/skin/Tan';
 
 import { HairColor } from '../../../util/color';
 

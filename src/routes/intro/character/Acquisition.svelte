@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '../../../components/ui/Button.svelte';
+	import Choice from '../../../components/ui/Choice.svelte';
 	import Response from '../../../components/ui/Response.svelte';
 	import Section from '../../../components/ui/Section.svelte';
 
@@ -13,7 +14,7 @@
 		no one will be in a position to apply moral scorekeeping to you. In the brave new world of the Free Cities, you will
 		be free to define yourself as the sum of your actions, rather than as the product of your past. The first decision
 		that will define who you are as an arcology owner is your choice of method in acquiring one.
-		<span class="font-bold text-gray-400">What approach will you take?</span>
+		<Choice>What approach will you take?</Choice>
 	</div>
 
 	<div class="flex">

@@ -69,7 +69,7 @@
 		<div class="backdrop" on:click={close} />
 
 		<div class="content-wrapper">
-			<div class="items-center bg-gray-900 border-gray-800 p-8 rounded-lg border-2">
+			<div class="items-center bg p-8 rounded-lg">
 				<slot name="content" {store} />
 
 				<slot name="footer" {store}>
@@ -111,7 +111,6 @@
 		z-index: 10;
 		max-width: 70vw;
 		border-radius: 0.3rem;
-		background-color: black;
 		overflow: hidden;
 	}
 
