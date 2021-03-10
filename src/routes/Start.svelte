@@ -5,7 +5,7 @@
 </script>
 
 <main class="flex items-center flex-col h-screen">
-  <div class="w-3/5 h-full items-center bg-gray-900 rounded-lg border-gray-800 border-2 my-32 m-auto">
+  <div class="w-3/5 h-full items-center bg rounded-lg my-32 m-auto">
     <header class="text-center text-5xl font-title mt-20">
       Free Cities
     </header>

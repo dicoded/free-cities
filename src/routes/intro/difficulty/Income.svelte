@@ -17,7 +17,6 @@
   <div class="flex">
     <Button
       selected={ $difficulty.income === 1 }
-      disabled={ $difficulty.income === 1 }
       handler={() => {
         $difficulty.income -= 1;
         $difficulty.income = $difficulty.income.clamp(1, 3);
@@ -26,7 +25,6 @@
     </Button>
     <Button
       selected={ $difficulty.income === 3 }
-      disabled={ $difficulty.income === 3 }
       handler={() => {
         $difficulty.income += 1;
         $difficulty.income = $difficulty.income.clamp(1, 3);

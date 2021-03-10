@@ -5,8 +5,10 @@
 </script>
 
 <button on:click={handler}
-	class:selected="{selected}"
-	class:disabled="{disabled}"
-	class="item hover">
+	class:selected={selected}
+	class:cursor-default={selected}
+	class:hover={!selected}
+	class:disabled={disabled}
+	class="item">
 	<slot></slot>
 </button>
