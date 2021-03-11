@@ -59,7 +59,7 @@ export function generateID(): number {
 }
 
 export function generateSex(): Sex {
-  if (Number().random(0, 99) < get(see).dicks) {
+  if (Number().random(1, 100) < get(see).dicks) {
     return Sex.MALE;
   }
 
