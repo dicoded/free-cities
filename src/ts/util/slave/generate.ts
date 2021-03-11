@@ -574,11 +574,81 @@ export function generatePersonality(): Personality {
 export function generateQuirks(): Quirks {
   const quirks = new Quirks();
 
+  const roll = Number().random(1, 10);
+
+  // TODO: couple these with the enums?
+  const behavioralQuirks = [
+    'confident',
+    'cutting',
+    'funny',
+    'fitness',
+    'adores women',
+    'adores men',
+    'insecure',
+    'sinful',
+    'advocate',
+  ];
+  const sexualQuirks = [
+    'gagfuck queen',
+    'painal queen',
+    'strugglefuck queen',
+    'tease',
+    'romantic',
+    'perverted',
+    'caring',
+    'unflinching',
+    'size queen',
+  ];
+
+  if (roll === 1) {
+    quirks.behavioral = behavioralQuirks.random();
+    quirks.sexual = sexualQuirks.random();
+  }
+
   return quirks;
 }
 
 export function generateFlaws(): Flaws {
   const flaws = new Flaws();
+
+  const roll = Number().random(1, 10);
+
+  const behavioralFlaws = [
+    'arrogant',
+    'bitchy',
+    'odd',
+    'hates men',
+    'hates women',
+    'gluttonous',
+    'anorexic',
+    'devout',
+    'liberated',
+  ];
+  const sexualFlaws = [
+    'hates oral',
+    'hates anal',
+    'hates penetration',
+    'shamefast',
+    'idealistic',
+    'repressed',
+    'apathetic',
+    'crude',
+    'judgemental',
+    'neglectful',
+    'cum addict',
+    'anal addict',
+    'attention whore',
+    'breast growth',
+    'abusive',
+    'malicious',
+    'self hating',
+    'breeder',
+  ];
+
+  if (roll === 1) {
+    flaws.behavioral = behavioralFlaws.random();
+    flaws.sexual = sexualFlaws.random();
+  }
 
   return flaws;
 }
