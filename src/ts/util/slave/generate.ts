@@ -100,8 +100,8 @@ export function generateName(actor: Actor): Name {
     name.birth.first = 'John';
     name.birth.last = 'Doe';
   } else {
-    name.birth.first = 'Kate';
-    name.birth.last = 'Vic';
+    name.birth.first = 'Jane';
+    name.birth.last = 'Doe';
   }
 
   return name;
