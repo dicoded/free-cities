@@ -659,7 +659,7 @@ export function generateFetish(): Fetish | null {
     'pregnancy',
   ];
 
-  if (Number().random(1, 10) > 1) return fetish;
+  if (Number().random(1, 10) > 1) return null;
 
   fetish.strength = Number().random(1, 100);
   fetish.type = fetishes.random();
@@ -667,43 +667,54 @@ export function generateFetish(): Fetish | null {
   return fetish;
 }
 
+function isAsexual(): boolean {
+  if (Number().random(1, 100) === 1) return true; // 1% chance of slave being asexual
+
+  return false;
+}
+
+function isBisexual(actor: Actor): boolean {
+  if (actor.sex === Sex.MALE && Number().random(1, 100) <= 30) return true; // 30% chance of slave being bisexual if gay
+  if (Number().random(1, 100) <= 50) return true; // 50% chance of slave being bisexual if lesbian
+
+  return false;
+}
+
+function isGay(): boolean {
+  if (Number().random(1, 20) === 1) return true; // 5% chance of slave being gay
+
+  return false;
+}
+
 export function generateAttraction(actor: Actor): Attraction {
   const attraction = new Attraction();
 
+  let { male, female } = attraction;
+
+  const isMale = actor.sex === Sex.MALE;
   const attracted = Number().random(66, 100);
   const notAttracted = Number().random(1, 65);
 
-  if (actor.sex === Sex.MALE) {
-    if (Number().random(1, 1000) <= 35) { // 3.5% chance of slave being gay
-      if (Number().random(1, 100) === 1) { // 1% chance of slave being asexual
-        attraction.male = notAttracted;
-        attraction.female = notAttracted;
-      }
+  male = isMale ? notAttracted : attracted;
+  female = isMale ? attracted : notAttracted;
 
-      attraction.male = attracted;
+  if (isGay()) {
+    male = isMale ? attracted : notAttracted;
+    female = isMale ? notAttracted : attracted;
 
-      if (Number().random(1, 100) <= 30) { // 30% chance of slave being bisexual
-        attraction.female = attracted;
-      }
-    } else {
-      attraction.male = notAttracted;
-      attraction.female = attracted;
+    if (isBisexual(actor)) {
+      male = attracted;
+      female = attracted;
     }
-  } else if (Number().random(1, 1000) <= 35) { // 3.5% chance of slave being lesbian
-    if (Number().random(1, 100) === 1) { // 1% chance of slave being asexual
-      attraction.male = notAttracted;
-      attraction.female = notAttracted;
-    }
-
-    attraction.female = attracted;
-
-    if (Number().random(1, 100) <= 50) { // 50% chance of slave being bisexual
-      attraction.male = attracted;
-    }
-  } else {
-    attraction.female = notAttracted;
-    attraction.male = attracted;
   }
+
+  if (isAsexual()) {
+    male = notAttracted;
+    female = notAttracted;
+  }
+
+  attraction.male = male;
+  attraction.female = female;
 
   return attraction;
 }
