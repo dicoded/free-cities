@@ -634,15 +634,6 @@ export function generateFlaws(): Flaws {
     'apathetic',
     'crude',
     'judgemental',
-    'neglectful',
-    'cum addict',
-    'anal addict',
-    'attention whore',
-    'breast growth',
-    'abusive',
-    'malicious',
-    'self hating',
-    'breeder',
   ];
 
   if (roll === 1) {
@@ -655,6 +646,23 @@ export function generateFlaws(): Flaws {
 
 export function generateFetish(): Fetish | null {
   const fetish = new Fetish();
+
+  const fetishes = [
+    'submissive',
+    'cumslut',
+    'humiliation',
+    'buttslut',
+    'boobs',
+    'sadist',
+    'masochist',
+    'dom',
+    'pregnancy',
+  ];
+
+  if (Number().random(1, 10) > 1) return fetish;
+
+  fetish.strength = Number().random(1, 100);
+  fetish.type = fetishes.random();
 
   return fetish;
 }
