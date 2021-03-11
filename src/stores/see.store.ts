@@ -14,7 +14,7 @@ const items = {
 
   extreme: false,
   hyperpreg: false,
-  dicks: 0,
+  dicks: 50,
   broodmothers: false,
   bestiality: false,
   watersports: false,
