@@ -496,10 +496,13 @@ export function generateHealth(): Health {
   const health = new Health();
 
   health.condition = Number().random(50, 100);
+
   health.damage.longTerm = Number().random(0, 20);
   health.damage.shortTerm = Number().random(0, 20);
+
   health.fatigue = Number().random(0, 25);
   health.illness = Number().random(0, 15);
+
   health.injury.major = Number().random(1, 100) <= 2 ? MajorInjury.BROKEN_ARM : null;
   health.injury.minor = Number().random(1, 100) <= 5 ? MinorInjury.BLACK_EYE : null;
 
