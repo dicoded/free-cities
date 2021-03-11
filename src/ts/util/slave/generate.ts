@@ -726,6 +726,7 @@ export function generateDrive(): number {
 export function generateAbstract(actor: Actor): Abstract {
   const abstract = new Abstract();
 
+  abstract.sex = generateSex();
   abstract.genes = generateGenes(actor);
   abstract.genetics = generateGenetics();
   abstract.race = generateRace(actor);
@@ -735,7 +736,6 @@ export function generateAbstract(actor: Actor): Abstract {
   abstract.weight = generateWeight();
   abstract.height = generateHeight();
   abstract.muscles = generateMuscles();
-  abstract.counter = generateCounter(actor);
 
   return abstract;
 }
@@ -765,8 +765,6 @@ export function generateSlave(): Slave {
 
   slave.ID = generateID();
 
-  slave.sex = generateSex();
-
   slave.intelligence = generateIntelligence();
   slave.education = generateEducation();
   slave.personality = generatePersonality();
@@ -780,6 +778,8 @@ export function generateSlave(): Slave {
   slave.abstract = generateAbstract(slave);
   slave.upper = generateUpper(slave);
   slave.lower = generateLower(slave);
+
+  slave.abstract.counter = generateCounter(slave);
 
   slave.nationality = generateNationality(slave);
 
