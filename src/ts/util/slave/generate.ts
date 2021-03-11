@@ -464,7 +464,7 @@ export function generateNationality(actor: Actor): string {
 
   const race = index[actor.race];
 
-  return nationalities[race][Number().random(0, nationalities[race].length - 1)];
+  return nationalities[race].random();
 }
 
 export function generateAge(): Age {
