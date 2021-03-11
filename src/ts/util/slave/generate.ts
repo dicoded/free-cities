@@ -233,11 +233,17 @@ export function generateMouth(): Mouth {
 export function generateFace(actor: Actor): Face {
   const face = new Face();
 
+  const roll = Number().random(1, 10);
+
   if (actor.sex === Sex.MALE) {
-    face.type = FaceShape.MASCULINE;
-  } else {
-    face.type = FaceShape.NORMAL;
-  }
+    if (roll < 8) face.type = FaceShape.MASCULINE;
+    else if (roll === 8) face.type = FaceShape.ANDROGYNOUS;
+    else face.type = FaceShape.NORMAL;
+  } else if (roll < 2) face.type = FaceShape.ANDROGYNOUS;
+  else if (roll < 4) face.type = FaceShape.CUTE;
+  else if (roll < 6) face.type = FaceShape.EXOTIC;
+  else if (roll < 8) face.type = FaceShape.SENSUAL;
+  else face.type = FaceShape.NORMAL;
 
   face.eyes = generateEyes(actor);
   face.ears = generateEars();
@@ -247,15 +253,23 @@ export function generateFace(actor: Actor): Face {
   return face;
 }
 
-// TODO: expand this
 export function generateShoulders(actor: Actor): Shoulders {
   const shoulders = new Shoulders();
 
+  const roll = Number().random(1, 10);
+
   if (actor.sex === Sex.MALE) {
-    shoulders.type = ShouldersType.BROAD;
-  } else {
-    shoulders.type = ShouldersType.FEMININE;
+    if (roll < 4) shoulders.type = ShouldersType.VERY_BROAD;
+    else if (roll === 4) shoulders.type = ShouldersType.FEMININE;
+    else shoulders.type = ShouldersType.BROAD;
+
+    return shoulders;
   }
+
+  if (roll < 4) shoulders.type = ShouldersType.NARROW;
+  else if (roll < 6) shoulders.type = ShouldersType.VERY_NARROW;
+  else if (roll === 6) shoulders.type = ShouldersType.BROAD;
+  else shoulders.type = ShouldersType.FEMININE;
 
   return shoulders;
 }
@@ -364,22 +378,14 @@ export function generateRace(actor: Actor): Race {
 export function getScars(): Scarring | null {
   let roll = Number().random(1, 100);
 
-  // TODO: tweak this number
-  // TODO: heavier scars have less chance?
-  // each scar has a 5% chance of appearing
   if (roll <= 5) {
-    roll = Number().random(1, 4);
+    roll = Number().random(1, 5);
 
-    switch (roll) {
-      case 1:
-        return Scarring.EXTREME;
-      case 2:
-        return Scarring.HEAVY;
-      case 3:
-        return Scarring.LIGHT;
-      default:
-        return Scarring.SOME;
-    }
+    if (roll === 1) return Number().random(1, 20) === 1 ? Scarring.EXTREME : null;
+    if (roll === 2) return Number().random(1, 10) === 1 ? Scarring.HEAVY : null;
+    if (roll === 3) return Number().random(1, 5) === 1 ? Scarring.LIGHT : null;
+
+    return Scarring.SOME;
   }
 
   return null;
@@ -494,9 +500,8 @@ export function generateHealth(): Health {
   health.damage.shortTerm = Number().random(0, 20);
   health.fatigue = Number().random(0, 25);
   health.illness = Number().random(0, 15);
-  // TODO: add more randomization here
-  health.injury.major = Number().random(1, 100) < 5 ? MajorInjury.BROKEN_ARM : null;
-  health.injury.minor = Number().random(1, 100) < 10 ? MinorInjury.BLACK_EYE : null;
+  health.injury.major = Number().random(1, 100) <= 2 ? MajorInjury.BROKEN_ARM : null;
+  health.injury.minor = Number().random(1, 100) <= 5 ? MinorInjury.BLACK_EYE : null;
 
   return health;
 }
@@ -514,8 +519,18 @@ export function generateMuscles(): number {
 }
 
 // TODO: expand this
-export function generateCounter(): Counter {
+export function generateCounter(actor: Actor): Counter {
   const counter = new Counter();
+
+  if (Number().random(1, 2) === 1) return counter; // 50% chance of slave being virgin (may need to be tweaked)
+
+  if (actor.sex === Sex.MALE) {
+    counter.anal.given.dick = Number().random(0, 20);
+    counter.oral.given.dick = Number().random(0, 20);
+    counter.vaginal.given.dick = Number().random(0, 20);
+
+    return counter;
+  }
 
   counter.anal.received.dick = Number().random(0, 20);
 
@@ -541,7 +556,7 @@ export function generateAbstract(actor: Actor): Abstract {
   abstract.weight = generateWeight();
   abstract.height = generateHeight();
   abstract.muscles = generateMuscles();
-  abstract.counter = generateCounter();
+  abstract.counter = generateCounter(actor);
 
   return abstract;
 }
