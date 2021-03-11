@@ -93,11 +93,16 @@ export function generateGenetics(): Genetics {
   return genetics;
 }
 
-export function generateName(): Name {
+export function generateName(actor: Actor): Name {
   const name = new Name();
 
-  name.birth.first = 'Kate';
-  name.birth.last = 'Vic';
+  if (actor.sex === Sex.MALE) {
+    name.birth.first = 'John';
+    name.birth.last = 'Doe';
+  } else {
+    name.birth.first = 'Kate';
+    name.birth.last = 'Vic';
+  }
 
   return name;
 }
@@ -442,23 +447,21 @@ export function generateSkin(actor: Actor): Skin {
 }
 
 export function generateNationality(actor: Actor): string {
-  const index = {
-    Amerindian: 0,
-    Asian: 1,
-    black: 2,
-    'Indo-Aryan': 3,
-    'Latin American': 4,
-    Malay: 5,
-    'Middle Eastern': 6,
-    'mixed race': 7,
-    'Pacific Islander': 8,
-    Semitic: 9,
-    'Southern European': 10,
-    white: 11,
-  };
-  const race = index[actor.race];
+  let race: number = 0;
 
-  return nationalities[race][Number().random(0, Object.keys(index).length - 1)];
+  if (actor.race === Race.ASIAN) race = 1;
+  if (actor.race === Race.BLACK) race = 2;
+  if (actor.race === Race.INDO_ARYAN) race = 3;
+  if (actor.race === Race.LATIN_AMERICAN) race = 4;
+  if (actor.race === Race.MALAY) race = 5;
+  if (actor.race === Race.MIDDLE_EASTERN) race = 6;
+  if (actor.race === Race.MIXED_RACE) race = 7;
+  if (actor.race === Race.PACIFIC_ISLANDER) race = 8;
+  if (actor.race === Race.SEMITIC) race = 9;
+  if (actor.race === Race.SOUTHERN_EUROPEAN) race = 10;
+  if (actor.race === Race.WHITE) race = 11;
+
+  return nationalities[race][Number().random(0, nationalities[race].length - 1)];
 }
 
 export function generateAge(): Age {
@@ -566,13 +569,14 @@ export function generateSlave(): Slave {
   slave.ID = generateID();
 
   slave.intelligence = generateIntelligence();
-  slave.nationality = generateNationality(slave);
 
   slave.abstract = generateAbstract(slave);
   slave.upper = generateUpper(slave);
   slave.lower = generateLower(slave);
 
-  slave.name = generateName();
+  slave.nationality = generateNationality(slave);
+
+  slave.name = generateName(slave);
 
   return slave;
 }

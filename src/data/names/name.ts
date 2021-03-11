@@ -487,7 +487,31 @@ export const { zambianMaleNames, zambianFemaleNames, zambianSurnames } = zambian
 export const { zimbabweanMaleNames, zimbabweanFemaleNames, zimbabweanSurnames } = zimbabwean;
 
 const names = [
-  afghan, africanAmerican, algerian, albanian, ancientEgyptian, andorran, angolan, antiguan, argentinian, armenian, aruban, asianAmerican, australian, austrian, azerbaijani, aztec, bahamian, bahraini, bangladeshi, barbadian, belarusian, belgian, belizean, beninese, bermudian, bhutanese, bissauGuinean, bolivian, bosnian, brazilian, british, bruneian, bulgarian, burkinabe, burmese, burundian, cambodian, cameroonian, canadian, capeVerdean, catalan, centralAfrican, chadian, chilean, chinese, colombian, congolese, cookIslander, costaRican, croatian, cuban, curacaoan, cypriot, czech, danish, djiboutian, dominican, dominiqais, dutch, eastTimorese, ecuadorian, egyptian, emirati, equatoguinean, eritrean, estonian, ethiopian, fijian, filipina, finnish, french, frenchGuianan, frenchPolynesian, gabonese, gambian, georgian, german, ghanan, greek, greenlandic, grenadian, guamanian, guatemalan, guinean, guyanese, haitian, honduran, hungarian, icelandic, iKiribati, indian, indonesian, iranian, iraqi, irish, israeli, italian, ivorian, jamaican, japanese, jordanian, kazakh, kenyan, kittitian, korean, kosovan, kurdish, kuwaiti, kyrgyz, laotian, latina, latvian, lebanese, liberian, libyan, liechtensteiner, lithuanian, luxembourgian, macedonian, malagasy, malawian, malaysian, maldivian, malian, maltese, marshallese, mauritanian, mauritian, mexican, micronesian, moldovan, monegasque, mongolian, montenegrin, moroccan, mosotho, motswana, mozambican, namibian, nauruan, nepalese, newCaledonian, newZealander, nicaraguan, nigerian, nigerien, niuean, niVanuatu, norwegian, omani, pakistani, palauan, palestinian, panamanian, papuaNewGuinean, paraguayan, peruvian, polish, portuguese, puertoRican, qatari, romanian, russian, rwandan, sahrawi, saintLucian, salvadoran, sammarinese, samoan, saoTomean, saudi, scottish, senegalese, serbian, seychellois, sierraLeonean, singaporean, slovak, slovene, solomonIslander, somali, southAfricanBlack, southAfricanWhite, southSudanese, spanish, sriLankan, sudanese, surinamese, swazi, swedish, swiss, syrian, taiwanese, tajik, tanzanian, thai, tibetan, togolese, tongan, trinidadian, tunisian, turkish, turkmen, tuvaluan, ugandan, ukrainian, uruguayan, uzbek, vatican, venezuelan, vietnamese, vincentian, whiteAmerican, yemeni, zairian, zambian, zimbabwean,
+  afghan, africanAmerican, algerian, albanian, ancientEgyptian, andorran, angolan, antiguan, argentinian, armenian, aruban, asianAmerican, australian, austrian, azerbaijani, aztec,
+  bahamian, bahraini, bangladeshi, barbadian, belarusian, belgian, belizean, beninese, bermudian, bhutanese, bissauGuinean, bolivian, bosnian, brazilian, british, bruneian, bulgarian, burkinabe, burmese, burundian,
+  cambodian, cameroonian, canadian, capeVerdean, catalan, centralAfrican, chadian, chilean, chinese, colombian, congolese, cookIslander, costaRican, croatian, cuban, curacaoan, cypriot, czech,
+  danish, djiboutian, dominican, dominiqais, dutch,
+  eastTimorese, ecuadorian, egyptian, emirati, equatoguinean, eritrean, estonian, ethiopian,
+  fijian, filipina, finnish, french, frenchGuianan, frenchPolynesian,
+  gabonese, gambian, georgian, german, ghanan, greek, greenlandic, grenadian, guamanian, guatemalan, guinean, guyanese,
+  haitian, honduran, hungarian,
+  icelandic, iKiribati, indian, indonesian, iranian, iraqi, irish, israeli, italian, ivorian,
+  jamaican, japanese, jordanian,
+  kazakh, kenyan, kittitian, korean, kosovan, kurdish, kuwaiti, kyrgyz,
+  laotian, latina, latvian, lebanese, liberian, libyan, liechtensteiner, lithuanian, luxembourgian,
+  macedonian, malagasy, malawian, malaysian, maldivian, malian, maltese, marshallese, mauritanian, mauritian, mexican, micronesian, moldovan, monegasque, mongolian, montenegrin, moroccan, mosotho, motswana, mozambican,
+  namibian, nauruan, nepalese, newCaledonian, newZealander, nicaraguan, nigerian, nigerien, niuean, niVanuatu, norwegian,
+  omani,
+  pakistani, palauan, palestinian, panamanian, papuaNewGuinean, paraguayan, peruvian, polish, portuguese, puertoRican,
+  qatari,
+  romanian, russian, rwandan,
+  sahrawi, saintLucian, salvadoran, sammarinese, samoan, saoTomean, saudi, scottish, senegalese, serbian, seychellois, sierraLeonean, singaporean, slovak, slovene, solomonIslander, somali, southAfricanBlack, southAfricanWhite, southSudanese, spanish, sriLankan, sudanese, surinamese, swazi, swedish, swiss, syrian,
+  taiwanese, tajik, tanzanian, thai, tibetan, togolese, tongan, trinidadian, tunisian, turkish, turkmen, tuvaluan,
+  ugandan, ukrainian, uruguayan, uzbek,
+  vatican, venezuelan, vietnamese, vincentian,
+  whiteAmerican,
+  yemeni,
+  zairian, zambian, zimbabwean,
 ];
 
 export default names;
