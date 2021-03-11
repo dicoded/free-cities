@@ -14,7 +14,9 @@
   import size from '../../ts/util/slave/desc/size';
   import skin from '../../ts/util/slave/desc/skin';
 
-  export let slave: Slave;
+  import activeSlave from '../../stores/active.store';
+
+  const slave: Slave = $activeSlave;
 </script>
 
 <Header>

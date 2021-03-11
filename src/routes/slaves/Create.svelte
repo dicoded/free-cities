@@ -73,6 +73,6 @@
     </div>
   </div>
 
-  <View slave={slave} />
+  <View />
   <Edit />
 </Body>

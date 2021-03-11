@@ -19,13 +19,15 @@
 
 <aside id="aside" class="transition-all ease-in-out duration-500 fixed h-screen p-8 w-1/5 dark:bg-gray-800 dark:border-gray-700 border-r-2 shadow-lg" class:open>
 	{#if link}
-		<nav class="py-8 text-xl flex">
+		<nav class="my-8 text-xl flex">
 			<Link to={link.href} handler={link.handler}>{link.text}</Link>
 		</nav>
 	{/if}
 
 	{#each components as component}
-		<svelte:component this={component} {...props[component]} />
+		<div class="my-4">
+			<svelte:component this={component} {...props[component]} />
+		</div>
 	{/each}
 </aside>
 
@@ -37,7 +39,6 @@
 <style>
 	aside {
 		left: -100%;
-		/* transition: 0.4s ease-in-out; */
 		backdrop-filter: blur(16px);
 		@apply bg-opacity-75;
 	}

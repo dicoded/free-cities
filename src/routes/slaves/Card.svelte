@@ -2,17 +2,28 @@
 	import Slave from '../../ts/classes/slave/Slave';
 
 	import Link from '../../components/ui/Link.svelte'
+	import Button from '../../components/ui/Button.svelte';
+	import Modal from '../../components/ui/Modal.svelte'
 
-	import { link, defaultLink } from '../../stores/nav.store'
+	import Interact from './Interact.svelte';
+
 	import activeSlave from '../../stores/active.store';
-
-	$link = defaultLink;
 
 	export let slave: Slave;
 </script>
 
-<div class="flex">
-	<Link to="slave-interact" handler={() => { $activeSlave = slave }}>
-		{slave.name.full}
-	</Link>
-</div>
+<Modal>
+	<div class="flex" slot="trigger" let:open>
+		<Button handler={() => {
+			$activeSlave = slave;
+
+			open();
+		}}>
+			{slave.name.full}
+		</Button>
+	</div>
+
+	<div slot="content" let:store={{close}}>
+		<Interact />
+	</div>
+</Modal>

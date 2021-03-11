@@ -335,9 +335,9 @@ function getRaceFromNationality(nationality: string): Race {
 }
 
 export function generateRace(actor: Actor): Race {
-  // if (actor.nationality) {
-  //   return getRaceFromNationality(actor.nationality);
-  // }
+  if (actor.nationality) {
+    return getRaceFromNationality(actor.nationality);
+  }
 
   const roll = Number().random(1, 100);
 

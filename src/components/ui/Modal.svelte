@@ -102,6 +102,7 @@
 
 	div.backdrop {
 		background-color: rgba(0, 0, 0, 0.4);
+		backdrop-filter: blur(16px);
 		position: absolute;
 		width: 100%;
 		height: 100%;
