@@ -306,8 +306,8 @@ describe('generateMuscles', () => {
 
 describe('generateCounter', () => {
   it('returns a random counter instance based on the given body\'s properties', () => {
-    expect(generateCounter()).toBeInstanceOf(Counter);
-    expect(generateCounter().anal.given.dick).toBeGreaterThanOrEqual(0);
+    expect(generateCounter(new Slave())).toBeInstanceOf(Counter);
+    expect(generateCounter(new Slave()).anal.given.dick).toBeGreaterThanOrEqual(0);
   });
 });
 
