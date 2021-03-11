@@ -18,6 +18,8 @@
 		],
 		"moduleResolution": "node",
 		"strict": true,
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true
 	},
 }

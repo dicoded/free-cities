@@ -4,7 +4,6 @@
 
 	import arcology from '../../stores/arcology.store';
 	import player from '../../stores/player.store';
-	import { link, defaultLink } from '../../stores/nav.store';
 </script>
 
 <Body>

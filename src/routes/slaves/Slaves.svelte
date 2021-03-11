@@ -26,7 +26,7 @@
 </div>
 
 {#each $slaves as slave}
-	<Card slave={slave} />
+	<Card {slave} />
 {/each}
 
 

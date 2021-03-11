@@ -93,11 +93,16 @@ export function generateGenetics(): Genetics {
   return genetics;
 }
 
-export function generateName(): Name {
+export function generateName(actor: Actor): Name {
   const name = new Name();
 
-  name.birth.first = 'Kate';
-  name.birth.last = 'Vic';
+  if (actor.sex === Sex.MALE) {
+    name.birth.first = 'John';
+    name.birth.last = 'Doe';
+  } else {
+    name.birth.first = 'Jane';
+    name.birth.last = 'Doe';
+  }
 
   return name;
 }
@@ -335,9 +340,9 @@ function getRaceFromNationality(nationality: string): Race {
 }
 
 export function generateRace(actor: Actor): Race {
-  // if (actor.nationality) {
-  //   return getRaceFromNationality(actor.nationality);
-  // }
+  if (actor.nationality) {
+    return getRaceFromNationality(actor.nationality);
+  }
 
   const roll = Number().random(1, 100);
 
@@ -456,9 +461,10 @@ export function generateNationality(actor: Actor): string {
     'Southern European': 10,
     white: 11,
   };
+
   const race = index[actor.race];
 
-  return nationalities[race][Number().random(0, Object.keys(index).length - 1)];
+  return nationalities[race].random();
 }
 
 export function generateAge(): Age {
@@ -566,13 +572,14 @@ export function generateSlave(): Slave {
   slave.ID = generateID();
 
   slave.intelligence = generateIntelligence();
-  slave.nationality = generateNationality(slave);
 
   slave.abstract = generateAbstract(slave);
   slave.upper = generateUpper(slave);
   slave.lower = generateLower(slave);
 
-  slave.name = generateName();
+  slave.nationality = generateNationality(slave);
+
+  slave.name = generateName(slave);
 
   return slave;
 }
