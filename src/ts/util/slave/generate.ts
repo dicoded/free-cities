@@ -2,6 +2,10 @@ import { get } from 'svelte/store';
 
 import Name from '../../classes/actor/Name';
 import Personality from '../../classes/actor/Personality';
+import Quirks from '../../classes/actor/quirks/Quirks';
+import Flaws from '../../classes/actor/flaws/Flaws';
+import Fetish from '../../classes/actor/Fetish';
+import Attraction from '../../classes/actor/Attraction';
 
 import Eyes from '../../classes/body/face/Eyes';
 import Ears from '../../classes/body/face/Ears';
@@ -147,6 +151,11 @@ export function generateIntelligence() {
   }
 
   return getIntelligence();
+}
+
+// TODO: this
+export function generateEducation(): number {
+  return 0;
 }
 
 // TODO: add in race support
@@ -527,23 +536,62 @@ export function generateCounter(actor: Actor): Counter {
 
   if (Number().random(1, 2) === 1) return counter; // 50% chance of slave being virgin (may need to be tweaked)
 
-  if (actor.sex === Sex.MALE) {
+  if (actor.penis) {
     counter.anal.given.dick = Number().random(0, 20);
     counter.oral.given.dick = Number().random(0, 20);
-    counter.vaginal.given.dick = Number().random(0, 20);
+
+    if (actor.attraction.known) {
+      if (actor.attraction.male > 65) {
+        counter.anal.received.dick = Number().random(0, 20);
+      }
+
+      if (actor.attraction.female > 65) {
+        counter.vaginal.given.dick = Number().random(0, 20);
+      }
+    }
 
     return counter;
   }
 
   counter.anal.received.dick = Number().random(0, 20);
+  counter.oral.received.dick = Number().random(0, 20);
 
   return counter;
 }
 
+// TODO: expand these
 export function generatePersonality(): Personality {
   const personality = new Personality();
 
   return personality;
+}
+
+export function generateQuirks(): Quirks {
+  const quirks = new Quirks();
+
+  return quirks;
+}
+
+export function generateFlaws(): Flaws {
+  const flaws = new Flaws();
+
+  return flaws;
+}
+
+export function generateFetish(): Fetish | null {
+  const fetish = new Fetish();
+
+  return fetish;
+}
+
+export function generateAttraction(): Attraction {
+  const attraction = new Attraction();
+
+  return attraction;
+}
+
+export function generateDrive(): number {
+  return 0;
 }
 
 export function generateAbstract(actor: Actor): Abstract {
@@ -590,6 +638,13 @@ export function generateSlave(): Slave {
   slave.ID = generateID();
 
   slave.intelligence = generateIntelligence();
+  slave.education = generateEducation();
+  slave.personality = generatePersonality();
+  slave.quirks = generateQuirks();
+  slave.flaws = generateFlaws();
+  slave.fetish = generateFetish();
+  slave.attraction = generateAttraction();
+  slave.drive = generateDrive();
 
   slave.abstract = generateAbstract(slave);
   slave.upper = generateUpper(slave);
