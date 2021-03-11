@@ -667,20 +667,54 @@ export function generateFetish(): Fetish | null {
   return fetish;
 }
 
-export function generateAttraction(): Attraction {
+export function generateAttraction(actor: Actor): Attraction {
   const attraction = new Attraction();
+
+  const attracted = Number().random(66, 100);
+  const notAttracted = Number().random(1, 65);
+
+  if (actor.sex === Sex.MALE) {
+    if (Number().random(1, 1000) <= 35) { // 3.5% chance of slave being gay
+      if (Number().random(1, 100) === 1) { // 1% chance of slave being asexual
+        attraction.male = notAttracted;
+        attraction.female = notAttracted;
+      }
+
+      attraction.male = attracted;
+
+      if (Number().random(1, 100) <= 30) { // 30% chance of slave being bisexual
+        attraction.female = attracted;
+      }
+    } else {
+      attraction.male = notAttracted;
+      attraction.female = attracted;
+    }
+  } else if (Number().random(1, 1000) <= 35) { // 3.5% chance of slave being lesbian
+    if (Number().random(1, 100) === 1) { // 1% chance of slave being asexual
+      attraction.male = notAttracted;
+      attraction.female = notAttracted;
+    }
+
+    attraction.female = attracted;
+
+    if (Number().random(1, 100) <= 50) { // 50% chance of slave being bisexual
+      attraction.male = attracted;
+    }
+  } else {
+    attraction.female = notAttracted;
+    attraction.male = attracted;
+  }
 
   return attraction;
 }
 
 export function generateDrive(): number {
-  return 0;
+  return Number().random(1, 100);
 }
 
 export function generateAbstract(actor: Actor): Abstract {
   const abstract = new Abstract();
 
-  abstract.sex = generateSex();
   abstract.genes = generateGenes(actor);
   abstract.genetics = generateGenetics();
   abstract.race = generateRace(actor);
@@ -720,14 +754,17 @@ export function generateSlave(): Slave {
 
   slave.ID = generateID();
 
+  slave.sex = generateSex();
+
   slave.intelligence = generateIntelligence();
   slave.education = generateEducation();
   slave.personality = generatePersonality();
   slave.quirks = generateQuirks();
   slave.flaws = generateFlaws();
   slave.fetish = generateFetish();
-  slave.attraction = generateAttraction();
   slave.drive = generateDrive();
+
+  slave.attraction = generateAttraction(slave);
 
   slave.abstract = generateAbstract(slave);
   slave.upper = generateUpper(slave);
