@@ -559,9 +559,14 @@ export function generateCounter(actor: Actor): Counter {
   return counter;
 }
 
-// TODO: expand these
+// TODO: may need to be expanded
 export function generatePersonality(): Personality {
   const personality = new Personality();
+
+  personality.introversion = Number().random(1, 100);
+  personality.sensing = Number().random(1, 100);
+  personality.thinking = Number().random(1, 100);
+  personality.judging = Number().random(1, 100);
 
   return personality;
 }
