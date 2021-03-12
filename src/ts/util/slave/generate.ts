@@ -372,8 +372,8 @@ export function generateRace(actor: Actor): Race {
   if (roll < 14) return Race.INDO_ARYAN;
   if (roll < 17) return Race.BLACK;
   if (roll < 18) return Race.SOUTHERN_EUROPEAN;
-  if (roll < 19) return Race.WHITE;
-  if (roll < 21) return Race.SEMITIC;
+  if (roll < 22) return Race.WHITE;
+  if (roll < 23) return Race.SEMITIC;
   if (roll < 26) return Race.MIDDLE_EASTERN;
   if (roll < 41) return Race.INDO_ARYAN;
 
@@ -411,6 +411,7 @@ export function generateScarring(): Scars {
   return scars;
 }
 
+// TODO:
 export function generateMarkings(): Markings {
   const markings = new Markings();
 

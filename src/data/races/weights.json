@@ -1,0 +1,1331 @@
+{
+	"Afghan": {
+		"Indo-Aryan": 28,
+		"Middle Eastern": 2,
+		"mixed race": 2
+	},
+	"Albanian": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"Southern European": 1,
+			"white": 42
+		},
+		"Algerian": {
+			"Middle Eastern": 38,
+			"mixed race": 2,
+			"Southern European": 1
+		},
+		"American": {
+			"Amerindian": 1,
+			"Asian": 4,
+			"black": 10,
+			"Indo-Aryan": 3,
+			"Latin American": 8,
+			"Malay": 1,
+			"Middle Eastern": 4,
+			"mixed race": 2,
+			"Pacific Islander": 1,
+			"Semitic": 3,
+			"Southern European": 4,
+			"white": 30
+		},
+		"Andorran": {
+			"Middle Eastern": 1,
+			"mixed race": 2,
+			"Southern European": 8,
+			"white": 3
+		},
+		"Angolan": {
+			"black": 14,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Antiguan": {
+			"black": 17,
+			"Indo-Aryan": 1,
+			"Latin American": 2,
+			"mixed race": 4,
+			"white": 1
+		},
+		"Argentinian": {
+			"Amerindian": 1,
+			"Latin American": 8,
+			"mixed race": 2,
+			"Southern European": 5,
+			"white": 3
+		},
+		"Armenian": {
+			"Indo-Aryan": 4,
+			"mixed race": 2,
+			"Semitic": 9,
+			"Southern European": 1,
+			"white": 2
+		},
+		"Aruban": {
+			"Amerindian": 2,
+			"black": 4,
+			"Latin American": 2,
+			"mixed race": 12,
+			"white": 2
+		},
+		"Australian": {
+			"Asian": 4,
+			"black": 2,
+			"Indo-Aryan": 1,
+			"Malay": 1,
+			"mixed race": 2,
+			"Pacific Islander": 6,
+			"Southern European": 1,
+			"white": 18
+		},
+		"Austrian": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"white": 10
+		},
+		"Azerbaijani": {
+			"Indo-Aryan": 14,
+			"mixed race": 1,
+			"Semitic": 4,
+			"white": 1
+		},
+		"Bahamian": {
+			"Asian": 1,
+			"black": 36,
+			"Latin American": 1,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Bahraini": {
+			"Indo-Aryan": 9,
+			"Middle Eastern": 10,
+			"mixed race": 2
+		},
+		"Bangladeshi": {
+			"Asian": 1,
+			"Indo-Aryan": 32,
+			"mixed race": 2
+		},
+		"Barbadian": {
+			"black": 26,
+			"Indo-Aryan": 1,
+			"mixed race": 2,
+			"white": 1
+		},
+		"Belarusian": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"Semitic": 1,
+			"white": 17
+		},
+		"Belgian": {
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"Southern European": 2,
+			"white": 10
+		},
+		"Belizean": {
+			"Amerindian": 1,
+			"black": 2,
+			"Indo-Aryan": 1,
+			"Latin American": 8,
+			"mixed race": 2,
+			"white": 1
+		},
+		"Beninese": {
+			"black": 22,
+			"Indo-Aryan": 1,
+			"mixed race": 2
+		},
+		"Bermudian": {
+			"Asian": 1,
+			"black": 8,
+			"mixed race": 2,
+			"white": 5
+		},
+		"Bhutanese": {
+			"Asian": 12,
+			"Indo-Aryan": 2,
+			"mixed race": 1
+		},
+		"Bissau-Guinean": {
+			"black": 47,
+			"mixed race": 2,
+			"Southern European": 1
+		},
+		"Bolivian": {
+			"Amerindian": 9,
+			"Latin American": 9,
+			"mixed race": 3,
+			"white": 1
+		},
+		"Bosnian": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"white": 23
+		},
+		"Brazilian": {
+			"Amerindian": 1,
+			"Asian": 1,
+			"black": 2,
+			"Latin American": 3,
+			"mixed race": 4,
+			"white": 6
+		},
+		"British": {
+			"Asian": 2,
+			"black": 3,
+			"Indo-Aryan": 3,
+			"Malay": 1,
+			"Middle Eastern": 2,
+			"mixed race": 2,
+			"Semitic": 2,
+			"Southern European": 4,
+			"white": 34
+		},
+		"Bruneian": {
+			"Asian": 10,
+			"Indo-Aryan": 5,
+			"Malay": 28,
+			"mixed race": 1
+		},
+		"Bulgarian": {
+			"Indo-Aryan": 4,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"white": 44
+		},
+		"Burkinabé": {
+			"black": 12,
+			"Middle Eastern": 1,
+			"mixed race": 1
+		},
+		"Burmese": {
+			"Asian": 8,
+			"Indo-Aryan": 4,
+			"Malay": 1,
+			"mixed race": 2
+		},
+		"Burundian": {
+			"black": 48,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Cambodian": {
+			"Asian": 23,
+			"Malay": 1,
+			"mixed race": 1
+		},
+		"Cameroonian": {
+			"black": 60,
+			"Middle Eastern": 1,
+			"mixed race": 1
+		},
+		"Canadian": {
+			"Amerindian": 2,
+			"Asian": 2,
+			"black": 2,
+			"Indo-Aryan": 2,
+			"Latin American": 1,
+			"Middle Eastern": 1,
+			"mixed race": 2,
+			"Southern European": 2,
+			"white": 28
+		},
+		"Cape Verdean": {
+			"black": 6,
+			"mixed race": 30,
+			"Southern European": 2,
+			"white": 1
+		},
+		"Catalan": {
+			"Latin American": 1,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"Southern European": 14,
+			"white": 1
+		},
+		"Central African": {
+			"black": 14,
+			"Middle Eastern": 1,
+			"mixed race": 1
+		},
+		"Chadian": {
+			"black": 15,
+			"Middle Eastern": 3,
+			"mixed race": 2
+		},
+		"Chilean": {
+			"Amerindian": 1,
+			"Latin American": 6,
+			"mixed race": 2,
+			"Southern European": 3,
+			"white": 2
+		},
+		"Chinese": {
+			"Asian": 70,
+			"Indo-Aryan": 1,
+			"mixed race": 1
+		},
+		"Colombian": {
+			"Amerindian": 1,
+			"black": 2,
+			"Latin American": 20,
+			"mixed race": 2,
+			"Southern European": 1,
+			"white": 1
+		},
+		"Comorian": {
+			"black": 11,
+			"Middle Eastern": 2,
+			"mixed race": 2
+		},
+		"Congolese": {
+			"black": 18,
+			"mixed race": 1,
+			"white": 1
+		},
+		"a Cook Islander": {
+			"mixed race": 2,
+			"Pacific Islander": 30,
+			"white": 1
+		},
+		"Costa Rican": {
+			"Amerindian": 1,
+			"black": 1,
+			"Latin American": 11,
+			"mixed race": 2,
+			"white": 2
+		},
+		"Croatian": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"Southern European": 1,
+			"white": 27
+		},
+		"Cuban": {
+			"black": 3,
+			"Latin American": 10,
+			"mixed race": 4,
+			"Southern European": 2,
+			"white": 1
+		},
+		"Curaçaoan": {
+			"black": 7,
+			"Indo-Aryan": 1,
+			"Latin American": 1,
+			"Malay": 1,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Cypriot": {
+			"Indo-Aryan": 4,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"Southern European": 6
+		},
+		"Czech": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"Semitic": 1,
+			"Southern European": 1,
+			"white": 26
+		},
+		"Danish": {
+			"Amerindian": 1,
+			"Indo-Aryan": 2,
+			"Middle Eastern": 2,
+			"mixed race": 1,
+			"white": 16
+		},
+		"Djiboutian": {
+			"black": 18,
+			"Middle Eastern": 4,
+			"mixed race": 2,
+			"Southern European": 1,
+			"white": 1
+		},
+		"Dominican": {
+			"black": 2,
+			"Latin American": 7,
+			"mixed race": 2,
+			"white": 2
+		},
+		"Dominiquais": {
+			"Amerindian": 1,
+			"black": 11,
+			"mixed race": 3,
+			"white": 1
+		},
+		"Dutch": {
+			"Indo-Aryan": 1,
+			"Malay": 1,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"white": 16
+		},
+		"East Timorese": {
+			"Asian": 1,
+			"mixed race": 2,
+			"Malay": 8,
+			"Pacific Islander": 3
+		},
+		"Ecuadorian": {
+			"Amerindian": 2,
+			"black": 2,
+			"Latin American": 9,
+			"mixed race": 2,
+			"Southern European": 1,
+			"white": 2
+		},
+		"Egyptian": {
+			"black": 2,
+			"Indo-Aryan": 1,
+			"Middle Eastern": 25,
+			"mixed race": 2,
+			"Semitic": 1
+		},
+		"Emirati": {
+			"Asian": 1,
+			"black": 1,
+			"Indo-Aryan": 16,
+			"Middle Eastern": 6,
+			"mixed race": 2
+		},
+		"Equatoguinean": {
+			"black": 22,
+			"mixed race": 2,
+			"Southern European": 1
+		},
+		"Eritrean": {
+			"black": 14,
+			"Middle Eastern": 6,
+			"mixed race": 2,
+			"Semitic": 2,
+			"Southern European": 1
+		},
+		"Estonian": {
+			"mixed race": 1,
+			"Semitic": 1,
+			"white": 23
+		},
+		"Ethiopian": {
+			"black": 10,
+			"Middle Eastern": 3,
+			"mixed race": 1,
+			"Semitic": 2
+		},
+		"Fijian": {
+			"Asian": 1,
+			"Indo-Aryan": 6,
+			"mixed race": 1,
+			"Pacific Islander": 8,
+			"white": 1
+		},
+		"Filipina": {
+			"Asian": 4,
+			"Latin American": 1,
+			"Malay": 10,
+			"Pacific Islander": 4,
+			"mixed race": 2,
+			"Southern European": 1
+		},
+		"Finnish": {
+			"Indo-Aryan": 1,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"white": 32
+		},
+		"French": {
+			"Asian": 1,
+			"black": 1,
+			"Indo-Aryan": 1,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"Semitic": 1,
+			"Southern European": 2,
+			"white": 22
+		},
+		"French Guianan": {
+			"Amerindian": 1,
+			"Asian": 1,
+			"black": 3,
+			"mixed race": 10,
+			"Southern European": 1,
+			"white": 3
+		},
+		"French Polynesian": {
+			"Asian": 3,
+			"mixed race": 1,
+			"Pacific Islander": 15,
+			"white": 1
+		},
+		"Gabonese": {
+			"black": 21,
+			"mixed race": 2,
+			"white": 2
+		},
+		"Gambian": {
+			"black": 28,
+			"Middle Eastern": 1,
+			"mixed race": 2
+		},
+		"Georgian": {
+			"Indo-Aryan": 6,
+			"mixed race": 1,
+			"Semitic": 7,
+			"Southern European": 1,
+			"white": 2
+		},
+		"German": {
+			"Asian": 1,
+			"black": 1,
+			"Indo-Aryan": 2,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"Semitic": 1,
+			"Southern European": 2,
+			"white": 20
+		},
+		"Ghanan": {
+			"Asian": 1,
+			"black": 14,
+			"Indo-Aryan": 1,
+			"Middle Eastern": 1,
+			"mixed race": 2,
+			"Semitic": 1
+		},
+		"Greek": {
+			"Indo-Aryan": 2,
+			"mixed race": 1,
+			"Southern European": 11,
+			"white": 3
+		},
+		"Greenlandic": {
+			"Amerindian": 44,
+			"mixed race": 1,
+			"white": 6
+		},
+		"Grenadian": {
+			"black": 18,
+			"Indo-Aryan": 1,
+			"mixed race": 2,
+			"white": 1
+		},
+		"Guamanian": {
+			"Asian": 2,
+			"Malay": 1,
+			"mixed race": 1,
+			"Pacific Islander": 6,
+			"white": 1
+		},
+		"Guatemalan": {
+			"Amerindian": 8,
+			"Latin American": 9,
+			"mixed race": 2,
+			"white": 2
+		},
+		"Guinean": {
+			"black": 33,
+			"Middle Eastern": 1,
+			"mixed race": 1
+		},
+		"Guyanese": {
+			"Amerindian": 2,
+			"black": 4,
+			"Indo-Aryan": 3,
+			"mixed race": 1
+		},
+		"Haitian": {
+			"black": 18,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Honduran": {
+			"Amerindian": 10,
+			"black": 1,
+			"Latin American": 48,
+			"mixed race": 4,
+			"white": 1
+		},
+		"Hungarian": {
+			"Indo-Aryan": 2,
+			"mixed race": 1,
+			"white": 9
+		},
+		"I-Kiribati": {
+			"Asian": 1,
+			"mixed race": 2,
+			"Pacific Islander": 22
+		},
+		"Icelandic": {
+			"Asian": 1,
+			"mixed race": 1,
+			"white": 50
+		},
+		"Indian": {
+			"Asian": 1,
+			"Indo-Aryan": 70,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Indonesian": {
+			"Asian": 4,
+			"Indo-Aryan": 1,
+			"Malay": 39,
+			"Middle Eastern": 2,
+			"mixed race": 2,
+			"Pacific Islander": 2
+		},
+		"Iranian": {
+			"Indo-Aryan": 15,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"Semitic": 1
+		},
+		"Iraqi": {
+			"black": 1,
+			"Indo-Aryan": 2,
+			"Middle Eastern": 8,
+			"mixed race": 1,
+			"Semitic": 2
+		},
+		"Irish": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"white": 28
+		},
+		"Israeli": {
+			"black": 1,
+			"Indo-Aryan": 1,
+			"Middle Eastern": 2,
+			"mixed race": 1,
+			"Semitic": 9,
+			"white": 2
+		},
+		"Italian": {
+			"Asian": 1,
+			"Indo-Aryan": 1,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"Southern European": 10,
+			"white": 4
+		},
+		"Ivorian": {
+			"black": 16,
+			"Middle Eastern": 1,
+			"mixed race": 2,
+			"white": 1
+		},
+		"Jamaican": {
+			"black": 11,
+			"Indo-Aryan": 1,
+			"mixed race": 2
+		},
+		"Japanese": {
+			"Asian": 71,
+			"Latin American": 1,
+			"mixed race": 1,
+			"Pacific Islander": 1,
+			"white": 1
+		},
+		"Jordanian": {
+			"Indo-Aryan": 1,
+			"Middle Eastern": 15,
+			"mixed race": 3,
+			"Semitic": 3
+		},
+		"Kazakh": {
+			"Asian": 2,
+			"Indo-Aryan": 6,
+			"mixed race": 1,
+			"Semitic": 1,
+			"white": 2
+		},
+		"Kenyan": {
+			"black": 16,
+			"Indo-Aryan": 1,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Kittitian": {
+			"black": 18,
+			"Indo-Aryan": 1,
+			"mixed race": 2,
+			"white": 1
+		},
+		"Korean": {
+			"Asian": 28,
+			"Indo-Aryan": 1,
+			"mixed race": 1
+		},
+		"Kosovan": {
+			"Indo-Aryan": 2,
+			"Middle Eastern": 1,
+			"mixed race": 2,
+			"white": 20
+		},
+		"Kurdish": {
+			"Indo-Aryan": 10,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"Semitic": 2
+		},
+		"Kuwaiti": {
+			"black": 1,
+			"Indo-Aryan": 5,
+			"Middle Eastern": 12,
+			"mixed race": 2
+		},
+		"Kyrgyz": {
+			"Asian": 5,
+			"Indo-Aryan": 9,
+			"mixed race": 2,
+			"white": 4
+		},
+		"Laotian": {
+			"Asian": 38,
+			"Malay": 1,
+			"mixed race": 1
+		},
+		"Latvian": {
+			"Indo-Aryan": 1,
+			"mixed race": 2,
+			"Semitic": 1,
+			"white": 51
+		},
+		"Lebanese": {
+			"Indo-Aryan": 1,
+			"Middle Eastern": 9,
+			"mixed race": 2,
+			"Semitic": 2
+		},
+		"Liberian": {
+			"black": 11,
+			"Middle Eastern": 1,
+			"mixed race": 2
+		},
+		"Libyan": {
+			"black": 1,
+			"Middle Eastern": 58,
+			"mixed race": 1
+		},
+		"a Liechtensteiner": {
+			"Indo-Aryan": 2,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"Southern European": 1,
+			"white": 20
+		},
+		"Lithuanian": {
+			"Indo-Aryan": 1,
+			"mixed race": 2,
+			"Semitic": 1,
+			"white": 56
+		},
+		"Luxembourgian": {
+			"mixed race": 1,
+			"Southern European": 3,
+			"white": 7
+		},
+		"Macedonian": {
+			"Indo-Aryan": 2,
+			"mixed race": 1,
+			"white": 16
+		},
+		"Malagasy": {
+			"Asian": 1,
+			"black": 10,
+			"Indo-Aryan": 4,
+			"mixed race": 2,
+			"white": 1
+		},
+		"Malawian": {
+			"black": 18,
+			"Indo-Aryan": 1,
+			"mixed race": 1
+		},
+		"Malaysian": {
+			"Asian": 2,
+			"Indo-Aryan": 1,
+			"Malay": 7,
+			"mixed race": 1
+		},
+		"Maldivian": {
+			"Indo-Aryan": 14,
+			"Middle Eastern": 1,
+			"mixed race": 1
+		},
+		"Malian": {
+			"black": 12,
+			"Middle Eastern": 2,
+			"mixed race": 1
+		},
+		"Maltese": {
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"Semitic": 1,
+			"Southern European": 20,
+			"white": 5
+		},
+		"Marshallese": {
+			"Asian": 1,
+			"mixed race": 1,
+			"Pacific Islander": 10
+		},
+		"Mauritanian": {
+			"black": 8,
+			"Middle Eastern": 5,
+			"mixed race": 1
+		},
+		"Mauritian": {
+			"Asian": 1,
+			"black": 4,
+			"Indo-Aryan": 8,
+			"mixed race": 3,
+			"white": 1
+		},
+		"Mexican": {
+			"Amerindian": 2,
+			"Asian": 1,
+			"black": 2,
+			"Latin American": 10,
+			"Middle Eastern": 1,
+			"mixed race": 2,
+			"white": 5
+		},
+		"Micronesian": {
+			"Asian": 1,
+			"mixed race": 1,
+			"Pacific Islander": 22,
+			"white": 1
+		},
+		"Moldovan": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"Semitic": 1,
+			"white": 15
+		},
+		"Monégasque": {
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"Southern European": 14,
+			"white": 14
+		},
+		"Mongolian": {
+			"Asian": 21,
+			"Indo-Aryan": 2,
+			"mixed race": 2
+		},
+		"Montenegrin": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"white": 14
+		},
+		"Moroccan": {
+			"Asian": 1,
+			"black": 3,
+			"Middle Eastern": 30,
+			"mixed race": 2,
+			"Southern European": 1
+		},
+		"Mosotho": {
+			"black": 68,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Motswana": {
+			"black": 38,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Mozambican": {
+			"black": 41,
+			"Indo-Aryan": 1,
+			"mixed race": 2,
+			"Southern European": 1
+		},
+		"Namibian": {
+			"black": 21,
+			"mixed race": 2,
+			"white": 2
+		},
+		"Nauruan": {
+			"Asian": 1,
+			"mixed race": 1,
+			"Pacific Islander": 42
+		},
+		"Nepalese": {
+			"Asian": 8,
+			"Indo-Aryan": 3,
+			"mixed race": 1
+		},
+		"New Caledonian": {
+			"Asian": 1,
+			"Malay": 1,
+			"mixed race": 1,
+			"Pacific Islander": 6,
+			"white": 3
+		},
+		"a New Zealander": {
+			"Asian": 3,
+			"mixed race": 1,
+			"Pacific Islander": 5,
+			"white": 17
+		},
+		"Ni-Vanuatu": {
+			"mixed race": 1,
+			"Pacific Islander": 48,
+			"white": 1
+		},
+		"Nicaraguan": {
+			"Amerindian": 1,
+			"black": 3,
+			"Latin American": 10,
+			"mixed race": 1,
+			"white": 6
+		},
+		"Nigerian": {
+			"black": 36,
+			"Middle Eastern": 1,
+			"mixed race": 2,
+			"white": 1
+		},
+		"Nigerien": {
+			"black": 18,
+			"Middle Eastern": 1,
+			"mixed race": 1
+		},
+		"Niuean": {
+			"Asian": 3,
+			"Pacific Islander": 20,
+			"mixed race": 5,
+			"white": 3
+		},
+		"Norwegian": {
+			"black": 1,
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"white": 27
+		},
+		"Omani": {
+			"black": 3,
+			"Indo-Aryan": 9,
+			"Malay": 2,
+			"Middle Eastern": 9,
+			"mixed race": 2
+		},
+		"Pakistani": {
+			"Indo-Aryan": 28,
+			"mixed race": 2,
+			"Semitic": 2
+		},
+		"Palauan": {
+			"Asian": 7,
+			"mixed race": 1,
+			"Pacific Islander": 25
+		},
+		"Palestinian": {
+			"Indo-Aryan": 1,
+			"Middle Eastern": 9,
+			"mixed race": 1,
+			"Semitic": 2
+		},
+		"Panamanian": {
+			"Amerindian": 3,
+			"Asian": 1,
+			"black": 2,
+			"Latin American": 12,
+			"mixed race": 2,
+			"white": 3
+		},
+		"Papua New Guinean": {
+			"Malay": 6,
+			"mixed race": 1,
+			"Pacific Islander": 3
+		},
+		"Paraguayan": {
+			"Asian": 1,
+			"black": 1,
+			"Latin American": 15,
+			"mixed race": 2,
+			"white": 5
+		},
+		"Peruvian": {
+			"Amerindian": 12,
+			"Asian": 1,
+			"Latin American": 9,
+			"mixed race": 4,
+			"Southern European": 2
+		},
+		"Polish": {
+			"Asian": 1,
+			"mixed race": 1,
+			"Southern European": 1,
+			"white": 52
+		},
+		"Portuguese": {
+			"black": 1,
+			"Indo-Aryan": 1,
+			"Latin American": 1,
+			"mixed race": 2,
+			"Southern European": 11,
+			"white": 2
+		},
+		"Puerto Rican": {
+			"Amerindian": 1,
+			"Asian": 1,
+			"black": 2,
+			"Latin American": 20,
+			"mixed race": 2,
+			"white": 12
+		},
+		"Qatari": {
+			"Asian": 2,
+			"Indo-Aryan": 7,
+			"Middle Eastern": 10,
+			"mixed race": 1
+		},
+		"Romanian": {
+			"Indo-Aryan": 3,
+			"mixed race": 1,
+			"Semitic": 2,
+			"white": 20
+		},
+		"Russian": {
+			"Amerindian": 1,
+			"Asian": 2,
+			"Indo-Aryan": 5,
+			"mixed race": 2,
+			"Semitic": 2,
+			"Southern European": 2,
+			"white": 50
+		},
+		"Rwandan": {
+			"black": 48,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Sahrawi": {
+			"black": 5,
+			"Middle Eastern": 7,
+			"mixed race": 2
+		},
+		"Saint Lucian": {
+			"black": 11,
+			"Indo-Aryan": 1,
+			"mixed race": 3
+		},
+		"Salvadoran": {
+			"Latin American": 9,
+			"mixed race": 1,
+			"white": 2
+		},
+		"Sammarinese": {
+			"mixed race": 1,
+			"Southern European": 10,
+			"white": 1
+		},
+		"Samoan": {
+			"mixed race": 2,
+			"Pacific Islander": 49,
+			"white": 1
+		},
+		"São Toméan": {
+			"Asian": 1,
+			"black": 6,
+			"mixed race": 6,
+			"Southern European": 1
+		},
+		"Saudi": {
+			"Asian": 2,
+			"black": 2,
+			"Indo-Aryan": 2,
+			"Middle Eastern": 20,
+			"mixed race": 1
+		},
+		"Scottish": {
+			"Asian": 1,
+			"black": 1,
+			"Indo-Aryan": 2,
+			"Middle Eastern": 1,
+			"mixed race": 2,
+			"Southern European": 1,
+			"white": 52
+		},
+		"Senegalese": {
+			"Asian": 1,
+			"black": 42,
+			"Middle Eastern": 2,
+			"mixed race": 3,
+			"white": 2
+		},
+		"Serbian": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"white": 10
+		},
+		"Seychellois": {
+			"Asian": 1,
+			"black": 4,
+			"Indo-Aryan": 1,
+			"mixed race": 9,
+			"Southern European": 1,
+			"white": 3
+		},
+		"Sierra Leonean": {
+			"black": 15,
+			"Middle Eastern": 1,
+			"mixed race": 2
+		},
+		"Singaporean": {
+			"Asian": 16,
+			"Indo-Aryan": 4,
+			"Malay": 6,
+			"mixed race": 1
+		},
+		"Slovak": {
+			"Indo-Aryan": 2,
+			"mixed race": 1,
+			"white": 22
+		},
+		"Slovene": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"Southern European": 1,
+			"white": 22
+		},
+		"a Solomon Islander": {
+			"Asian": 1,
+			"mixed race": 1,
+			"Pacific Islander": 22,
+			"white": 1
+		},
+		"Somali": {
+			"black": 56,
+			"Indo-Aryan": 1,
+			"Middle Eastern": 2,
+			"mixed race": 1
+		},
+		"South African": {
+			"Asian": 1,
+			"black": 22,
+			"Indo-Aryan": 1,
+			"Malay": 1,
+			"mixed race": 5,
+			"Semitic": 1,
+			"Southern European": 1,
+			"white": 5
+		},
+		"South Sudanese": {
+			"black": 16,
+			"Middle Eastern": 3,
+			"mixed race": 1
+		},
+		"Spanish": {
+			"Asian": 1,
+			"Indo-Aryan": 1,
+			"Latin American": 1,
+			"Middle Eastern": 1,
+			"mixed race": 2,
+			"Semitic": 1,
+			"Southern European": 15,
+			"white": 3
+		},
+		"Sri Lankan": {
+			"Indo-Aryan": 34,
+			"Malay": 1,
+			"Middle Eastern": 1,
+			"mixed race": 2,
+			"Southern European": 1,
+			"white": 1
+		},
+		"Sudanese": {
+			"black": 3,
+			"Middle Eastern": 16,
+			"mixed race": 1
+		},
+		"Surinamese": {
+			"Amerindian": 1,
+			"black": 7,
+			"Indo-Aryan": 7,
+			"Malay": 4,
+			"mixed race": 3
+		},
+		"Swazi": {
+			"black": 32,
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Swedish": {
+			"black": 1,
+			"Indo-Aryan": 2,
+			"Middle Eastern": 2,
+			"mixed race": 1,
+			"white": 18
+		},
+		"Swiss": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"Southern European": 2,
+			"white": 10
+		},
+		"Syrian": {
+			"Indo-Aryan": 2,
+			"Middle Eastern": 8,
+			"mixed race": 1,
+			"Semitic": 2
+		},
+		"Taiwanese": {
+			"Asian": 18,
+			"Malay": 1,
+			"mixed race": 1
+		},
+		"Tajik": {
+			"Asian": 2,
+			"Indo-Aryan": 11,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Tanzanian": {
+			"black": 46,
+			"Middle Eastern": 2,
+			"mixed race": 1,
+			"Semitic": 1
+		},
+		"Thai": {
+			"Asian": 25,
+			"Indo-Aryan": 1,
+			"Malay": 4,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Tibetan": {
+			"Asian": 14,
+			"Indo-Aryan": 1,
+			"mixed race": 1
+		},
+		"Togolese": {
+			"black": 27,
+			"Middle Eastern": 1,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Tongan": {
+			"Asian": 1,
+			"mixed race": 1,
+			"Pacific Islander": 47,
+			"white": 1
+		},
+		"Trinidadian": {
+			"black": 3,
+			"Indo-Aryan": 3,
+			"mixed race": 2,
+			"white": 1
+		},
+		"Tunisian": {
+			"Middle Eastern": 33,
+			"mixed race": 1,
+			"Southern European": 1
+		},
+		"Turkish": {
+			"Indo-Aryan": 33,
+			"Middle Eastern": 2,
+			"mixed race": 1,
+			"Semitic": 2,
+			"Southern European": 1,
+			"white": 1
+		},
+		"Turkmen": {
+			"Asian": 2,
+			"Indo-Aryan": 11,
+			"mixed race": 1,
+			"Semitic": 1,
+			"white": 3
+		},
+		"Tuvaluan": {
+			"mixed race": 1,
+			"Pacific Islander": 48,
+			"white": 1
+		},
+		"Ugandan": {
+			"black": 19,
+			"Indo-Aryan": 1,
+			"mixed race": 2
+		},
+		"Ukrainian": {
+			"Indo-Aryan": 1,
+			"mixed race": 1,
+			"Semitic": 1,
+			"white": 25
+		},
+		"Uruguayan": {
+			"Amerindian": 1,
+			"black": 2,
+			"Latin American": 12,
+			"mixed race": 1,
+			"Southern European": 2,
+			"white": 1
+		},
+		"Uzbek": {
+			"Asian": 3,
+			"Indo-Aryan": 9,
+			"mixed race": 1,
+			"Semitic": 2,
+			"white": 3
+		},
+		"Vatican": {
+			"Latin American": 2,
+			"mixed race": 1,
+			"Southern European": 5,
+			"white": 5
+		},
+		"Venezuelan": {
+			"Amerindian": 1,
+			"black": 1,
+			"Latin American": 15,
+			"mixed race": 5,
+			"white": 3
+		},
+		"Vietnamese": {
+			"Asian": 10,
+			"Malay": 1,
+			"mixed race": 1
+		},
+		"Vincentian": {
+			"black": 12,
+			"Indo-Aryan": 2,
+			"mixed race": 5,
+			"white": 1
+		},
+		"Yemeni": {
+			"black": 2,
+			"Indo-Aryan": 1,
+			"Middle Eastern": 8,
+			"mixed race": 1,
+			"Semitic": 2
+		},
+		"Zairian": {
+			"black": 23,
+			"mixed race": 1,
+			"white": 1
+		},
+		"Zambian": {
+			"black": 38,
+			"Indo-Aryan": 1,
+			"mixed race": 2,
+			"white": 1
+		},
+		"Zimbabwean": {
+			"black": 28,
+			"mixed race": 1,
+			"white": 1
+		},
+		"default": {
+			"mixed race": 1,
+			"white": 9
+		}
+	}
+}
