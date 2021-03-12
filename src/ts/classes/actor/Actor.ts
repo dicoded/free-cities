@@ -328,4 +328,17 @@ export default class Actor extends Body implements IActor {
 
   // get totalRelatives(): number {
   // }
+
+  get isAsexual(): boolean {
+    return this.attraction.male <= 65 && this.attraction.female <= 65;
+  }
+
+  get isBisexual(): boolean {
+    return this.attraction.male > 65 && this.attraction.female > 65;
+  }
+
+  get isGay(): boolean {
+    return (this.sex === Sex.MALE && this.attraction.male > 65)
+      || (this.sex === Sex.FEMALE && this.attraction.female > 65);
+  }
 }

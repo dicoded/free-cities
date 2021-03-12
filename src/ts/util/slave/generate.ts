@@ -549,24 +549,24 @@ export function generateCounter(actor: Actor): Counter {
   if (Number().random(1, 2) === 1) return counter; // 50% chance of slave being virgin (may need to be tweaked)
 
   if (actor.penis) {
-    counter.anal.given.dick = Number().random(0, 20);
-    counter.oral.given.dick = Number().random(0, 20);
+    counter.anal.given.dick = Number().gaussian(0, 20, 2);
+    counter.oral.given.dick = Number().gaussian(0, 20, 2);
 
     if (actor.attraction.known) {
       if (actor.attraction.male > 65) {
-        counter.anal.received.dick = Number().random(0, 20);
+        counter.anal.received.dick = Number().gaussian(0, 20, 2);
       }
 
       if (actor.attraction.female > 65) {
-        counter.vaginal.given.dick = Number().random(0, 20);
+        counter.vaginal.given.dick = Number().gaussian(0, 20, 2);
       }
     }
 
     return counter;
   }
 
-  counter.anal.received.dick = Number().random(0, 20);
-  counter.oral.received.dick = Number().random(0, 20);
+  counter.anal.received.dick = Number().gaussian(0, 20, 2);
+  counter.oral.received.dick = Number().gaussian(0, 20, 2);
 
   return counter;
 }
