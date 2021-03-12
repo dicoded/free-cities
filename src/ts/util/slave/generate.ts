@@ -8,7 +8,7 @@ import Fetish from '../../classes/actor/Fetish';
 import Attraction from '../../classes/actor/Attraction';
 
 import Eyes from '../../classes/body/face/Eyes';
-import Ears from '../../classes/body/face/Ears';
+import Ears, { EarShape } from '../../classes/body/face/Ears';
 import Nose from '../../classes/body/face/Nose';
 import Mouth from '../../classes/body/face/Mouth';
 import Face, { FaceShape } from '../../classes/body/face/Face';
@@ -201,9 +201,23 @@ export function generateEyes(actor: Actor): Eyes {
   return eyes;
 }
 
-// TODO: these
 export function generateEars(): Ears {
   const ears = new Ears();
+
+  const roll = Number().random(1, 100);
+
+  if (roll <= 2) {
+    ears.left.deaf = true;
+    ears.right.deaf = true;
+  }
+
+  if (roll <= 5) {
+    ears.left.hardOfHearing = true;
+    ears.right.hardOfHearing = true;
+  }
+
+  if (Number().random(1, 100) === 1) ears.left.shape = EarShape.DAMAGED;
+  if (Number().random(1, 100) === 1) ears.right.shape = EarShape.DAMAGED;
 
   return ears;
 }
@@ -211,9 +225,12 @@ export function generateEars(): Ears {
 export function generateNose(): Nose {
   const nose = new Nose();
 
+  if (Number().random(1, 100) <= 2) nose.smell = false;
+
   return nose;
 }
 
+// TODO: this
 export function generateMouth(): Mouth {
   const mouth = new Mouth();
 
