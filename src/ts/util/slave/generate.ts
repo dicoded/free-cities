@@ -78,15 +78,15 @@ export function generateSex(): Sex {
 
 export function generateGenes(actor: Actor): Genes {
   if (actor.sex === Sex.MALE) {
-    if (Number().random(1, 3500) === 1) return Genes.X0;
-    if (Number().random(1, 1000) === 1) return Genes.XYY;
     if (Number().random(1, 750) === 1) return Genes.XXY;
+    if (Number().random(1, 1000) === 1) return Genes.XYY;
+    if (Number().random(1, 3500) === 1) return Genes.X0;
 
     return Genes.XY;
   }
 
-  if (Number().random(1, 3500) === 1) return Genes.X0;
   if (Number().random(1, 1000) === 1) return Genes.XXX;
+  if (Number().random(1, 3500) === 1) return Genes.X0;
 
   return Genes.XX;
 }
@@ -111,47 +111,15 @@ export function generateName(actor: Actor): Name {
   return name;
 }
 
-function skewedGaussian(s: number) {
-  const randoms = Number().gaussianPair();
-
-  if (s === 0) {
-    return randoms[0];
-  }
-
-  const delta = s / Math.sqrt(1 + s * s);
-  const result = delta * randoms[0] + Math.sqrt(1 - delta * delta) * randoms[1];
-
-  return randoms[0] >= 0 ? result : -result;
-}
-
-function multiplierGenerator() {
-  const skew = 0.0;
-  const minMultiplier = -3.0;
-  const maxMultiplier = 3.0;
-
-  let result = skewedGaussian(skew);
-
-  while (result < minMultiplier || result > maxMultiplier) result = skewedGaussian(skew);
-
-  return result;
-}
-
 export function generateIntelligence() {
-  const spread = 45;
-  const mean = 0;
-  const minIntelligence = -101;
-  const maxIntelligence = 100;
+  const roll = Number().gaussianPair(25, 2.5);
+  const average = (roll[0] + roll[1]) / 2;
 
-  let result = multiplierGenerator() * spread * mean;
-
-  while (result < minIntelligence || result > maxIntelligence) result = multiplierGenerator() * spread * mean;
-
-  return Math.ceil(result);
+  return Math.ceil(average).clamp(-100, 100);
 }
 
-// TODO: this
 export function generateEducation(): number {
-  return 0;
+  return Number().gaussian(0, 30);
 }
 
 function getHairLength(actor: Actor) {
@@ -211,6 +179,7 @@ export function generateHair(actor: Actor): Hair {
   return hair;
 }
 
+// TODO: this
 export function generateEyes(actor: Actor): Eyes {
   const eyes = new Eyes();
 
@@ -232,6 +201,7 @@ export function generateEyes(actor: Actor): Eyes {
   return eyes;
 }
 
+// TODO: these
 export function generateEars(): Ears {
   const ears = new Ears();
 
@@ -516,13 +486,13 @@ export function generateAge(): Age {
 export function generateHealth(): Health {
   const health = new Health();
 
-  health.condition = Number().random(50, 100);
+  health.condition = Number().gaussian(50, 100, 0.5);
 
-  health.damage.longTerm = Number().random(0, 20);
-  health.damage.shortTerm = Number().random(0, 20);
+  health.damage.longTerm = Number().gaussian(0, 20, 2);
+  health.damage.shortTerm = Number().gaussian(0, 20, 2);
 
-  health.fatigue = Number().random(0, 25);
-  health.illness = Number().random(0, 15);
+  health.fatigue = Number().gaussian(0, 25, 2.5);
+  health.illness = Number().gaussian(0, 15, 2.5);
 
   health.injury.major = Number().random(1, 100) <= 2 ? MajorInjury.BROKEN_ARM : null;
   health.injury.minor = Number().random(1, 100) <= 5 ? MinorInjury.BLACK_EYE : null;
@@ -531,15 +501,15 @@ export function generateHealth(): Health {
 }
 
 export function generateWeight(): number {
-  return Number().random(-30, 30);
+  return Number().gaussian(-50, 150);
 }
 
 export function generateHeight(): number {
-  return Number().random(140, 190);
+  return Number().gaussian(140, 190);
 }
 
 export function generateMuscles(): number {
-  return Number().random(-30, 30);
+  return Number().gaussian(-30, 30);
 }
 
 // TODO: expand this

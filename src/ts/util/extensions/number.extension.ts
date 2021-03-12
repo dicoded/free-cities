@@ -140,7 +140,7 @@ Number.prototype.gaussian = function gaussian(
   this: number,
   min: number = 0,
   max: number = 0,
-  skew: number = 0,
+  skew: number = 1,
 ): number {
   let u = 0;
   let v = 0;
