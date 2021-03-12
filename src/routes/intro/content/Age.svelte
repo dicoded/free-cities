@@ -5,7 +5,7 @@
 	import Response from '../../../components/ui/Response.svelte';
 	import Section from '../../../components/ui/Section.svelte';
 
-	import { minimumAge } from '../../../stores/global.store';
+	import { min } from '../../../stores/global.store';
 </script>
 
 <Section>
@@ -18,27 +18,27 @@
 
 	<div class="flex">
 		<Button
-			selected={$minimumAge === 18}
-			handler={() => { $minimumAge = 18 }}>
+			selected={$min.age === 18}
+			handler={() => { $min.age = 18 }}>
 			Protected
 		</Button>
 		<Button
-			selected={$minimumAge === 3}
-			handler={() => { $minimumAge = 3 }}>
+			selected={$min.age === 3}
+			handler={() => { $min.age = 3 }}>
 			Free game
 		</Button>
-		<Number placeholder="Minimum Slave Age" bind:value={$minimumAge} min={3} max={18} />
+		<Number placeholder="Minimum Slave Age" bind:value={$min.age} min={3} max={18} />
 	</div>
 
-	{#if $minimumAge}
+	{#if $min.age}
 		<Response>
-			{#if $minimumAge >= 18}
+			{#if $min.age >= 18}
 				They viewed those under the age of <span class="rb">18</span> as those <span class="rb">not to involve</span>
 				in their affairs.
-			{:else if $minimumAge === 3}
+			{:else if $min.age === 3}
 				They saw <span class="rb">anyone that could walk</span> as someone that could do slave duties.
 			{:else}
-				They decided anyone over the age of <span class="rb">{$minimumAge}</span> could become a slave.
+				They decided anyone over the age of <span class="rb">{$min.age}</span> could become a slave.
 			{/if}
 		</Response>
 	{/if}
