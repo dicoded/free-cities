@@ -154,25 +154,47 @@ export function generateEducation(): number {
   return 0;
 }
 
-// TODO: add in race support
+function getHairLength(actor: Actor) {
+  const hair = {
+    armpits: 0,
+    body: 0,
+    main: 0,
+    pubic: 0,
+  };
+
+  if (actor.sex === Sex.MALE) {
+    hair.armpits = Number().random(1, 8);
+    hair.body = Number().random(1, 3);
+    hair.main = Number().random(0, 20);
+    hair.pubic = Number().random(0, 6);
+  } else {
+    hair.armpits = Number().random(0, 5);
+    hair.body = Number().random(0, 2);
+    hair.main = Number().random(0, 60);
+    hair.pubic = Number().random(0, 6);
+  }
+
+  return hair;
+}
+
 export function generateHair(actor: Actor): Hair {
   const hair = new Hair();
-  const roll = Number().random(1, 100);
 
   let hairColor: HairColor;
 
-  if (roll < 20) {
-    hairColor = HairColor.BLACK;
-  } else if (roll < 39) {
-    hairColor = HairColor.BLOND;
-  } else if (roll < 58) {
-    hairColor = HairColor.BROWN;
-  } else if (roll < 77) {
-    hairColor = HairColor.RED;
-  } else if (roll < 96) {
-    hairColor = HairColor.GRAY;
-  } else {
-    hairColor = HairColor.WHITE;
+  const darkHair = Number().random(1, 2) === 1 ? HairColor.BLACK : HairColor.BROWN;
+
+  // TODO: these will still need to be tweaked
+  switch (actor.race) {
+    case Race.ASIAN:
+      hairColor = HairColor.BLACK;
+      break;
+    case Race.WHITE:
+      hairColor = Number().random(1, 5) === 1 ? HairColor.RED : HairColor.BLOND;
+      break;
+    default:
+      hairColor = darkHair;
+      break;
   }
 
   hair.armpits.original = hairColor;
@@ -181,17 +203,10 @@ export function generateHair(actor: Actor): Hair {
   hair.main.original = hairColor;
   hair.pubic.original = hairColor;
 
-  if (actor.sex === Sex.MALE) {
-    hair.armpits.length = Number().random(1, 8);
-    hair.body.length = Number().random(1, 3);
-    hair.main.length = Number().random(0, 20);
-    hair.pubic.length = Number().random(0, 6);
-  } else {
-    hair.armpits.length = Number().random(0, 5);
-    hair.body.length = Number().random(0, 2);
-    hair.main.length = Number().random(0, 60);
-    hair.pubic.length = Number().random(0, 6);
-  }
+  hair.armpits.length = getHairLength(actor).armpits;
+  hair.body.length = getHairLength(actor).body;
+  hair.main.length = getHairLength(actor).main;
+  hair.pubic.length = getHairLength(actor).pubic;
 
   return hair;
 }
