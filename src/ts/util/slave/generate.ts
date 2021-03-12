@@ -586,8 +586,6 @@ export function generatePersonality(): Personality {
 export function generateQuirks(): Quirks {
   const quirks = new Quirks();
 
-  const roll = Number().random(1, 10);
-
   // TODO: couple these with the enums?
   const behavioralQuirks = [
     'confident',
@@ -612,18 +610,14 @@ export function generateQuirks(): Quirks {
     'size queen',
   ];
 
-  if (roll === 1) {
-    quirks.behavioral = behavioralQuirks.random();
-    quirks.sexual = sexualQuirks.random();
-  }
+  if (Number().random(1, 10) === 1) quirks.behavioral = behavioralQuirks.random();
+  if (Number().random(1, 10) === 1) quirks.sexual = sexualQuirks.random();
 
   return quirks;
 }
 
 export function generateFlaws(): Flaws {
   const flaws = new Flaws();
-
-  const roll = Number().random(1, 10);
 
   const behavioralFlaws = [
     'arrogant',
@@ -648,10 +642,8 @@ export function generateFlaws(): Flaws {
     'judgemental',
   ];
 
-  if (roll === 1) {
-    flaws.behavioral = behavioralFlaws.random();
-    flaws.sexual = sexualFlaws.random();
-  }
+  if (Number().random(1, 10) === 1) flaws.behavioral = behavioralFlaws.random();
+  if (Number().random(1, 10) === 1) flaws.sexual = sexualFlaws.random();
 
   return flaws;
 }
