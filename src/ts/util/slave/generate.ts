@@ -111,46 +111,42 @@ export function generateName(actor: Actor): Name {
   return name;
 }
 
-// TODO: add parameters?
-export function generateIntelligence() {
-  const mean = 0;
-  const minMult = -3.0;
-  const maxMult = 3.0;
+function skewedGaussian(s: number) {
+  const randoms = Number().gaussianPair();
+
+  if (s === 0) {
+    return randoms[0];
+  }
+
+  const delta = s / Math.sqrt(1 + s * s);
+  const result = delta * randoms[0] + Math.sqrt(1 - delta * delta) * randoms[1];
+
+  return randoms[0] >= 0 ? result : -result;
+}
+
+function multiplierGenerator() {
   const skew = 0.0;
+  const minMultiplier = -3.0;
+  const maxMultiplier = 3.0;
+
+  let result = skewedGaussian(skew);
+
+  while (result < minMultiplier || result > maxMultiplier) result = skewedGaussian(skew);
+
+  return result;
+}
+
+export function generateIntelligence() {
   const spread = 45;
+  const mean = 0;
   const minIntelligence = -101;
   const maxIntelligence = 100;
 
-  function skewedGaussian(s: number) {
-    const randoms = Number().gaussianPair();
+  let result = multiplierGenerator() * spread * mean;
 
-    if (s === 0) {
-      return randoms[0];
-    }
+  while (result < minIntelligence || result > maxIntelligence) result = multiplierGenerator() * spread * mean;
 
-    const delta = s / Math.sqrt(1 + s * s);
-    const result = delta * randoms[0] + Math.sqrt(1 - delta * delta) * randoms[1];
-
-    return randoms[0] >= 0 ? result : -result;
-  }
-
-  function multGenerator() {
-    let result = skewedGaussian(skew);
-
-    while (result < minMult || result > maxMult) result = skewedGaussian(skew);
-
-    return result;
-  }
-
-  function getIntelligence() {
-    let result = multGenerator() * spread * mean;
-
-    while (result < minIntelligence || result > maxIntelligence) result = multGenerator() * spread * mean;
-
-    return Math.ceil(result);
-  }
-
-  return getIntelligence();
+  return Math.ceil(result);
 }
 
 // TODO: this
