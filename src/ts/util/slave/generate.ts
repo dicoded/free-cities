@@ -616,31 +616,56 @@ export function generatePersonality(): Personality {
   return personality;
 }
 
+const behavioralFlaws = [
+  BehavioralFlaws.ARROGANT,
+  BehavioralFlaws.BITCHY,
+  BehavioralFlaws.ODD,
+  BehavioralFlaws.ANOREXIC,
+  BehavioralFlaws.HATES_MEN,
+  BehavioralFlaws.HATES_WOMEN,
+  BehavioralFlaws.GLUTTONOUS,
+  BehavioralFlaws.DEVOUT,
+  BehavioralFlaws.LIBERATED,
+];
+
+const sexualFlaws = [
+  SexualFlaws.HATES_ANAL,
+  SexualFlaws.HATES_ORAL,
+  SexualFlaws.HATES_PENETRATION,
+  SexualFlaws.SHAMEFAST,
+  SexualFlaws.IDEALISTIC,
+  SexualFlaws.REPRESSED,
+  SexualFlaws.APATHETIC,
+  SexualFlaws.CRUDE,
+  SexualFlaws.JUDGEMENTAL,
+];
+
+const behavioralQuirks = [
+  BehavioralQuirks.CONFIDENT,
+  BehavioralQuirks.CUTTING,
+  BehavioralQuirks.FUNNY,
+  BehavioralQuirks.FITNESS,
+  BehavioralQuirks.ADORES_MEN,
+  BehavioralQuirks.ADORES_WOMEN,
+  BehavioralQuirks.INSECURE,
+  BehavioralQuirks.SINFUL,
+  BehavioralQuirks.ADVOCATE,
+];
+
+const sexualQuirks = [
+  SexualQuirks.PAINAL_QUEEN,
+  SexualQuirks.GAGFUCK_QUEEN,
+  SexualQuirks.STRUGGLEFUCK_QUEEN,
+  SexualQuirks.TEASE,
+  SexualQuirks.ROMANTIC,
+  SexualQuirks.PERVERTED,
+  SexualQuirks.CARING,
+  SexualQuirks.UNFLINCHING,
+  SexualQuirks.SIZE_QUEEN,
+];
+
 export function generateFlaws(): Flaws {
   const flaws = new Flaws();
-
-  const behavioralFlaws = [
-    BehavioralFlaws.ANOREXIC,
-    BehavioralFlaws.ARROGANT,
-    BehavioralFlaws.BITCHY,
-    BehavioralFlaws.DEVOUT,
-    BehavioralFlaws.GLUTTONOUS,
-    BehavioralFlaws.HATES_MEN,
-    BehavioralFlaws.HATES_WOMEN,
-    BehavioralFlaws.LIBERATED,
-    BehavioralFlaws.ODD,
-  ];
-  const sexualFlaws = [
-    SexualFlaws.APATHETIC,
-    SexualFlaws.CRUDE,
-    SexualFlaws.HATES_ANAL,
-    SexualFlaws.HATES_ORAL,
-    SexualFlaws.HATES_PENETRATION,
-    SexualFlaws.IDEALISTIC,
-    SexualFlaws.JUDGEMENTAL,
-    SexualFlaws.REPRESSED,
-    SexualFlaws.SHAMEFAST,
-  ];
 
   if (Number().random(1, 10) === 1) flaws.behavioral = behavioralFlaws.random();
   if (Number().random(1, 10) === 1) flaws.sexual = sexualFlaws.random();
@@ -648,35 +673,35 @@ export function generateFlaws(): Flaws {
   return flaws;
 }
 
-// TODO: rework to better match quirks?
-export function generateQuirks(): Quirks {
+function getBehavioralQuirk(actor: Actor): BehavioralQuirks {
+  if (!actor.flaws.behavioral) return behavioralQuirks.random();
+
+  let quirk: BehavioralQuirks = behavioralQuirks.random();
+
+  while (behavioralQuirks.indexOf(quirk) === behavioralFlaws.indexOf(actor.flaws.behavioral)) {
+    quirk = behavioralQuirks.random();
+  }
+
+  return quirk;
+}
+
+function getSexualQuirk(actor: Actor): SexualQuirks {
+  if (!actor.flaws.sexual) return sexualQuirks.random();
+
+  let quirk: SexualQuirks = behavioralQuirks.random();
+
+  while (sexualQuirks.indexOf(quirk) === sexualFlaws.indexOf(actor.flaws.sexual)) {
+    quirk = sexualQuirks.random();
+  }
+
+  return quirk;
+}
+
+export function generateQuirks(actor: Actor): Quirks {
   const quirks = new Quirks();
 
-  const behavioralQuirks = [
-    BehavioralQuirks.ADORES_MEN,
-    BehavioralQuirks.ADORES_WOMEN,
-    BehavioralQuirks.ADVOCATE,
-    BehavioralQuirks.CONFIDENT,
-    BehavioralQuirks.CUTTING,
-    BehavioralQuirks.FITNESS,
-    BehavioralQuirks.FUNNY,
-    BehavioralQuirks.INSECURE,
-    BehavioralQuirks.SINFUL,
-  ];
-  const sexualQuirks = [
-    SexualQuirks.CARING,
-    SexualQuirks.GAGFUCK_QUEEN,
-    SexualQuirks.PAINAL_QUEEN,
-    SexualQuirks.PERVERTED,
-    SexualQuirks.ROMANTIC,
-    SexualQuirks.SIZE_QUEEN,
-    SexualQuirks.STRUGGLEFUCK_QUEEN,
-    SexualQuirks.TEASE,
-    SexualQuirks.UNFLINCHING,
-  ];
-
-  if (Number().random(1, 10) === 1) quirks.behavioral = behavioralQuirks.random();
-  if (Number().random(1, 10) === 1) quirks.sexual = sexualQuirks.random();
+  if (Number().random(1, 20) === 1) quirks.behavioral = getBehavioralQuirk(actor);
+  if (Number().random(1, 20) === 1) quirks.sexual = getSexualQuirk(actor);
 
   return quirks;
 }
@@ -806,10 +831,10 @@ export function generateSlave(): Slave {
   slave.education = generateEducation();
   slave.personality = generatePersonality();
   slave.flaws = generateFlaws();
-  slave.quirks = generateQuirks();
   slave.fetish = generateFetish();
   slave.drive = generateDrive();
 
+  slave.quirks = generateQuirks(slave);
   slave.attraction = generateAttraction(slave);
 
   slave.abstract = generateAbstract(slave);
