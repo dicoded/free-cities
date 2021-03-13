@@ -10,7 +10,7 @@ import Attraction from '../../classes/actor/Attraction';
 import Eyes from '../../classes/body/face/Eyes';
 import Ears, { EarShape } from '../../classes/body/face/Ears';
 import Nose from '../../classes/body/face/Nose';
-import Mouth, { LipSize } from '../../classes/body/face/Mouth';
+import Mouth from '../../classes/body/face/Mouth';
 import Face, { FaceShape } from '../../classes/body/face/Face';
 
 import Hair from '../../classes/body/upper/Hairs';
