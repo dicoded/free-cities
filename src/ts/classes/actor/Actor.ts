@@ -223,7 +223,7 @@ export default class Actor extends Body implements IActor {
     else this.daughters.add(actor.ID);
   }
 
-  relativeTo(actor: Actor | undefined): string | null {
+  relativeTo(actor: Actor): string | null {
     if (!actor) return null;
 
     if (this.isChildOf(actor) && actor.sex === Sex.MALE) return 'son';

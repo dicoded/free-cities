@@ -48,7 +48,11 @@ import {
 } from '../color';
 import nationalities from '../../../data/nationalities/nationality';
 
-// TODO: add in better range distribution (bell curve?)
+// Utility functions
+
+function gaussian(minimum: number, maximum: number, skew: number = 1): number {
+  return Math.floor(Number().gaussian(minimum, maximum, skew));
+}
 
 // Generator functions
 
@@ -241,8 +245,8 @@ function getLipSize(actor: Actor): LipSize {
   ];
 
   return actor.sex === Sex.MALE
-    ? lipSizes[Math.floor(Number().gaussian(0, lipSizes.length))]
-    : lipSizes[Math.floor(Number().gaussian(0, lipSizes.length, 0.50))];
+    ? lipSizes[gaussian(0, lipSizes.length)]
+    : lipSizes[gaussian(0, lipSizes.length, 0.50)];
 }
 
 export function generateMouth(actor: Actor): Mouth {
@@ -513,7 +517,7 @@ export function generateAge(): Age {
     });
   }
 
-  const roll = Math.floor(Number().gaussian(get(min).age, get(max).age, 1.5));
+  const roll = gaussian(get(min).age, get(max).age, 1.5);
 
   age.actual = roll;
   age.physical = age.actual;
@@ -522,17 +526,16 @@ export function generateAge(): Age {
   return age;
 }
 
-// TODO: go over these numbers again
 export function generateHealth(): Health {
   const health = new Health();
 
-  health.condition = Number().gaussian(50, 100, 0.5);
+  health.condition = gaussian(50, 100, 0.5);
 
-  health.damage.longTerm = Number().gaussian(0, 20, 2);
-  health.damage.shortTerm = Number().gaussian(0, 20, 2);
+  health.damage.longTerm = gaussian(0, 20, 2);
+  health.damage.shortTerm = gaussian(0, 20, 2);
 
-  health.fatigue = Number().gaussian(0, 25, 2.5);
-  health.illness = Number().gaussian(0, 15, 2.5);
+  health.fatigue = gaussian(0, 25, 2.5);
+  health.illness = gaussian(0, 15, 2.5);
 
   health.injury.major = Number().random(1, 100) <= 2 ? MajorInjury.BROKEN_ARM : null;
   health.injury.minor = Number().random(1, 100) <= 5 ? MinorInjury.BLACK_EYE : null;
@@ -541,15 +544,15 @@ export function generateHealth(): Health {
 }
 
 export function generateWeight(): number {
-  return Number().gaussian(-50, 150);
+  return gaussian(-50, 150);
 }
 
 export function generateHeight(): number {
-  return Number().gaussian(140, 190);
+  return gaussian(140, 190);
 }
 
 export function generateMuscles(): number {
-  return Number().gaussian(-30, 30);
+  return gaussian(-30, 30);
 }
 
 // TODO: expand this
@@ -559,24 +562,24 @@ export function generateCounter(actor: Actor): Counter {
   if (Number().random(1, 2) === 1) return counter; // 50% chance of slave being virgin (may need to be tweaked)
 
   if (actor.penis) {
-    counter.anal.given.dick = Number().gaussian(0, 20, 2);
-    counter.oral.given.dick = Number().gaussian(0, 20, 2);
+    counter.anal.given.dick = gaussian(0, 20, 2);
+    counter.oral.given.dick = gaussian(0, 20, 2);
 
     if (actor.attraction.known) {
       if (actor.attraction.male > 65) {
-        counter.anal.received.dick = Number().gaussian(0, 20, 2);
+        counter.anal.received.dick = gaussian(0, 20, 2);
       }
 
       if (actor.attraction.female > 65) {
-        counter.vaginal.given.dick = Number().gaussian(0, 20, 2);
+        counter.vaginal.given.dick = gaussian(0, 20, 2);
       }
     }
 
     return counter;
   }
 
-  counter.anal.received.dick = Number().gaussian(0, 20, 2);
-  counter.oral.received.dick = Number().gaussian(0, 20, 2);
+  counter.anal.received.dick = gaussian(0, 20, 2);
+  counter.oral.received.dick = gaussian(0, 20, 2);
 
   return counter;
 }
