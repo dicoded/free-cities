@@ -616,6 +616,38 @@ export function generatePersonality(): Personality {
   return personality;
 }
 
+export function generateFlaws(): Flaws {
+  const flaws = new Flaws();
+
+  const behavioralFlaws = [
+    BehavioralFlaws.ANOREXIC,
+    BehavioralFlaws.ARROGANT,
+    BehavioralFlaws.BITCHY,
+    BehavioralFlaws.DEVOUT,
+    BehavioralFlaws.GLUTTONOUS,
+    BehavioralFlaws.HATES_MEN,
+    BehavioralFlaws.HATES_WOMEN,
+    BehavioralFlaws.LIBERATED,
+    BehavioralFlaws.ODD,
+  ];
+  const sexualFlaws = [
+    SexualFlaws.APATHETIC,
+    SexualFlaws.CRUDE,
+    SexualFlaws.HATES_ANAL,
+    SexualFlaws.HATES_ORAL,
+    SexualFlaws.HATES_PENETRATION,
+    SexualFlaws.IDEALISTIC,
+    SexualFlaws.JUDGEMENTAL,
+    SexualFlaws.REPRESSED,
+    SexualFlaws.SHAMEFAST,
+  ];
+
+  if (Number().random(1, 10) === 1) flaws.behavioral = behavioralFlaws.random();
+  if (Number().random(1, 10) === 1) flaws.sexual = sexualFlaws.random();
+
+  return flaws;
+}
+
 // TODO: rework to better match quirks?
 export function generateQuirks(): Quirks {
   const quirks = new Quirks();
@@ -649,38 +681,6 @@ export function generateQuirks(): Quirks {
   return quirks;
 }
 
-export function generateFlaws(): Flaws {
-  const flaws = new Flaws();
-
-  const behavioralFlaws = [
-    BehavioralFlaws.ANOREXIC,
-    BehavioralFlaws.ARROGANT,
-    BehavioralFlaws.BITCHY,
-    BehavioralFlaws.DEVOUT,
-    BehavioralFlaws.GLUTTONOUS,
-    BehavioralFlaws.HATES_MEN,
-    BehavioralFlaws.HATES_WOMEN,
-    BehavioralFlaws.LIBERATED,
-    BehavioralFlaws.ODD,
-  ];
-  const sexualFlaws = [
-    SexualFlaws.APATHETIC,
-    SexualFlaws.CRUDE,
-    SexualFlaws.HATES_ANAL,
-    SexualFlaws.HATES_ORAL,
-    SexualFlaws.HATES_PENETRATION,
-    SexualFlaws.IDEALISTIC,
-    SexualFlaws.JUDGEMENTAL,
-    SexualFlaws.REPRESSED,
-    SexualFlaws.SHAMEFAST,
-  ];
-
-  if (Number().random(1, 10) === 1) flaws.behavioral = behavioralFlaws.random();
-  if (Number().random(1, 10) === 1) flaws.sexual = sexualFlaws.random();
-
-  return flaws;
-}
-
 export function generateFetish(): Fetish | null {
   const fetish = new Fetish();
 
@@ -698,7 +698,7 @@ export function generateFetish(): Fetish | null {
 
   if (Number().random(1, 10) > 1) return null;
 
-  fetish.strength = Number().random(1, 100);
+  fetish.strength = gaussian(1, 100, 2);
   fetish.type = fetishes.random();
 
   return fetish;
@@ -805,8 +805,8 @@ export function generateSlave(): Slave {
   slave.intelligence = generateIntelligence();
   slave.education = generateEducation();
   slave.personality = generatePersonality();
-  slave.quirks = generateQuirks();
   slave.flaws = generateFlaws();
+  slave.quirks = generateQuirks();
   slave.fetish = generateFetish();
   slave.drive = generateDrive();
 
