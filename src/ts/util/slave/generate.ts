@@ -10,7 +10,7 @@ import Attraction from '../../classes/actor/Attraction';
 import Eyes from '../../classes/body/face/Eyes';
 import Ears, { EarShape } from '../../classes/body/face/Ears';
 import Nose from '../../classes/body/face/Nose';
-import Mouth from '../../classes/body/face/Mouth';
+import Mouth, { LipSize } from '../../classes/body/face/Mouth';
 import Face, { FaceShape } from '../../classes/body/face/Face';
 
 import Hair from '../../classes/body/upper/Hairs';
@@ -232,16 +232,26 @@ export function generateNose(): Nose {
   return nose;
 }
 
-export function generateMouth(): Mouth {
+function getLipSize(actor: Actor): LipSize {
+  const lipSizes = [
+    LipSize.THIN,
+    LipSize.NORMAL,
+    LipSize.PRETTY,
+    LipSize.PLUSH,
+  ];
+
+  return actor.sex === Sex.MALE
+    ? lipSizes[Math.floor(Number().gaussian(0, lipSizes.length))]
+    : lipSizes[Math.floor(Number().gaussian(0, lipSizes.length, 0.50))];
+}
+
+export function generateMouth(actor: Actor): Mouth {
   const mouth = new Mouth();
 
-  const lipSizes = ['thin', 'normal', 'pretty', 'plush'];
   const teethTypes = ['normal', 'crooked', 'gapped'];
 
   mouth.lips.color = BaseColor.PINK;
-  // TODO: tweak this for male / female
-  mouth.lips.size = lipSizes.random();
-
+  mouth.lips.size = getLipSize(actor);
   mouth.teeth.color = BaseColor.WHITE;
   mouth.teeth.type = teethTypes.random();
   // TODO:
@@ -268,7 +278,7 @@ export function generateFace(actor: Actor): Face {
   face.eyes = generateEyes(actor);
   face.ears = generateEars();
   face.nose = generateNose();
-  face.mouth = generateMouth();
+  face.mouth = generateMouth(actor);
 
   return face;
 }
@@ -474,24 +484,24 @@ export function generateSkin(actor: Actor): Skin {
 }
 
 export function generateNationality(actor: Actor): string {
-  const index = {
-    Amerindian: 0,
-    Asian: 1,
-    black: 2,
-    'Indo-Aryan': 3,
-    'Latin American': 4,
-    Malay: 5,
-    'Middle Eastern': 6,
-    'mixed race': 7,
-    'Pacific Islander': 8,
-    Semitic: 9,
-    'Southern European': 10,
-    white: 11,
-  };
+  const races = [
+    'Amerindian',
+    'Asian',
+    'black',
+    'Indo-Aryan',
+    'Latin American',
+    'Malay',
+    'Middle Eastern',
+    'mixed race',
+    'Pacific Islander',
+    'Semitic',
+    'Southern European',
+    'white',
+  ];
 
-  const race = index[actor.race];
+  const index = races.indexOf(actor.race);
 
-  return nationalities[race].random();
+  return nationalities[index].random();
 }
 
 export function generateAge(): Age {
