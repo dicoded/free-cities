@@ -4,8 +4,13 @@ import Name from '../../classes/actor/Name';
 import Personality from '../../classes/actor/Personality';
 import Quirks from '../../classes/actor/quirks/Quirks';
 import Flaws from '../../classes/actor/flaws/Flaws';
-import Fetish from '../../classes/actor/Fetish';
+import Fetish, { FetishType } from '../../classes/actor/Fetish';
 import Attraction from '../../classes/actor/Attraction';
+
+import SexualQuirks from '../../classes/actor/quirks/Sexual';
+import BehavioralQuirks from '../../classes/actor/quirks/Behavioral';
+import SexualFlaws from '../../classes/actor/flaws/Sexual';
+import BehavioralFlaws from '../../classes/actor/flaws/Behavioral';
 
 import Eyes from '../../classes/body/face/Eyes';
 import Ears, { EarShape } from '../../classes/body/face/Ears';
@@ -611,31 +616,31 @@ export function generatePersonality(): Personality {
   return personality;
 }
 
+// TODO: rework to better match quirks?
 export function generateQuirks(): Quirks {
   const quirks = new Quirks();
 
-  // TODO: couple these with the enums?
   const behavioralQuirks = [
-    'confident',
-    'cutting',
-    'funny',
-    'fitness',
-    'adores women',
-    'adores men',
-    'insecure',
-    'sinful',
-    'advocate',
+    BehavioralQuirks.ADORES_MEN,
+    BehavioralQuirks.ADORES_WOMEN,
+    BehavioralQuirks.ADVOCATE,
+    BehavioralQuirks.CONFIDENT,
+    BehavioralQuirks.CUTTING,
+    BehavioralQuirks.FITNESS,
+    BehavioralQuirks.FUNNY,
+    BehavioralQuirks.INSECURE,
+    BehavioralQuirks.SINFUL,
   ];
   const sexualQuirks = [
-    'gagfuck queen',
-    'painal queen',
-    'strugglefuck queen',
-    'tease',
-    'romantic',
-    'perverted',
-    'caring',
-    'unflinching',
-    'size queen',
+    SexualQuirks.CARING,
+    SexualQuirks.GAGFUCK_QUEEN,
+    SexualQuirks.PAINAL_QUEEN,
+    SexualQuirks.PERVERTED,
+    SexualQuirks.ROMANTIC,
+    SexualQuirks.SIZE_QUEEN,
+    SexualQuirks.STRUGGLEFUCK_QUEEN,
+    SexualQuirks.TEASE,
+    SexualQuirks.UNFLINCHING,
   ];
 
   if (Number().random(1, 10) === 1) quirks.behavioral = behavioralQuirks.random();
@@ -648,26 +653,26 @@ export function generateFlaws(): Flaws {
   const flaws = new Flaws();
 
   const behavioralFlaws = [
-    'arrogant',
-    'bitchy',
-    'odd',
-    'hates men',
-    'hates women',
-    'gluttonous',
-    'anorexic',
-    'devout',
-    'liberated',
+    BehavioralFlaws.ANOREXIC,
+    BehavioralFlaws.ARROGANT,
+    BehavioralFlaws.BITCHY,
+    BehavioralFlaws.DEVOUT,
+    BehavioralFlaws.GLUTTONOUS,
+    BehavioralFlaws.HATES_MEN,
+    BehavioralFlaws.HATES_WOMEN,
+    BehavioralFlaws.LIBERATED,
+    BehavioralFlaws.ODD,
   ];
   const sexualFlaws = [
-    'hates oral',
-    'hates anal',
-    'hates penetration',
-    'shamefast',
-    'idealistic',
-    'repressed',
-    'apathetic',
-    'crude',
-    'judgemental',
+    SexualFlaws.APATHETIC,
+    SexualFlaws.CRUDE,
+    SexualFlaws.HATES_ANAL,
+    SexualFlaws.HATES_ORAL,
+    SexualFlaws.HATES_PENETRATION,
+    SexualFlaws.IDEALISTIC,
+    SexualFlaws.JUDGEMENTAL,
+    SexualFlaws.REPRESSED,
+    SexualFlaws.SHAMEFAST,
   ];
 
   if (Number().random(1, 10) === 1) flaws.behavioral = behavioralFlaws.random();
@@ -680,15 +685,15 @@ export function generateFetish(): Fetish | null {
   const fetish = new Fetish();
 
   const fetishes = [
-    'submissive',
-    'cumslut',
-    'humiliation',
-    'buttslut',
-    'boobs',
-    'sadist',
-    'masochist',
-    'dom',
-    'pregnancy',
+    FetishType.BOOBS,
+    FetishType.BUTTSLUT,
+    FetishType.CUMSLUT,
+    FetishType.DOM,
+    FetishType.HUMILIATION,
+    FetishType.MASOCHIST,
+    FetishType.PREGNANCY,
+    FetishType.SADIST,
+    FetishType.SUBMISSIVE,
   ];
 
   if (Number().random(1, 10) > 1) return null;
