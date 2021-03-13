@@ -42,7 +42,7 @@ export enum VoiceImplant {
   CYBERNETIC = 'cybernetic',
 }
 
-interface Lips {
+interface ILips {
     /**
      * The color of the body's lips.
      *
@@ -90,7 +90,7 @@ interface IThroat {
 
 interface IMouth {
     /** Properties pertaining to the body's lips. */
-    lips: Lips;
+    lips: ILips;
 
     /** Properties pertaining to the body's teeth. */
     teeth: ITeeth;
@@ -109,7 +109,7 @@ interface IMouth {
 }
 
 export default class Mouth implements IMouth {
-  lips: Lips;
+  lips: ILips;
 
   teeth: ITeeth;
 
@@ -129,7 +129,7 @@ export default class Mouth implements IMouth {
       type: TeethType.NORMAL,
     };
     this.throat = {
-      capacity: 100,
+      capacity: 2500,
       vocalCords: true,
       voice: {
         type: VoiceType.FEMININE,

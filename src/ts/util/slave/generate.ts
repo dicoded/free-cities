@@ -10,7 +10,7 @@ import Attraction from '../../classes/actor/Attraction';
 import Eyes from '../../classes/body/face/Eyes';
 import Ears, { EarShape } from '../../classes/body/face/Ears';
 import Nose from '../../classes/body/face/Nose';
-import Mouth from '../../classes/body/face/Mouth';
+import Mouth, { LipSize } from '../../classes/body/face/Mouth';
 import Face, { FaceShape } from '../../classes/body/face/Face';
 
 import Hair from '../../classes/body/upper/Hairs';
@@ -43,7 +43,9 @@ import Slave from '../../classes/slave/Slave';
 import { entityID, min, max } from '../../../stores/global.store';
 import see from '../../../stores/see.store';
 
-import { SkinColor, HairColor, EyeColor } from '../color';
+import {
+  SkinColor, HairColor, EyeColor, BaseColor,
+} from '../color';
 import nationalities from '../../../data/nationalities/nationality';
 
 // TODO: add in better range distribution (bell curve?)
@@ -230,9 +232,20 @@ export function generateNose(): Nose {
   return nose;
 }
 
-// TODO: this
 export function generateMouth(): Mouth {
   const mouth = new Mouth();
+
+  const lipSizes = ['thin', 'normal', 'pretty', 'plush'];
+  const teethTypes = ['normal', 'crooked', 'gapped'];
+
+  mouth.lips.color = BaseColor.PINK;
+  // TODO: tweak this for male / female
+  mouth.lips.size = lipSizes.random();
+
+  mouth.teeth.color = BaseColor.WHITE;
+  mouth.teeth.type = teethTypes.random();
+  // TODO:
+  mouth.throat.capacity = Number().gaussian(1000, 4000);
 
   return mouth;
 }
