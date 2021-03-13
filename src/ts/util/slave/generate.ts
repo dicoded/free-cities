@@ -30,7 +30,7 @@ import Abstract, { Sex, Genes, Race } from '../../classes/body/nonphysical/Nonph
 import Age from '../../classes/body/nonphysical/Age';
 import Skin from '../../classes/body/nonphysical/skin/Skin';
 import Scars, { Scarring } from '../../classes/body/nonphysical/skin/Scars';
-import Markings from '../../classes/body/nonphysical/skin/Markings';
+import Markings, { MarkingsType } from '../../classes/body/nonphysical/skin/Markings';
 import Health, { MajorInjury, MinorInjury } from '../../classes/body/nonphysical/Health';
 import Genetics from '../../classes/body/nonphysical/Genetics';
 import Counter from '../../classes/body/nonphysical/counter/Counter';
@@ -440,9 +440,24 @@ export function generateScarring(): Scars {
   return scars;
 }
 
-// TODO:
+// TODO: rework to take skin and hair types into account and have markings match
 export function generateMarkings(): Markings {
   const markings = new Markings();
+
+  const markingTypes = [
+    MarkingsType.BEAUTY_MARK,
+    MarkingsType.BIRTHMARK,
+    MarkingsType.FRECKLED,
+    MarkingsType.HEAVILY_FRECKLED,
+  ];
+
+  markings.arms = markingTypes.random();
+  markings.belly = markingTypes.random();
+  markings.chest = markingTypes.random();
+  markings.crotch = markingTypes.random();
+  markings.face = markingTypes.random();
+  markings.legs = markingTypes.random();
+  markings.shoulders = markingTypes.random();
 
   return markings;
 }
