@@ -130,7 +130,7 @@ export function generateIntelligence() {
 }
 
 export function generateEducation(): number {
-  return Number().gaussian(0, 30);
+  return gaussian(0, 30);
 }
 
 function getHairLength(actor: Actor) {
@@ -793,7 +793,7 @@ export function generateAttraction(actor: Actor): Attraction {
 }
 
 export function generateDrive(): number {
-  return Number().gaussian(1, 100);
+  return gaussian(1, 100);
 }
 
 export function generateAbstract(actor: Actor): Abstract {
