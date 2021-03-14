@@ -27,6 +27,8 @@ import Upper from '../ts/classes/body/upper/UpperBody';
 import Lower from '../ts/classes/body/lower/LowerBody';
 import Slave from '../ts/classes/slave/Slave';
 
+import '../ts/util/extensions/array.extension';
+
 import {
   generateID,
   generateSex,
@@ -159,7 +161,7 @@ describe('generateNose', () => {
 
 describe('generateMouth', () => {
   it('returns a new random mouth', () => {
-    expect(generateMouth()).toBeInstanceOf(Mouth);
+    expect(generateMouth(new Slave())).toBeInstanceOf(Mouth);
   });
 });
 
