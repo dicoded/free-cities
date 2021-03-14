@@ -467,40 +467,66 @@ export function generateMarkings(): Markings {
   return markings;
 }
 
-// TODO: less verbose way?
+const skinColors = {
+  amerindian: [
+    SkinColor.BROWN,
+  ],
+  asian: [
+    SkinColor.PALE,
+  ],
+  black: [
+    SkinColor.BLACK,
+  ],
+  indoAryan: [
+    SkinColor.BRONZE,
+  ],
+  latinAmerican: [
+    SkinColor.BROWN,
+  ],
+  malay: [
+    SkinColor.OLIVE,
+  ],
+  middleEastern: [
+    SkinColor.BROWN,
+  ],
+  mixedRace: [
+    SkinColor.BROWN,
+  ],
+  pacificIslander: [
+    SkinColor.BROWN,
+  ],
+  semitic: [
+    SkinColor.TAN,
+  ],
+  southernEuropean: [
+    SkinColor.WHITE,
+  ],
+  white: [
+    SkinColor.WHITE,
+  ],
+};
+
+function getSkinColor(actor: Actor): SkinColor {
+  if (actor.race === Race.AMERINDIAN) return skinColors.amerindian.random();
+  if (actor.race === Race.ASIAN) return skinColors.asian.random();
+  if (actor.race === Race.BLACK) return skinColors.black.random();
+  if (actor.race === Race.INDO_ARYAN) return skinColors.indoAryan.random();
+  if (actor.race === Race.LATIN_AMERICAN) return skinColors.latinAmerican.random();
+  if (actor.race === Race.MALAY) return skinColors.malay.random();
+  if (actor.race === Race.MIDDLE_EASTERN) return skinColors.middleEastern.random();
+  if (actor.race === Race.MIXED_RACE) return skinColors.mixedRace.random();
+  if (actor.race === Race.PACIFIC_ISLANDER) return skinColors.pacificIslander.random();
+  if (actor.race === Race.SEMITIC) return skinColors.semitic.random();
+  if (actor.race === Race.SOUTHERN_EUROPEAN) return skinColors.southernEuropean.random();
+  if (actor.race === Race.WHITE) return skinColors.white.random();
+
+  return SkinColor.BROWN; // default fallback
+}
+
 export function generateSkin(actor: Actor): Skin {
   const skin = new Skin();
 
-  switch (actor.race) {
-    case Race.ASIAN:
-      skin.color = SkinColor.VERY_FAIR;
-      break;
-    case Race.BLACK:
-      skin.color = SkinColor.BLACK;
-      break;
-    case Race.SOUTHERN_EUROPEAN:
-      skin.color = SkinColor.WHITE;
-      break;
-    case Race.INDO_ARYAN:
-      skin.color = SkinColor.BRONZE;
-      break;
-    case Race.MALAY:
-      skin.color = SkinColor.OLIVE;
-      break;
-    case Race.MIXED_RACE:
-      skin.color = SkinColor.EBONY;
-      break;
-    case Race.SEMITIC:
-      skin.color = SkinColor.TAN;
-      break;
-    case Race.WHITE:
-      skin.color = SkinColor.FAIR;
-      break;
-    default:
-      skin.color = SkinColor.BROWN;
-      break;
-  }
-
+  skin.color = getSkinColor(actor);
   skin.scars = generateScarring();
   skin.markings = generateMarkings();
 
