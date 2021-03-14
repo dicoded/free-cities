@@ -467,60 +467,64 @@ export function generateMarkings(): Markings {
   return markings;
 }
 
-const skinColors = {
-  amerindian: [
+const races = [
+  'Amerindian',
+  'Asian',
+  'black',
+  'Indo-Aryan',
+  'Latin American',
+  'Malay',
+  'Middle Eastern',
+  'mixed race',
+  'Pacific Islander',
+  'Semitic',
+  'Southern European',
+  'white',
+];
+
+const skinColors = [
+  [ // Amerindian
     SkinColor.BROWN,
   ],
-  asian: [
+  [ // Asian
     SkinColor.PALE,
   ],
-  black: [
+  [ // black
     SkinColor.BLACK,
   ],
-  indoAryan: [
+  [ // Indo-Aryan
     SkinColor.BRONZE,
   ],
-  latinAmerican: [
+  [ // Latin American
     SkinColor.BROWN,
   ],
-  malay: [
+  [ // Malay
     SkinColor.OLIVE,
   ],
-  middleEastern: [
+  [ // Middle Eastern
     SkinColor.BROWN,
   ],
-  mixedRace: [
+  [ // mixed race
     SkinColor.BROWN,
   ],
-  pacificIslander: [
+  [ // Pacific Islander
     SkinColor.BROWN,
   ],
-  semitic: [
+  [ // Semitic
     SkinColor.TAN,
   ],
-  southernEuropean: [
+  [ // Southern European
     SkinColor.WHITE,
   ],
-  white: [
+  [ // white
     SkinColor.WHITE,
   ],
-};
+];
 
 function getSkinColor(actor: Actor): SkinColor {
-  if (actor.race === Race.AMERINDIAN) return skinColors.amerindian.random();
-  if (actor.race === Race.ASIAN) return skinColors.asian.random();
-  if (actor.race === Race.BLACK) return skinColors.black.random();
-  if (actor.race === Race.INDO_ARYAN) return skinColors.indoAryan.random();
-  if (actor.race === Race.LATIN_AMERICAN) return skinColors.latinAmerican.random();
-  if (actor.race === Race.MALAY) return skinColors.malay.random();
-  if (actor.race === Race.MIDDLE_EASTERN) return skinColors.middleEastern.random();
-  if (actor.race === Race.MIXED_RACE) return skinColors.mixedRace.random();
-  if (actor.race === Race.PACIFIC_ISLANDER) return skinColors.pacificIslander.random();
-  if (actor.race === Race.SEMITIC) return skinColors.semitic.random();
-  if (actor.race === Race.SOUTHERN_EUROPEAN) return skinColors.southernEuropean.random();
-  if (actor.race === Race.WHITE) return skinColors.white.random();
+  const index = races.indexOf(actor.race);
 
-  return SkinColor.BROWN; // default fallback
+  return skinColors[index].random();
 }
 
 export function generateSkin(actor: Actor): Skin {
@@ -534,21 +538,6 @@ export function generateSkin(actor: Actor): Skin {
 }
 
 export function generateNationality(actor: Actor): string {
-  const races = [
-    'Amerindian',
-    'Asian',
-    'black',
-    'Indo-Aryan',
-    'Latin American',
-    'Malay',
-    'Middle Eastern',
-    'mixed race',
-    'Pacific Islander',
-    'Semitic',
-    'Southern European',
-    'white',
-  ];
-
   const index = races.indexOf(actor.race);
 
   return nationalities[index].random();
