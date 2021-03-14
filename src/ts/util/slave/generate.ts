@@ -482,6 +482,7 @@ const races = [
   'white',
 ];
 
+// TODO: expand these
 const skinColors = [
   [ // Amerindian
     SkinColor.BROWN,
