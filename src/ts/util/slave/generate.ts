@@ -575,23 +575,25 @@ export function generateMuscles(): number {
   return gaussian(-30, 30);
 }
 
-// TODO: expand this
 export function generateCounter(actor: Actor): Counter {
   const counter = new Counter();
 
-  if (Number().random(1, 2) === 1) return counter; // 50% chance of slave being virgin (may need to be tweaked)
+  // TODO: this number may need to be tweaked
+  if (Number().random(1, 2) === 1) return counter; // 50% chance of slave being virgin
 
   if (actor.penis) {
     counter.anal.given.dick = gaussian(0, 20, 2);
-    counter.oral.given.dick = gaussian(0, 20, 2);
+    counter.oral.given.dick = gaussian(0, 20, 1.5);
 
     if (actor.attraction.known) {
       if (actor.attraction.male > 65) {
-        counter.anal.received.dick = gaussian(0, 20, 2);
+        counter.anal.received.dick = gaussian(0, 20, 1.5);
+        counter.oral.given.dick = gaussian(0, 20, 1.25);
       }
 
       if (actor.attraction.female > 65) {
-        counter.vaginal.given.dick = gaussian(0, 20, 2);
+        counter.vaginal.given.dick = gaussian(0, 20);
+        counter.oral.given.pussy = gaussian(0, 20, 1.5);
       }
     }
 
@@ -599,12 +601,11 @@ export function generateCounter(actor: Actor): Counter {
   }
 
   counter.anal.received.dick = gaussian(0, 20, 2);
-  counter.oral.received.dick = gaussian(0, 20, 2);
+  counter.oral.received.dick = gaussian(0, 20, 1.25);
 
   return counter;
 }
 
-// TODO: may need to be expanded
 export function generatePersonality(): Personality {
   const personality = new Personality();
 
