@@ -749,35 +749,45 @@ function isGay(): boolean {
   return false;
 }
 
+function getMaleAttraction(actor: Actor): {male: boolean, female: boolean} {
+  if (isAsexual()) return { male: false, female: false };
+
+  if (isGay()) {
+    if (isBisexual(actor)) return { male: true, female: true };
+
+    return { male: true, female: false };
+  }
+
+  return { male: false, female: true };
+}
+
+function getFemaleAttraction(actor: Actor): { male: boolean, female: boolean; } {
+  if (isAsexual()) return { male: false, female: false };
+
+  if (isGay()) {
+    if (isBisexual(actor)) return { male: true, female: true };
+
+    return { male: false, female: true };
+  }
+
+  return { male: true, female: false };
+}
+
 export function generateAttraction(actor: Actor): Attraction {
   const attraction = new Attraction();
 
-  let { male, female } = attraction;
-
-  const isMale = actor.sex === Sex.MALE;
   const attracted = Number().random(66, 100);
   const notAttracted = Number().random(1, 65);
 
-  male = isMale ? notAttracted : attracted;
-  female = isMale ? attracted : notAttracted;
+  if (actor.sex === Sex.MALE) {
+    attraction.male = getMaleAttraction(actor).male ? attracted : notAttracted;
+    attraction.female = getMaleAttraction(actor).female ? attracted : notAttracted;
 
-  if (isGay()) {
-    male = isMale ? attracted : notAttracted;
-    female = isMale ? notAttracted : attracted;
-
-    if (isBisexual(actor)) {
-      male = attracted;
-      female = attracted;
-    }
+    return attraction;
   }
 
-  if (isAsexual()) {
-    male = notAttracted;
-    female = notAttracted;
-  }
-
-  attraction.male = male;
-  attraction.female = female;
+  attraction.male = getFemaleAttraction(actor).male ? attracted : notAttracted;
+  attraction.female = getFemaleAttraction(actor).female ? attracted : notAttracted;
 
   return attraction;
 }
