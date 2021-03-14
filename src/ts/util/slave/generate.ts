@@ -749,45 +749,45 @@ function isGay(): boolean {
   return false;
 }
 
-function getMaleAttraction(actor: Actor): {male: boolean, female: boolean} {
-  if (isAsexual()) return { male: false, female: false };
+const attracted = Number().random(66, 100);
+const notAttracted = Number().random(1, 65);
+
+function getMaleAttraction(actor: Actor): {male: number, female: number} {
+  if (isAsexual()) return { male: notAttracted, female: notAttracted };
 
   if (isGay()) {
-    if (isBisexual(actor)) return { male: true, female: true };
+    if (isBisexual(actor)) return { male: attracted, female: attracted };
 
-    return { male: true, female: false };
+    return { male: attracted, female: notAttracted };
   }
 
-  return { male: false, female: true };
+  return { male: notAttracted, female: attracted };
 }
 
-function getFemaleAttraction(actor: Actor): { male: boolean, female: boolean; } {
-  if (isAsexual()) return { male: false, female: false };
+function getFemaleAttraction(actor: Actor): { male: number, female: number; } {
+  if (isAsexual()) return { male: notAttracted, female: notAttracted };
 
   if (isGay()) {
-    if (isBisexual(actor)) return { male: true, female: true };
+    if (isBisexual(actor)) return { male: attracted, female: attracted };
 
-    return { male: false, female: true };
+    return { male: notAttracted, female: attracted };
   }
 
-  return { male: true, female: false };
+  return { male: attracted, female: notAttracted };
 }
 
 export function generateAttraction(actor: Actor): Attraction {
   const attraction = new Attraction();
 
-  const attracted = Number().random(66, 100);
-  const notAttracted = Number().random(1, 65);
-
   if (actor.sex === Sex.MALE) {
-    attraction.male = getMaleAttraction(actor).male ? attracted : notAttracted;
-    attraction.female = getMaleAttraction(actor).female ? attracted : notAttracted;
+    attraction.male = getMaleAttraction(actor).male;
+    attraction.female = getMaleAttraction(actor).female;
 
     return attraction;
   }
 
-  attraction.male = getFemaleAttraction(actor).male ? attracted : notAttracted;
-  attraction.female = getFemaleAttraction(actor).female ? attracted : notAttracted;
+  attraction.male = getFemaleAttraction(actor).male;
+  attraction.female = getFemaleAttraction(actor).female;
 
   return attraction;
 }
