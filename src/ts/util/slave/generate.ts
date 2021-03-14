@@ -56,7 +56,7 @@ import nationalities from '../../../data/nationalities/nationality';
 // Utility functions
 
 function gaussian(minimum: number, maximum: number, skew: number = 1): number {
-  return Math.floor(Number().gaussian(minimum, maximum, skew));
+  return Math.floor(minimum, maximum, skew));
 }
 
 // Generator functions
@@ -123,7 +123,7 @@ export function generateName(actor: Actor): Name {
 }
 
 export function generateIntelligence() {
-  const roll = Number().gaussianPair(25, 2.5);
+  const roll Pair(25, 2.5);
   const average = (roll[0] + roll[1]) / 2;
 
   return Math.ceil(average).clamp(-100, 100);
@@ -264,7 +264,7 @@ export function generateMouth(actor: Actor): Mouth {
   mouth.teeth.color = BaseColor.WHITE;
   mouth.teeth.type = teethTypes.random();
   // TODO:
-  mouth.throat.capacity = Number().gaussian(1000, 4000);
+  mouth.throat.capacity = gaussian(1000, 4000);
 
   return mouth;
 }
