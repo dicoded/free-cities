@@ -793,7 +793,7 @@ export function generateAttraction(actor: Actor): Attraction {
 }
 
 export function generateDrive(): number {
-  return Number().random(1, 100);
+  return Number().gaussian(1, 100);
 }
 
 export function generateAbstract(actor: Actor): Abstract {
