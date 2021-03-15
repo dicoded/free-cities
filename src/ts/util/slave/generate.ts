@@ -165,156 +165,90 @@ const eyeColors: EyeColor[][] = [
   ],
 ];
 
+const darkSkin: SkinColor[] = [
+  SkinColor.PURE_BLACK,
+  SkinColor.EBONY,
+  SkinColor.BLACK,
+  SkinColor.DARK_BROWN,
+  SkinColor.BROWN,
+  SkinColor.LIGHT_BROWN,
+  SkinColor.DARK_BEIGE,
+  SkinColor.BEIGE,
+  SkinColor.LIGHT_BEIGE,
+  SkinColor.DARK,
+];
+
+const mediumSkin: SkinColor[] = [
+  SkinColor.DARK_OLIVE,
+  SkinColor.BRONZE,
+  SkinColor.OLIVE,
+  SkinColor.TAN,
+  SkinColor.LIGHT_OLIVE,
+];
+
+const lightSkin: SkinColor[] = [
+  SkinColor.LIGHT,
+  SkinColor.FAIR,
+  SkinColor.VERY_FAIR,
+  SkinColor.EXTREMELY_FAIR,
+  SkinColor.PALE,
+  SkinColor.VERY_PALE,
+  SkinColor.EXTREMELY_PALE,
+  SkinColor.WHITE,
+  SkinColor.IVORY,
+  SkinColor.PURE_WHITE,
+];
+
+// TODO: could use some adjusting
 const skinColors: SkinColor[][] = [
   [ // Amerindian
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
+    ...darkSkin,
+    ...mediumSkin,
   ],
   [ // Asian
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
-    SkinColor.LIGHT,
-    SkinColor.FAIR,
-    SkinColor.VERY_FAIR,
-    SkinColor.EXTREMELY_FAIR,
-    SkinColor.PALE,
+    ...mediumSkin,
+    ...lightSkin,
   ],
   [ // black
-    SkinColor.PURE_BLACK,
-    SkinColor.EBONY,
-    SkinColor.BLACK,
-    SkinColor.DARK_BROWN,
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
+    ...darkSkin,
   ],
   [ // Indo-Aryan
-    SkinColor.DARK_BROWN,
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
+    ...darkSkin,
+    ...mediumSkin,
+    ...lightSkin,
   ],
   [ // Latin American
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
+    ...darkSkin,
+    ...mediumSkin,
   ],
   [ // Malay
-    SkinColor.DARK_BROWN,
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
+    ...darkSkin,
+    ...mediumSkin,
   ],
   [ // Middle Eastern
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
+    ...darkSkin,
+    ...mediumSkin,
+    ...lightSkin,
   ],
   [ // mixed race
-    SkinColor.DARK_BROWN,
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
-    SkinColor.LIGHT,
-    SkinColor.FAIR,
-    SkinColor.VERY_FAIR,
+    ...darkSkin,
+    ...mediumSkin,
+    ...lightSkin,
   ],
   [ // Pacific Islander
-    SkinColor.DARK_BROWN,
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
+    ...darkSkin,
+    ...mediumSkin,
   ],
   [ // Semitic
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
+    ...mediumSkin,
+    ...lightSkin,
   ],
   [ // Southern European
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
-    SkinColor.LIGHT,
-    SkinColor.FAIR,
-    SkinColor.VERY_FAIR,
-    SkinColor.EXTREMELY_FAIR,
-    SkinColor.PALE,
+    ...mediumSkin,
+    ...lightSkin,
   ],
   [ // white
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
-    SkinColor.LIGHT,
-    SkinColor.FAIR,
-    SkinColor.VERY_FAIR,
-    SkinColor.EXTREMELY_FAIR,
-    SkinColor.PALE,
-    SkinColor.VERY_PALE,
-    SkinColor.EXTREMELY_PALE,
-    SkinColor.WHITE,
-    SkinColor.IVORY,
-    SkinColor.PURE_WHITE,
+    ...lightSkin,
   ],
 ];
 
@@ -528,28 +462,34 @@ export function generateHair(actor: Actor): Hair {
   return hair;
 }
 
-function getEyeColor(actor: Actor): EyeColor {
+function getEyeColor(actor: Actor): { left: EyeColor, right: EyeColor } {
   const index = races.indexOf(actor.race);
-  const color = eyeColors[index].random();
+
+  const randomColor = eyeColors[index].random();
+  const brownOrRandomColor = gaussian(1, 100, 0.75) > 50 ? EyeColor.BROWN : randomColor;
+
+  const color = darkSkin.includes(actor.skin.color)
+    ? brownOrRandomColor
+    : randomColor;
+
+  const colors = {
+    left: color,
+    right: color,
+  };
+
+  if (Number().random(1, 100) === 1) { // 1% chance of heterochromia
+    colors.left = eyeColors[index].random();
+    colors.right = eyeColors[index].random();
+  }
+
+  return colors;
 }
 
 export function generateEyes(actor: Actor): Eyes {
   const eyes = new Eyes();
 
-  const index = races.indexOf(actor.race);
-  const heterochromia = Number().random(1, 100) === 1;
-
-  if (heterochromia) {
-    eyes.left.color.original = eyeColors[index].random();
-    eyes.right.color.original = eyeColors[index].random();
-
-    return eyes;
-  }
-
-  const color = eyeColors[index].random();
-
-  eyes.left.color.original = color;
-  eyes.right.color.original = color;
+  eyes.left.color.original = getEyeColor(actor).left;
+  eyes.right.color.original = getEyeColor(actor).right;
 
   return eyes;
 }
@@ -557,17 +497,11 @@ export function generateEyes(actor: Actor): Eyes {
 export function generateEars(): Ears {
   const ears = new Ears();
 
-  const roll = Number().random(1, 100);
+  ears.left.deaf = Number().random(1, 100) <= 2;
+  ears.right.deaf = Number().random(1, 100) <= 2;
 
-  if (roll <= 2) {
-    ears.left.deaf = true;
-    ears.right.deaf = true;
-  }
-
-  if (roll <= 5) {
-    ears.left.hardOfHearing = true;
-    ears.right.hardOfHearing = true;
-  }
+  ears.left.hardOfHearing = Number().random(1, 100) <= 5;
+  ears.right.hardOfHearing = Number().random(1, 100) <= 5;
 
   if (Number().random(1, 100) === 1) ears.left.shape = EarShape.DAMAGED;
   if (Number().random(1, 100) === 1) ears.right.shape = EarShape.DAMAGED;
@@ -796,15 +730,6 @@ export function generateScarring(): Scars {
 
 function getMarkings(actor: Actor): MarkingsType | null {
   const marking = gaussian(1, 100, 1.5) > 50 ? markingTypes.random() : null;
-  const lightSkin: SkinColor[] = [
-    SkinColor.FAIR,
-    SkinColor.VERY_FAIR,
-    SkinColor.EXTREMELY_FAIR,
-    SkinColor.PALE,
-    SkinColor.VERY_PALE,
-    SkinColor.EXTREMELY_PALE,
-    SkinColor.WHITE,
-  ];
 
   if (actor.hair.original === HairColor.RED && lightSkin.includes(actor.skin.color)) {
     return gaussian(1, 100, 0.75) > 50 ? markingTypes[Number().random(2, 3)] : marking;
