@@ -68,7 +68,7 @@ const races = [
   'white',
 ];
 
-// TODO: connect eye, hair, and skin colorsE
+// TODO: connect eye, hair, and skin colors
 
 // Utility functions
 
@@ -394,20 +394,24 @@ export function generateFace(actor: Actor): Face {
 
   const roll = Number().random(1, 10);
 
-  if (actor.sex === Sex.MALE) {
-    if (roll < 8) face.type = FaceShape.MASCULINE;
-    else if (roll === 8) face.type = FaceShape.ANDROGYNOUS;
-    else face.type = FaceShape.NORMAL;
-  } else if (roll < 2) face.type = FaceShape.ANDROGYNOUS;
-  else if (roll < 4) face.type = FaceShape.CUTE;
-  else if (roll < 6) face.type = FaceShape.EXOTIC;
-  else if (roll < 8) face.type = FaceShape.SENSUAL;
-  else face.type = FaceShape.NORMAL;
-
   face.eyes = generateEyes(actor);
   face.ears = generateEars();
   face.nose = generateNose();
   face.mouth = generateMouth(actor);
+
+  if (actor.sex === Sex.MALE) {
+    if (roll < 8) face.type = FaceShape.MASCULINE;
+    else if (roll === 8) face.type = FaceShape.ANDROGYNOUS;
+    else face.type = FaceShape.NORMAL;
+
+    return face;
+  }
+
+  if (roll < 2) face.type = FaceShape.ANDROGYNOUS;
+  else if (roll < 4) face.type = FaceShape.CUTE;
+  else if (roll < 6) face.type = FaceShape.EXOTIC;
+  else if (roll < 8) face.type = FaceShape.SENSUAL;
+  else face.type = FaceShape.NORMAL;
 
   return face;
 }
