@@ -667,12 +667,6 @@ export function generateNationality(actor: Actor): string {
 export function generateAge(): Age {
   const age = new Age();
 
-  if (get(max).age > 999) {
-    max.set({
-      age: 75,
-    });
-  }
-
   const roll = gaussian(get(min).age, get(max).age, 1.5);
 
   age.actual = roll;
