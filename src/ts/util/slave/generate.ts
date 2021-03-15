@@ -319,8 +319,6 @@ const fetishes: FetishType[] = [
   FetishType.SUBMISSIVE,
 ];
 
-// TODO: connect eye, hair, and skin colors
-
 // Utility functions
 
 function gaussian(minimum: number, maximum: number, skew: number = 1): number {
@@ -426,7 +424,13 @@ function getHairLength(actor: Actor) {
 
 function getHairColor(actor: Actor): HairColor {
   const index = races.indexOf(actor.race);
-  const color = hairColors[index].random();
+
+  const randomColor = hairColors[index].random();
+  const brownOrRandomColor = gaussian(1, 100, 0.75) > 50 ? HairColor.BROWN : randomColor;
+
+  const color = darkSkin.includes(actor.skin.color)
+    ? brownOrRandomColor
+    : randomColor;
 
   if (actor.age.physical > 70) {
     return gaussian(1, 100) > 50
@@ -435,12 +439,12 @@ function getHairColor(actor: Actor): HairColor {
   }
 
   if (actor.age.physical > 30) {
-    return gaussian(1, 100) > 100 - actor.age.physical
+    return gaussian(1, 100) > 100 - actor.age.physical // the older the actor, the higher the chance of gray hair
       ? [HairColor.GRAY, color].random()
       : color;
   }
 
-  return hairColors[index].random();
+  return color;
 }
 
 export function generateHair(actor: Actor): Hair {
