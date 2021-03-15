@@ -1,3 +1,5 @@
+// TODO: these tests could probably use some expanding
+
 import Hair from '../ts/classes/body/upper/Hairs';
 import Eyes from '../ts/classes/body/face/Eyes';
 import Ears from '../ts/classes/body/face/Ears';
@@ -92,7 +94,7 @@ expect.extend({
 describe('generateID', () => {
   it('returns a unique ID', () => {
     expect(generateID()).toBeGreaterThan(0);
-    expect(generateID()).not.toBe(generateID());
+    expect(generateID()).not.toBe(generateID()); // a generated ID should never be the same as an existing ID
   });
 });
 
@@ -258,11 +260,11 @@ describe('generateSkin', () => {
   });
 });
 
-// describe('generateNationality', () => {
-//   it('returns a nationality based on the given body\'s properties', () => {
-//     expect(generateNationality(new Slave())).toBeTruthy();
-//   });
-// });
+describe('generateNationality', () => {
+  it('returns a nationality based on the given body\'s properties', () => {
+    expect(generateNationality(new Slave())).toBeTruthy();
+  });
+});
 
 describe('generateAge', () => {
   it('returns a random age', () => {
@@ -339,9 +341,9 @@ describe('generateLower', () => {
   });
 });
 
-// describe('generateSlave', () => {
-//   it('creates a new slave instance based on the given body', () => {
-//     expect(generateSlave()).toBeInstanceOf(Slave);
-//     expect(generateSlave().mindbroken).toBeBoolean();
-//   });
-// });
+describe('generateSlave', () => {
+  it('creates a new slave instance based on the given body', () => {
+    expect(generateSlave()).toBeInstanceOf(Slave);
+    expect(generateSlave().mindbroken).toBeBoolean();
+  });
+});
