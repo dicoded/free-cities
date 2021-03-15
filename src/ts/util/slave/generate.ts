@@ -171,25 +171,77 @@ function getHairLength(actor: Actor) {
   return hair;
 }
 
+const hairColors: HairColor[][] = [
+  [ // Amerindian
+    HairColor.BLACK,
+  ],
+  [ // Asian
+    HairColor.BLACK,
+  ],
+  [ // black
+    HairColor.BLACK,
+  ],
+  [ // Indo-Aryan
+    HairColor.BLACK,
+  ],
+  [ // Latin American
+    HairColor.BLACK,
+    HairColor.BROWN,
+  ],
+  [ // Malay
+    HairColor.BLACK,
+  ],
+  [ // Middle Eastern
+    HairColor.BLACK,
+  ],
+  [ // mixed race
+    HairColor.BLACK,
+    HairColor.BROWN,
+  ],
+  [ // Pacific Islander
+    HairColor.BLACK,
+    HairColor.BROWN,
+  ],
+  [ // Semitic
+    HairColor.BLACK,
+    HairColor.BROWN,
+  ],
+  [ // Southern European
+    HairColor.BLACK,
+    HairColor.BROWN,
+    HairColor.BLOND,
+  ],
+  [ // white
+    HairColor.BLACK,
+    HairColor.BROWN,
+    HairColor.BLOND,
+    HairColor.RED,
+  ],
+];
+
+function getHairColor(actor: Actor): HairColor {
+  const index = races.indexOf(actor.race);
+  const color = hairColors[index].random();
+
+  if (actor.age.physical > 70) {
+    return gaussian(1, 100) > 50
+      ? HairColor.WHITE
+      : [HairColor.GRAY, HairColor.WHITE].random();
+  }
+
+  if (actor.age.physical > 30) {
+    return gaussian(1, 100) > 100 - actor.age.physical
+      ? [HairColor.GRAY, color].random()
+      : color;
+  }
+
+  return hairColors[index].random();
+}
+
 export function generateHair(actor: Actor): Hair {
   const hair = new Hair();
 
-  let hairColor: HairColor;
-
-  const darkHair = Number().random(1, 2) === 1 ? HairColor.BLACK : HairColor.BROWN;
-
-  // TODO: these will still need to be tweaked
-  switch (actor.race) {
-    case Race.ASIAN:
-      hairColor = HairColor.BLACK;
-      break;
-    case Race.WHITE:
-      hairColor = Number().random(1, 5) === 1 ? HairColor.RED : HairColor.BLOND;
-      break;
-    default:
-      hairColor = darkHair;
-      break;
-  }
+  const hairColor: HairColor = getHairColor(actor);
 
   hair.armpits.original = hairColor;
   hair.body.original = hairColor;
@@ -486,7 +538,7 @@ export function generateMarkings(): Markings {
 }
 
 // TODO: expand these
-const skinColors = [
+const skinColors: SkinColor[][] = [
   [ // Amerindian
     SkinColor.BROWN,
   ],
@@ -637,7 +689,7 @@ export function generatePersonality(): Personality {
   return personality;
 }
 
-const behavioralFlaws = [
+const behavioralFlaws: BehavioralFlaws[] = [
   BehavioralFlaws.ARROGANT,
   BehavioralFlaws.BITCHY,
   BehavioralFlaws.ODD,
@@ -649,7 +701,7 @@ const behavioralFlaws = [
   BehavioralFlaws.LIBERATED,
 ];
 
-const sexualFlaws = [
+const sexualFlaws: SexualFlaws[] = [
   SexualFlaws.HATES_ANAL,
   SexualFlaws.HATES_ORAL,
   SexualFlaws.HATES_PENETRATION,
@@ -661,7 +713,7 @@ const sexualFlaws = [
   SexualFlaws.JUDGEMENTAL,
 ];
 
-const behavioralQuirks = [
+const behavioralQuirks: BehavioralQuirks[] = [
   BehavioralQuirks.CONFIDENT,
   BehavioralQuirks.CUTTING,
   BehavioralQuirks.FUNNY,
@@ -673,7 +725,7 @@ const behavioralQuirks = [
   BehavioralQuirks.ADVOCATE,
 ];
 
-const sexualQuirks = [
+const sexualQuirks: SexualQuirks[] = [
   SexualQuirks.PAINAL_QUEEN,
   SexualQuirks.GAGFUCK_QUEEN,
   SexualQuirks.STRUGGLEFUCK_QUEEN,
