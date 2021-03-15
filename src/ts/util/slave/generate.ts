@@ -257,24 +257,72 @@ export function generateHair(actor: Actor): Hair {
   return hair;
 }
 
-// TODO: this
+const eyeColors: EyeColor[][] = [
+  [ // Amerindian
+    EyeColor.BROWN,
+  ],
+  [ // Asian
+    EyeColor.BROWN,
+  ],
+  [ // black
+    EyeColor.BROWN,
+    EyeColor.AMBER,
+  ],
+  [ // Indo-Aryan
+    EyeColor.BROWN,
+  ],
+  [ // Latin American
+    EyeColor.BROWN,
+  ],
+  [ // Malay
+    EyeColor.BROWN,
+  ],
+  [ // Middle Eastern
+    EyeColor.BROWN,
+  ],
+  [ // mixed race
+    EyeColor.BROWN,
+    EyeColor.AMBER,
+    EyeColor.GRAY,
+  ],
+  [ // Pacific Islander
+    EyeColor.BROWN,
+  ],
+  [ // Semitic
+    EyeColor.BROWN,
+  ],
+  [ // Southern European
+    EyeColor.BROWN,
+    EyeColor.AMBER,
+    EyeColor.BLUE,
+    EyeColor.GRAY,
+  ],
+  [ // white
+    EyeColor.AMBER,
+    EyeColor.BLUE,
+    EyeColor.BROWN,
+    EyeColor.GRAY,
+    EyeColor.GREEN,
+  ],
+];
+
 export function generateEyes(actor: Actor): Eyes {
   const eyes = new Eyes();
 
-  switch (actor.race) {
-    case Race.SOUTHERN_EUROPEAN:
-      eyes.left.color.original = EyeColor.GREEN;
-      eyes.right.color.original = EyeColor.GREEN;
-      break;
-    case Race.WHITE:
-      eyes.left.color.original = EyeColor.BLUE;
-      eyes.right.color.original = EyeColor.BLUE;
-      break;
-    default:
-      eyes.left.color.original = EyeColor.BROWN;
-      eyes.right.color.original = EyeColor.BROWN;
-      break;
+  const index = races.indexOf(actor.race);
+  const heterochromia = Number().random(1, 100) === 1;
+
+  if (heterochromia) {
+    eyes.left.color.original = eyeColors[index].random();
+    eyes.right.color.original = eyeColors[index].random();
+
+    return eyes;
   }
+
+  const color = eyeColors[index].random();
+
+  eyes.left.color.original = color;
+  eyes.right.color.original = color;
 
   return eyes;
 }
