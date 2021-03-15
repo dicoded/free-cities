@@ -15,7 +15,7 @@ import BehavioralFlaws from '../../classes/actor/flaws/Behavioral';
 import Eyes from '../../classes/body/face/Eyes';
 import Ears, { EarShape } from '../../classes/body/face/Ears';
 import Nose from '../../classes/body/face/Nose';
-import Mouth, { LipSize } from '../../classes/body/face/Mouth';
+import Mouth, { LipSize, TeethType } from '../../classes/body/face/Mouth';
 import Face, { FaceShape } from '../../classes/body/face/Face';
 
 import Hair from '../../classes/body/upper/Hairs';
@@ -52,6 +52,21 @@ import {
   SkinColor, HairColor, EyeColor, BaseColor,
 } from '../color';
 import nationalities from '../../../data/nationalities/nationality';
+
+const races = [
+  'Amerindian',
+  'Asian',
+  'black',
+  'Indo-Aryan',
+  'Latin American',
+  'Malay',
+  'Middle Eastern',
+  'mixed race',
+  'Pacific Islander',
+  'Semitic',
+  'Southern European',
+  'white',
+];
 
 // Utility functions
 
@@ -257,14 +272,17 @@ function getLipSize(actor: Actor): LipSize {
 export function generateMouth(actor: Actor): Mouth {
   const mouth = new Mouth();
 
-  const teethTypes = ['normal', 'crooked', 'gapped'];
+  const teethTypes = [
+    TeethType.NORMAL,
+    TeethType.CROOKED,
+    TeethType.GAPPED,
+  ];
 
   mouth.lips.color = BaseColor.PINK;
   mouth.lips.size = getLipSize(actor);
   mouth.teeth.color = BaseColor.WHITE;
-  mouth.teeth.type = teethTypes.random();
-  // TODO:
-  mouth.throat.capacity = gaussian(1000, 4000);
+  mouth.teeth.type = teethTypes[gaussian(0, 3, 2)];
+  mouth.throat.capacity = gaussian(1000, 4000, 4).round(200);
 
   return mouth;
 }
@@ -467,21 +485,6 @@ export function generateMarkings(): Markings {
   return markings;
 }
 
-const races = [
-  'Amerindian',
-  'Asian',
-  'black',
-  'Indo-Aryan',
-  'Latin American',
-  'Malay',
-  'Middle Eastern',
-  'mixed race',
-  'Pacific Islander',
-  'Semitic',
-  'Southern European',
-  'white',
-];
-
 // TODO: expand these
 const skinColors = [
   [ // Amerindian
@@ -594,8 +597,9 @@ export function generateMuscles(): number {
 export function generateCounter(actor: Actor): Counter {
   const counter = new Counter();
 
-  // TODO: this number may need to be tweaked
-  if (Number().random(1, 2) === 1) return counter; // 50% chance of slave being virgin
+  const chance = actor.age.actual < 18 ? actor.age.actual : actor.age.actual * 3;
+
+  if (Number().random(1, 100) < chance) return counter;
 
   if (actor.penis) {
     counter.anal.given.dick = gaussian(0, 20, 2);
