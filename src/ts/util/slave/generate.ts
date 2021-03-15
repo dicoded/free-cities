@@ -53,7 +53,7 @@ import {
 } from '../color';
 import nationalities from '../../../data/nationalities/nationality';
 
-const races = [
+const races: string[] = [
   'Amerindian',
   'Asian',
   'black',
@@ -66,6 +66,323 @@ const races = [
   'Semitic',
   'Southern European',
   'white',
+];
+
+const hairColors: HairColor[][] = [
+  [ // Amerindian
+    HairColor.BLACK,
+  ],
+  [ // Asian
+    HairColor.BLACK,
+  ],
+  [ // black
+    HairColor.BLACK,
+  ],
+  [ // Indo-Aryan
+    HairColor.BLACK,
+  ],
+  [ // Latin American
+    HairColor.BLACK,
+    HairColor.BROWN,
+  ],
+  [ // Malay
+    HairColor.BLACK,
+  ],
+  [ // Middle Eastern
+    HairColor.BLACK,
+  ],
+  [ // mixed race
+    HairColor.BLACK,
+    HairColor.BROWN,
+  ],
+  [ // Pacific Islander
+    HairColor.BLACK,
+    HairColor.BROWN,
+  ],
+  [ // Semitic
+    HairColor.BLACK,
+    HairColor.BROWN,
+  ],
+  [ // Southern European
+    HairColor.BLACK,
+    HairColor.BROWN,
+    HairColor.BLOND,
+  ],
+  [ // white
+    HairColor.BLACK,
+    HairColor.BROWN,
+    HairColor.BLOND,
+    HairColor.RED,
+  ],
+];
+
+const eyeColors: EyeColor[][] = [
+  [ // Amerindian
+    EyeColor.BROWN,
+  ],
+  [ // Asian
+    EyeColor.BROWN,
+  ],
+  [ // black
+    EyeColor.BROWN,
+    EyeColor.AMBER,
+  ],
+  [ // Indo-Aryan
+    EyeColor.BROWN,
+  ],
+  [ // Latin American
+    EyeColor.BROWN,
+  ],
+  [ // Malay
+    EyeColor.BROWN,
+  ],
+  [ // Middle Eastern
+    EyeColor.BROWN,
+  ],
+  [ // mixed race
+    EyeColor.BROWN,
+    EyeColor.AMBER,
+    EyeColor.GRAY,
+  ],
+  [ // Pacific Islander
+    EyeColor.BROWN,
+  ],
+  [ // Semitic
+    EyeColor.BROWN,
+  ],
+  [ // Southern European
+    EyeColor.BROWN,
+    EyeColor.AMBER,
+    EyeColor.BLUE,
+    EyeColor.GRAY,
+  ],
+  [ // white
+    EyeColor.AMBER,
+    EyeColor.BLUE,
+    EyeColor.BROWN,
+    EyeColor.GRAY,
+    EyeColor.GREEN,
+  ],
+];
+
+const skinColors: SkinColor[][] = [
+  [ // Amerindian
+    SkinColor.DARK_OLIVE,
+    SkinColor.BRONZE,
+    SkinColor.OLIVE,
+    SkinColor.TAN,
+    SkinColor.LIGHT_OLIVE,
+  ],
+  [ // Asian
+    SkinColor.TAN,
+    SkinColor.LIGHT_OLIVE,
+    SkinColor.LIGHT,
+    SkinColor.FAIR,
+    SkinColor.VERY_FAIR,
+    SkinColor.EXTREMELY_FAIR,
+    SkinColor.PALE,
+  ],
+  [ // black
+    SkinColor.PURE_BLACK,
+    SkinColor.EBONY,
+    SkinColor.BLACK,
+    SkinColor.DARK_BROWN,
+    SkinColor.BROWN,
+    SkinColor.LIGHT_BROWN,
+    SkinColor.DARK_BEIGE,
+  ],
+  [ // Indo-Aryan
+    SkinColor.DARK_BROWN,
+    SkinColor.BROWN,
+    SkinColor.LIGHT_BROWN,
+    SkinColor.DARK_BEIGE,
+    SkinColor.BEIGE,
+    SkinColor.LIGHT_BEIGE,
+    SkinColor.DARK,
+    SkinColor.DARK_OLIVE,
+    SkinColor.BRONZE,
+    SkinColor.OLIVE,
+    SkinColor.TAN,
+    SkinColor.LIGHT_OLIVE,
+  ],
+  [ // Latin American
+    SkinColor.BROWN,
+    SkinColor.LIGHT_BROWN,
+    SkinColor.DARK_BEIGE,
+    SkinColor.BEIGE,
+    SkinColor.LIGHT_BEIGE,
+    SkinColor.DARK,
+    SkinColor.DARK_OLIVE,
+    SkinColor.BRONZE,
+    SkinColor.OLIVE,
+    SkinColor.TAN,
+  ],
+  [ // Malay
+    SkinColor.DARK_BROWN,
+    SkinColor.BROWN,
+    SkinColor.LIGHT_BROWN,
+    SkinColor.DARK_BEIGE,
+    SkinColor.BEIGE,
+    SkinColor.LIGHT_BEIGE,
+    SkinColor.DARK,
+    SkinColor.DARK_OLIVE,
+    SkinColor.BRONZE,
+    SkinColor.OLIVE,
+  ],
+  [ // Middle Eastern
+    SkinColor.BROWN,
+    SkinColor.LIGHT_BROWN,
+    SkinColor.DARK_BEIGE,
+    SkinColor.BEIGE,
+    SkinColor.LIGHT_BEIGE,
+    SkinColor.DARK,
+    SkinColor.DARK_OLIVE,
+    SkinColor.BRONZE,
+    SkinColor.OLIVE,
+    SkinColor.TAN,
+  ],
+  [ // mixed race
+    SkinColor.DARK_BROWN,
+    SkinColor.BROWN,
+    SkinColor.LIGHT_BROWN,
+    SkinColor.DARK_BEIGE,
+    SkinColor.BEIGE,
+    SkinColor.LIGHT_BEIGE,
+    SkinColor.DARK,
+    SkinColor.DARK_OLIVE,
+    SkinColor.BRONZE,
+    SkinColor.OLIVE,
+    SkinColor.TAN,
+    SkinColor.LIGHT_OLIVE,
+    SkinColor.LIGHT,
+    SkinColor.FAIR,
+    SkinColor.VERY_FAIR,
+  ],
+  [ // Pacific Islander
+    SkinColor.DARK_BROWN,
+    SkinColor.BROWN,
+    SkinColor.LIGHT_BROWN,
+    SkinColor.DARK_BEIGE,
+    SkinColor.BEIGE,
+    SkinColor.LIGHT_BEIGE,
+    SkinColor.DARK,
+    SkinColor.DARK_OLIVE,
+    SkinColor.BRONZE,
+    SkinColor.OLIVE,
+  ],
+  [ // Semitic
+    SkinColor.LIGHT_BROWN,
+    SkinColor.DARK_BEIGE,
+    SkinColor.BEIGE,
+    SkinColor.LIGHT_BEIGE,
+    SkinColor.DARK,
+    SkinColor.DARK_OLIVE,
+    SkinColor.BRONZE,
+    SkinColor.OLIVE,
+    SkinColor.TAN,
+    SkinColor.LIGHT_OLIVE,
+  ],
+  [ // Southern European
+    SkinColor.BEIGE,
+    SkinColor.LIGHT_BEIGE,
+    SkinColor.DARK,
+    SkinColor.DARK_OLIVE,
+    SkinColor.BRONZE,
+    SkinColor.OLIVE,
+    SkinColor.TAN,
+    SkinColor.LIGHT_OLIVE,
+    SkinColor.LIGHT,
+    SkinColor.FAIR,
+    SkinColor.VERY_FAIR,
+    SkinColor.EXTREMELY_FAIR,
+    SkinColor.PALE,
+  ],
+  [ // white
+    SkinColor.LIGHT_BEIGE,
+    SkinColor.DARK,
+    SkinColor.DARK_OLIVE,
+    SkinColor.BRONZE,
+    SkinColor.OLIVE,
+    SkinColor.TAN,
+    SkinColor.LIGHT_OLIVE,
+    SkinColor.LIGHT,
+    SkinColor.FAIR,
+    SkinColor.VERY_FAIR,
+    SkinColor.EXTREMELY_FAIR,
+    SkinColor.PALE,
+    SkinColor.VERY_PALE,
+    SkinColor.EXTREMELY_PALE,
+    SkinColor.WHITE,
+    SkinColor.IVORY,
+    SkinColor.PURE_WHITE,
+  ],
+];
+
+const markingTypes: MarkingsType[] = [
+  MarkingsType.BEAUTY_MARK,
+  MarkingsType.BIRTHMARK,
+  MarkingsType.FRECKLED,
+  MarkingsType.HEAVILY_FRECKLED,
+];
+
+const behavioralFlaws: BehavioralFlaws[] = [
+  BehavioralFlaws.ARROGANT,
+  BehavioralFlaws.BITCHY,
+  BehavioralFlaws.ODD,
+  BehavioralFlaws.ANOREXIC,
+  BehavioralFlaws.HATES_MEN,
+  BehavioralFlaws.HATES_WOMEN,
+  BehavioralFlaws.GLUTTONOUS,
+  BehavioralFlaws.DEVOUT,
+  BehavioralFlaws.LIBERATED,
+];
+
+const sexualFlaws: SexualFlaws[] = [
+  SexualFlaws.HATES_ANAL,
+  SexualFlaws.HATES_ORAL,
+  SexualFlaws.HATES_PENETRATION,
+  SexualFlaws.SHAMEFAST,
+  SexualFlaws.IDEALISTIC,
+  SexualFlaws.REPRESSED,
+  SexualFlaws.APATHETIC,
+  SexualFlaws.CRUDE,
+  SexualFlaws.JUDGEMENTAL,
+];
+
+const behavioralQuirks: BehavioralQuirks[] = [
+  BehavioralQuirks.CONFIDENT,
+  BehavioralQuirks.CUTTING,
+  BehavioralQuirks.FUNNY,
+  BehavioralQuirks.FITNESS,
+  BehavioralQuirks.ADORES_MEN,
+  BehavioralQuirks.ADORES_WOMEN,
+  BehavioralQuirks.INSECURE,
+  BehavioralQuirks.SINFUL,
+  BehavioralQuirks.ADVOCATE,
+];
+
+const sexualQuirks: SexualQuirks[] = [
+  SexualQuirks.PAINAL_QUEEN,
+  SexualQuirks.GAGFUCK_QUEEN,
+  SexualQuirks.STRUGGLEFUCK_QUEEN,
+  SexualQuirks.TEASE,
+  SexualQuirks.ROMANTIC,
+  SexualQuirks.PERVERTED,
+  SexualQuirks.CARING,
+  SexualQuirks.UNFLINCHING,
+  SexualQuirks.SIZE_QUEEN,
+];
+
+const fetishes: FetishType[] = [
+  FetishType.BOOBS,
+  FetishType.BUTTSLUT,
+  FetishType.CUMSLUT,
+  FetishType.DOM,
+  FetishType.HUMILIATION,
+  FetishType.MASOCHIST,
+  FetishType.PREGNANCY,
+  FetishType.SADIST,
+  FetishType.SUBMISSIVE,
 ];
 
 // TODO: connect eye, hair, and skin colors
@@ -173,54 +490,6 @@ function getHairLength(actor: Actor) {
   return hair;
 }
 
-const hairColors: HairColor[][] = [
-  [ // Amerindian
-    HairColor.BLACK,
-  ],
-  [ // Asian
-    HairColor.BLACK,
-  ],
-  [ // black
-    HairColor.BLACK,
-  ],
-  [ // Indo-Aryan
-    HairColor.BLACK,
-  ],
-  [ // Latin American
-    HairColor.BLACK,
-    HairColor.BROWN,
-  ],
-  [ // Malay
-    HairColor.BLACK,
-  ],
-  [ // Middle Eastern
-    HairColor.BLACK,
-  ],
-  [ // mixed race
-    HairColor.BLACK,
-    HairColor.BROWN,
-  ],
-  [ // Pacific Islander
-    HairColor.BLACK,
-    HairColor.BROWN,
-  ],
-  [ // Semitic
-    HairColor.BLACK,
-    HairColor.BROWN,
-  ],
-  [ // Southern European
-    HairColor.BLACK,
-    HairColor.BROWN,
-    HairColor.BLOND,
-  ],
-  [ // white
-    HairColor.BLACK,
-    HairColor.BROWN,
-    HairColor.BLOND,
-    HairColor.RED,
-  ],
-];
-
 function getHairColor(actor: Actor): HairColor {
   const index = races.indexOf(actor.race);
   const color = hairColors[index].random();
@@ -259,54 +528,10 @@ export function generateHair(actor: Actor): Hair {
   return hair;
 }
 
-const eyeColors: EyeColor[][] = [
-  [ // Amerindian
-    EyeColor.BROWN,
-  ],
-  [ // Asian
-    EyeColor.BROWN,
-  ],
-  [ // black
-    EyeColor.BROWN,
-    EyeColor.AMBER,
-  ],
-  [ // Indo-Aryan
-    EyeColor.BROWN,
-  ],
-  [ // Latin American
-    EyeColor.BROWN,
-  ],
-  [ // Malay
-    EyeColor.BROWN,
-  ],
-  [ // Middle Eastern
-    EyeColor.BROWN,
-  ],
-  [ // mixed race
-    EyeColor.BROWN,
-    EyeColor.AMBER,
-    EyeColor.GRAY,
-  ],
-  [ // Pacific Islander
-    EyeColor.BROWN,
-  ],
-  [ // Semitic
-    EyeColor.BROWN,
-  ],
-  [ // Southern European
-    EyeColor.BROWN,
-    EyeColor.AMBER,
-    EyeColor.BLUE,
-    EyeColor.GRAY,
-  ],
-  [ // white
-    EyeColor.AMBER,
-    EyeColor.BLUE,
-    EyeColor.BROWN,
-    EyeColor.GRAY,
-    EyeColor.GREEN,
-  ],
-];
+function getEyeColor(actor: Actor): EyeColor {
+  const index = races.indexOf(actor.race);
+  const color = eyeColors[index].random();
+}
 
 export function generateEyes(actor: Actor): Eyes {
   const eyes = new Eyes();
@@ -569,17 +794,9 @@ export function generateScarring(): Scars {
   return scars;
 }
 
-const markingTypes: MarkingsType[] = [
-  MarkingsType.BEAUTY_MARK,
-  MarkingsType.BIRTHMARK,
-  MarkingsType.FRECKLED,
-  MarkingsType.HEAVILY_FRECKLED,
-];
-
 function getMarkings(actor: Actor): MarkingsType | null {
   const marking = gaussian(1, 100, 1.5) > 50 ? markingTypes.random() : null;
-
-  if (actor.hair.original === HairColor.RED && [
+  const lightSkin: SkinColor[] = [
     SkinColor.FAIR,
     SkinColor.VERY_FAIR,
     SkinColor.EXTREMELY_FAIR,
@@ -587,7 +804,9 @@ function getMarkings(actor: Actor): MarkingsType | null {
     SkinColor.VERY_PALE,
     SkinColor.EXTREMELY_PALE,
     SkinColor.WHITE,
-  ].includes(actor.skin.color)) {
+  ];
+
+  if (actor.hair.original === HairColor.RED && lightSkin.includes(actor.skin.color)) {
     return gaussian(1, 100, 0.75) > 50 ? markingTypes[Number().random(2, 3)] : marking;
   }
 
@@ -607,159 +826,6 @@ export function generateMarkings(actor: Actor): Markings {
 
   return markings;
 }
-
-const skinColors: SkinColor[][] = [
-  [ // Amerindian
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
-  ],
-  [ // Asian
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
-    SkinColor.LIGHT,
-    SkinColor.FAIR,
-    SkinColor.VERY_FAIR,
-    SkinColor.EXTREMELY_FAIR,
-    SkinColor.PALE,
-  ],
-  [ // black
-    SkinColor.PURE_BLACK,
-    SkinColor.EBONY,
-    SkinColor.BLACK,
-    SkinColor.DARK_BROWN,
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-  ],
-  [ // Indo-Aryan
-    SkinColor.DARK_BROWN,
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
-  ],
-  [ // Latin American
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-  ],
-  [ // Malay
-    SkinColor.DARK_BROWN,
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-  ],
-  [ // Middle Eastern
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-  ],
-  [ // mixed race
-    SkinColor.DARK_BROWN,
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
-    SkinColor.LIGHT,
-    SkinColor.FAIR,
-    SkinColor.VERY_FAIR,
-  ],
-  [ // Pacific Islander
-    SkinColor.DARK_BROWN,
-    SkinColor.BROWN,
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-  ],
-  [ // Semitic
-    SkinColor.LIGHT_BROWN,
-    SkinColor.DARK_BEIGE,
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
-  ],
-  [ // Southern European
-    SkinColor.BEIGE,
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
-    SkinColor.LIGHT,
-    SkinColor.FAIR,
-    SkinColor.VERY_FAIR,
-    SkinColor.EXTREMELY_FAIR,
-    SkinColor.PALE,
-  ],
-  [ // white
-    SkinColor.LIGHT_BEIGE,
-    SkinColor.DARK,
-    SkinColor.DARK_OLIVE,
-    SkinColor.BRONZE,
-    SkinColor.OLIVE,
-    SkinColor.TAN,
-    SkinColor.LIGHT_OLIVE,
-    SkinColor.LIGHT,
-    SkinColor.FAIR,
-    SkinColor.VERY_FAIR,
-    SkinColor.EXTREMELY_FAIR,
-    SkinColor.PALE,
-    SkinColor.VERY_PALE,
-    SkinColor.EXTREMELY_PALE,
-    SkinColor.WHITE,
-    SkinColor.IVORY,
-    SkinColor.PURE_WHITE,
-  ],
-];
 
 function getSkinColor(actor: Actor): SkinColor {
   const index = races.indexOf(actor.race);
@@ -867,54 +933,6 @@ export function generatePersonality(): Personality {
   return personality;
 }
 
-const behavioralFlaws: BehavioralFlaws[] = [
-  BehavioralFlaws.ARROGANT,
-  BehavioralFlaws.BITCHY,
-  BehavioralFlaws.ODD,
-  BehavioralFlaws.ANOREXIC,
-  BehavioralFlaws.HATES_MEN,
-  BehavioralFlaws.HATES_WOMEN,
-  BehavioralFlaws.GLUTTONOUS,
-  BehavioralFlaws.DEVOUT,
-  BehavioralFlaws.LIBERATED,
-];
-
-const sexualFlaws: SexualFlaws[] = [
-  SexualFlaws.HATES_ANAL,
-  SexualFlaws.HATES_ORAL,
-  SexualFlaws.HATES_PENETRATION,
-  SexualFlaws.SHAMEFAST,
-  SexualFlaws.IDEALISTIC,
-  SexualFlaws.REPRESSED,
-  SexualFlaws.APATHETIC,
-  SexualFlaws.CRUDE,
-  SexualFlaws.JUDGEMENTAL,
-];
-
-const behavioralQuirks: BehavioralQuirks[] = [
-  BehavioralQuirks.CONFIDENT,
-  BehavioralQuirks.CUTTING,
-  BehavioralQuirks.FUNNY,
-  BehavioralQuirks.FITNESS,
-  BehavioralQuirks.ADORES_MEN,
-  BehavioralQuirks.ADORES_WOMEN,
-  BehavioralQuirks.INSECURE,
-  BehavioralQuirks.SINFUL,
-  BehavioralQuirks.ADVOCATE,
-];
-
-const sexualQuirks: SexualQuirks[] = [
-  SexualQuirks.PAINAL_QUEEN,
-  SexualQuirks.GAGFUCK_QUEEN,
-  SexualQuirks.STRUGGLEFUCK_QUEEN,
-  SexualQuirks.TEASE,
-  SexualQuirks.ROMANTIC,
-  SexualQuirks.PERVERTED,
-  SexualQuirks.CARING,
-  SexualQuirks.UNFLINCHING,
-  SexualQuirks.SIZE_QUEEN,
-];
-
 export function generateFlaws(): Flaws {
   const flaws = new Flaws();
 
@@ -959,18 +977,6 @@ export function generateQuirks(actor: Actor): Quirks {
 
 export function generateFetish(): Fetish | null {
   const fetish = new Fetish();
-
-  const fetishes = [
-    FetishType.BOOBS,
-    FetishType.BUTTSLUT,
-    FetishType.CUMSLUT,
-    FetishType.DOM,
-    FetishType.HUMILIATION,
-    FetishType.MASOCHIST,
-    FetishType.PREGNANCY,
-    FetishType.SADIST,
-    FetishType.SUBMISSIVE,
-  ];
 
   if (Number().random(1, 10) > 1) return null;
 
