@@ -563,24 +563,41 @@ export function generateScarring(): Scars {
   return scars;
 }
 
-// TODO: rework to take skin and hair types into account and have markings match
-export function generateMarkings(): Markings {
+const markingTypes: MarkingsType[] = [
+  MarkingsType.BEAUTY_MARK,
+  MarkingsType.BIRTHMARK,
+  MarkingsType.FRECKLED,
+  MarkingsType.HEAVILY_FRECKLED,
+];
+
+function getMarkings(actor: Actor): MarkingsType | null {
+  const marking = gaussian(1, 100, 1.5) > 50 ? markingTypes.random() : null;
+
+  if (actor.hair.original === HairColor.RED && [
+    SkinColor.FAIR,
+    SkinColor.VERY_FAIR,
+    SkinColor.EXTREMELY_FAIR,
+    SkinColor.PALE,
+    SkinColor.VERY_PALE,
+    SkinColor.EXTREMELY_PALE,
+    SkinColor.WHITE,
+  ].includes(actor.skin.color)) {
+    return gaussian(1, 100, 0.75) > 50 ? markingTypes[Number().random(2, 3)] : marking;
+  }
+
+  return marking;
+}
+
+export function generateMarkings(actor: Actor): Markings {
   const markings = new Markings();
 
-  const markingTypes = [
-    MarkingsType.BEAUTY_MARK,
-    MarkingsType.BIRTHMARK,
-    MarkingsType.FRECKLED,
-    MarkingsType.HEAVILY_FRECKLED,
-  ];
-
-  markings.arms = markingTypes.random();
-  markings.belly = markingTypes.random();
-  markings.chest = markingTypes.random();
-  markings.crotch = markingTypes.random();
-  markings.face = markingTypes.random();
-  markings.legs = markingTypes.random();
-  markings.shoulders = markingTypes.random();
+  markings.arms = getMarkings(actor);
+  markings.belly = getMarkings(actor);
+  markings.chest = getMarkings(actor);
+  markings.crotch = getMarkings(actor);
+  markings.face = getMarkings(actor);
+  markings.legs = getMarkings(actor);
+  markings.shoulders = getMarkings(actor);
 
   return markings;
 }
@@ -635,8 +652,8 @@ export function generateSkin(actor: Actor): Skin {
   const skin = new Skin();
 
   skin.color = getSkinColor(actor);
+  skin.markings = generateMarkings(actor);
   skin.scars = generateScarring();
-  skin.markings = generateMarkings();
 
   return skin;
 }

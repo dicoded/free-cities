@@ -247,7 +247,7 @@ describe('generateScarring', () => {
 
 describe('generateMarkings', () => {
   it('returns a markings instance with random marks', () => {
-    expect(generateMarkings()).toBeInstanceOf(Markings);
+    expect(generateMarkings(new Slave())).toBeInstanceOf(Markings);
   });
 });
 
