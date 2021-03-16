@@ -7,17 +7,11 @@ function fuckdoll(slave: Slave): string {
 
   text.push(`${She} is`);
 
-  if (slave.fuckdoll <= 10) {
-    text.push('poorly adapted to life as a living sex toy.');
-  } else if (slave.fuckdoll <= 30) {
-    text.push('moderately adapted to life as a living sex toy.');
-  } else if (slave.fuckdoll <= 60) {
-    text.push('well adapted to life as a living sex toy.');
-  } else if (slave.fuckdoll < 100) {
-    text.push('almost perfectly adapted to life as a living sex toy.');
-  } else {
-    text.push('perfectly adapted to life as a living sex toy.');
-  }
+  if (slave.fuckdoll <= 10) text.push('poorly adapted to life as a living sex toy.');
+  else if (slave.fuckdoll <= 30) text.push('moderately adapted to life as a living sex toy.');
+  else if (slave.fuckdoll <= 60) text.push('well adapted to life as a living sex toy.');
+  else if (slave.fuckdoll < 100) text.push('almost perfectly adapted to life as a living sex toy.');
+  else text.push('perfectly adapted to life as a living sex toy.');
 
   text.push('Entertainment and prostitution skills are irrelevant for a Fuckdoll.');
 
