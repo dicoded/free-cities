@@ -259,6 +259,7 @@ const markingTypes: MarkingsType[] = [
   MarkingsType.HEAVILY_FRECKLED,
 ];
 
+// TODO: most likely a better way to do this
 const behavioralFlaws: BehavioralFlaws[] = [
   BehavioralFlaws.ARROGANT,
   BehavioralFlaws.BITCHY,
@@ -368,6 +369,7 @@ export function generateGenes(actor: Actor): Genes {
   return Genes.XX;
 }
 
+// TODO: this
 export function generateGenetics(): Genetics {
   const genetics = new Genetics();
 
@@ -651,12 +653,14 @@ export function generateCrotch(actor: Actor): Crotch {
   return crotch;
 }
 
+// TODO:
 export function generateButt(): Butt {
   const butt = new Butt();
 
   return butt;
 }
 
+// TODO:
 export function generateLegs(): Legs {
   const legs = new Legs();
 
@@ -937,6 +941,7 @@ function isGay(): boolean {
 const attracted = Number().random(66, 100);
 const notAttracted = Number().random(1, 65);
 
+// TODO: could probably be improved
 function getMaleAttraction(actor: Actor): {male: number, female: number} {
   if (isAsexual()) return { male: notAttracted, female: notAttracted };
 

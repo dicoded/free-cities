@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { get } from 'svelte/store';
 
 import eyes from './eyes';
