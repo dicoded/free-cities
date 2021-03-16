@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import BehavioralFlaws from '../../../classes/actor/flaws/Behavioral';
 import SexualFlaws from '../../../classes/actor/flaws/Sexual';
 
@@ -18,6 +17,7 @@ function getFlawArrogant(slave: Slave): string {
   if (slave.devotion < -20 && slave.trust >= -20) return `${He} is arrogant and clings to ${his} dignity.`;
   if (slave.devotion < -20) return `${He} is still arrogant at heart, but does ${his} best to hide it out of fear.`;
   if (slave.devotion <= 20) return `${He} is arrogant and seems to think slavery beneath ${him}.`;
+
   return `Despite being well broken, ${he} seems to retain hints of arrogance.`;
 }
 
@@ -27,6 +27,7 @@ function getFlawBitchy(slave: Slave): string {
   if (slave.devotion < -20 && slave.trust >= -20) return `${He} is bitchy and insults you every chance ${he} gets.`;
   if (slave.devotion < -20) return `${He} is still bitchy at times, but does ${his} best to keep quiet out of fear.`;
   if (slave.devotion <= 20) return `${He} is bitchy and constantly tries to get a word in edgewise.`;
+
   return `Since ${he} is well broken, ${he} tries to confine ${his} bitchy remarks to your other slaves.`;
 }
 
@@ -71,6 +72,7 @@ function getFlawLiberated(slave: Slave): string {
   if (slave.devotion < -20 && slave.trust >= -20) return `${He} strongly believes that slavery is wrong, and resists it as best ${he} can.`;
   if (slave.devotion < -20) return `${He} strongly believes that slavery is wrong, but usually keeps quiet out of fear.`;
   if (slave.devotion <= 20) return `${He} strongly believes that slavery is wrong, and rarely misses a chance to complain about it.`;
+
   return `${He} strongly believes that slavery is wrong, but has learned to keep it to ${himself}.`;
 }
 
