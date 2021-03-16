@@ -40,7 +40,8 @@
   import prestige from '../../ts/util/slave/desc/prestige';
   import quirks from '../../ts/util/slave/desc/quirks';
   import race from '../../ts/util/slave/desc/race';
-  import relationRival from '../../ts/util/slave/desc/relationRival';
+  import relationship from '../../ts/util/slave/desc/relationship';
+  import rivalry from '../../ts/util/slave/desc/rivalry';
   import scars from '../../ts/util/slave/desc/scars';
   import score from '../../ts/util/slave/desc/score';
   import sex from '../../ts/util/slave/desc/sex';
@@ -69,7 +70,8 @@
 {age(slave)}
 {health(slave)}
 {mind(slave)}
-{relationRival(slave)}
+{relationship(slave)}
+{rivalry(slave)}
 {career(slave)}
 {prestige(slave)}
 {size(slave)}
