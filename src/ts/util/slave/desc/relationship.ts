@@ -9,7 +9,7 @@ export default function relationship(actor: Actor): string {
   if (actor.relationship.type > RelationshipType.SLUT && actor.closeRelatives > 0) {
     const lover = getActor(actor.relationship.target);
 
-    if (lover !== undefined && actor.relativeTo(lover) !== null) {
+    if (lover && actor.relativeTo(lover)) {
       return `${He} is in an incestuous relationship with ${his} ${actor.relativeTo(lover)}, ${lover.name.firstLast}.`;
     }
   }
