@@ -44,7 +44,7 @@ function entertainment(slave: Slave): string {
   return `${She} is a master of entertainment and`;
 }
 
-function prostitution(slave: Slave): string {
+function whoring(slave: Slave): string {
   const { She, girl } = slave.pronouns;
 
   const notEntertaining = slave.skills.entertainment <= 10;
@@ -63,11 +63,9 @@ function prostitution(slave: Slave): string {
 export default function skills(slave: Slave): string {
   const text: string[] = [];
 
-  if (slave.isFuckdoll) {
-    return fuckdoll(slave);
-  }
+  if (slave.isFuckdoll) return fuckdoll(slave);
 
-  text.push(entertainment(slave), prostitution(slave));
+  text.push(entertainment(slave), whoring(slave));
 
   return text.join(' ');
 }
