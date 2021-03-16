@@ -18,53 +18,92 @@ import { Sex } from '../../../classes/body/nonphysical/Nonphysical';
 
 const PC = get(player);
 
-function behavioralFlaws(slave: Slave): string {
+function getFlawAnorexic(slave: Slave): string {
+  const { He } = slave.pronouns;
+
+  return `${He} suffers from anorexia.`;
+}
+
+function getFlawArrogant(slave: Slave): string {
   const {
     He, he, his, him,
   } = slave.pronouns;
 
+  if (slave.devotion < -20 && slave.trust >= -20) return `${He} is arrogant and clings to ${his} dignity.`;
+  if (slave.devotion < -20) return `${He} is still arrogant at heart, but does ${his} best to hide it out of fear.`;
+  if (slave.devotion <= 20) return `${He} is arrogant and seems to think slavery beneath ${him}.`;
+  return `Despite being well broken, ${he} seems to retain hints of arrogance.`;
+}
+
+function getFlawBitchy(slave: Slave): string {
+  const { He, he, his } = slave.pronouns;
+
+  if (slave.devotion < -20 && slave.trust >= -20) return `${He} is bitchy and insults you every chance ${he} gets.`;
+  if (slave.devotion < -20) return `${He} is still bitchy at times, but does ${his} best to keep quiet out of fear.`;
+  if (slave.devotion <= 20) return `${He} is bitchy and constantly tries to get a word in edgewise.`;
+  return `Since ${he} is well broken, ${he} tries to confine ${his} bitchy remarks to your other slaves.`;
+}
+
+function getFlawDevout(slave: Slave): string {
+  const { He, his, himself } = slave.pronouns;
+
   const text: string[] = [];
 
-  if (slave.flaws.behavioral) {
-    switch (slave.flaws.behavioral) {
-      case BehavioralFlaws.ANOREXIC:
-        return `${He} suffers from anorexia.`;
-      case BehavioralFlaws.ARROGANT:
-        if (slave.devotion < -20 && slave.trust >= -20) return `${He} is arrogant and clings to ${his} dignity.`;
-        if (slave.devotion < -20) return `${He} is still arrogant at heart, but does ${his} best to hide it out of fear.`;
-        if (slave.devotion <= 20) return `${He} is arrogant and seems to think slavery beneath ${him}.`;
-        return `Despite being well broken, ${he} seems to retain hints of arrogance.`;
-      case BehavioralFlaws.BITCHY:
-        if (slave.devotion < -20 && slave.trust >= -20) return `${He} is bitchy and insults you every chance ${he} gets.`;
-        if (slave.devotion < -20) return `${He} is still bitchy at times, but does ${his} best to keep quiet out of fear.`;
-        if (slave.devotion <= 20) return `${He} is bitchy and constantly tries to get a word in edgewise.`;
-        return `Since ${he} is well broken, ${he} tries to confine ${his} bitchy remarks to your other slaves.`;
-      case BehavioralFlaws.DEVOUT:
-        text.push(`${He} is devoutly religious,`);
-        if (slave.devotion < -20 && slave.trust >= -20) text.push(`and uses ${his} faith as a wellspring of resistance.`);
-        else if (slave.devotion < -20) text.push(`and uses ${his} faith as a place of refuge.`);
-        else if (slave.devotion <= 20) text.push(`and uses ${his} faith as a private place within ${him}self.`);
-        else text.push(`but has learned to keep ${his} faith private.`);
-        return text.join(' ');
-      case BehavioralFlaws.GLUTTONOUS:
-        return `${He} tends to overeat whenever ${he} can, reacting to the rigors of sexual slavery with overeating.`;
-      case BehavioralFlaws.HATES_MEN:
-        // TODO: expand with fetishes
-        return `${He} strongly dislikes being around men.`;
-      case BehavioralFlaws.HATES_WOMEN:
-        // TODO: expand with fetishes
-        return `${He} strongly dislikes being around women.`;
-      case BehavioralFlaws.LIBERATED:
-        if (slave.devotion < -20 && slave.trust >= -20) return `${He} strongly believes that slavery is wrong, and resists it as best ${he} can.`;
-        if (slave.devotion < -20) return `${He} strongly believes that slavery is wrong, but usually keeps quiet out of fear.`;
-        if (slave.devotion <= 20) return `${He} strongly believes that slavery is wrong, and rarely misses a chance to complain about it.`;
-        return `${He} strongly believes that slavery is wrong, but has learned to keep it to ${him}self.`;
-      case BehavioralFlaws.ODD:
-        return `${He} behaves oddly, saying and doing random things.`;
-      default:
-        throw new TypeError(`Unknown .behavioralFlaw '${slave.flaws.behavioral}' found in behavioralFlaws().`);
-    }
-  }
+  text.push(`${He} is devoutly religious,`);
+
+  if (slave.devotion < -20 && slave.trust >= -20) text.push(`and uses ${his} faith as a wellspring of resistance.`);
+  else if (slave.devotion < -20) text.push(`and uses ${his} faith as a place of refuge.`);
+  else if (slave.devotion <= 20) text.push(`and uses ${his} faith as a private place within ${himself}.`);
+  else text.push(`but has learned to keep ${his} faith private.`);
+
+  return text.join(' ');
+}
+
+function getFlawGluttonous(slave: Slave): string {
+  const { He, he } = slave.pronouns;
+
+  return `${He} tends to overeat whenever ${he} can, reacting to the rigors of sexual slavery with overeating.`;
+}
+
+function getFlawHatesMen(slave: Slave): string {
+  const { He } = slave.pronouns;
+
+  // TODO: expand with fetishes
+  return `${He} strongly dislikes being around men.`;
+}
+
+function getFlawHatesWomen(slave: Slave): string {
+  const { He } = slave.pronouns;
+
+  // TODO: expand with fetishes
+  return `${He} strongly dislikes being around women.`;
+}
+
+function getFlawLiberated(slave: Slave): string {
+  const { He, he, himself } = slave.pronouns;
+
+  if (slave.devotion < -20 && slave.trust >= -20) return `${He} strongly believes that slavery is wrong, and resists it as best ${he} can.`;
+  if (slave.devotion < -20) return `${He} strongly believes that slavery is wrong, but usually keeps quiet out of fear.`;
+  if (slave.devotion <= 20) return `${He} strongly believes that slavery is wrong, and rarely misses a chance to complain about it.`;
+  return `${He} strongly believes that slavery is wrong, but has learned to keep it to ${himself}.`;
+}
+
+function getFlawOdd(slave: Slave): string {
+  const { He } = slave.pronouns;
+
+  return `${He} behaves oddly, saying and doing random things.`;
+}
+
+function behavioralFlaws(slave: Slave): string {
+  if (slave.flaws.behavioral === BehavioralFlaws.ANOREXIC) return getFlawAnorexic(slave);
+  if (slave.flaws.behavioral === BehavioralFlaws.ARROGANT) return getFlawArrogant(slave);
+  if (slave.flaws.behavioral === BehavioralFlaws.BITCHY) return getFlawBitchy(slave);
+  if (slave.flaws.behavioral === BehavioralFlaws.DEVOUT) return getFlawDevout(slave);
+  if (slave.flaws.behavioral === BehavioralFlaws.GLUTTONOUS) return getFlawGluttonous(slave);
+  if (slave.flaws.behavioral === BehavioralFlaws.HATES_MEN) return getFlawHatesMen(slave);
+  if (slave.flaws.behavioral === BehavioralFlaws.HATES_WOMEN) return getFlawHatesWomen(slave);
+  if (slave.flaws.behavioral === BehavioralFlaws.LIBERATED) return getFlawLiberated(slave);
+  if (slave.flaws.behavioral === BehavioralFlaws.ODD) return getFlawOdd(slave);
 
   // TODO: add text here?
   return '';

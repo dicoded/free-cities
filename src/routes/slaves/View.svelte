@@ -77,6 +77,8 @@
 {size(slave)}
 {skin(slave)}
 
+{skills(slave)}
+
 {armwear(slave)}
 {belly(slave)}
 {butt(slave)}
@@ -111,6 +113,5 @@
 {score(slave)}
 {sex(slave)}
 {shoulders(slave)}
-{skills(slave)}
 {waist(slave)}
 {weight(slave)}
