@@ -92,7 +92,7 @@ interface IPersonality {
   feeling: number;
 
   /**
-   * How judgemental the slave is, on a scale from 0 - 100.
+   * How judging the slave is, on a scale from 0 - 100.
    *
    * People with this trait typically prefer to have a set schedule and rules to follow, and like to have plans made
    * in advance. They typically prefer to have detailed, step-by-step instructions, and prefer to have their options

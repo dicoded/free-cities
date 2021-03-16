@@ -136,15 +136,18 @@ Number.prototype.clamp = function clamp(this: number, min: number, max: number):
   return Math.min(Math.max(min, this), max);
 };
 
-Number.prototype.gaussian = function gaussian(this: number,
+Number.prototype.gaussian = function gaussian(
+  this: number,
   min: number = 0,
   max: number = 0,
-  skew: number = 0): number {
+  skew: number = 1,
+): number {
   let u = 0;
   let v = 0;
 
   while (u === 0) u = Math.random();
   while (v === 0) v = Math.random();
+
   let num = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
 
   num = num / 10.0 + 0.5;

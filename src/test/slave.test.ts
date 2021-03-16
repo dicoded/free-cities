@@ -1,3 +1,5 @@
+// TODO: these tests could probably use some expanding
+
 import Hair from '../ts/classes/body/upper/Hairs';
 import Eyes from '../ts/classes/body/face/Eyes';
 import Ears from '../ts/classes/body/face/Ears';
@@ -26,6 +28,8 @@ import Abstract from '../ts/classes/body/nonphysical/Nonphysical';
 import Upper from '../ts/classes/body/upper/UpperBody';
 import Lower from '../ts/classes/body/lower/LowerBody';
 import Slave from '../ts/classes/slave/Slave';
+
+import '../ts/util/extensions/array.extension';
 
 import {
   generateID,
@@ -90,7 +94,7 @@ expect.extend({
 describe('generateID', () => {
   it('returns a unique ID', () => {
     expect(generateID()).toBeGreaterThan(0);
-    expect(generateID()).not.toBe(generateID());
+    expect(generateID()).not.toBe(generateID()); // a generated ID should never be the same as an existing ID
   });
 });
 
@@ -159,7 +163,7 @@ describe('generateNose', () => {
 
 describe('generateMouth', () => {
   it('returns a new random mouth', () => {
-    expect(generateMouth()).toBeInstanceOf(Mouth);
+    expect(generateMouth(new Slave())).toBeInstanceOf(Mouth);
   });
 });
 
@@ -245,7 +249,7 @@ describe('generateScarring', () => {
 
 describe('generateMarkings', () => {
   it('returns a markings instance with random marks', () => {
-    expect(generateMarkings()).toBeInstanceOf(Markings);
+    expect(generateMarkings(new Slave())).toBeInstanceOf(Markings);
   });
 });
 
@@ -256,11 +260,11 @@ describe('generateSkin', () => {
   });
 });
 
-// describe('generateNationality', () => {
-//   it('returns a nationality based on the given body\'s properties', () => {
-//     expect(generateNationality(new Slave())).toBeTruthy();
-//   });
-// });
+describe('generateNationality', () => {
+  it('returns a nationality based on the given body\'s properties', () => {
+    expect(generateNationality(new Slave())).toBeTruthy();
+  });
+});
 
 describe('generateAge', () => {
   it('returns a random age', () => {
@@ -306,8 +310,8 @@ describe('generateMuscles', () => {
 
 describe('generateCounter', () => {
   it('returns a random counter instance based on the given body\'s properties', () => {
-    expect(generateCounter()).toBeInstanceOf(Counter);
-    expect(generateCounter().anal.given.dick).toBeGreaterThanOrEqual(0);
+    expect(generateCounter(new Slave())).toBeInstanceOf(Counter);
+    expect(generateCounter(new Slave()).anal.given.dick).toBeGreaterThanOrEqual(0);
   });
 });
 
@@ -337,9 +341,9 @@ describe('generateLower', () => {
   });
 });
 
-// describe('generateSlave', () => {
-//   it('creates a new slave instance based on the given body', () => {
-//     expect(generateSlave()).toBeInstanceOf(Slave);
-//     expect(generateSlave().mindbroken).toBeBoolean();
-//   });
-// });
+describe('generateSlave', () => {
+  it('creates a new slave instance based on the given body', () => {
+    expect(generateSlave()).toBeInstanceOf(Slave);
+    expect(generateSlave().mindbroken).toBeBoolean();
+  });
+});

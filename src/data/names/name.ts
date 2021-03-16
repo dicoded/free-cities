@@ -4,8 +4,8 @@
 
 import afghan from './afghan.json';
 import africanAmerican from './africanAmerican.json';
-import algerian from './algerian.json';
 import albanian from './albanian.json';
+import algerian from './algerian.json';
 import ancientEgyptian from './ancientEgyptian.json';
 import andorran from './andorran.json';
 import angolan from './angolan.json';
@@ -246,8 +246,8 @@ import zimbabwean from './zimbabwean.json';
 
 export const { afghanMaleNames, afghanFemaleNames, afghanSurnames } = afghan;
 export const { africanAmericanMaleNames, africanAmericanFemaleNames, africanAmericanSurnames } = africanAmerican;
-export const { algerianMaleNames, algerianFemaleNames, algerianSurnames } = algerian;
 export const { albanianMaleNames, albanianFemaleNames, albanianSurnames } = albanian;
+export const { algerianMaleNames, algerianFemaleNames, algerianSurnames } = algerian;
 export const { ancientEgyptianMaleNames, ancientEgyptianFemaleNames } = ancientEgyptian;
 export const { andorranMaleNames, andorranFemaleNames, andorranSurnames } = andorran;
 export const { angolanMaleNames, angolanFemaleNames, angolanSurnames } = angolan;

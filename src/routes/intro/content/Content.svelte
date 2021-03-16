@@ -9,7 +9,7 @@
   import Other from './other/Other.svelte';
 
   import see from '../../../stores/see.store';
-  import { minimumAge } from '../../../stores/global.store';
+  import { min } from '../../../stores/global.store';
 </script>
 
 {#if $see.content}
@@ -23,7 +23,7 @@
       <Gender />
       {#if $see.dicks !== null}
         <Age />
-        {#if $minimumAge}
+        {#if $min.age}
           <Other />
           {#if $see.incest !== null}
             <div class="flex mt-8">

@@ -6,7 +6,7 @@ export enum EarShape {
   USHI = 'ushi',
 }
 
-interface Ear {
+interface IEar {
   /** The shape of the body's ear. */
   shape: EarShape;
 
@@ -19,16 +19,16 @@ interface Ear {
 
 interface IEars {
   /** Properties pertaining to the body's left ear. */
-  left: Ear;
+  left: IEar;
 
   /** Properties pertaining to the body's right ear. */
-  right: Ear;
+  right: IEar;
 }
 
 export default class Ears implements IEars {
-  left: Ear;
+  left: IEar;
 
-  right: Ear;
+  right: IEar;
 
   constructor() {
     this.left = {

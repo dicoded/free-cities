@@ -223,7 +223,7 @@ export default class Actor extends Body implements IActor {
     else this.daughters.add(actor.ID);
   }
 
-  relativeTo(actor: Actor | undefined): string | null {
+  relativeTo(actor: Actor): string | null {
     if (!actor) return null;
 
     if (this.isChildOf(actor) && actor.sex === Sex.MALE) return 'son';
@@ -328,4 +328,17 @@ export default class Actor extends Body implements IActor {
 
   // get totalRelatives(): number {
   // }
+
+  get isAsexual(): boolean {
+    return this.attraction.male <= 65 && this.attraction.female <= 65;
+  }
+
+  get isBisexual(): boolean {
+    return this.attraction.male > 65 && this.attraction.female > 65;
+  }
+
+  get isGay(): boolean {
+    return (this.sex === Sex.MALE && this.attraction.male > 65)
+      || (this.sex === Sex.FEMALE && this.attraction.female > 65);
+  }
 }

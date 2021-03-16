@@ -35,8 +35,6 @@ export const difficulty = writable({
 
 export const trade = writable(TradeType.GLOBAL);
 
-export const minimumAge = writable(18);
-
 export const makeDicks = writable(false);
 
 export const max = writable({
