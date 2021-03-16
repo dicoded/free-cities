@@ -42,5 +42,5 @@ export const max = writable({
 });
 
 export const min = writable({
-  age: 3,
+  age: 18,
 });
