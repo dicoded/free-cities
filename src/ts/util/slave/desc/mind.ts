@@ -2,9 +2,6 @@ import { get } from 'svelte/store';
 
 import eyes from './eyes';
 
-import BehavioralQuirks from '../../../classes/actor/quirks/Behavioral';
-import SexualQuirks from '../../../classes/actor/quirks/Sexual';
-
 import BehavioralFlaws from '../../../classes/actor/flaws/Behavioral';
 import SexualFlaws from '../../../classes/actor/flaws/Sexual';
 import { FetishType } from '../../../classes/actor/Fetish';
@@ -16,73 +13,6 @@ import player from '../../../../stores/player.store';
 import { Sex } from '../../../classes/body/nonphysical/Nonphysical';
 
 const PC = get(player);
-
-function behavioralQuirks(slave: Slave): string {
-  const {
-    He, he, his, him,
-  } = slave.pronouns;
-
-  if (slave.quirks.behavioral) {
-    switch (slave.quirks.behavioral) {
-      case BehavioralQuirks.ADORES_MEN:
-        return `${He} adores men, and loves spending time with them.`;
-      case BehavioralQuirks.ADORES_WOMEN:
-        return `${He} adores women, and loves spending time with them.`;
-      case BehavioralQuirks.ADVOCATE:
-        return `${He}'s an advocate for slavery, and can articulate what it's done for ${him}.`;
-      case BehavioralQuirks.CONFIDENT:
-        return `${He}'s confident, and believes that ${he} has something of value to offer, even as a slave.`;
-      case BehavioralQuirks.CUTTING:
-        return `${He} often has a witty or cutting remark ready, but knows when to keep them to ${him}self.`;
-      case BehavioralQuirks.FITNESS:
-        return `${He}'s a fitness fanatic, and almost gets off to a hard workout.`;
-      case BehavioralQuirks.FUNNY:
-        return `${He}'s funny, often providing a little comic relief.`;
-      case BehavioralQuirks.INSECURE:
-        return `${He}'s insecure, defining ${his} self worth by how much others want to fuck ${him}.`;
-      case BehavioralQuirks.SINFUL:
-        // TODO: Chattel Religionism
-        return `${He}'s delightfully sinful, taking real pleasure in breaking cultural mores.`;
-      default:
-        throw new TypeError(`Unknown .behavioralQuirk '${slave.quirks.behavioral}' found in behavioralQuirks().`);
-    }
-  }
-
-  return '';
-}
-
-function sexualQuirks(slave: Slave): string {
-  const {
-    He, he, his, him,
-  } = slave.pronouns;
-
-  if (slave.quirks.sexual) {
-    switch (slave.quirks.sexual) {
-      case SexualQuirks.CARING:
-        return `${He}'s caring, and enjoys bringing partners pleasure more than getting off ${him}self.`;
-      case SexualQuirks.GAGFUCK_QUEEN:
-        return `${He}'s a gagfuck queen: ${he}'s able to safely take a rough facefuck.`;
-      case SexualQuirks.PAINAL_QUEEN:
-        return `${He}'s a painal queen: ${he} knows exactly how much ${he} can take without getting hurt.`;
-      case SexualQuirks.PERVERTED:
-        return `${He}'s perverted, and enjoys breaking sexual boundaries.`;
-      case SexualQuirks.ROMANTIC:
-        return `${He}'s a romantic, and persists in innocent pleasure in the closeness of sex.`;
-      case SexualQuirks.SIZE_QUEEN:
-        return `${He}'s a size queen; preferring big cock is almost ${his} trademark.`;
-      case SexualQuirks.STRUGGLEFUCK_QUEEN:
-        return `${He}'s a strugglefuck queen: ${he} can gauge exactly how much resistance ${his} partners want.`;
-      case SexualQuirks.TEASE:
-        return `${He}'s a tease, and often displays a little flash of ${him}self followed by a blush.`;
-      case SexualQuirks.UNFLINCHING:
-        return `${He}'s unflinching, willing to do anything, even by the standards of sex slaves.`;
-      default:
-        throw new TypeError(`Unknown .sexualQuirk '${slave.quirks.sexual}' found in sexualQuirks().`);
-    }
-  }
-
-  return '';
-}
 
 function fetish(slave: Slave): string {
   const {
@@ -238,8 +168,6 @@ export default function mind(actor: Actor): string {
 
   if (actor instanceof Slave) {
     text.push(
-      behavioralQuirks(actor),
-      sexualQuirks(actor),
       fetish(actor),
       attraction(actor),
     );
