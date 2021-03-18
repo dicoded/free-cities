@@ -2,7 +2,46 @@ import Slave from '../../../classes/slave/Slave';
 
 import { HipSize } from '../../../classes/body/lower/Hips';
 
-// TODO: rework to take BMI into account
+function isExtremelyObese(slave: Slave): boolean {
+  return slave.isMorbidlyObese && slave.weight > 190;
+}
+
+function isVeryObese(slave: Slave): boolean {
+  return slave.isObese && slave.weight > 160;
+}
+
+function isObese(slave: Slave): boolean {
+  return slave.isObese && slave.weight > 130;
+}
+
+function isFat(slave: Slave): boolean {
+  return slave.isOverweight && slave.weight > 95;
+}
+
+function isPlush(slave: Slave): boolean {
+  return slave.isOverweight && slave.weight > 30 && slave.hips.size > HipSize.WIDE;
+}
+
+function isChubby(slave: Slave): boolean {
+  return slave.isOverweight && slave.weight > 30;
+}
+
+function isCurvy(slave: Slave): boolean {
+  return slave.isOverweight && slave.weight > 10;
+}
+
+function isThin(slave: Slave): boolean {
+  return slave.isUnderweight && slave.weight < -10;
+}
+
+function isUnderweight(slave: Slave): boolean {
+  return slave.isUnderweight && slave.weight < -30;
+}
+
+function isEmaciated(slave: Slave): boolean {
+  return slave.isUnderweight && slave.weight < -95;
+}
+
 export default function weight(slave: Slave): string {
   const { his, him } = slave.pronouns;
 
@@ -19,44 +58,19 @@ export default function weight(slave: Slave): string {
   const underweight: string[] = ['rail thin', 'too skinny', 'underweight'];
   const emaciated: string[] = ['dangerously skinny, emaciated'];
 
-  // if (slave.isMorbidlyObese) return;
-
-  // TODO: add in FS effects
-  if (slave.weight > 190) return extremelyObese.random();
-  if (slave.weight > 160) return veryObese.random();
-  if (slave.weight > 130) return obese.random();
-  if (slave.weight > 95) {
-    if (slave.hips.size > HipSize.WIDE) {
-      return `${fat.random()}, but ${his} huge hips make the extra weight attractive on ${him}.`;
-    }
-
-    return fat.random();
-  }
-
-  if (slave.weight > 30) {
-    if (slave.hips.size > HipSize.WIDE) {
-      return `${plush.random()}, but ${his} motherly hips make the extra weight attractive on ${him}.`;
-    }
-
-    return chubby.random();
-  }
-
-  if (slave.weight > 10) return curvy.random();
-  if (slave.weight < -10) return thin.random();
-  if (slave.weight < -30) {
-    if (slave.hips.size > HipSize.WIDE) {
-      return `${skinny.random()}, and ${his} wide hips make the gap between ${his} thighs very
-      noticeable.`;
-    }
-
-    if (slave.hips.size < HipSize.NARROW) {
-      return `${skinny.random()}, but ${his} trim hips make ${him} look like a model.`;
-    }
-
-    return underweight.random();
-  }
-
-  if (slave.weight < -95) return emaciated.random();
+  if (isExtremelyObese(slave)) return extremelyObese.random();
+  if (isVeryObese(slave)) return veryObese.random();
+  if (isObese(slave)) return obese.random();
+  if (isFat(slave) && slave.hips.size > HipSize.WIDE) return `${fat.random()}, but ${his} huge hips make the extra weight attractive on ${him}.`;
+  if (isFat(slave)) return fat.random();
+  if (isPlush(slave)) return `${plush.random()}, but ${his} motherly hips make the extra weight attractive on ${him}.`;
+  if (isChubby(slave)) return chubby.random();
+  if (isCurvy(slave)) return curvy.random();
+  if (isThin(slave)) return thin.random();
+  if (isUnderweight(slave) && slave.hips.size > HipSize.WIDE) return `${skinny.random()}, and ${his} wide hips make the gap between ${his} thighs very noticeable.`;
+  if (isUnderweight(slave) && slave.hips.size < HipSize.NARROW) return `${skinny.random()}, but ${his} trim hips make ${him} look like a model.`;
+  if (isUnderweight(slave)) return underweight.random();
+  if (isEmaciated(slave)) return emaciated.random();
 
   return healthy.random();
 }

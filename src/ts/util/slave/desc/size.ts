@@ -4,12 +4,12 @@ import height from './height';
 import weight from './weight';
 
 export default function size(slave: Slave): string {
+  const { He } = slave.pronouns;
+
   const text: string[] = [];
 
-  text.push(
-    height(slave),
-    weight(slave),
-  );
+  text.push(`${He} is`, weight(slave));
+  text.push(height(slave));
 
   return text.join(' ');
 }
