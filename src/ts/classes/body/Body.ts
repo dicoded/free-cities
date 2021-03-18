@@ -576,14 +576,22 @@ export default class Body implements IBody {
   }
 
   get isUnderweight(): boolean {
-    return this.BMI < 18.6;
+    return this.BMI < 19;
   }
 
   get isHealthyWeight(): boolean {
-    return this.BMI >= 18.6 && this.BMI < 24.9;
+    return this.BMI.between(19, 24);
   }
 
   get isOverweight(): boolean {
-    return this.BMI >= 24.9;
+    return this.BMI.between(25, 29);
+  }
+
+  get isObese(): boolean {
+    return this.BMI.between(30, 39);
+  }
+
+  get isMorbidlyObese(): boolean {
+    return this.BMI > 39;
   }
 }
