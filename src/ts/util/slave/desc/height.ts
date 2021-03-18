@@ -1,6 +1,6 @@
-import Actor from '../../../classes/actor/Actor';
+import Slave from '../../../classes/slave/Slave';
 
-export default function height(actor: Actor): string {
+export default function height(slave: Slave): string {
   const text: string[] = [];
 
   return text.join(' ');

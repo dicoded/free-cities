@@ -1,15 +1,15 @@
 import Slave from '../../../classes/slave/Slave';
 
+import height from './height';
 import weight from './weight';
-
-// TODO:
-// function height(slave: Slave): string {
-// }
 
 export default function size(slave: Slave): string {
   const text: string[] = [];
 
-  text.push(weight(slave));
+  text.push(
+    height(slave),
+    weight(slave),
+  );
 
   return text.join(' ');
 }
