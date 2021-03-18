@@ -22,7 +22,6 @@
   import genes from '../../ts/util/slave/desc/genes';
   import hair from '../../ts/util/slave/desc/hair';
   import health, { healthColor } from '../../ts/util/slave/desc/health';
-  import height from '../../ts/util/slave/desc/height';
   import hips from '../../ts/util/slave/desc/hips';
   import intelligence from '../../ts/util/slave/desc/intelligence';
   import legs from '../../ts/util/slave/desc/legs';
@@ -51,7 +50,6 @@
   import skin from '../../ts/util/slave/desc/skin';
   import trust, { trustColor } from '../../ts/util/slave/desc/trust';
   import waist from '../../ts/util/slave/desc/waist';
-  import weight from '../../ts/util/slave/desc/weight';
 
   import activeSlave from '../../stores/active.store';
 
@@ -93,7 +91,6 @@
 {flaws(slave)}
 {genes(slave)}
 {hair(slave)}
-{height(slave)}
 {hips(slave)}
 {intelligence(slave)}
 {legs(slave)}
@@ -112,5 +109,5 @@
 {score(slave)}
 {sex(slave)}
 {shoulders(slave)}
+{size(slave)}
 {waist(slave)}
-{weight(slave)}
