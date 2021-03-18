@@ -270,6 +270,10 @@ export default class Body implements IBody {
     return this.abstract.counter;
   }
 
+  get BMI() {
+    return this.weight / this.height ** 2;
+  }
+
   // Checkers
 
   get canAchieveErection(): boolean {
@@ -569,5 +573,17 @@ export default class Body implements IBody {
 
   get isNull(): boolean {
     return !this.penis && !this.vagina;
+  }
+
+  get isUnderweight(): boolean {
+    return this.BMI < 18.6;
+  }
+
+  get isHealthyWeight(): boolean {
+    return this.BMI >= 18.6 && this.BMI < 24.9;
+  }
+
+  get isOverweight(): boolean {
+    return this.BMI >= 24.9;
   }
 }
