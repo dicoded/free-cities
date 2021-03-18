@@ -102,15 +102,15 @@ export default function fetish(slave: Slave): string {
   const { His } = slave.pronouns;
 
   if (slave.fetish?.known) {
-    if (slave.fetish?.type === FetishType.BOOBS) return getFetishBoobs(slave);
-    if (slave.fetish?.type === FetishType.BUTTSLUT) return getFetishButtslut(slave);
-    if (slave.fetish?.type === FetishType.CUMSLUT) return getFetishCumslut(slave);
-    if (slave.fetish?.type === FetishType.DOM) return getFetishDom(slave);
-    if (slave.fetish?.type === FetishType.HUMILIATION) return getFetishHumiliations(slave);
-    if (slave.fetish?.type === FetishType.MASOCHIST) return getFetishMasochistic(slave);
-    if (slave.fetish?.type === FetishType.PREGNANCY) return getFetishPregnancy(slave);
-    if (slave.fetish?.type === FetishType.SADIST) return getFetishSadist(slave);
-    if (slave.fetish?.type === FetishType.SUBMISSIVE) return getFetishSubmissiveness(slave);
+    if (slave.fetish.type === FetishType.BOOBS) return getFetishBoobs(slave);
+    if (slave.fetish.type === FetishType.BUTTSLUT) return getFetishButtslut(slave);
+    if (slave.fetish.type === FetishType.CUMSLUT) return getFetishCumslut(slave);
+    if (slave.fetish.type === FetishType.DOM) return getFetishDom(slave);
+    if (slave.fetish.type === FetishType.HUMILIATION) return getFetishHumiliations(slave);
+    if (slave.fetish.type === FetishType.MASOCHIST) return getFetishMasochistic(slave);
+    if (slave.fetish.type === FetishType.PREGNANCY) return getFetishPregnancy(slave);
+    if (slave.fetish.type === FetishType.SADIST) return getFetishSadist(slave);
+    if (slave.fetish.type === FetishType.SUBMISSIVE) return getFetishSubmissiveness(slave);
   }
 
   return `${His} fetishes, if any, are not known to you.`;
