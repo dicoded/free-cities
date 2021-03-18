@@ -37,8 +37,9 @@ export default class Player extends Actor implements IPlayer {
   acquisition: Acquisition;
 
   constructor() {
-    super(-1);
+    super();
 
+    this.ID = -1;
     this.career = Career.ARCOLOGY_OWNER;
     this.acquisition = Acquisition.DILIGENCE;
   }

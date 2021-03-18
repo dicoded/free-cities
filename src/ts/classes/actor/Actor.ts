@@ -122,10 +122,10 @@ export default class Actor extends Body implements IActor {
 
   rivalry: Rivalry;
 
-  constructor(ID: number) {
+  constructor() {
     super();
 
-    this.ID = ID;
+    this.ID = 0;
     this.name = new Name();
     this.intelligence = 0;
     this.education = 0;

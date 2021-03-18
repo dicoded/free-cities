@@ -1,5 +1,3 @@
-import { generateID } from '../../util/slave/generate';
-
 import Actor from '../actor/Actor';
 import Skills from './Skills';
 
@@ -76,7 +74,7 @@ export default class Slave extends Actor implements ISlave {
   weekAcquired: number;
 
   constructor() {
-    super(generateID());
+    super();
 
     this.devotion = 0;
     this.trust = 0;

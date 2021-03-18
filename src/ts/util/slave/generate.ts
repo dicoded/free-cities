@@ -329,11 +329,9 @@ function gaussian(minimum: number, maximum: number, skew: number = 1): number {
 // Generator functions
 
 export function generateID(): number {
-  const id = get(entityID);
-
   entityID.update((i) => i + 1);
 
-  return id;
+  return get(entityID);
 }
 
 export function generateSex(): Sex {

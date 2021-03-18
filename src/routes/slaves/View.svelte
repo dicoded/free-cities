@@ -74,10 +74,10 @@
 {rivalry(slave)}
 {career(slave)}
 {prestige(slave)}
-{size(slave)}
 {skin(slave)}
 
 {skills(slave)}
+{family(slave)}
 
 {armwear(slave)}
 {belly(slave)}
@@ -89,7 +89,6 @@
 {ears(slave)}
 {eyes(slave)}
 {face(slave)}
-{family(slave)}
 {fetish(slave)}
 {flaws(slave)}
 {genes(slave)}
