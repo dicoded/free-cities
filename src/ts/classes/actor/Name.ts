@@ -9,7 +9,7 @@ interface IName {
   last: string;
 
   /** The actor's full name. */
-  full: () => string;
+  full: () => string | null;
 }
 
 interface INames {
@@ -30,16 +30,16 @@ export default class Name implements INames {
       first: '',
       middle: '',
       last: '',
-      full(): string {
-        return `${this.first}${this.middle ? ` ${this.middle}` : ''}${this.last ? ` ${this.last}` : ''}`;
+      full(): string | null {
+        return `${this.first}${this.middle ? ` ${this.middle}` : ''}${this.last ? ` ${this.last}` : ''}` || null;
       },
     };
     this.slave = {
       first: '',
       middle: '',
       last: '',
-      full(): string {
-        return `${this.first}${this.middle ? ` ${this.middle}` : ''}${this.last ? ` ${this.last}` : ''}`;
+      full(): string | null {
+        return `${this.first}${this.middle ? ` ${this.middle}` : ''}${this.last ? ` ${this.last}` : ''}` || null;
       },
     };
   }
@@ -57,7 +57,7 @@ export default class Name implements INames {
   }
 
   /** Returns the actor's full name. If the actor does not have a slave name, returns the birth name instead. */
-  get full(): string {
+  get full(): string | null {
     let name: string;
 
     if (this.slave.first) {
@@ -70,7 +70,7 @@ export default class Name implements INames {
         name += ` ${this.slave.last}`;
       }
 
-      return name;
+      return name || null;
     }
 
     name = this.birth.first;
@@ -82,7 +82,7 @@ export default class Name implements INames {
       name += ` ${this.birth.last}`;
     }
 
-    return name;
+    return name || null;
   }
 
   get firstLast(): string {
