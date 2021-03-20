@@ -1,8 +1,8 @@
-import heights from './heights.json';
+import heights from '../../../data/nationalities/heights.json';
 
-import { Sex, Genes } from '../../ts/classes/body/nonphysical/Nonphysical';
+import { Sex, Genes } from '../../classes/body/nonphysical/Nonphysical';
 
-import Actor from '../../ts/classes/actor/Actor';
+import Actor from '../../classes/actor/Actor';
 
 export const { male, female } = heights;
 
@@ -23,20 +23,22 @@ export function getMeanHeightBySex(sex: Sex): Map<string, number> {
   return femaleMeans;
 }
 
-export function getMeanHeightByGenes(actor: Actor): number {
+export function getMeanHeightByActor(actor: Actor): number {
   const mean = getMeanHeightBySex(actor.sex).get(actor.nationality) ?? 0;
 
   if (actor.genes === Genes.X0) return mean * 0.93;
   if (actor.genes === Genes.XXX || actor.genes === Genes.XXY) return mean * 1.03;
   if (actor.genes === Genes.XYY) return mean * 1.04;
 
-  if (mean === 0) throw new Error(`Error finding mean height for actor with ID ${actor.ID} in getMeanHeightByGenes().`);
+  if (mean === 0) throw new Error(`Error finding mean height for actor with ID ${actor.ID}.`);
 
   return mean;
 }
 
-export function getMeanHeight(nationality: string, sex: Sex, actor: Actor | null): number | undefined {
-  if (actor) return getMeanHeightByGenes(actor);
+export function getMeanHeightByNationality(nationality: string, sex: Sex): number {
+  const mean = getMeanHeightBySex(sex).get(nationality) ?? 0;
 
-  return getMeanHeightBySex(sex).get(nationality) ?? 0;
+  if (mean === 0) throw new Error(`Error finding mean height for nationality '${nationality}' with sex '${sex}'.`);
+
+  return mean;
 }

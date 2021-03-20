@@ -52,7 +52,7 @@ import {
   SkinColor, HairColor, EyeColor, BaseColor,
 } from '../color';
 import nationalities from '../../../data/nationalities/nationality';
-import { getMeanHeight } from '../../../data/nationalities/heights';
+import { getMeanHeightByActor } from './heights';
 
 const races: string[] = [
   'Amerindian',
@@ -814,10 +814,13 @@ export function generateWeight(): number {
   return gaussian(-50, 150);
 }
 
-export function generateHeight(): number {
+export function generateHeight(actor?: Actor): number {
+  if (actor) return getMeanHeightByActor(actor);
+
   return gaussian(140, 190);
 }
 
+// TODO: differentiate between male and female
 export function generateMuscles(): number {
   return gaussian(-30, 30);
 }
@@ -996,7 +999,6 @@ export function generateAbstract(actor: Actor): Abstract {
   abstract.age = generateAge();
   abstract.health = generateHealth();
   abstract.weight = generateWeight();
-  abstract.height = generateHeight();
   abstract.muscles = generateMuscles();
 
   return abstract;
@@ -1041,13 +1043,11 @@ export function generateSlave(): Slave {
   slave.upper = generateUpper(slave);
   slave.lower = generateLower(slave);
 
+  slave.nationality = generateNationality(slave);
+  slave.abstract.height = generateHeight(slave);
   slave.abstract.counter = generateCounter(slave);
 
-  slave.nationality = generateNationality(slave);
-
   slave.name = generateName(slave);
-
-  console.log(getMeanHeight(slave.nationality, slave.sex));
 
   return slave;
 }

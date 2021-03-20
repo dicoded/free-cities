@@ -24,7 +24,7 @@ import Genetics from '../ts/classes/body/nonphysical/Genetics';
 import Counter from '../ts/classes/body/nonphysical/counter/Counter';
 import Personality from '../ts/classes/actor/Personality';
 
-import Abstract from '../ts/classes/body/nonphysical/Nonphysical';
+import Abstract, { Sex } from '../ts/classes/body/nonphysical/Nonphysical';
 import Upper from '../ts/classes/body/upper/UpperBody';
 import Lower from '../ts/classes/body/lower/LowerBody';
 import Slave from '../ts/classes/slave/Slave';
@@ -297,7 +297,15 @@ describe('generateWeight', () => {
 
 describe('generateHeight', () => {
   it('returns a random height', () => {
-    expect(generateHeight()).toBeGreaterThan(0);
+    const slave = new Slave();
+    slave.sex = Sex.MALE;
+    slave.nationality = 'American';
+
+    expect(generateHeight(slave)).toBeGreaterThan(0);
+  });
+  it('returns a random height between 140 and 190 if no actor is given', () => {
+    expect(generateHeight()).toBeGreaterThanOrEqual(140);
+    expect(generateHeight()).toBeLessThanOrEqual(190);
   });
 });
 

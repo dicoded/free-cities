@@ -215,8 +215,7 @@
 		"Yemeni": 159.89,
 		"Zairian": 166.8,
 		"Zambian": 166.52,
-		"Zimbabwean": 168.59,
-		"": 171.42
+		"Zimbabwean": 168.59
 	},
 	"female": {
 		"Afghan": 155.08,
@@ -434,7 +433,6 @@
 		"Yemeni": 153.97,
 		"Zairian": 155.25,
 		"Zambian": 155.82,
-		"Zimbabwean": 158.22,
-		"": 159.65
+		"Zimbabwean": 158.22
 	}
 }
