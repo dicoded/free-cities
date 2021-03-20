@@ -1,4 +1,4 @@
-import { name as fuckdollName } from '../fuckdoll';
+import { name as fuckdollName } from './fuckdoll';
 
 import Actor from '../../../classes/actor/Actor';
 import Slave from '../../../classes/slave/Slave';
