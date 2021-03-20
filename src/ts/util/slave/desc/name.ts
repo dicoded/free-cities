@@ -3,31 +3,32 @@ import { name as fuckdollName } from './fuckdoll';
 import Actor from '../../../classes/actor/Actor';
 import Slave from '../../../classes/slave/Slave';
 
+const isNameLost = (actor: Actor): boolean => !actor.name.birth.full()
+    || (actor.name.slave.first !== actor.name.birth.first && !actor.name.birth.first)
+  || (actor.name.slave.last !== actor.name.birth.last && !actor.name.birth.last);
+
+const didNameChange = (actor: Actor): boolean => actor.name.slave.full() !== ''
+  && actor.name.slave.full() !== actor.name.birth.full();
+
 function getOriginalName(actor: Actor): string {
   const { his } = actor.pronouns;
 
   const text: string[] = [];
   const lost = ' whatever it was, however, has been lost forever.';
 
-  if (actor.name.slave.first !== actor.name.birth.first && actor.name.slave.last !== actor.name.birth.last) {
-    return `${actor.name.full} is not ${his} original full name;${!actor.name.birth.full ? lost : ''}`;
+  if (actor.name.slave.full() !== '' && actor.name.slave.full() !== actor.name.birth.full()) {
+    return `${actor.name.full} is not ${his} original full name;${!actor.name.birth.full() ? lost : ''}`;
   }
 
-  if (actor.name.slave.first !== actor.name.birth.first) {
+  if (actor.name.slave.first && actor.name.slave.first !== actor.name.birth.first) {
     return `${actor.name.slave.first} is not ${his} original given name;${!actor.name.birth.first ? lost : ''}`;
   }
 
-  if (actor.name.slave.last !== actor.name.birth.last) {
+  if (actor.name.slave.last && actor.name.slave.last !== actor.name.birth.last) {
     return `${actor.name.slave.last} is not ${his} original surname;${!actor.name.birth.last ? lost : ''}`;
   }
 
   return text.join(' ');
-}
-
-function isNameLost(actor: Actor): boolean {
-  return (!actor.name.birth.full)
-    || (actor.name.slave.first !== actor.name.birth.first && !actor.name.birth.first)
-    || (actor.name.slave.last !== actor.name.birth.last && !actor.name.birth.last);
 }
 
 function firstNameReaction(slave: Slave): string {
@@ -45,7 +46,7 @@ function firstNameReaction(slave: Slave): string {
 function surnameReaction(slave: Slave): string {
   if (slave.devotion > 95) return 'loves.';
   if (slave.devotion > 50) return 'likes';
-  if (slave.name.birth.last === '') return 'is indifferent to.';
+  if (!slave.name.birth.last) return 'is indifferent to.';
   if (slave.devotion > 20) return 'accepts';
   if (slave.devotion >= -20) return 'tolerates.';
   if (slave.devotion >= -50) return 'resents.';
@@ -65,8 +66,8 @@ export default function name(actor: Actor): string {
 
     text.push(getOriginalName(actor));
 
-    if (actor.name.birth.first || actor.name.birth.last) {
-      if (isNameLost(actor)) text.push(`${He}`);
+    if (didNameChange(actor) && (actor.name.birth.first || actor.name.birth.last)) {
+      if (!isNameLost(actor)) text.push(`${He}`);
       else text.push(`${he}`);
 
       if (actor instanceof Slave) {
