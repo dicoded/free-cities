@@ -52,6 +52,7 @@ import {
   SkinColor, HairColor, EyeColor, BaseColor,
 } from '../color';
 import nationalities from '../../../data/nationalities/nationality';
+import { getMeanHeight } from '../../../data/nationalities/heights';
 
 const races: string[] = [
   'Amerindian',
@@ -1045,6 +1046,8 @@ export function generateSlave(): Slave {
   slave.nationality = generateNationality(slave);
 
   slave.name = generateName(slave);
+
+  console.log(getMeanHeight(slave.nationality, slave.sex));
 
   return slave;
 }
