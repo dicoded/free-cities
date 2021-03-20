@@ -51,7 +51,7 @@ import see from '../../../stores/see.store';
 import {
   SkinColor, HairColor, EyeColor, BaseColor,
 } from '../color';
-import nationalities from '../../../data/nationalities/nationality';
+import nationalities from './nationality';
 import { getMeanHeightByActor } from './heights';
 
 const races: string[] = [
