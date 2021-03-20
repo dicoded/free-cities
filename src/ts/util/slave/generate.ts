@@ -625,12 +625,14 @@ export function generateBelly(actor: Actor): Belly {
   return belly;
 }
 
+// TODO:
 export function generateWaist(): Waist {
   const waist = new Waist();
 
   return waist;
 }
 
+// TODO:
 export function generateHips(): Hips {
   const hips = new Hips();
 
