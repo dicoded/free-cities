@@ -1,5 +1,6 @@
 import Actor from '../actor/Actor';
 import Skills from './Skills';
+import Job from './assignment';
 
 interface ISlave extends Actor {
   /**
@@ -32,6 +33,8 @@ interface ISlave extends Actor {
    */
   trust: number;
 
+  assignment: Job;
+
   /** The career the slave had before becoming a slave. */
   career: string;
 
@@ -59,6 +62,8 @@ export default class Slave extends Actor implements ISlave {
 
   trust: number;
 
+  assignment: Job;
+
   career: string;
 
   fuckdoll: number | false;
@@ -78,6 +83,7 @@ export default class Slave extends Actor implements ISlave {
 
     this.devotion = 0;
     this.trust = 0;
+    this.assignment = Job.CHOICE;
     this.career = '';
     this.fuckdoll = false;
     this.indentured = false;

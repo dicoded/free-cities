@@ -1,0 +1,47 @@
+enum Job {
+  REST = 'rest',
+  FUCKTOY = 'please you',
+  CLASSES = 'take classes',
+  HOUSE = 'be a servant',
+  WHORE = 'whore',
+  PUBLIC = 'serve the public',
+  SUBORDINATE = 'be a subordinate slave',
+  MILKED = 'get milked',
+  GLORYHOLE = 'work a glory hole',
+  CONFINEMENT = 'stay confined',
+
+  BODYGUARD = 'guard you',
+  HEAD_GIRL = 'be your Head Girl',
+  RECRUITER = 'recruit girls',
+  AGENT = 'be your agent',
+  AGENT_PARTNER = 'live with your agent',
+
+  ARCADE = 'be confined in the arcade',
+  MADAM = 'be the Madam',
+  BROTHEL = 'work in the brothel',
+  WARDEN = 'be the Wardeness',
+  CELLBLOCK = 'be confined in the cellblock',
+  DJ = 'be the DJ',
+  CLUB = 'serve in the club',
+  NURSE = 'be the Nurse',
+  CLINIC = 'get treatment in the clinic',
+  MILKMAID = 'be the Milkmaid',
+  DAIRY = 'work in the dairy',
+  FARMER = 'be the Farmer',
+  FARMYARD = 'work as a farmhand',
+  HEAD_GIRL_SUITE = 'live with your Head Girl',
+  CONCUBINE = 'be your Concubine',
+  MASTER_SUITE = 'serve in the master suite',
+  MATRON = 'be the Matron',
+  NURSERY = 'work as a nanny',
+  TEACHER = 'be the Schoolteacher',
+  SCHOOL = 'learn in the schoolroom',
+  STEWARD = 'be the Stewardess',
+  QUARTER = 'work as a servant',
+  ATTENDANT = 'be the Attendant',
+  SPA = 'rest in the spa',
+
+  CHOICE = 'choose own job'
+}
+
+export default Job;
