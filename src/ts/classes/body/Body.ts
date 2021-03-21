@@ -594,4 +594,20 @@ export default class Body implements IBody {
   get isMorbidlyObese(): boolean {
     return this.BMI > 39;
   }
+
+  get hasAnyArms(): boolean {
+    return this.arms.left !== null || this.arms.right !== null;
+  }
+
+  get hasAnyLegs(): boolean {
+    return this.legs.left !== null || this.legs.right !== null;
+  }
+
+  get hasBothArms(): boolean {
+    return this.arms.left !== null && this.arms.right !== null;
+  }
+
+  get hasBothLegs(): boolean {
+    return this.legs.left !== null && this.legs.right !== null;
+  }
 }
