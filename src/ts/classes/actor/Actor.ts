@@ -11,11 +11,20 @@ import Family from './Family';
 import Relationship from './Relationship';
 import Rivalry from './Rivalry';
 
+import Accessories from '../actor/Accessories';
+
 import { Sex } from '../body/nonphysical/Nonphysical';
 
 import { getActor } from '../../util/slave/util';
 
 interface IActor extends Entity, Body {
+
+  /** Properties pertaining to the actor's name. */
+  name: Name;
+
+  /** Any accessories the slave is wearing. */
+  accessories: Accessories;
+
 /**
  * How intelligent the actor is.
  *
@@ -41,9 +50,6 @@ interface IActor extends Entity, Body {
    * | *16 - 30*  | Well educated   |
    */
   education: number;
-
-  /** Properties pertaining to the actor's name. */
-  name: Name;
 
   /** Where the actor is from. */
   nationality: string;
@@ -94,6 +100,8 @@ interface IActor extends Entity, Body {
 export default class Actor extends Body implements IActor {
   ID: number;
 
+  accessories: Accessories;
+
   intelligence: number;
 
   education: number;
@@ -127,6 +135,7 @@ export default class Actor extends Body implements IActor {
 
     this.ID = 0;
     this.name = new Name();
+    this.accessories = new Accessories();
     this.intelligence = 0;
     this.education = 0;
     this.nationality = '';
