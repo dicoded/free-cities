@@ -1,3 +1,4 @@
+import Accessories from '../actor/Accessories';
 import Actor from '../actor/Actor';
 import Skills from './Skills';
 import Job from './assignment';
@@ -33,6 +34,7 @@ interface ISlave extends Actor {
    */
   trust: number;
 
+  /** What job the slave is assigned to. */
   assignment: Job;
 
   /** The career the slave had before becoming a slave. */

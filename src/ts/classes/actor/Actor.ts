@@ -25,19 +25,42 @@ interface IActor extends Entity, Body {
   /** Any accessories the slave is wearing. */
   accessories: Accessories;
 
-/**
- * How intelligent the actor is.
- *
- * | **Range**     | **Description**     |
- * |--------------:|:--------------------|
- * | *-100 - -96* | Borderline retarded |
- * | *-95 - -51*  | Very slow           |
- * | *-50 - -16*  | Slow                |
- * | *-15 - 15*   | Average             |
- * | *16 - 50*    | Smart               |
- * | *51 - 95*    | Very smart          |
- * | *96 - 100*   | Brilliant           |
- */
+  /** Who the actor is and isn't attracted to. */
+  attraction: Attraction;
+
+  /**
+   * The actor's sex drive.
+   *
+   * | **Range** | **Description**    |
+   * |----------:|:-------------------|
+   * | *0 - 20*  | No sex drive       |
+   * | *21 - 40* | Poor sex drive     |
+   * | *41 - 60* | Average sex drive  |
+   * | *61 - 80* | Good sex drive     |
+   * | *81 - 95* | Powerful sex drive |
+   * | *96+*     | Nymphomaniac       |
+   */
+  drive: number;
+
+  /** Any fetish the actor has. */
+  fetish: Fetish | null;
+
+  /** Any flaws the actor has. */
+  flaws: Flaws;
+
+  /**
+   * How intelligent the actor is.
+   *
+   * | **Range**     | **Description**     |
+   * |--------------:|:--------------------|
+   * | *-100 - -96* | Borderline retarded |
+   * | *-95 - -51*  | Very slow           |
+   * | *-50 - -16*  | Slow                |
+   * | *-15 - 15*   | Average             |
+   * | *16 - 50*    | Smart               |
+   * | *51 - 95*    | Very smart          |
+   * | *96 - 100*   | Brilliant           |
+   */
   intelligence: number;
 
   /**
@@ -65,29 +88,6 @@ interface IActor extends Entity, Body {
 
   /** Any quirks the actor has. */
   quirks: Quirks;
-
-  /** Any flaws the actor has. */
-  flaws: Flaws;
-
-  /** Any fetish the actor has. */
-  fetish: Fetish | null;
-
-  /** Who the actor is and isn't attracted to. */
-  attraction: Attraction;
-
-  /**
-   * The actor's sex drive.
-   *
-   * | **Range** | **Description**    |
-   * |----------:|:-------------------|
-   * | *0 - 20*  | No sex drive       |
-   * | *21 - 40* | Poor sex drive     |
-   * | *41 - 60* | Average sex drive  |
-   * | *61 - 80* | Good sex drive     |
-   * | *81 - 95* | Powerful sex drive |
-   * | *96+*     | Nymphomaniac       |
-   */
-  drive: number;
 
   /** Any relationship the actor is in, if any. */
   relationship: Relationship;
