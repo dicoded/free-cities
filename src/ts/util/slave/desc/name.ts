@@ -1,4 +1,4 @@
-import { name as fuckdollName } from './fuckdoll';
+import { name as getFuckdollName } from './fuckdoll';
 
 import Actor from '../../../classes/actor/Actor';
 import Slave from '../../../classes/slave/Slave';
@@ -64,14 +64,37 @@ function surnameReaction(slave: Slave): string {
   return 'hates.';
 }
 
+function didSlaveNameChange(slave: Slave): string {
+  const { He, he } = slave.pronouns;
+
+  const text: string[] = [];
+
+  text.push(firstNameReaction(slave));
+
+  if (didFirstNameChange(slave) && didSurnameChange(slave)) text.push(`${slave.name.birth.full()}.`);
+  else if (didFirstNameChange(slave)) {
+    if (slave.name.slave.first.endsWith(slave.name.birth.first)) {
+      text.push('just plain');
+    }
+
+    text.push(`${slave.name.birth.first}.`);
+  } else if (didSurnameChange(slave)) {
+    text.push(`${slave.name.birth.last}.`);
+  }
+
+  if (!slave.name.slave.last) text.push(`${He} has no surname as a slave, which ${he}`, surnameReaction(slave));
+
+  return text.join(' ');
+}
+
 export default function name(actor: Actor): string {
   const { He, he } = actor.pronouns;
 
   const text: string[] = [];
 
-  if (actor.name.slave !== actor.name.birth) {
+  if (didNameChange(actor)) {
     if (actor instanceof Slave && actor.isFuckdoll) {
-      return fuckdollName(actor);
+      return getFuckdollName(actor);
     }
 
     text.push(getOriginalName(actor));
@@ -81,26 +104,14 @@ export default function name(actor: Actor): string {
       else text.push(`${he}`);
 
       if (actor instanceof Slave) {
-        text.push(firstNameReaction(actor));
-
-        if (actor.name.slave.first !== actor.name.birth.first && actor.name.slave.last !== actor.name.birth.last) {
-          text.push(`${actor.name.birth.full()}.`);
-        } else if (actor.name.slave.first !== actor.name.birth.first) {
-          if (actor.name.slave.first.endsWith(actor.name.birth.first)) {
-            text.push('just plain');
-          }
-
-          text.push(`${actor.name.birth.first}.`);
-        } else if (actor.name.slave.last !== actor.name.birth.last) {
-          text.push(`${actor.name.birth.last}.`);
-        }
-
-        if (!actor.name.slave.last) text.push(`${He} has no surname as a slave, which ${he}`, surnameReaction(actor));
+        text.push(didSlaveNameChange(actor));
       } else {
         // TODO:
       }
     }
+
+    return text.join(' ');
   }
 
-  return text.join(' ');
+  return '';
 }
