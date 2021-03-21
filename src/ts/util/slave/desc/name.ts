@@ -3,32 +3,42 @@ import { name as fuckdollName } from './fuckdoll';
 import Actor from '../../../classes/actor/Actor';
 import Slave from '../../../classes/slave/Slave';
 
-const isNameLost = (actor: Actor): boolean => !actor.name.birth.full()
-    || (actor.name.slave.first !== actor.name.birth.first && !actor.name.birth.first)
-  || (actor.name.slave.last !== actor.name.birth.last && !actor.name.birth.last);
+const hasSlaveName = (actor: Actor): boolean => actor.name.slave.full() !== '';
+const hasBirthName = (actor: Actor): boolean => actor.name.birth.full() !== '';
 
-const didNameChange = (actor: Actor): boolean => actor.name.slave.full() !== ''
+const didNameChange = (actor: Actor): boolean => hasSlaveName(actor)
   && actor.name.slave.full() !== actor.name.birth.full();
+
+const didFullNameChange = (actor: Actor): boolean => hasSlaveName(actor)
+  && actor.name.slave.full() !== actor.name.birth.full();
+
+const didFirstNameChange = (actor: Actor): boolean => hasSlaveName(actor)
+  && actor.name.slave.first !== actor.name.birth.first;
+
+const didSurnameChange = (actor: Actor): boolean => hasSlaveName(actor)
+  && actor.name.slave.last !== actor.name.birth.last;
+
+const isNameLost = (actor: Actor): boolean => !hasBirthName(actor)
+  || (didFirstNameChange(actor) && !actor.name.birth.first)
+  || (didSurnameChange(actor) && !actor.name.birth.last);
 
 function getOriginalName(actor: Actor): string {
   const { his } = actor.pronouns;
-
-  const text: string[] = [];
   const lost = ' whatever it was, however, has been lost forever.';
 
-  if (actor.name.slave.full() !== '' && actor.name.slave.full() !== actor.name.birth.full()) {
-    return `${actor.name.full} is not ${his} original full name;${!actor.name.birth.full() ? lost : ''}`;
+  if (didFullNameChange(actor)) {
+    return `${actor.name.full} is not ${his} original full name;${!hasBirthName(actor) ? lost : ''}`;
   }
 
-  if (actor.name.slave.first && actor.name.slave.first !== actor.name.birth.first) {
+  if (didFirstNameChange(actor)) {
     return `${actor.name.slave.first} is not ${his} original given name;${!actor.name.birth.first ? lost : ''}`;
   }
 
-  if (actor.name.slave.last && actor.name.slave.last !== actor.name.birth.last) {
+  if (didSurnameChange(actor)) {
     return `${actor.name.slave.last} is not ${his} original surname;${!actor.name.birth.last ? lost : ''}`;
   }
 
-  return text.join(' ');
+  return '';
 }
 
 function firstNameReaction(slave: Slave): string {
