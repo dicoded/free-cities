@@ -493,8 +493,10 @@ function getEyeColor(actor: Actor): { left: EyeColor, right: EyeColor } {
 export function generateEyes(actor: Actor): Eyes {
   const eyes = new Eyes();
 
-  eyes.left.color.original = getEyeColor(actor).left;
-  eyes.right.color.original = getEyeColor(actor).right;
+  const eyeColor = getEyeColor(actor);
+
+  eyes.left.color.original = eyeColor.left;
+  eyes.right.color.original = eyeColor.right;
 
   return eyes;
 }
