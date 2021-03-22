@@ -44,6 +44,7 @@ function getHearing(actor: Actor): string {
   return `but this isn't obvious just by looking at ${his} ears.`;
 }
 
+// TODO: add support for just one ear
 export default function ears(actor: Actor): string {
   const text: string[] = [];
 
@@ -51,10 +52,12 @@ export default function ears(actor: Actor): string {
 
   text.push(getEarShape(actor));
 
-  if (actor.ears.both?.deaf) text.push(`${He} is completely deaf,`);
-  else if (actor.ears.both?.hardOfHearing) text.push(`${His} hearing is noticeably impaired,`);
+  if (actor.ears.both?.deaf || actor.ears.both?.hardOfHearing) {
+    if (actor.ears.both?.deaf) text.push(`${He} is completely deaf,`);
+    else if (actor.ears.both?.hardOfHearing) text.push(`${His} hearing is noticeably impaired,`);
 
-  text.push(getHearing(actor));
+    text.push(getHearing(actor));
+  }
 
   return text.join(' ');
 }
