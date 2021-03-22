@@ -106,37 +106,40 @@ export default class Slave extends Actor implements ISlave {
     return `${this.titlePrefix}${this.titleMain}${this.titleSuffix}`;
   }
 
+  get titlesMale(): string {
+    if (this.isHerm) return ['futanari', 'herm'].random();
+    if (this.isFuta) return 'futa';
+    if (this.isDickGirl) return 'dickgirl';
+    if (this.isShemale) return 'shemale';
+    if (this.isEunuch) return 'eunuch';
+    if (this.isTrap) return 'trap';
+    if (this.isTittyBoy) return 'tittyboy';
+    if (this.isSissy) return 'sissy';
+    if (this.isTwink) return 'twink';
+    if (this.isBoyToy) return 'boytoy';
+    if (this.isTitan) return 'titan';
+    if (this.isMuscleBoy) return 'muscleboy';
+
+    return 'slaveboy';
+  }
+
+  get titlesFemale(): string {
+    if (this.isCuntBoy) return 'cuntboy';
+    if (this.isTranny) return 'tranny';
+    if (this.isMILF) return 'MILF';
+    if (this.isGILF) return 'GILF';
+    if (this.isBimbo) return 'bimbo';
+    if (this.isHourglass) return 'hourglass';
+    if (this.isAmazon) return 'amazon';
+    if (this.isPetite) return 'petite';
+    if (this.isMuscleGirl) return 'musclegirl';
+
+    return 'slavegirl';
+  }
+
   get titleMain(): string {
-    if (this.isMale) {
-      if (this.isHerm) return Number().random(1, 100) > 50 ? 'futanari' : 'herm';
-      if (this.isFuta) return 'futa';
-      if (this.isDickGirl) return 'dickgirl';
-      if (this.isShemale) return 'shemale';
-      if (this.isEunuch) return 'eunuch';
-      if (this.isTrap) return 'trap';
-      if (this.isTittyBoy) return 'tittyboy';
-      if (this.isSissy) return 'sissy';
-      if (this.isTwink) return 'twink';
-      if (this.isBoyToy) return 'boytoy';
-      if (this.isTitan) return 'titan';
-      if (this.isMuscleBoy) return 'muscleboy';
-
-      return 'slaveboy';
-    }
-
-    if (this.isFemale) {
-      if (this.isCuntBoy) return 'cuntboy';
-      if (this.isTranny) return 'tranny';
-      if (this.isMILF) return 'MILF';
-      if (this.isGILF) return 'GILF';
-      if (this.isBimbo) return 'bimbo';
-      if (this.isHourglass) return 'hourglass';
-      if (this.isAmazon) return 'amazon';
-      if (this.isPetite) return 'petite';
-      if (this.isMuscleGirl) return 'musclegirl';
-
-      return 'slavegirl';
-    }
+    if (this.isMale) return this.titlesMale;
+    if (this.isFemale) return this.titlesFemale;
 
     if (this.isNeuter) return 'neuter';
     if (this.isBallSlave) return 'ballslave';
