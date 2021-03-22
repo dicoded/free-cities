@@ -51,4 +51,28 @@ export default class Ears implements IEars {
 
     return null;
   }
+
+  set deaf(val: boolean) {
+    this.left.deaf = val;
+    this.right.deaf = val;
+
+    this.left.hardOfHearing = !val;
+    this.right.hardOfHearing = !val;
+  }
+
+  get deaf(): boolean {
+    return this.left.deaf && this.right.deaf;
+  }
+
+  set hardOfHearing(val: boolean) {
+    this.left.hardOfHearing = val;
+    this.right.hardOfHearing = val;
+
+    this.left.deaf = !val;
+    this.right.deaf = !val;
+  }
+
+  get hardOfHearing(): boolean {
+    return this.left.hardOfHearing && this.right.hardOfHearing;
+  }
 }
