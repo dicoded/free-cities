@@ -40,11 +40,7 @@ interface IFace {
    */
   beauty: number;
 
-  /**
-   * The type of face the body has.
-   *
-   * Any values other than the defaults will be treated the same as `"normal"`.
-   */
+  /** The type of face the body has. */
   type: FaceShape;
 }
 
