@@ -1,4 +1,3 @@
-import Accessories from '../actor/Accessories';
 import Actor from '../actor/Actor';
 import Skills from './Skills';
 import Job from './assignment';
