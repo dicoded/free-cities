@@ -79,6 +79,7 @@
 {ears(slave)}
 {eyes(slave)}
 {face(slave)}
+{nose(slave)}
 
 {armwear(slave)}
 {belly(slave)}
@@ -99,7 +100,6 @@
 {mouth(slave)}
 {muscles(slave)}
 {nationality(slave)}
-{nose(slave)}
 {personality(slave)}
 {piercings(slave)}
 {pregnancy(slave)}
