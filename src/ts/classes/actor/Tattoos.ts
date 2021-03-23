@@ -12,6 +12,7 @@ export enum Tattoo {
   SACRILEGE = 'Sacrilege',
   POSSESSIVE = 'Possessive',
   PATERNALIST = 'Paternalist',
+  MAKEUP = 'permanent makeup',
 }
 
 export enum BellyTattoo {

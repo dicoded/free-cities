@@ -1,6 +1,8 @@
 import Actor from '../../../classes/actor/Actor';
 
 import { FaceShape } from '../../../classes/body/face/Face';
+import { Makeup } from '../../../classes/actor/Accessories';
+import { Tattoo } from '../../../classes/actor/Tattoos';
 
 function getFaceShapeMasculine(actor: Actor): string {
   const { his, him } = actor.pronouns;
@@ -95,10 +97,38 @@ function getFaceWeight(actor: Actor): string {
   return '';
 }
 
+function getFaceFuckdoll(actor: Actor): string {
+
+}
+
+function getFaceMarking(actor: Actor): string {
+
+}
+
+function getFaceSurgery(actor: Actor): string {
+
+}
+
+function getMakeup(actor: Actor): string {
+  const { He, His, his } = actor.pronouns;
+
+  if (actor.accessories.makeup === Makeup.MINIMAL) return `${He}'s wearing minimal makeup.`;
+  if (actor.accessories.makeup === Makeup.LUXURIOUS) return `${He}'s wearing expensive, luxurious makeup.`;
+  if (actor.accessories.makeup === Makeup.COLOR_COORDINATED_HAIR) return `${His} makeup is color-coordinated with ${his} ${actor.hair.color} hair.`;
+  if (actor.accessories.makeup === Makeup.HEAVY) return `${He}'s wearing stereotypical, garish streetwalker makeup.`;
+  if (actor.accessories.makeup === Makeup.NEON) return `${He}'s wearing eye-catching neon makeup.`;
+  if (actor.accessories.makeup === Makeup.COLOR_COORDINATED_NEON) return `${His} neon makeup is color-coordinated with ${his} ${actor.hair.color} hair.`;
+  if (actor.accessories.makeup === Makeup.METALLIC) return `${He}'s wearing expensive, metallic makeup.`;
+  if (actor.accessories.makeup === Makeup.COLOR_COORDINATED_METALLIC) return `${His} metallic makeup is color-coordinated with ${his} ${actor.hair.color} hair.`;
+  if (actor.accessories.tattoos?.face === Tattoo.MAKEUP) return `${His} face appears to bear very heavy, slutty makeup, but on closer inspection, the makeup is actually tattooed on.`;
+
+  return `${His} face is makeup-free.`;
+}
+
 export default function face(actor: Actor): string {
   const text: string[] = [];
 
-  text.push(getFaceShape(actor), getFaceWeight(actor));
+  text.push(getFaceShape(actor), getFaceWeight(actor), getMakeup(actor));
 
   return text.join(' ');
 }

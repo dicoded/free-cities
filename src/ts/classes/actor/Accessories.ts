@@ -2,7 +2,6 @@ import Piercings from './Piercings';
 import Tattoos from './Tattoos';
 
 export enum Eyewear {
-
   GLASSES = 'glasses',
   BLURRING_GLASSES = 'blurring glasses',
   CORRECTIVE_GLASSES = 'corrective glasses',
@@ -11,14 +10,12 @@ export enum Eyewear {
 }
 
 export enum Earwear {
-
   HEARING_AIDS = 'hearing aids',
   MUFFLING_EAR_PLUGS = 'muffling ear plugs',
   DEAFENING_EAR_PLUGS = 'deafening ear plugs',
 }
 
 export enum BellyWear {
-
   SMALL_EMPATHY_BELLY = 'a small empathy belly',
   MEDIUM_EMPATHY_BELLY = 'a medium empathy belly',
   LARGE_EMPATHY_BELLY = 'a large empathy belly',
@@ -29,7 +26,6 @@ export enum BellyWear {
 }
 
 export enum Makeup {
-
   NONE = 'none',
   MINIMAL = 'minimal',
   LUXURIOUS = 'expensive, luxurious',
