@@ -1,8 +1,10 @@
 import Actor from '../../../classes/actor/Actor';
+import Slave from '../../../classes/slave/Slave';
 
 import { FaceShape } from '../../../classes/body/face/Face';
 import { Makeup } from '../../../classes/actor/Accessories';
 import { Tattoo } from '../../../classes/actor/Tattoos';
+import { MarkingsType } from '../../../classes/body/nonphysical/skin/Markings';
 
 function getFaceShapeMasculine(actor: Actor): string {
   const { his, him } = actor.pronouns;
@@ -98,16 +100,30 @@ function getFaceWeight(actor: Actor): string {
 }
 
 function getFaceFuckdoll(actor: Actor): string {
+  const { him, his } = actor.pronouns;
 
+  if (actor.face.beauty < -40) return `However, it's hard to see this past the suit, since its face is padded to make ${him} seem less ugly.`;
+  if (actor.face.beauty < -10) return `However, it's hard to see this past the suit, since its face is shaped to make ${him} seem prettier.`;
+
+  return `However, the suit obscures all but the shape of ${his} pretty face.`;
 }
 
 function getFaceMarking(actor: Actor): string {
+  const { He, his, him } = actor.pronouns;
 
+  if (actor.face.beauty < -95) return 'It bears a severely disfiguring, discolored mark.';
+  if (actor.face.beauty < -40) return 'It bears a couple of unsightly moles.';
+  if (actor.face.beauty < -10) return 'It bears an ugly mole.';
+  if (actor.face.beauty <= 10) return `${He} has a distinctive beauty mark.`;
+  if (actor.face.beauty <= 40) return `${He} has a nice beauty mark.`;
+  if (actor.face.beauty <= 95) return `${He} has a beauty mark that adds to ${his} distinctiveness.`;
+
+  return `${He} has a beauty mark that makes ${him} really memorable.`;
 }
 
-function getFaceSurgery(actor: Actor): string {
-
-}
+// TODO:
+// function getFaceSurgery(actor: Actor): string {
+// }
 
 function getMakeup(actor: Actor): string {
   const { He, His, his } = actor.pronouns;
@@ -129,6 +145,9 @@ export default function face(actor: Actor): string {
   const text: string[] = [];
 
   text.push(getFaceShape(actor), getFaceWeight(actor), getMakeup(actor));
+
+  if (Actor instanceof Slave && Actor.isFuckdoll) text.push(getFaceFuckdoll(actor));
+  else if (actor.markings.face === MarkingsType.BIRTHMARK) text.push(getFaceMarking(actor));
 
   return text.join(' ');
 }
