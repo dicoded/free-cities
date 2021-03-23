@@ -78,6 +78,7 @@
 {family(slave)}
 {ears(slave)}
 {eyes(slave)}
+{face(slave)}
 
 {armwear(slave)}
 {belly(slave)}
@@ -86,7 +87,6 @@
 {clothing(slave)}
 {counter(slave)}
 {crotch(slave)}
-{face(slave)}
 {fetish(slave)}
 {flaws(slave)}
 {genes(slave)}

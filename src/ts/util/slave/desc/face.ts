@@ -1,7 +1,104 @@
 import Actor from '../../../classes/actor/Actor';
 
+import { FaceShape } from '../../../classes/body/face/Face';
+
+function getFaceShapeMasculine(actor: Actor): string {
+  const { his, him } = actor.pronouns;
+
+  if (actor.face.beauty < -95) return `so ugly and masculine that ${his} designation as a slave girl is a mockery.`;
+  if (actor.face.beauty < -40) return `ugly and masculine, making ${him} a poor slave girl by appearance.`;
+  if (actor.face.beauty < -10) return 'unattractively masculine.';
+  if (actor.face.beauty <= 10) return 'masculine, but not entirely unappealing.';
+  if (actor.face.beauty <= 40) return 'attractively masculine.';
+  if (actor.face.beauty <= 95) return 'quite handsome in a masculine way.';
+
+  return 'the height of masculine handsomeness.';
+}
+
+function getFaceShapeAndrogynous(actor: Actor): string {
+  const { he } = actor.pronouns;
+
+  if (actor.face.beauty < -95) return 'disturbingly androgynous and terribly ugly.';
+  if (actor.face.beauty < -40) return `ugly and androgynous; ${he} has neither masculine nor feminine appeal.`;
+  if (actor.face.beauty < -10) return 'strangely androgynous, and rather unattractive.';
+  if (actor.face.beauty <= 10) return 'strangely androgynous.';
+  if (actor.face.beauty <= 40) return 'androgynous, and attractive enough that this ambiguity is interesting.';
+  if (actor.face.beauty <= 95) return 'gorgeously androgynous in a complex way that captures the eye.';
+
+  return `so gorgeously androgynous that ${he} tends to induce sexual confusion.`;
+}
+
+function getFaceShapeCute(actor: Actor): string {
+  const { he } = actor.pronouns;
+
+  if (actor.face.beauty < -95) return `very ugly, yet somehow cute; ${he}'s so unattractive that ${he} inspires pity.`;
+  if (actor.face.beauty < -40) return 'ugly, but cute, with a pitiable appeal.';
+  if (actor.face.beauty < -10) return 'not attractive, but is appealingly cute.';
+  if (actor.face.beauty <= 10) return 'merely average, but is appealingly cute.';
+  if (actor.face.beauty <= 40) return 'both attractive and appealingly cute.';
+  if (actor.face.beauty <= 95) return 'beautiful, yet somehow also approachably cute.';
+
+  return 'an impossibly perfect combination of beauty and girl-next-door cuteness.';
+}
+
+function getFaceShapeSensual(actor: Actor): string {
+  if (actor.face.beauty < -95) return 'very ugly, yet naturally slutty, promising a decent fuck despite its appearance.';
+  if (actor.face.beauty < -40) return 'ugly, but also slutty, promising a good fuck despite its appearance.';
+  if (actor.face.beauty < -10) return 'not attractive, but it has a certain sensual appeal.';
+  if (actor.face.beauty <= 10) return 'merely average, but undeniably sensual.';
+  if (actor.face.beauty <= 40) return 'both attractive and naturally sultry.';
+  if (actor.face.beauty <= 95) return 'both beautiful and sultry, bringing sex to mind naturally.';
+
+  return 'very beautiful in a consummately sexual way.';
+}
+
+function getFaceShapeExotic(actor: Actor): string {
+  if (actor.face.beauty < -95) return 'very ugly and unusual, a real tragedy in flesh.';
+  if (actor.face.beauty < -40) return 'ugly and unusual, a real misfortune.';
+  if (actor.face.beauty < -10) return 'unattractive, and distinctive in its unattractiveness.';
+  if (actor.face.beauty <= 10) return 'quite average, but not uninteresting.';
+  if (actor.face.beauty <= 40) return 'attractive in an exotic and interesting way.';
+  if (actor.face.beauty <= 95) return 'exotic and beautiful, capable of catching the eye and keeping its gaze.';
+
+  return 'very beautiful and exotic, almost to the point of alien fascination.';
+}
+
+function getFaceShapeNormal(actor: Actor): string {
+  if (actor.face.beauty < -95) return 'very ugly.';
+  if (actor.face.beauty < -40) return 'quite ugly.';
+  if (actor.face.beauty < -10) return 'unattractive.';
+  if (actor.face.beauty <= 10) return 'average and conventionally feminine.';
+  if (actor.face.beauty <= 40) return 'conventionally attractive.';
+  if (actor.face.beauty <= 95) return 'conventionally beautiful.';
+
+  return 'the height of conventional feminine beauty.';
+}
+
+function getFaceShape(actor: Actor): string {
+  if (actor.face.type === FaceShape.MASCULINE) return getFaceShapeMasculine(actor);
+  if (actor.face.type === FaceShape.ANDROGYNOUS) return getFaceShapeAndrogynous(actor);
+  if (actor.face.type === FaceShape.CUTE) return getFaceShapeCute(actor);
+  if (actor.face.type === FaceShape.SENSUAL) return getFaceShapeSensual(actor);
+  if (actor.face.type === FaceShape.EXOTIC) return getFaceShapeExotic(actor);
+
+  return getFaceShapeNormal(actor);
+}
+
+function getFaceWeight(actor: Actor): string {
+  const { His } = actor.pronouns;
+
+  if (actor.isMorbidlyObese) return `${His} face is quite fat with ample excess chins.`;
+  if (actor.isObese) return `${His} face is round and plump with a trio of extra chins.`;
+  if (actor.isOverweight && actor.weight > 130) return `${His} face is chubby with an obvious second chin.`;
+  if (actor.isOverweight) return `${His} face is soft with barely a second chin.`;
+
+  return '';
+}
+
 export default function face(actor: Actor): string {
   const text: string[] = [];
+
+  text.push(getFaceShape(actor), getFaceWeight(actor));
 
   return text.join(' ');
 }
