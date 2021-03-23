@@ -20,11 +20,12 @@ export default function devotion(slave: Slave): string {
  * <span class={devotionColor(slave.devotion)}>{devotion(slave)}</span>
  */
 export function devotionColor(val: number): string {
-  if (val < -95) return 'text-purple-700';
-  if (val < -50) return 'text-purple-500';
-  if (val < -20) return 'text-purple-300';
-  if (val <= 20) return 'text-gray-400';
-  if (val <= 50) return 'text-pink-300';
-  if (val <= 95) return 'text-pink-500';
-  return 'text-pink-700';
+  if (val < -95) return 'text-purple-800 dark:text-purple-700';
+  if (val < -50) return 'text-purple-600 dark:text-purple-500';
+  if (val < -20) return 'text-purple-400 dark:text-purple-300';
+  if (val <= 20) return 'text-gray-600 dark:text-gray-400';
+  if (val <= 50) return 'text-pink-400 dark:text-pink-300';
+  if (val <= 95) return 'text-pink-600 dark:text-pink-500';
+
+  return 'text-pink-800 dark:text-pink-700';
 }
