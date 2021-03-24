@@ -25,20 +25,22 @@ export function getMeanHeightBySex(sex: Sex): Map<string, number> {
 
 export function getMeanHeightByActor(actor: Actor): number {
   const mean = getMeanHeightBySex(actor.sex).get(actor.nationality) ?? 0;
+  const randomMean = Number().gaussian(mean - 10, mean + 10);
 
-  if (actor.genes === Genes.X0) return mean * 0.93;
-  if (actor.genes === Genes.XXX || actor.genes === Genes.XXY) return mean * 1.03;
-  if (actor.genes === Genes.XYY) return mean * 1.04;
+  if (actor.genes === Genes.X0) return randomMean * 0.93;
+  if (actor.genes === Genes.XXX || actor.genes === Genes.XXY) return randomMean * 1.03;
+  if (actor.genes === Genes.XYY) return randomMean * 1.04;
 
   if (mean === 0) throw new Error(`Error finding mean height for actor with ID ${actor.ID}.`);
 
-  return mean;
+  return randomMean;
 }
 
 export function getMeanHeightByNationality(nationality: string, sex: Sex): number {
   const mean = getMeanHeightBySex(sex).get(nationality) ?? 0;
+  const randomMean = Number().gaussian(mean - 10, mean + 10);
 
   if (mean === 0) throw new Error(`Error finding mean height for nationality '${nationality}' with sex '${sex}'.`);
 
-  return mean;
+  return randomMean;
 }

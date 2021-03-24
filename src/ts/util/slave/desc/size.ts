@@ -10,9 +10,9 @@ export default function size(slave: Slave): string {
 
   text.push(
     `${He} is`,
-    weight(slave),
-    'and',
     height(slave),
+    'and',
+    weight(slave),
   );
 
   return text.join(' ');

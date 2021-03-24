@@ -818,10 +818,8 @@ export function generateWeight(): number {
   return gaussian(-50, 150);
 }
 
-export function generateHeight(actor?: Actor): number {
-  if (actor) return getMeanHeightByActor(actor);
-
-  return gaussian(140, 190);
+export function generateHeight(actor: Actor): number {
+  return getMeanHeightByActor(actor);
 }
 
 // TODO: differentiate between male and female

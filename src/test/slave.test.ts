@@ -303,10 +303,6 @@ describe('generateHeight', () => {
 
     expect(generateHeight(slave)).toBeGreaterThan(0);
   });
-  it('returns a random height between 140 and 190 if no actor is given', () => {
-    expect(generateHeight()).toBeGreaterThanOrEqual(140);
-    expect(generateHeight()).toBeLessThanOrEqual(190);
-  });
 });
 
 describe('generateMuscles', () => {

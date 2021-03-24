@@ -29,19 +29,19 @@ export default function weight(actor: Actor): string {
   const underweight: string = ['rail thin', 'too skinny', 'underweight'].random();
   const emaciated: string = ['dangerously skinny, emaciated'].random();
 
-  if (isExtremelyObese(actor)) return extremelyObese;
-  if (isVeryObese(actor)) return veryObese;
-  if (isObese(actor)) return obese;
+  if (isExtremelyObese(actor)) return `${extremelyObese}.`;
+  if (isVeryObese(actor)) return `${veryObese}.`;
+  if (isObese(actor)) return `${obese}.`;
   if (isFat(actor) && actor.hips.size > HipSize.WIDE) return `${fat}, but ${his} huge hips make the extra weight attractive on ${him}.`;
-  if (isFat(actor)) return fat;
+  if (isFat(actor)) return `${fat}.`;
   if (isPlush(actor)) return `${plush}, but ${his} motherly hips make the extra weight attractive on ${him}.`;
-  if (isChubby(actor)) return chubby;
-  if (isCurvy(actor)) return curvy;
-  if (isThin(actor)) return thin;
+  if (isChubby(actor)) return `${chubby}.`;
+  if (isCurvy(actor)) return `${curvy}.`;
+  if (isThin(actor)) return `${thin}.`;
   if (isUnderweight(actor) && actor.hips.size > HipSize.WIDE) return `${skinny}, and ${his} wide hips make the gap between ${his} thighs very noticeable.`;
   if (isUnderweight(actor) && actor.hips.size < HipSize.NARROW) return `${skinny}, but ${his} trim hips make ${him} look like a model.`;
-  if (isUnderweight(actor)) return underweight;
-  if (isEmaciated(actor)) return emaciated;
+  if (isUnderweight(actor)) return `${underweight}.`;
+  if (isEmaciated(actor)) return `${emaciated}.`;
 
-  return healthy;
+  return `${healthy}.`;
 }
