@@ -54,6 +54,8 @@
   import activeSlave from '../../stores/active.store';
 
   const slave: Slave = $activeSlave;
+
+  console.log(slave);
 </script>
 
 <Header>

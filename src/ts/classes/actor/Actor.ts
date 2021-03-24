@@ -313,8 +313,8 @@ export default class Actor extends Body implements IActor {
   }
 
   get isMomDad(): boolean {
-    return this.family.father !== undefined
-      && this.family.mother !== undefined
+    return this.family.father !== 0
+      && this.family.mother !== 0
       && this.family.father === this.family.mother;
   }
 
