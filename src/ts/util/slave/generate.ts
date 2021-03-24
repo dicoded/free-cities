@@ -51,6 +51,7 @@ import see from '../../../stores/see.store';
 import {
   SkinColor, HairColor, EyeColor, BaseColor,
 } from '../color';
+import names from './name';
 import nationalities from './nationality';
 import { getMeanHeightByActor } from './heights';
 
@@ -377,6 +378,8 @@ export function generateGenetics(): Genetics {
 
 export function generateName(actor: Actor): Name {
   const name = new Name();
+
+
 
   if (actor.sex === Sex.MALE) {
     name.birth.first = 'John';
