@@ -142,9 +142,16 @@ function getMakeup(actor: Actor): string {
 }
 
 export default function face(actor: Actor): string {
+  const { His } = actor.pronouns;
+
   const text: string[] = [];
 
-  text.push(getFaceShape(actor), getFaceWeight(actor), getMakeup(actor));
+  text.push(
+    `${His} face is`,
+    getFaceShape(actor),
+    getFaceWeight(actor),
+    getMakeup(actor),
+  );
 
   if (Actor instanceof Slave && Actor.isFuckdoll) text.push(getFaceFuckdoll(actor));
   else if (actor.markings.face === MarkingsType.BIRTHMARK) text.push(getFaceMarking(actor));
