@@ -8,8 +8,11 @@ export default function size(slave: Slave): string {
 
   const text: string[] = [];
 
-  text.push(`${He} is`, weight(slave));
-  text.push(height(slave));
+  text.push(
+    `${He} is`,
+    weight(slave),
+    height(slave),
+  );
 
   return text.join(' ');
 }
