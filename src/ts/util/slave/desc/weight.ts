@@ -1,20 +1,20 @@
-import Slave from '../../../classes/slave/Slave';
+import Actor from '../../../classes/actor/Actor';
 
 import { HipSize } from '../../../classes/body/lower/Hips';
 
-const isExtremelyObese = (slave: Slave): boolean => slave.isMorbidlyObese && slave.weight > 190;
-const isVeryObese = (slave: Slave): boolean => slave.isObese && slave.weight > 160;
-const isObese = (slave: Slave): boolean => slave.isObese && slave.weight > 130;
-const isFat = (slave: Slave): boolean => slave.isOverweight && slave.weight > 95;
-const isPlush = (slave: Slave): boolean => slave.isOverweight && slave.weight > 30 && slave.hips.size > HipSize.WIDE;
-const isChubby = (slave: Slave): boolean => slave.isOverweight && slave.weight > 30;
-const isCurvy = (slave: Slave): boolean => slave.isOverweight && slave.weight > 10;
-const isThin = (slave: Slave): boolean => slave.isUnderweight && slave.weight < -10;
-const isUnderweight = (slave: Slave): boolean => slave.isUnderweight && slave.weight < -30;
-const isEmaciated = (slave: Slave): boolean => slave.isUnderweight && slave.weight < -95;
+const isExtremelyObese = (actor: Actor): boolean => actor.isMorbidlyObese && actor.weight > 190;
+const isVeryObese = (actor: Actor): boolean => actor.isObese && actor.weight > 160;
+const isObese = (actor: Actor): boolean => actor.isObese && actor.weight > 130;
+const isFat = (actor: Actor): boolean => actor.isOverweight && actor.weight > 95;
+const isPlush = (actor: Actor): boolean => actor.isOverweight && actor.weight > 30 && actor.hips.size > HipSize.WIDE;
+const isChubby = (actor: Actor): boolean => actor.isOverweight && actor.weight > 30;
+const isCurvy = (actor: Actor): boolean => actor.isOverweight && actor.weight > 10;
+const isThin = (actor: Actor): boolean => actor.isUnderweight && actor.weight < -10;
+const isUnderweight = (actor: Actor): boolean => actor.isUnderweight && actor.weight < -30;
+const isEmaciated = (actor: Actor): boolean => actor.isUnderweight && actor.weight < -95;
 
-export default function weight(slave: Slave): string {
-  const { his, him } = slave.pronouns;
+export default function weight(actor: Actor): string {
+  const { his, him } = actor.pronouns;
 
   const extremelyObese: string = ['dangerously fat', 'dangerously overweight', 'extremely obese'].random();
   const veryObese: string = ['extremely fat', 'extremely overweight', 'very obese'].random();
@@ -29,19 +29,19 @@ export default function weight(slave: Slave): string {
   const underweight: string = ['rail thin', 'too skinny', 'underweight'].random();
   const emaciated: string = ['dangerously skinny, emaciated'].random();
 
-  if (isExtremelyObese(slave)) return extremelyObese;
-  if (isVeryObese(slave)) return veryObese;
-  if (isObese(slave)) return obese;
-  if (isFat(slave) && slave.hips.size > HipSize.WIDE) return `${fat}, but ${his} huge hips make the extra weight attractive on ${him}.`;
-  if (isFat(slave)) return fat;
-  if (isPlush(slave)) return `${plush}, but ${his} motherly hips make the extra weight attractive on ${him}.`;
-  if (isChubby(slave)) return chubby;
-  if (isCurvy(slave)) return curvy;
-  if (isThin(slave)) return thin;
-  if (isUnderweight(slave) && slave.hips.size > HipSize.WIDE) return `${skinny}, and ${his} wide hips make the gap between ${his} thighs very noticeable.`;
-  if (isUnderweight(slave) && slave.hips.size < HipSize.NARROW) return `${skinny}, but ${his} trim hips make ${him} look like a model.`;
-  if (isUnderweight(slave)) return underweight;
-  if (isEmaciated(slave)) return emaciated;
+  if (isExtremelyObese(actor)) return extremelyObese;
+  if (isVeryObese(actor)) return veryObese;
+  if (isObese(actor)) return obese;
+  if (isFat(actor) && actor.hips.size > HipSize.WIDE) return `${fat}, but ${his} huge hips make the extra weight attractive on ${him}.`;
+  if (isFat(actor)) return fat;
+  if (isPlush(actor)) return `${plush}, but ${his} motherly hips make the extra weight attractive on ${him}.`;
+  if (isChubby(actor)) return chubby;
+  if (isCurvy(actor)) return curvy;
+  if (isThin(actor)) return thin;
+  if (isUnderweight(actor) && actor.hips.size > HipSize.WIDE) return `${skinny}, and ${his} wide hips make the gap between ${his} thighs very noticeable.`;
+  if (isUnderweight(actor) && actor.hips.size < HipSize.NARROW) return `${skinny}, but ${his} trim hips make ${him} look like a model.`;
+  if (isUnderweight(actor)) return underweight;
+  if (isEmaciated(actor)) return emaciated;
 
   return healthy;
 }
