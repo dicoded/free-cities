@@ -101,7 +101,6 @@
 {markings(slave)}
 {mouth(slave)}
 {muscles(slave)}
-{nationality(slave)}
 {personality(slave)}
 {piercings(slave)}
 {pregnancy(slave)}
