@@ -379,8 +379,6 @@ export function generateGenetics(): Genetics {
 export function generateName(actor: Actor): Name {
   const name = new Name();
 
-
-
   if (actor.sex === Sex.MALE) {
     name.birth.first = 'John';
     name.birth.last = 'Doe';
