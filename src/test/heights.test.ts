@@ -4,6 +4,8 @@ import {
   getMeanHeightBySex,
 } from '../ts/util/slave/heights';
 
+import '../ts/util/extensions/number.extension';
+
 import Actor from '../ts/classes/actor/Actor';
 import { Sex } from '../ts/classes/body/nonphysical/Nonphysical';
 
