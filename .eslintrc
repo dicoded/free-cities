@@ -54,6 +54,13 @@
         "import/no-unresolved": "off",
         "import/extensions": "off",
 
+        "no-param-reassign": [
+            "error",
+            {
+                "props": false
+            }
+        ],
+
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-shadow": "error"
     }
