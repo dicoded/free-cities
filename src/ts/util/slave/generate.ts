@@ -53,7 +53,7 @@ import {
   SkinColor, HairColor, EyeColor, BaseColor,
 } from '../color';
 import nationalities from './nationality';
-import { getMeanHeightByActor } from './heights';
+import { getMeanHeightByBody } from './heights';
 
 const races: string[] = [
   'Amerindian',
@@ -819,8 +819,8 @@ export function generateWeight(): number {
   return gaussian(-50, 150);
 }
 
-export function generateHeight(actor: Actor): number {
-  return getMeanHeightByActor(actor);
+export function generateHeight(body: Body): number {
+  return getMeanHeightByBody(body);
 }
 
 // TODO: differentiate between male and female
@@ -828,27 +828,44 @@ export function generateMuscles(): number {
   return gaussian(-30, 30);
 }
 
-export function generateCounter(actor: Actor): Counter {
+export function getAttractionCounts(actor: Actor) {
+  const counts = [];
+
+  if (actor.attraction.known) {
+    if (actor.attraction.male > 65) {
+      // anal.received.dick
+      counts.push(gaussian(0, 20, 1.5));
+      // oral.given.dick
+      counts.push(gaussian(0, 20, 1.25));
+    }
+
+    if (actor.attraction.female > 65) {
+      counts.push(gaussian(0, 20));
+      counts.push(gaussian(0, 20, 1.5));
+    }
+  }
+
+  return counts;
+}
+
+export function generateCounter(body: Body): Counter {
   const counter = new Counter();
 
-  const chance = actor.age.actual < 18 ? actor.age.actual : actor.age.actual * 3;
+  const chance = body.age.actual < 18 ? body.age.actual : body.age.actual * 3;
 
   if (Number().random(1, 100) < chance) return counter;
 
-  if (actor.penis) {
+  if (body.penis) {
     counter.anal.given.dick = gaussian(0, 20, 2);
     counter.oral.given.dick = gaussian(0, 20, 1.5);
 
-    if (actor.attraction.known) {
-      if (actor.attraction.male > 65) {
-        counter.anal.received.dick = gaussian(0, 20, 1.5);
-        counter.oral.given.dick = gaussian(0, 20, 1.25);
-      }
-
-      if (actor.attraction.female > 65) {
-        counter.vaginal.given.dick = gaussian(0, 20);
-        counter.oral.given.pussy = gaussian(0, 20, 1.5);
-      }
+    if (body instanceof Actor) {
+      [
+        counter.anal.received.dick,
+        counter.oral.given.dick,
+        counter.vaginal.given.dick,
+        counter.oral.given.pussy,
+      ] = getAttractionCounts(body);
     }
 
     return counter;
@@ -1032,6 +1049,9 @@ export function generateBody(body: Body = new Body()): Body {
   body.upper = generateUpper(body);
   body.lower = generateLower(body);
 
+  body.abstract.height = generateHeight(body);
+  body.abstract.counter = generateCounter(body);
+
   return body;
 }
 
@@ -1049,8 +1069,6 @@ export function generateActor(actor: Actor = new Actor()): Actor {
   actor.attraction = generateAttraction(actor);
 
   actor.nationality = generateNationality(actor);
-  actor.abstract.height = generateHeight(actor);
-  actor.abstract.counter = generateCounter(actor);
 
   actor.name = generateName(actor);
 

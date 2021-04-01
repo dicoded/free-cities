@@ -1,5 +1,5 @@
 import {
-  getMeanHeightByActor,
+  getMeanHeightByBody,
   getMeanHeightByNationality,
   getMeanHeightBySex,
 } from '../ts/util/slave/heights';
@@ -15,10 +15,10 @@ describe('getMeanHeightByActor', () => {
     actor.sex = Sex.MALE;
     actor.nationality = 'American';
 
-    expect(getMeanHeightByActor(actor)).toBeGreaterThan(0);
+    expect(getMeanHeightByBody(actor)).toBeGreaterThan(0);
   });
   it('throws an error if the actor has no sex or nationality', () => {
-    expect(() => getMeanHeightByActor(new Actor())).toThrow();
+    expect(() => getMeanHeightByBody(new Actor())).toThrow();
   });
 });
 

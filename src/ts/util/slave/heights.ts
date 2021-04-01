@@ -2,6 +2,7 @@ import heights from '../../../data/nationalities/heights.json';
 
 import { Sex, Genes } from '../../classes/body/nonphysical/Nonphysical';
 
+import Body from '../../classes/body/Body';
 import Actor from '../../classes/actor/Actor';
 
 export const { male, female } = heights;
@@ -23,15 +24,17 @@ export function getMeanHeightBySex(sex: Sex): Map<string, number> {
   return femaleMeans;
 }
 
-export function getMeanHeightByActor(actor: Actor): number {
-  const mean = getMeanHeightBySex(actor.sex).get(actor.nationality) ?? 0;
+export function getMeanHeightByBody(body: Body): number {
+  let mean = 0;
+  if (body instanceof Actor) mean = getMeanHeightBySex(body.sex).get(body.nationality) ?? 0;
+
   const randomMean = Number().gaussian(mean - 10, mean + 10);
 
-  if (actor.genes === Genes.X0) return randomMean * 0.93;
-  if (actor.genes === Genes.XXX || actor.genes === Genes.XXY) return randomMean * 1.03;
-  if (actor.genes === Genes.XYY) return randomMean * 1.04;
+  if (body.genes === Genes.X0) return randomMean * 0.93;
+  if (body.genes === Genes.XXX || body.genes === Genes.XXY) return randomMean * 1.03;
+  if (body.genes === Genes.XYY) return randomMean * 1.04;
 
-  if (mean === 0) throw new Error(`Error finding mean height for actor with ID ${actor.ID}.`);
+  if (mean === 0) throw new Error(`Error finding mean height for actor with ID ${body.ID}.`);
 
   return randomMean;
 }
