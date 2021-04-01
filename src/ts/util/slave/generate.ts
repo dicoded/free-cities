@@ -829,23 +829,26 @@ export function generateMuscles(): number {
 }
 
 export function getAttractionCounts(actor: Actor) {
-  const counts = [];
+  const counter = new Counter();
 
-  if (actor.attraction.known) {
-    if (actor.attraction.male > 65) {
-      // anal.received.dick
-      counts.push(gaussian(0, 20, 1.5));
-      // oral.given.dick
-      counts.push(gaussian(0, 20, 1.25));
+  if (actor.attraction.male > 65) {
+    if (actor.penis) {
+      counter.anal.received.dick = gaussian(0, 20, 1.5);
+      counter.oral.given.dick = gaussian(0, 20, 1.25);
+      counter.oral.received.dick = gaussian(0, 20, 1.5);
     }
 
-    if (actor.attraction.female > 65) {
-      counts.push(gaussian(0, 20));
-      counts.push(gaussian(0, 20, 1.5));
+    if (actor.vagina) {
+      counter.vaginal.received.dick = gaussian(0, 20, 1.5);
     }
   }
 
-  return counts;
+  if (actor.attraction.female > 65) {
+    counter.vaginal.given.dick = gaussian(0, 20);
+    counter.oral.given.pussy = gaussian(0, 20, 1.5);
+  }
+
+  return counter;
 }
 
 export function generateCounter(body: Body): Counter {
@@ -858,21 +861,19 @@ export function generateCounter(body: Body): Counter {
   if (body.penis) {
     counter.anal.given.dick = gaussian(0, 20, 2);
     counter.oral.given.dick = gaussian(0, 20, 1.5);
+  }
 
-    if (body instanceof Actor) {
-      [
-        counter.anal.received.dick,
-        counter.oral.given.dick,
-        counter.vaginal.given.dick,
-        counter.oral.given.pussy,
-      ] = getAttractionCounts(body);
-    }
+  if (body instanceof Actor && body.attraction.known) {
+    counter.anal.received.dick = getAttractionCounts(body).anal.received.dick;
+    counter.oral.given.dick = getAttractionCounts(body).oral.given.dick;
+    counter.vaginal.given.dick = getAttractionCounts(body).vaginal.given.dick;
+    counter.oral.given.pussy = getAttractionCounts(body).oral.given.pussy;
+    counter.vaginal.received.dick = getAttractionCounts(body).vaginal.received.dick;
 
     return counter;
   }
 
   counter.anal.received.dick = gaussian(0, 20, 2);
-  counter.oral.received.dick = gaussian(0, 20, 1.25);
 
   return counter;
 }
