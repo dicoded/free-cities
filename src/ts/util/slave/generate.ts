@@ -41,6 +41,7 @@ import Genetics from '../../classes/body/nonphysical/Genetics';
 import Counter from '../../classes/body/nonphysical/counter/Counter';
 
 import Actor from '../../classes/actor/Actor';
+import Body from '../../classes/body/Body';
 import Upper from '../../classes/body/upper/UpperBody';
 import Lower from '../../classes/body/lower/LowerBody';
 import Slave from '../../classes/slave/Slave';
@@ -51,7 +52,6 @@ import see from '../../../stores/see.store';
 import {
   SkinColor, HairColor, EyeColor, BaseColor,
 } from '../color';
-import names from './name';
 import nationalities from './nationality';
 import { getMeanHeightByActor } from './heights';
 
@@ -354,8 +354,8 @@ export function generateSex(): Sex {
   return Sex.FEMALE;
 }
 
-export function generateGenes(actor: Actor): Genes {
-  if (actor.sex === Sex.MALE) {
+export function generateGenes(body: Body): Genes {
+  if (body.sex === Sex.MALE) {
     if (Number().random(1, 750) === 1) return Genes.XXY;
     if (Number().random(1, 1000) === 1) return Genes.XYY;
     if (Number().random(1, 3500) === 1) return Genes.X0;
@@ -401,7 +401,7 @@ export function generateEducation(): number {
   return gaussian(0, 30);
 }
 
-function getHairLength(actor: Actor) {
+function getHairLength(body: Body) {
   const hair = {
     armpits: 0,
     body: 0,
@@ -409,7 +409,7 @@ function getHairLength(actor: Actor) {
     pubic: 0,
   };
 
-  if (actor.sex === Sex.MALE) {
+  if (body.sex === Sex.MALE) {
     hair.armpits = Number().random(1, 8);
     hair.body = Number().random(1, 3);
     hair.main = Number().random(0, 20);
@@ -424,24 +424,24 @@ function getHairLength(actor: Actor) {
   return hair;
 }
 
-function getHairColor(actor: Actor): HairColor {
-  const index = races.indexOf(actor.race);
+function getHairColor(body: Body): HairColor {
+  const index = races.indexOf(body.race);
 
   const randomColor = hairColors[index].random();
   const brownOrRandomColor = gaussian(1, 100, 0.75) > 50 ? HairColor.BROWN : randomColor;
 
-  const color = darkSkin.includes(actor.skin.color)
+  const color = darkSkin.includes(body.skin.color)
     ? brownOrRandomColor
     : randomColor;
 
-  if (actor.age.physical > 70) {
+  if (body.age.physical > 70) {
     return gaussian(1, 100) > 50
       ? HairColor.WHITE
       : [HairColor.GRAY, HairColor.WHITE].random();
   }
 
-  if (actor.age.physical > 30) {
-    return gaussian(1, 100) > 100 - actor.age.physical // the older the actor, the higher the chance of gray hair
+  if (body.age.physical > 30) {
+    return gaussian(1, 100) > 100 - body.age.physical // the older the actor, the higher the chance of gray hair
       ? [HairColor.GRAY, color].random()
       : color;
   }
@@ -449,10 +449,10 @@ function getHairColor(actor: Actor): HairColor {
   return color;
 }
 
-export function generateHair(actor: Actor): Hair {
+export function generateHair(body: Body): Hair {
   const hair = new Hair();
 
-  const hairColor: HairColor = getHairColor(actor);
+  const hairColor: HairColor = getHairColor(body);
 
   hair.armpits.original = hairColor;
   hair.body.original = hairColor;
@@ -460,21 +460,21 @@ export function generateHair(actor: Actor): Hair {
   hair.main.original = hairColor;
   hair.pubic.original = hairColor;
 
-  hair.armpits.length = getHairLength(actor).armpits;
-  hair.body.length = getHairLength(actor).body;
-  hair.main.length = getHairLength(actor).main;
-  hair.pubic.length = getHairLength(actor).pubic;
+  hair.armpits.length = getHairLength(body).armpits;
+  hair.body.length = getHairLength(body).body;
+  hair.main.length = getHairLength(body).main;
+  hair.pubic.length = getHairLength(body).pubic;
 
   return hair;
 }
 
-function getEyeColor(actor: Actor): { left: EyeColor, right: EyeColor } {
-  const index = races.indexOf(actor.race);
+function getEyeColor(body: Body): { left: EyeColor, right: EyeColor } {
+  const index = races.indexOf(body.race);
 
   const randomColor = eyeColors[index].random();
   const brownOrRandomColor = gaussian(1, 100, 0.75) > 50 ? EyeColor.BROWN : randomColor;
 
-  const color = darkSkin.includes(actor.skin.color)
+  const color = darkSkin.includes(body.skin.color)
     ? brownOrRandomColor
     : randomColor;
 
@@ -491,10 +491,10 @@ function getEyeColor(actor: Actor): { left: EyeColor, right: EyeColor } {
   return colors;
 }
 
-export function generateEyes(actor: Actor): Eyes {
+export function generateEyes(body: Body): Eyes {
   const eyes = new Eyes();
 
-  const eyeColor = getEyeColor(actor);
+  const eyeColor = getEyeColor(body);
 
   eyes.left.color.original = eyeColor.left;
   eyes.right.color.original = eyeColor.right;
@@ -525,7 +525,7 @@ export function generateNose(): Nose {
   return nose;
 }
 
-function getLipSize(actor: Actor): LipSize {
+function getLipSize(body: Body): LipSize {
   const lipSizes = [
     LipSize.THIN,
     LipSize.NORMAL,
@@ -533,12 +533,12 @@ function getLipSize(actor: Actor): LipSize {
     LipSize.PLUSH,
   ];
 
-  return actor.sex === Sex.MALE
+  return body.sex === Sex.MALE
     ? lipSizes[gaussian(0, lipSizes.length)]
     : lipSizes[gaussian(0, lipSizes.length, 0.50)];
 }
 
-export function generateMouth(actor: Actor): Mouth {
+export function generateMouth(body: Body): Mouth {
   const mouth = new Mouth();
 
   const teethTypes = [
@@ -548,7 +548,7 @@ export function generateMouth(actor: Actor): Mouth {
   ];
 
   mouth.lips.color = BaseColor.PINK;
-  mouth.lips.size = getLipSize(actor);
+  mouth.lips.size = getLipSize(body);
   mouth.teeth.color = BaseColor.WHITE;
   mouth.teeth.type = teethTypes[gaussian(0, 3, 2)];
   mouth.throat.capacity = gaussian(1000, 4000, 4).round(200);
@@ -556,17 +556,17 @@ export function generateMouth(actor: Actor): Mouth {
   return mouth;
 }
 
-export function generateFace(actor: Actor): Face {
+export function generateFace(body: Body): Face {
   const face = new Face();
 
   const roll = Number().random(1, 10);
 
-  face.eyes = generateEyes(actor);
+  face.eyes = generateEyes(body);
   face.ears = generateEars();
   face.nose = generateNose();
-  face.mouth = generateMouth(actor);
+  face.mouth = generateMouth(body);
 
-  if (actor.sex === Sex.MALE) {
+  if (body.sex === Sex.MALE) {
     if (roll < 8) face.type = FaceShape.MASCULINE;
     else if (roll === 8) face.type = FaceShape.ANDROGYNOUS;
     else face.type = FaceShape.NORMAL;
@@ -583,12 +583,12 @@ export function generateFace(actor: Actor): Face {
   return face;
 }
 
-export function generateShoulders(actor: Actor): Shoulders {
+export function generateShoulders(body: Body): Shoulders {
   const shoulders = new Shoulders();
 
   const roll = Number().random(1, 10);
 
-  if (actor.sex === Sex.MALE) {
+  if (body.sex === Sex.MALE) {
     if (roll < 4) shoulders.type = ShouldersType.VERY_BROAD;
     else if (roll === 4) shoulders.type = ShouldersType.FEMININE;
     else shoulders.type = ShouldersType.BROAD;
@@ -604,10 +604,10 @@ export function generateShoulders(actor: Actor): Shoulders {
   return shoulders;
 }
 
-export function generateChest(actor: Actor): Chest {
+export function generateChest(body: Body): Chest {
   const chest = new Chest();
 
-  if (actor.sex === Sex.MALE) {
+  if (body.sex === Sex.MALE) {
     chest.size = Number().random(0, 50);
   } else {
     chest.size = Number().random(200, 750);
@@ -616,10 +616,10 @@ export function generateChest(actor: Actor): Chest {
   return chest;
 }
 
-export function generateBelly(actor: Actor): Belly {
+export function generateBelly(body: Body): Belly {
   const belly = new Belly();
 
-  if (actor.sex === Sex.MALE) {
+  if (body.sex === Sex.MALE) {
     belly.size = Number().random(0, 50);
   } else {
     belly.size = Number().random(0, 100);
@@ -642,14 +642,14 @@ export function generateHips(): Hips {
   return hips;
 }
 
-export function generateCrotch(actor: Actor): Crotch {
+export function generateCrotch(body: Body): Crotch {
   const crotch = new Crotch();
 
-  if (actor.sex === Sex.MALE) {
+  if (body.sex === Sex.MALE) {
     crotch.penis = new Penis();
     crotch.vagina = null;
   }
-  if (actor.sex === Sex.FEMALE) {
+  if (body.sex === Sex.FEMALE) {
     crotch.vagina = new Vagina();
     crotch.penis = null;
   }
@@ -687,9 +687,9 @@ function getRaceFromNationality(nationality: string): Race {
   return Race.INDO_ARYAN;
 }
 
-export function generateRace(actor: Actor): Race {
-  if (actor.nationality) {
-    return getRaceFromNationality(actor.nationality);
+export function generateRace(body: Body): Race {
+  if (body instanceof Actor && body.nationality) {
+    return getRaceFromNationality(body.nationality);
   }
 
   const roll = Number().random(1, 100);
@@ -740,41 +740,41 @@ export function generateScarring(): Scars {
   return scars;
 }
 
-function getMarkings(actor: Actor): MarkingsType | null {
+function getMarkings(body: Body): MarkingsType | null {
   const marking = gaussian(1, 100, 1.5) > 50 ? markingTypes.random() : null;
 
-  if (actor.hair.original === HairColor.RED && lightSkin.includes(actor.skin.color)) {
+  if (body.hair.original === HairColor.RED && lightSkin.includes(body.skin.color)) {
     return gaussian(1, 100, 0.75) > 50 ? markingTypes[Number().random(2, 3)] : marking;
   }
 
   return marking;
 }
 
-export function generateMarkings(actor: Actor): Markings {
+export function generateMarkings(body: Body): Markings {
   const markings = new Markings();
 
-  markings.arms = getMarkings(actor);
-  markings.belly = getMarkings(actor);
-  markings.chest = getMarkings(actor);
-  markings.crotch = getMarkings(actor);
-  markings.face = getMarkings(actor);
-  markings.legs = getMarkings(actor);
-  markings.shoulders = getMarkings(actor);
+  markings.arms = getMarkings(body);
+  markings.belly = getMarkings(body);
+  markings.chest = getMarkings(body);
+  markings.crotch = getMarkings(body);
+  markings.face = getMarkings(body);
+  markings.legs = getMarkings(body);
+  markings.shoulders = getMarkings(body);
 
   return markings;
 }
 
-function getSkinColor(actor: Actor): SkinColor {
-  const index = races.indexOf(actor.race);
+function getSkinColor(body: Body): SkinColor {
+  const index = races.indexOf(body.race);
 
   return skinColors[index].random();
 }
 
-export function generateSkin(actor: Actor): Skin {
+export function generateSkin(body: Body): Skin {
   const skin = new Skin();
 
-  skin.color = getSkinColor(actor);
-  skin.markings = generateMarkings(actor);
+  skin.color = getSkinColor(body);
+  skin.markings = generateMarkings(body);
   skin.scars = generateScarring();
 
   return skin;
@@ -991,14 +991,14 @@ export function generateDrive(): number {
   return gaussian(1, 100);
 }
 
-export function generateAbstract(actor: Actor): Abstract {
+export function generateAbstract(body: Body): Abstract {
   const abstract = new Abstract();
 
   abstract.sex = generateSex();
-  abstract.genes = generateGenes(actor);
+  abstract.genes = generateGenes(body);
   abstract.genetics = generateGenetics();
-  abstract.race = generateRace(actor);
-  abstract.skin = generateSkin(actor);
+  abstract.race = generateRace(body);
+  abstract.skin = generateSkin(body);
   abstract.age = generateAge();
   abstract.health = generateHealth();
   abstract.weight = generateWeight();
@@ -1007,19 +1007,19 @@ export function generateAbstract(actor: Actor): Abstract {
   return abstract;
 }
 
-export function generateUpper(actor: Actor): Upper {
+export function generateUpper(body: Body): Upper {
   const upper = new Upper();
 
-  upper.hair = generateHair(actor);
-  upper.face = generateFace(actor);
-  upper.shoulders = generateShoulders(actor);
-  upper.chest = generateChest(actor);
-  upper.belly = generateBelly(actor);
+  upper.hair = generateHair(body);
+  upper.face = generateFace(body);
+  upper.shoulders = generateShoulders(body);
+  upper.chest = generateChest(body);
+  upper.belly = generateBelly(body);
 
   return upper;
 }
 
-export function generateLower(actor: Actor): Lower {
+export function generateLower(actor: Body): Lower {
   const lower = new Lower();
 
   lower.crotch = generateCrotch(actor);
@@ -1027,30 +1027,38 @@ export function generateLower(actor: Actor): Lower {
   return lower;
 }
 
-export function generateSlave(): Slave {
-  const slave = new Slave();
+export function generateBody(body: Body = new Body()): Body {
+  body.abstract = generateAbstract(body);
+  body.upper = generateUpper(body);
+  body.lower = generateLower(body);
 
-  slave.ID = generateID();
+  return body;
+}
 
-  slave.intelligence = generateIntelligence();
-  slave.education = generateEducation();
-  slave.personality = generatePersonality();
-  slave.flaws = generateFlaws();
-  slave.fetish = generateFetish();
-  slave.drive = generateDrive();
+export function generateActor(actor: Actor = new Actor()): Actor {
+  actor.ID = generateID();
 
-  slave.quirks = generateQuirks(slave);
-  slave.attraction = generateAttraction(slave);
+  actor.intelligence = generateIntelligence();
+  actor.education = generateEducation();
+  actor.personality = generatePersonality();
+  actor.flaws = generateFlaws();
+  actor.fetish = generateFetish();
+  actor.drive = generateDrive();
 
-  slave.abstract = generateAbstract(slave);
-  slave.upper = generateUpper(slave);
-  slave.lower = generateLower(slave);
+  actor.quirks = generateQuirks(actor);
+  actor.attraction = generateAttraction(actor);
 
-  slave.nationality = generateNationality(slave);
-  slave.abstract.height = generateHeight(slave);
-  slave.abstract.counter = generateCounter(slave);
+  actor.nationality = generateNationality(actor);
+  actor.abstract.height = generateHeight(actor);
+  actor.abstract.counter = generateCounter(actor);
 
-  slave.name = generateName(slave);
+  actor.name = generateName(actor);
+
+  return actor;
+}
+
+export function generateSlave(slave: Slave = new Slave()): Slave {
+  generateActor(slave);
 
   return slave;
 }
