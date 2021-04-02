@@ -4,7 +4,7 @@ import Lower from './lower/LowerBody';
 
 import { FaceShape } from '../body/face/Face';
 import {
-  VoiceImplant, VoiceType, AccentType, LipSize,
+  VoiceImplant, VoiceType, AccentType,
 } from '../body/face/Mouth';
 import { ShouldersType } from '../body/upper/Shoulders';
 import { HipSize } from '../body/lower/Hips';
@@ -113,10 +113,6 @@ export default class Body implements IBody {
 
   get hair() {
     return this.upper.hair.main;
-  }
-
-  set hair(hair) {
-    this.hair = hair;
   }
 
   get eyebrows() {
@@ -413,7 +409,7 @@ export default class Body implements IBody {
   }
 
   get isBimbo(): boolean {
-    return this.isFemale && this.lips.size > LipSize.PLUSH && this.chest.size > 2000 && this.butt.size > 1200;
+    return this.isFemale && this.lips.size > 41 && this.chest.size > 2000 && this.butt.size > 1200;
   }
 
   get isHourglass(): boolean {

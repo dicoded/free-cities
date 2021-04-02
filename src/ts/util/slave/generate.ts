@@ -15,7 +15,7 @@ import BehavioralFlaws from '../../classes/actor/flaws/Behavioral';
 import Eyes from '../../classes/body/face/Eyes';
 import Ears, { EarShape } from '../../classes/body/face/Ears';
 import Nose from '../../classes/body/face/Nose';
-import Mouth, { LipSize, TeethType } from '../../classes/body/face/Mouth';
+import Mouth, { TeethType } from '../../classes/body/face/Mouth';
 import Face, { FaceShape } from '../../classes/body/face/Face';
 
 import Hair from '../../classes/body/upper/Hairs';
@@ -387,7 +387,7 @@ export function generateName(actor: Actor): Name {
     name.birth.first = names.random().female.random();
   }
 
-  name.birth.last = names.random().surnames.random() ?? '';
+  // name.birth.last = names.random().surnames.random() ?? '';
 
   return name;
 }
@@ -527,17 +527,10 @@ export function generateNose(): Nose {
   return nose;
 }
 
-function getLipSize(body: Body): LipSize {
-  const lipSizes = [
-    LipSize.THIN,
-    LipSize.NORMAL,
-    LipSize.PRETTY,
-    LipSize.PLUSH,
-  ];
-
+function getLipSize(body: Body): number {
   return body.sex === Sex.MALE
-    ? lipSizes[gaussian(0, lipSizes.length)]
-    : lipSizes[gaussian(0, lipSizes.length, 0.50)];
+    ? gaussian(0, 70, 1.5)
+    : gaussian(0, 70, 0.50);
 }
 
 export function generateMouth(body: Body): Mouth {

@@ -1,14 +1,5 @@
 import { BaseColor } from '../../../util/color';
 
-export enum LipSize {
-  THIN = 'thin',
-  NORMAL = 'normal',
-  PRETTY = 'pretty',
-  PLUSH = 'plush',
-  HUGE = 'huge',
-  FACEPUSSY = 'facepussy',
-}
-
 export enum TeethType {
   NORMAL = 'normal',
   CROOKED = 'crooked',
@@ -52,10 +43,18 @@ interface ILips {
 
     /** The size of the body's lips.
      *
-     * One of `Thin`, `Normal`, `Pretty`, `Plush`, `Huge`, or `Facepussy`.
+     * | **Range**   | **Description** |
+     * |------------:|:----------------|
+     * | *0 - 10*    | Thin            |
+     * | *11 - 20*   | Normal          |
+     * | *21 - -40*  | Pretty          |
+     * | *41 - 70*   | Plush           |
+     * | *71 - 95*   | Huge            |
+     * | *96+*       | Facepussy       |
+     *
      * Anything `Huge` or above results in a lisp.
      */
-    size: LipSize;
+    size: number;
 }
 
 interface ITeeth {
@@ -122,7 +121,7 @@ export default class Mouth implements IMouth {
   constructor() {
     this.lips = {
       color: BaseColor.PINK,
-      size: LipSize.NORMAL,
+      size: 40,
     };
     this.teeth = {
       color: BaseColor.WHITE,
