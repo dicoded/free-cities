@@ -863,6 +863,7 @@ export function generateCounter(body: Body): Counter {
     counter.oral.given.dick = gaussian(0, 20, 1.5);
   }
 
+  // TODO: might be a better way to do this
   if (body instanceof Actor && body.attraction.known) {
     counter.anal.received.dick = getAttractionCounts(body).anal.received.dick;
     counter.oral.given.dick = getAttractionCounts(body).oral.given.dick;
