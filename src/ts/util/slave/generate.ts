@@ -53,6 +53,7 @@ import {
   SkinColor, HairColor, EyeColor, BaseColor,
 } from '../color';
 import nationalities from './nationality';
+import names from './name';
 import { getMeanHeightByBody } from './heights';
 
 const races: string[] = [
@@ -376,16 +377,17 @@ export function generateGenetics(): Genetics {
   return genetics;
 }
 
+// TODO: this needs to be reworked to take nationality into account
 export function generateName(actor: Actor): Name {
   const name = new Name();
 
   if (actor.sex === Sex.MALE) {
-    name.birth.first = 'John';
-    name.birth.last = 'Doe';
+    name.birth.first = names.random().male.random();
   } else {
-    name.birth.first = 'Jane';
-    name.birth.last = 'Doe';
+    name.birth.first = names.random().female.random();
   }
+
+  name.birth.last = names.random().surnames.random() ?? '';
 
   return name;
 }
