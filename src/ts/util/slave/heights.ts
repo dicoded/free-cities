@@ -7,21 +7,22 @@ import Actor from '../../classes/actor/Actor';
 
 export const { male, female } = heights;
 
+export function getMeanHeightMap(obj: Object): Map<string, number> {
+  const map = new Map();
+  const keys = Object.keys(obj);
+  const values = Object.values(obj);
+
+  keys.forEach((val, i) => {
+    map.set(val, values[i]);
+  });
+
+  return map;
+}
+
 export function getMeanHeightBySex(sex: Sex): Map<string, number> {
-  const maleMeans = new Map();
-  const femaleMeans = new Map();
+  if (sex === Sex.MALE) return getMeanHeightMap(male);
 
-  // FIXME: figure out a better way to do this
-  Object.keys(male).forEach((val, i) => {
-    maleMeans.set(val, Object.values(male)[i]);
-  });
-  Object.keys(female).forEach((val, i) => {
-    femaleMeans.set(val, Object.values(female)[i]);
-  });
-
-  if (sex === Sex.MALE) return maleMeans;
-
-  return femaleMeans;
+  return getMeanHeightMap(female);
 }
 
 export function getMeanHeightByBody(body: Body): number {
@@ -34,7 +35,7 @@ export function getMeanHeightByBody(body: Body): number {
   if (body.genes === Genes.XXX || body.genes === Genes.XXY) return randomMean * 1.03;
   if (body.genes === Genes.XYY) return randomMean * 1.04;
 
-  if (mean === 0) throw new Error(`Error finding mean height for actor with ID ${body.ID}.`);
+  if (mean === 0) throw new Error('Error finding mean height for body');
 
   return randomMean;
 }
