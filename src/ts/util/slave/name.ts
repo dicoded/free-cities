@@ -486,8 +486,10 @@ export const { male: zairianMaleNames, female: zairianFemaleNames, surnames: zai
 export const { male: zambianMaleNames, female: zambianFemaleNames, surnames: zambianSurnames } = zambian;
 export const { male: zimbabweanMaleNames, female: zimbabweanFemaleNames, surnames: zimbabweanSurnames } = zimbabwean;
 
+export const specialNames = [ancientEgyptian, aztec];
+
 const names = [
-  afghan, africanAmerican, algerian, albanian, ancientEgyptian, andorran, angolan, antiguan, argentinian, armenian, aruban, asianAmerican, australian, austrian, azerbaijani, aztec,
+  afghan, africanAmerican, algerian, albanian, andorran, angolan, antiguan, argentinian, armenian, aruban, asianAmerican, australian, austrian, azerbaijani,
   bahamian, bahraini, bangladeshi, barbadian, belarusian, belgian, belizean, beninese, bermudian, bhutanese, bissauGuinean, bolivian, bosnian, brazilian, british, bruneian, bulgarian, burkinabe, burmese, burundian,
   cambodian, cameroonian, canadian, capeVerdean, catalan, centralAfrican, chadian, chilean, chinese, colombian, congolese, cookIslander, costaRican, croatian, cuban, curacaoan, cypriot, czech,
   danish, djiboutian, dominican, dominiquais, dutch,
