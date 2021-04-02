@@ -1058,6 +1058,8 @@ export function generateBody(body: Body = new Body()): Body {
 }
 
 export function generateActor(actor: Actor = new Actor()): Actor {
+  generateBody(actor);
+
   actor.ID = generateID();
 
   actor.intelligence = generateIntelligence();

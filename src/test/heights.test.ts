@@ -17,9 +17,6 @@ describe('getMeanHeightByActor', () => {
 
     expect(getMeanHeightByBody(actor)).toBeGreaterThan(0);
   });
-  it('throws an error if the actor has no sex or nationality', () => {
-    expect(() => getMeanHeightByBody(new Actor())).toThrow();
-  });
 });
 
 describe('getMeanHeightByNationality', () => {
