@@ -82,6 +82,8 @@
 {eyes(slave)}
 {face(slave)}
 {nose(slave)}
+{size(slave)}
+{fetish(slave)}
 
 {armwear(slave)}
 {belly(slave)}
@@ -90,7 +92,6 @@
 {clothing(slave)}
 {counter(slave)}
 {crotch(slave)}
-{fetish(slave)}
 {flaws(slave)}
 {genes(slave)}
 {hair(slave)}
@@ -110,5 +111,4 @@
 {score(slave)}
 {sex(slave)}
 {shoulders(slave)}
-{size(slave)}
 {waist(slave)}

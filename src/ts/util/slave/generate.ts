@@ -966,7 +966,7 @@ const attracted = Number().random(66, 100);
 const notAttracted = Number().random(1, 65);
 
 // TODO: could probably be improved
-function getMaleAttraction(actor: Actor): {male: number, female: number} {
+function getMaleAttraction(actor: Actor): { male: number, female: number } {
   if (isAsexual()) return { male: notAttracted, female: notAttracted };
 
   if (isGay()) {
