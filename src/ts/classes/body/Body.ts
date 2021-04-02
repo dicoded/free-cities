@@ -293,6 +293,10 @@ export default class Body implements IBody {
     return !(this.upper.face.eyes.left.blind && this.upper.face.eyes.right.blind);
   }
 
+  get canTalk(): boolean {
+    return !this.upper.face.mouth.mute;
+  }
+
   get isTrueVirgin() {
     return this.counter.totalGiven === 0 && this.counter.totalReceived === 0;
   }

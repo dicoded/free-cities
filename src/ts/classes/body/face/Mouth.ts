@@ -9,7 +9,6 @@ export enum TeethType {
   REMOVABLE = 'removable',
   POINTY = 'pointy',
   FANGS = 'fangs',
-  FANG = 'fang',
   BABY = 'baby',
   MIXED = 'mixed',
 }

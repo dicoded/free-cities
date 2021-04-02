@@ -133,6 +133,7 @@ export default class Actor extends Body implements IActor {
   constructor() {
     super();
 
+
     this.ID = 0;
     this.name = new Name();
     this.accessories = new Accessories();
