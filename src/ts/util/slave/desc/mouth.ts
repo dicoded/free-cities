@@ -250,20 +250,20 @@ function getLipTattoos(actor: Actor): string {
   return '';
 }
 
-function getLipBrands(actor: Actor): string {
+// function getLipBrands(actor: Actor): string {
+// TODO:
+// }
 
-}
-
-function getLipScars(actor: Actor): string {
-
-}
+// function getLipScars(actor: Actor): string {
+// TODO:
+// }
 
 function lipMods(actor: Actor): string {
   return [
     getLipPiercings(actor),
     getLipTattoos(actor),
-    getLipBrands(actor),
-    getLipScars(actor),
+    // getLipBrands(actor),
+    // getLipScars(actor),
   ].join(' ');
 }
 
@@ -280,19 +280,19 @@ function getTonguePiercings(actor: Actor): string {
   return '';
 }
 
-function getTongueBrands(actor: Actor): string {
+// function getTongueBrands(actor: Actor): string {
+// TODO:
+// }
 
-}
-
-function getTongueScars(actor: Actor): string {
-
-}
+// function getTongueScars(actor: Actor): string {
+// TODO:
+// }
 
 function tongueMods(actor: Actor): string {
   return [
     getTonguePiercings(actor),
-    getTongueBrands(actor),
-    getTongueScars(actor),
+    // getTongueBrands(actor),
+    // getTongueScars(actor),
   ].join(' ');
 }
 
