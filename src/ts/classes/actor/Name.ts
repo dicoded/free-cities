@@ -7,9 +7,6 @@ interface IName {
 
   /** The actor's last name. */
   last: string;
-
-  /** The actor's full name. */
-  full: () => string;
 }
 
 interface INames {
@@ -30,80 +27,48 @@ export default class Name implements INames {
       first: '',
       middle: '',
       last: '',
-      full(): string {
-        return `${this.first}${this.middle ? ` ${this.middle}` : ''}${this.last ? ` ${this.last}` : ''}`;
-      },
     };
     this.slave = {
       first: '',
       middle: '',
       last: '',
-      full(): string {
-        return `${this.first}${this.middle ? ` ${this.middle}` : ''}${this.last ? ` ${this.last}` : ''}`;
-      },
     };
   }
 
   get first(): string {
-    return this.slave.first ?? this.birth.first;
+    return this.slave.first || this.birth.first;
   }
 
   get middle(): string {
-    return this.slave.middle ?? this.birth.middle;
+    return this.slave.middle || this.birth.middle;
   }
 
   get last(): string {
-    return this.slave.last ?? this.birth.last;
+    return this.slave.last || this.birth.last;
+  }
+
+  get fullBirth(): string {
+    return `${this.first}${this.middle ? ` ${this.middle}` : ''}${this.last ? ` ${this.last}` : ''}`;
+  }
+
+  get fullSlave(): string {
+    return `${this.first}${this.middle ? ` ${this.middle}` : ''}${this.last ? ` ${this.last}` : ''}`;
   }
 
   /** Returns the actor's full name. If the actor does not have a slave name, returns the birth name instead. */
   get full(): string {
-    let name: string;
+    return this.fullSlave || this.fullBirth;
+  }
 
-    if (this.slave.first) {
-      name = this.slave.first;
+  get firstLastSlave(): string {
+    return `${this.slave.first}${this.slave.last ? ` ${this.slave.last}` : ''}`;
+  }
 
-      if (this.slave.middle) {
-        name += ` ${this.slave.middle}`;
-      }
-      if (this.slave.last) {
-        name += ` ${this.slave.last}`;
-      }
-
-      return name;
-    }
-
-    name = this.birth.first;
-
-    if (this.birth.middle) {
-      name += ` ${this.birth.middle}`;
-    }
-    if (this.birth.last) {
-      name += ` ${this.birth.last}`;
-    }
-
-    return name;
+  get firstLastBirth(): string {
+    return `${this.birth.first}${this.birth.last ? ` ${this.birth.last}` : ''}`;
   }
 
   get firstLast(): string {
-    let name: string;
-
-    if (this.slave.first) {
-      name = this.slave.first;
-
-      if (this.slave.last) {
-        name += ` ${this.slave.last}`;
-      }
-
-      return name;
-    }
-
-    name = this.birth.first;
-
-    if (this.birth.last) {
-      name += ` ${this.birth.last}`;
-    }
-
-    return name;
+    return this.firstLastSlave || this.firstLastBirth;
   }
 }
