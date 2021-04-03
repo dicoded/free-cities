@@ -18,6 +18,17 @@ function fuckdoll(slave: Slave): string {
   return text.join(' ');
 }
 
+function oral(slave: Slave): string {
+  const { She } = slave.pronouns;
+
+  if (slave.skills.sex.oral <= 10) return `${She} is unskilled at oral sex.`;
+  if (slave.skills.sex.oral <= 30) return `${She} is capable of basic oral sex.`;
+  if (slave.skills.sex.oral <= 60) return `${She} is orally skilled.`;
+  if (slave.skills.sex.oral < 100) return `${She} is expert at oral.`;
+
+  return `${She} is an oral sex master.`;
+}
+
 function entertainment(slave: Slave): string {
   const { She } = slave.pronouns;
 
@@ -59,7 +70,11 @@ export default function skills(slave: Slave): string {
 
   if (slave.isFuckdoll) return fuckdoll(slave);
 
-  text.push(entertainment(slave), whoring(slave));
+  text.push(
+    oral(slave),
+    entertainment(slave),
+    whoring(slave),
+  );
 
   return text.join(' ');
 }

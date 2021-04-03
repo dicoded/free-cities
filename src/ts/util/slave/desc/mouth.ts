@@ -296,6 +296,22 @@ function tongueMods(actor: Actor): string {
   ].join(' ');
 }
 
+function fuckdoll(slave: Slave): string {
+  const { his } = slave.pronouns;
+
+  const text: string[] = [];
+
+  text.push(`Sticking a ${PC.penis ? 'dick' : 'dildo'} into ${his}`);
+
+  if (slave.lips.size > 95) text.push('facepussy');
+  else text.push('mouth insert');
+
+  if (slave.fuckdoll <= 45) text.push('mostly results in gagging');
+  else text.push('offers its user a selection of delightful face hole massage options.');
+
+  return text.join(' ');
+}
+
 export default function mouth(actor: Actor): string {
   const text: string[] = [];
 
@@ -306,6 +322,8 @@ export default function mouth(actor: Actor): string {
     lipMods(actor),
     tongueMods(actor),
   );
+
+  if (actor instanceof Slave && actor.isFuckdoll) text.push(fuckdoll(actor));
 
   return text.join(' ');
 }
