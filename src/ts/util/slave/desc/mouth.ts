@@ -280,10 +280,6 @@ function getTonguePiercings(actor: Actor): string {
   return '';
 }
 
-function getTongueTattoos(actor: Actor): string {
-
-}
-
 function getTongueBrands(actor: Actor): string {
 
 }
@@ -295,7 +291,6 @@ function getTongueScars(actor: Actor): string {
 function tongueMods(actor: Actor): string {
   return [
     getTonguePiercings(actor),
-    getTongueTattoos(actor),
     getTongueBrands(actor),
     getTongueScars(actor),
   ].join(' ');
