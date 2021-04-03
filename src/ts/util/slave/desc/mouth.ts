@@ -5,7 +5,7 @@ import Slave from '../../../classes/slave/Slave';
 import { TeethType } from '../../../classes/body/face/Mouth';
 import { FaceShape } from '../../../classes/body/face/Face';
 import { Piercing } from '../../../classes/actor/Piercings';
-import { Tattoo, Tattoo } from '../../../classes/actor/Tattoos';
+import { Tattoo } from '../../../classes/actor/Tattoos';
 
 import pc from '../../../../stores/player.store';
 
