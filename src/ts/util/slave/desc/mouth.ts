@@ -3,6 +3,7 @@ import { get } from 'svelte/store';
 import Actor from '../../../classes/actor/Actor';
 import { TeethType } from '../../../classes/body/face/Mouth';
 import { FaceShape } from '../../../classes/body/face/Face';
+import { Piercing } from '../../../classes/actor/Piercings';
 
 import pc from '../../../../stores/player.store';
 
@@ -136,7 +137,16 @@ function taste(actor: Actor): string {
 }
 
 function getLipPiercings(actor: Actor): string {
+  const { He, His } = actor.pronouns;
 
+  if (actor.accessories.piercings?.lips === Piercing.LIGHT) {
+    return `${He} has a simple lip piercing.`;
+  }
+  if (actor.accessories.piercings?.lips === Piercing.HEAVY) {
+    return `${His} lips are heavily pierced.`;
+  }
+
+  return '';
 }
 
 function getLipTattoos(actor: Actor): string {
@@ -161,7 +171,16 @@ function lipMods(actor: Actor): string {
 }
 
 function getTonguePiercings(actor: Actor): string {
+  const {
+    His, he, him, his,
+  } = actor.pronouns;
 
+  if (actor.accessories.piercings?.tongue === Piercing.LIGHT) return `${His} tongue bears a single stud, so oral sex with ${him} is a bit more fun.`;
+  if (actor.accessories.piercings?.tongue === Piercing.HEAVY) return `${His} tongue bears a row of studs, offering thorough stimulation to anyone ${he} blows.`;
+
+  if (actor.accessories.piercings?.tongue && actor.hasLisp) return `The piercings make ${his} lisp more pronounced.`;
+
+  return '';
 }
 
 function getTongueTattoos(actor: Actor): string {

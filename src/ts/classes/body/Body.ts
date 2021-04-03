@@ -4,7 +4,7 @@ import Lower from './lower/LowerBody';
 
 import { FaceShape } from '../body/face/Face';
 import {
-  VoiceImplant, VoiceType, AccentType,
+  VoiceImplant, VoiceType, AccentType, TeethType,
 } from '../body/face/Mouth';
 import { ShouldersType } from '../body/upper/Shoulders';
 import { HipSize } from '../body/lower/Hips';
@@ -609,5 +609,10 @@ export default class Body implements IBody {
 
   get hasBothLegs(): boolean {
     return this.legs.left !== null && this.legs.right !== null;
+  }
+
+  get hasLisp(): boolean {
+    return this.canTalk
+      && (this.lips.size > 70 || this.mouth.teeth.type === TeethType.GAPPED);
   }
 }

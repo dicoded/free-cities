@@ -14,6 +14,7 @@ import Rivalry from './Rivalry';
 import Accessories from '../actor/Accessories';
 
 import { Sex } from '../body/nonphysical/Nonphysical';
+import { Piercing } from '../actor/Piercings';
 
 import { getActor } from '../../util/slave/util';
 
@@ -132,7 +133,6 @@ export default class Actor extends Body implements IActor {
 
   constructor() {
     super();
-
 
     this.ID = 0;
     this.name = new Name();
@@ -350,5 +350,11 @@ export default class Actor extends Body implements IActor {
   get isGay(): boolean {
     return (this.sex === Sex.MALE && this.attraction.male > 65)
       || (this.sex === Sex.FEMALE && this.attraction.female > 65);
+  }
+
+  get hasLisp(): boolean {
+    return super.hasLisp
+      || (this.accessories.piercings?.lips === Piercing.LIGHT && this.accessories.piercings?.tongue === Piercing.HEAVY)
+      || (this.accessories.piercings?.lips === Piercing.HEAVY && this.accessories.piercings?.tongue === Piercing.LIGHT);
   }
 }
