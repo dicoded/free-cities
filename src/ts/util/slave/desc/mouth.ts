@@ -1,9 +1,11 @@
 import { get } from 'svelte/store';
 
 import Actor from '../../../classes/actor/Actor';
+import Slave from '../../../classes/slave/Slave';
 import { TeethType } from '../../../classes/body/face/Mouth';
 import { FaceShape } from '../../../classes/body/face/Face';
 import { Piercing } from '../../../classes/actor/Piercings';
+import { Tattoo, Tattoo } from '../../../classes/actor/Tattoos';
 
 import pc from '../../../../stores/player.store';
 
@@ -149,8 +151,103 @@ function getLipPiercings(actor: Actor): string {
   return '';
 }
 
-function getLipTattoos(actor: Actor): string {
+function getLipTribalPatterns(actor: Actor): string {
+  const { His, him } = actor.pronouns;
 
+  return `${His} face is tattooed with tribal patterns that make ${him} seem mysterious and exotic.`;
+}
+
+function getLipFlowers(actor: Actor): string {
+  const { His } = actor.pronouns;
+
+  return `${His} minimal facial tattoos are limited to a cute flower on each cheek.`;
+}
+
+function getLipCounting(actor: Actor): string {
+  const { his, he } = actor.pronouns;
+
+  if (actor.counter.oral.given.dick === 0) return `There is a horizontal line tattooed across the ${his} cheeks for symbols counting ${his} oral totals to be inscribed under, once ${he} has some.`;
+  if (actor.counter.oral.given.dick < 500) return `Tiny dick, pussy, and anus symbols are tattooed all over ${his} cheeks, one for every thing ${he}'s sucked.`;
+
+  return `Tiny dick, pussy, and anus symbols are tattooed all over ${his} face, forehead, and neck, one for every thing ${he}'s sucked.`;
+}
+
+function getLipAdvertisements(actor: Actor): string {
+  const { His, his } = actor.pronouns;
+
+  return `${His} facial tattoos include 'Facefuck Me' across ${his} forehead, 'Cock' to the left of ${his} mouth, and 'Sucker' to the right of it.`;
+}
+
+function getLipRudeWords(actor: Actor): string {
+  const { His, his } = actor.pronouns;
+
+  return `${His} facial tattoos include 'Sex Slave' across ${his} forehead, 'Face' to the left of ${his} mouth, and 'Pussy' to the right of it.`;
+}
+
+function getLipDegradation(actor: Actor): string {
+  const { his } = actor.pronouns;
+
+  return `'${actor instanceof Slave ? actor.title : actor.name.firstLast}' is tattooed across ${his} forehead.`;
+}
+
+function getLipAsianArt(actor: Actor): string {
+  const { He, his } = actor.pronouns;
+
+  return `${He} has a blossoming cherry tree tattooed on one temple; its pink petals are dappled across ${his} cheeks.`;
+}
+
+function getLipBovinePatterns(actor: Actor): string {
+  const { His, him } = actor.pronouns;
+
+  return `${His} face is subtly tattooed to give ${him} a somewhat bovine appearance.`;
+}
+
+function getLipPermanentMakeup(actor: Actor): string {
+  const { His } = actor.pronouns;
+
+  return `${His} normal makeup is difficult to distinguish from the underlying tattoo.`;
+}
+
+function getLipSacrilege(actor: Actor): string {
+  const { His, him } = actor.pronouns;
+
+  return `${His} face is subtly tattooed to give ${him} a decidedly demonic appearance.`;
+}
+
+function getLipSacrament(actor: Actor): string {
+  const { His, him } = actor.pronouns;
+
+  return `${His} face is subtly tattooed to give ${him} a decidedly angelic appearance.`;
+}
+
+function getLipPossessive(actor: Actor): string {
+  const { his } = actor.pronouns;
+
+  return `'Property of ${PC.name.firstLast}' is tattooed across ${his} forehead.`;
+}
+
+function getLipPaternalist(actor: Actor): string {
+  const { his } = actor.pronouns;
+
+  return `'Beloved ${actor instanceof Slave ? actor.title : actor.name.firstLast}' is tattooed across one of ${his} cheeks.`;
+}
+
+function getLipTattoos(actor: Actor): string {
+  if (actor.accessories.tattoos?.lips === Tattoo.TRIBAL_PATTERNS) return getLipTribalPatterns(actor);
+  if (actor.accessories.tattoos?.lips === Tattoo.FLOWERS) return getLipFlowers(actor);
+  if (actor.accessories.tattoos?.lips === Tattoo.COUNTING) return getLipCounting(actor);
+  if (actor.accessories.tattoos?.lips === Tattoo.ADVERTISEMENTS) return getLipAdvertisements(actor);
+  if (actor.accessories.tattoos?.lips === Tattoo.RUDE_WORDS) return getLipRudeWords(actor);
+  if (actor.accessories.tattoos?.lips === Tattoo.DEGRADATION) return getLipDegradation(actor);
+  if (actor.accessories.tattoos?.lips === Tattoo.ASIAN_ART) return getLipAsianArt(actor);
+  if (actor.accessories.tattoos?.lips === Tattoo.BOVINE_PATTERNS) return getLipBovinePatterns(actor);
+  if (actor.accessories.tattoos?.lips === Tattoo.MAKEUP) return getLipPermanentMakeup(actor);
+  if (actor.accessories.tattoos?.lips === Tattoo.SACRILEGE) return getLipSacrilege(actor);
+  if (actor.accessories.tattoos?.lips === Tattoo.SACRAMENT) return getLipSacrament(actor);
+  if (actor.accessories.tattoos?.lips === Tattoo.POSSESSIVE) return getLipPossessive(actor);
+  if (actor.accessories.tattoos?.lips === Tattoo.PATERNALIST) return getLipPaternalist(actor);
+
+  return '';
 }
 
 function getLipBrands(actor: Actor): string {
