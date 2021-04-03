@@ -84,6 +84,7 @@
 {nose(slave)}
 {size(slave)}
 {fetish(slave)}
+{mouth(slave)}
 
 {armwear(slave)}
 {belly(slave)}
@@ -100,7 +101,6 @@
 {legs(slave)}
 {limbs(slave)}
 {markings(slave)}
-{mouth(slave)}
 {muscles(slave)}
 {personality(slave)}
 {piercings(slave)}
