@@ -488,6 +488,8 @@ export const { male: zimbabweanMaleNames, female: zimbabweanFemaleNames, surname
 
 export const specialNames = [ancientEgyptian, aztec];
 
+// TODO: this will need to be expanded to take surnames with male-female variants into account
+
 const names = [
   afghan, africanAmerican, algerian, albanian, andorran, angolan, antiguan, argentinian, armenian, aruban, asianAmerican, australian, austrian, azerbaijani,
   bahamian, bahraini, bangladeshi, barbadian, belarusian, belgian, belizean, beninese, bermudian, bhutanese, bissauGuinean, bolivian, bosnian, brazilian, british, bruneian, bulgarian, burkinabe, burmese, burundian,
