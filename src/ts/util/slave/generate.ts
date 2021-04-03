@@ -387,7 +387,7 @@ export function generateName(actor: Actor): Name {
     name.birth.first = names.random().female.random();
   }
 
-  // name.birth.last = names.random().surnames.random() ?? '';
+  name.birth.last = names.random().surnames.random() ?? '';
 
   return name;
 }

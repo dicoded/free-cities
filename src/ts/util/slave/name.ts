@@ -248,7 +248,7 @@ export const { male: afghanMaleNames, female: afghanFemaleNames, surnames: afgha
 export const { male: africanAmericanMaleNames, female: africanAmericanFemaleNames, surnames: africanAmericanSurnames } = africanAmerican;
 export const { male: albanianMaleNames, female: albanianFemaleNames, surnames: albanianSurnames } = albanian;
 export const { male: algerianMaleNames, female: algerianFemaleNames, surnames: algerianSurnames } = algerian;
-export const { male: ancientEgyptianMaleNames, female: ancientEgyptianFemaleNames } = ancientEgyptian;
+export const { male: ancientEgyptianMaleNames, female: ancientEgyptianFemaleNames, surnames: ancientEgyptianSurnames } = ancientEgyptian;
 export const { male: andorranMaleNames, female: andorranFemaleNames, surnames: andorranSurnames } = andorran;
 export const { male: angolanMaleNames, female: angolanFemaleNames, surnames: angolanSurnames } = angolan;
 export const { male: antiguanMaleNames, female: antiguanFemaleNames, surnames: antiguanSurnames } = antiguan;
@@ -259,7 +259,7 @@ export const { male: asianAmericanMaleNames, female: asianAmericanFemaleNames, s
 export const { male: australianMaleNames, female: australianFemaleNames, surnames: australianSurnames } = australian;
 export const { male: austrianMaleNames, female: austrianFemaleNames, surnames: austrianSurnames } = austrian;
 export const { male: azerbaijaniMaleNames, female: azerbaijaniFemaleNames, surnames: azerbaijaniSurnames } = azerbaijani;
-export const { male: aztecMaleNames, female: aztecFemaleNames } = aztec;
+export const { male: aztecMaleNames, female: aztecFemaleNames, surnames: aztecSurnames } = aztec;
 
 export const { male: bahamianMaleNames, female: bahamianFemaleNames, surnames: bahamianSurnames } = bahamian;
 export const { male: bahrainiMaleNames, female: bahrainiFemaleNames, surnames: bahrainiSurnames } = bahraini;
