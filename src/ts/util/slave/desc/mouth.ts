@@ -127,10 +127,18 @@ function teeth(actor: Actor): string {
   return getStraightTeeth(actor);
 }
 
+function taste(actor: Actor): string {
+  const { He, his } = actor.pronouns;
+
+  if (!actor.mouth.taste) return `${He} has no sense of taste, though this isn't immediately obvious just by looking at ${his} tongue.`;
+
+  return '';
+}
+
 export default function mouth(actor: Actor): string {
   const text: string[] = [];
 
-  text.push(lips(actor), teeth(actor));
+  text.push(lips(actor), teeth(actor), taste(actor));
 
   return text.join(' ');
 }
