@@ -135,10 +135,66 @@ function taste(actor: Actor): string {
   return '';
 }
 
+function getLipPiercings(actor: Actor): string {
+
+}
+
+function getLipTattoos(actor: Actor): string {
+
+}
+
+function getLipBrands(actor: Actor): string {
+
+}
+
+function getLipScars(actor: Actor): string {
+
+}
+
+function lipMods(actor: Actor): string {
+  return [
+    getLipPiercings(actor),
+    getLipTattoos(actor),
+    getLipBrands(actor),
+    getLipScars(actor),
+  ].join(' ');
+}
+
+function getTonguePiercings(actor: Actor): string {
+
+}
+
+function getTongueTattoos(actor: Actor): string {
+
+}
+
+function getTongueBrands(actor: Actor): string {
+
+}
+
+function getTongueScars(actor: Actor): string {
+
+}
+
+function tongueMods(actor: Actor): string {
+  return [
+    getTonguePiercings(actor),
+    getTongueTattoos(actor),
+    getTongueBrands(actor),
+    getTongueScars(actor),
+  ].join(' ');
+}
+
 export default function mouth(actor: Actor): string {
   const text: string[] = [];
 
-  text.push(lips(actor), teeth(actor), taste(actor));
+  text.push(
+    lips(actor),
+    teeth(actor),
+    taste(actor),
+    lipMods(actor),
+    tongueMods(actor),
+  );
 
   return text.join(' ');
 }
