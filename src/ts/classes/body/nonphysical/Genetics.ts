@@ -52,12 +52,17 @@ interface IQuirks {
   */
   dwarfism: number,
 
-  /** Body retains childlike characteristics. */
+  /**
+   * Body retains childlike characteristics.
+   *
+   * `.neoteny` * `progeria`: progeria wins
+   */
   neoteny: number,
 
   /** Body undergoes rapid aging.
    *
-   * `.neoteny` + `.progeria`: progeria wins. */
+   * `.neoteny` + `.progeria`: progeria wins.
+   */
   progeria: number,
 
   /**
@@ -93,26 +98,33 @@ interface IQuirks {
   /**
    * Body constantly gains weight unless dieting, easier to gain weight.
    *
-   * `.wGain` + `.wLoss`: weight gain/loss fluctuates randomly. */
+   * `.wGain` + `.wLoss`: weight gain/loss fluctuates randomly.
+   */
   wGain: number,
 
   /**
    * Body constantly loses weight unless gaining, easier to lose weight.
    *
-   * `.wGain` + `.wLoss`: weight gain/loss fluctuates randomly. */
+   * `.wGain` + `.wLoss`: weight gain/loss fluctuates randomly.
+   */
   wLoss: number,
 
   /**
    * Body constantly gains muscle mass, easier to gain muscle.
    *
-   * `.mGain` + `.mLoss`: muscle gain/loss amplified, body loses muscle unless actively building. */
+   * `.mGain` + `.mLoss`: muscle gain/loss amplified, body loses muscle unless actively building.
+   */
   mGain: number,
 
   /**
    * Body constantly loses muscle mass, easier to gain muscle.
    *
-   * `.mGain` + `.mLoss`: muscle gain/loss amplified, body loses muscle unless actively building. */
+   * `.mGain` + `.mLoss`: muscle gain/loss amplified, body loses muscle unless actively building.
+   */
   mLoss: number,
+
+  /** Body can only ever birth boys. */
+  boysOnly: number;
 
   /** Body can only ever birth girls. */
   girlsOnly: number;
@@ -163,6 +175,7 @@ function getQuirks() {
     wLoss: 0,
     mGain: 0,
     mLoss: 0,
+    boysOnly: 0,
     girlsOnly: 0,
     androgyny: 0,
   };
@@ -213,6 +226,8 @@ export default class Genetics implements IGenetics {
     mGain: number;
 
     mLoss: number;
+
+    boysOnly: number;
 
     girlsOnly: number;
 
