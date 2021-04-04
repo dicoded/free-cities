@@ -24,7 +24,7 @@ import Chest from '../../classes/body/upper/Chest';
 import Belly from '../../classes/body/upper/Belly';
 
 import Waist from '../../classes/body/lower/Waist';
-import Hips from '../../classes/body/lower/Hips';
+import Hips, { HipSize } from '../../classes/body/lower/Hips';
 import Crotch from '../../classes/body/lower/crotch/Crotch';
 import Penis from '../../classes/body/lower/crotch/Penis';
 import Vagina from '../../classes/body/lower/crotch/Vagina';
@@ -632,9 +632,11 @@ export function generateWaist(actor: Actor): Waist {
   return waist;
 }
 
-// TODO:
-export function generateHips(): Hips {
+export function generateHips(actor: Actor): Hips {
   const hips = new Hips();
+
+  if (actor.sex === Sex.MALE) hips.size = [HipSize.VERY_NARROW, HipSize.NARROW, HipSize.NORMAL].random();
+  else hips.size = [HipSize.NORMAL, HipSize.WIDE, HipSize.VERY_WIDE].random();
 
   return hips;
 }
