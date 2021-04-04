@@ -139,6 +139,35 @@ interface IGenetics {
   mods: IMods;
 }
 
+function getQuirks() {
+  return {
+    macromastia: 0,
+    gigantomastia: 0,
+    fertility: 0,
+    hyperFertility: 0,
+    superfetation: 0,
+    polyhydramnios: 0,
+    uterineHypersensitivity: 0,
+    galactorrhea: 0,
+    gigantism: 0,
+    dwarfism: 0,
+    neoteny: 0,
+    progeria: 0,
+    pFace: 0,
+    uFace: 0,
+    albinism: 0,
+    heterochromia: 0,
+    rearLipedema: 0,
+    wellHung: 0,
+    wGain: 0,
+    wLoss: 0,
+    mGain: 0,
+    mLoss: 0,
+    girlsOnly: 0,
+    androgyny: 0,
+  };
+}
+
 export default class Genetics implements IGenetics {
   quirks: {
     macromastia: number;
@@ -197,32 +226,7 @@ export default class Genetics implements IGenetics {
   }
 
   constructor() {
-    this.quirks = {
-      macromastia: 0,
-      gigantomastia: 0,
-      fertility: 0,
-      hyperFertility: 0,
-      superfetation: 0,
-      polyhydramnios: 0,
-      uterineHypersensitivity: 0,
-      galactorrhea: 0,
-      gigantism: 0,
-      dwarfism: 0,
-      neoteny: 0,
-      progeria: 0,
-      pFace: 0,
-      uFace: 0,
-      albinism: 0,
-      heterochromia: 0,
-      rearLipedema: 0,
-      wellHung: 0,
-      wGain: 0,
-      wLoss: 0,
-      mGain: 0,
-      mLoss: 0,
-      girlsOnly: 0,
-      androgyny: 0,
-    };
+    this.quirks = getQuirks();
 
     this.mods = {
       NCS: false,

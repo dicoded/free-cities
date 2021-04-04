@@ -665,7 +665,6 @@ export function generateButt(actor: Actor): Butt {
   return butt;
 }
 
-// TODO:
 export function generateLegs(): Legs {
   const legs = new Legs();
 
