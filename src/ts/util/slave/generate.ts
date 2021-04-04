@@ -656,9 +656,11 @@ export function generateCrotch(body: Body): Crotch {
   return crotch;
 }
 
-// TODO:
-export function generateButt(): Butt {
+export function generateButt(actor: Actor): Butt {
   const butt = new Butt();
+
+  if (actor.sex === Sex.MALE) butt.size = gaussian(0, 750, 1.5).round(10);
+  else butt.size = gaussian(600, 1000, 0.75);
 
   return butt;
 }
