@@ -623,9 +623,11 @@ export function generateBelly(body: Body): Belly {
   return belly;
 }
 
-// TODO:
-export function generateWaist(): Waist {
+export function generateWaist(actor: Actor): Waist {
   const waist = new Waist();
+
+  if (actor.sex === Sex.MALE) waist.size = gaussian(-10, 100, 0.5);
+  else waist.size = gaussian(-100, 40, 3);
 
   return waist;
 }

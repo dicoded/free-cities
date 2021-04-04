@@ -1,6 +1,7 @@
 interface IWaist {
   /**
    * The size of the body's waist.
+   * TODO: redo to take males into account
    *
    * | **Range**   | **Size**     |
    * |------------:|:-------------|
