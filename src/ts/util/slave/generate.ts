@@ -37,7 +37,7 @@ import Skin from '../../classes/body/nonphysical/skin/Skin';
 import Scars, { Scarring } from '../../classes/body/nonphysical/skin/Scars';
 import Markings, { MarkingsType } from '../../classes/body/nonphysical/skin/Markings';
 import Health, { MajorInjury, MinorInjury } from '../../classes/body/nonphysical/Health';
-import Genetics from '../../classes/body/nonphysical/Genetics';
+import Genetics, { getQuirks } from '../../classes/body/nonphysical/Genetics';
 import Counter from '../../classes/body/nonphysical/counter/Counter';
 
 import Actor from '../../classes/actor/Actor';
@@ -373,6 +373,13 @@ export function generateGenes(body: Body): Genes {
 // TODO: this
 export function generateGenetics(): Genetics {
   const genetics = new Genetics();
+
+  const randomQuirk: string = Object.keys(genetics.quirks).random();
+
+  if (Number().random(1, 100) < 5) {
+    // @ts-ignore
+    genetics.quirks[randomQuirk] = true;
+  }
 
   return genetics;
 }
