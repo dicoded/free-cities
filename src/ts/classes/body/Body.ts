@@ -469,7 +469,7 @@ export default class Body implements IBody {
   }
 
   get isAlbino(): boolean {
-    return this.genetics.quirks.albinism === 2;
+    return this.genetics.quirks.albinism;
   }
 
   get isLactating(): boolean {
