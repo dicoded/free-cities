@@ -37,7 +37,7 @@ import Skin from '../../classes/body/nonphysical/skin/Skin';
 import Scars, { Scarring } from '../../classes/body/nonphysical/skin/Scars';
 import Markings, { MarkingsType } from '../../classes/body/nonphysical/skin/Markings';
 import Health, { MajorInjury, MinorInjury } from '../../classes/body/nonphysical/Health';
-import Genetics, { getQuirks } from '../../classes/body/nonphysical/Genetics';
+import Genetics from '../../classes/body/nonphysical/Genetics';
 import Counter from '../../classes/body/nonphysical/counter/Counter';
 
 import Actor from '../../classes/actor/Actor';
@@ -370,16 +370,17 @@ export function generateGenes(body: Body): Genes {
   return Genes.XX;
 }
 
-// TODO: this
-export function generateGenetics(): Genetics {
+export function generateGenetics(body: Body): Genetics {
   const genetics = new Genetics();
 
   const randomQuirk: string = Object.keys(genetics.quirks).random();
 
   if (Number().random(1, 100) < 5) {
-    // @ts-ignore
+    // @ts-ignore FIXME:
     genetics.quirks[randomQuirk] = true;
   }
+
+  if (body.sex === Sex.FEMALE) genetics.quirks.wellHung = false;
 
   return genetics;
 }
@@ -630,19 +631,19 @@ export function generateBelly(body: Body): Belly {
   return belly;
 }
 
-export function generateWaist(actor: Actor): Waist {
+export function generateWaist(body: Body): Waist {
   const waist = new Waist();
 
-  if (actor.sex === Sex.MALE) waist.size = gaussian(-10, 100, 0.5);
+  if (body.sex === Sex.MALE) waist.size = gaussian(-10, 100, 0.5);
   else waist.size = gaussian(-100, 40, 3);
 
   return waist;
 }
 
-export function generateHips(actor: Actor): Hips {
+export function generateHips(body: Body): Hips {
   const hips = new Hips();
 
-  if (actor.sex === Sex.MALE) hips.size = [HipSize.VERY_NARROW, HipSize.NARROW, HipSize.NORMAL].random();
+  if (body.sex === Sex.MALE) hips.size = [HipSize.VERY_NARROW, HipSize.NARROW, HipSize.NORMAL].random();
   else hips.size = [HipSize.NORMAL, HipSize.WIDE, HipSize.VERY_WIDE].random();
 
   return hips;
@@ -663,10 +664,10 @@ export function generateCrotch(body: Body): Crotch {
   return crotch;
 }
 
-export function generateButt(actor: Actor): Butt {
+export function generateButt(body: Body): Butt {
   const butt = new Butt();
 
-  if (actor.sex === Sex.MALE) butt.size = gaussian(0, 750, 1.5).round(10);
+  if (body.sex === Sex.MALE) butt.size = gaussian(0, 750, 1.5).round(10);
   else butt.size = gaussian(600, 1000, 0.75);
 
   return butt;
@@ -1022,7 +1023,7 @@ export function generateAbstract(body: Body): Abstract {
 
   abstract.sex = generateSex();
   abstract.genes = generateGenes(body);
-  abstract.genetics = generateGenetics();
+  abstract.genetics = generateGenetics(body);
   abstract.race = generateRace(body);
   abstract.skin = generateSkin(body);
   abstract.age = generateAge();

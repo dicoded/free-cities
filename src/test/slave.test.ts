@@ -124,7 +124,7 @@ describe('generateGenes', () => {
 
 describe('generateGenetics', () => {
   it('returns a new genetics instance', () => {
-    expect(generateGenetics()).toBeInstanceOf(Genetics);
+    expect(generateGenetics(new Slave())).toBeInstanceOf(Genetics);
   });
 });
 
@@ -198,16 +198,16 @@ describe('generateBelly', () => {
 
 describe('generateWaist', () => {
   it('returns a waist instance based on the given body\'s properties', () => {
-    expect(generateWaist()).toBeInstanceOf(Waist);
-    expect(generateWaist().size).toBeGreaterThanOrEqual(-100);
-    expect(generateWaist().size).toBeLessThanOrEqual(100);
+    expect(generateWaist(new Slave())).toBeInstanceOf(Waist);
+    expect(generateWaist(new Slave()).size).toBeGreaterThanOrEqual(-100);
+    expect(generateWaist(new Slave()).size).toBeLessThanOrEqual(100);
   });
 });
 
 describe('generateHips', () => {
   it('returns a hips instance based on the given body\'s properties', () => {
-    expect(generateHips()).toBeInstanceOf(Hips);
-    expect(generateHips().size).toBeTruthy();
+    expect(generateHips(new Slave())).toBeInstanceOf(Hips);
+    expect(generateHips(new Slave()).size).toBeTruthy();
   });
 });
 
@@ -222,8 +222,8 @@ describe('generateCrotch', () => {
 
 describe('generateButt', () => {
   it('returns a butt instance based on the given body\'s properties', () => {
-    expect(generateButt()).toBeInstanceOf(Butt);
-    expect(generateButt().size).toBeGreaterThanOrEqual(0);
+    expect(generateButt(new Slave())).toBeInstanceOf(Butt);
+    expect(generateButt(new Slave()).size).toBeGreaterThanOrEqual(0);
   });
 });
 
