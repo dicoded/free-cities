@@ -86,7 +86,6 @@
 {fetish(slave)}
 {mouth(slave)}
 
-{armwear(slave)}
 {belly(slave)}
 {butt(slave)}
 {chest(slave)}
