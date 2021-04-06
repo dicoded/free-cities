@@ -3,14 +3,14 @@ import { name as getFuckdollName } from './fuckdoll';
 import Actor from '../../../classes/actor/Actor';
 import Slave from '../../../classes/slave/Slave';
 
-const hasSlaveName = (actor: Actor): boolean => actor.name.slave.full() !== '';
-const hasBirthName = (actor: Actor): boolean => actor.name.birth.full() !== '';
+const hasSlaveName = (actor: Actor): boolean => actor.name.fullSlave !== '';
+const hasBirthName = (actor: Actor): boolean => actor.name.fullBirth !== '';
 
 const didNameChange = (actor: Actor): boolean => hasSlaveName(actor)
-  && actor.name.slave.full() !== actor.name.birth.full();
+  && actor.name.fullSlave !== actor.name.fullBirth;
 
 const didFullNameChange = (actor: Actor): boolean => hasSlaveName(actor)
-  && actor.name.slave.full() !== actor.name.birth.full();
+  && actor.name.fullSlave !== actor.name.fullBirth;
 
 const didFirstNameChange = (actor: Actor): boolean => hasSlaveName(actor)
   && actor.name.slave.first !== actor.name.birth.first;
@@ -71,7 +71,7 @@ function didSlaveNameChange(slave: Slave): string {
 
   text.push(firstNameReaction(slave));
 
-  if (didFirstNameChange(slave) && didSurnameChange(slave)) text.push(`${slave.name.birth.full()}.`);
+  if (didFirstNameChange(slave) && didSurnameChange(slave)) text.push(`${slave.name.fullBirth}.`);
   else if (didFirstNameChange(slave)) {
     if (slave.name.slave.first.endsWith(slave.name.birth.first)) {
       text.push('just plain');

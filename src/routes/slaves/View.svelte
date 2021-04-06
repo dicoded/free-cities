@@ -64,7 +64,7 @@
 
 <span class="font-bold">{slave.name.full}</span> is a <span class={devotionColor(slave.devotion)}>{devotion(slave)},</span>
 <span class={trustColor(slave.trust)}>{trust(slave)}</span>
-<span class="font-bold text-red-600 dark:text-red-400">{slave.title}.</span>
+<span class="title">{slave.title}.</span>
 
 {name(slave)}
 {age(slave)}
@@ -112,3 +112,16 @@
 {sex(slave)}
 {shoulders(slave)}
 {waist(slave)}
+
+<style lang="postcss">
+  .title {
+    @apply font-bold;
+    @apply text-red-600;
+  }
+
+  @screen dark {
+    .title {
+      @apply text-red-400;
+    }
+  }
+</style>
