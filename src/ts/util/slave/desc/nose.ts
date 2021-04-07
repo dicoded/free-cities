@@ -1,11 +1,9 @@
 import Actor from '../../../classes/actor/Actor';
 
 export default function nose(actor: Actor): string {
-  const { He, his } = actor.pronouns;
+  const { He, His, his } = actor.pronouns;
 
-  const text: string[] = [];
+  if (!actor.nose.smell) return `${He} has no sense of smell, but this isn't immediately obvious just by looking at ${his} nose.`;
 
-  text.push(`${He} has no sense of smell, but this isn't immediately obvious just by looking at ${his} nose.`);
-
-  return text.join(' ');
+  return `${His} nose is perfectly ordinary.`;
 }
