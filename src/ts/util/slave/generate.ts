@@ -15,7 +15,7 @@ import BehavioralFlaws from '../../classes/actor/flaws/Behavioral';
 import Eyes from '../../classes/body/face/Eyes';
 import Ears, { EarShape } from '../../classes/body/face/Ears';
 import Nose from '../../classes/body/face/Nose';
-import Mouth, { TeethType } from '../../classes/body/face/Mouth';
+import Mouth, { TeethType, VoiceType } from '../../classes/body/face/Mouth';
 import Face, { FaceShape } from '../../classes/body/face/Face';
 
 import Hair from '../../classes/body/upper/Hairs';
@@ -541,6 +541,13 @@ function getLipSize(body: Body): number {
     : gaussian(0, 70, 0.50);
 }
 
+function getVoice(body: Body): VoiceType {
+  if (body.sex === Sex.MALE) return VoiceType.DEEP;
+  if (Number().random(1, 100) < 25) return VoiceType.HIGH;
+
+  return VoiceType.FEMININE;
+}
+
 export function generateMouth(body: Body): Mouth {
   const mouth = new Mouth();
 
@@ -555,33 +562,37 @@ export function generateMouth(body: Body): Mouth {
   mouth.teeth.color = BaseColor.WHITE;
   mouth.teeth.type = teethTypes[gaussian(0, 3, 2)];
   mouth.throat.capacity = gaussian(1000, 4000, 4).round(200);
+  mouth.throat.voice.type = getVoice(body);
 
   return mouth;
+}
+
+function getFaceShape(body: Body): FaceShape {
+  const roll = Number().random(1, 10);
+
+  if (body.sex === Sex.MALE) {
+    if (roll < 8) return FaceShape.MASCULINE;
+    if (roll === 8) return FaceShape.ANDROGYNOUS;
+
+    return FaceShape.NORMAL;
+  }
+
+  if (roll < 2) return FaceShape.ANDROGYNOUS;
+  if (roll < 4) return FaceShape.CUTE;
+  if (roll < 6) return FaceShape.EXOTIC;
+  if (roll < 8) return FaceShape.SENSUAL;
+
+  return FaceShape.NORMAL;
 }
 
 export function generateFace(body: Body): Face {
   const face = new Face();
 
-  const roll = Number().random(1, 10);
-
   face.eyes = generateEyes(body);
   face.ears = generateEars();
   face.nose = generateNose();
   face.mouth = generateMouth(body);
-
-  if (body.sex === Sex.MALE) {
-    if (roll < 8) face.type = FaceShape.MASCULINE;
-    else if (roll === 8) face.type = FaceShape.ANDROGYNOUS;
-    else face.type = FaceShape.NORMAL;
-
-    return face;
-  }
-
-  if (roll < 2) face.type = FaceShape.ANDROGYNOUS;
-  else if (roll < 4) face.type = FaceShape.CUTE;
-  else if (roll < 6) face.type = FaceShape.EXOTIC;
-  else if (roll < 8) face.type = FaceShape.SENSUAL;
-  else face.type = FaceShape.NORMAL;
+  face.type = getFaceShape(body);
 
   return face;
 }
