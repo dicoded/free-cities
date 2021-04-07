@@ -2,7 +2,9 @@ import { get } from 'svelte/store';
 
 import Actor from '../../../classes/actor/Actor';
 import Slave from '../../../classes/slave/Slave';
-import { TeethType } from '../../../classes/body/face/Mouth';
+
+import { Sex } from '../../../classes/body/nonphysical/Nonphysical';
+import { TeethType, VoiceType } from '../../../classes/body/face/Mouth';
 import { FaceShape } from '../../../classes/body/face/Face';
 import { Piercing } from '../../../classes/actor/Piercings';
 import { Tattoo } from '../../../classes/actor/Tattoos';
@@ -296,6 +298,32 @@ function tongueMods(actor: Actor): string {
   ].join(' ');
 }
 
+function getVoiceType(actor: Actor): string {
+  if (actor.sex === Sex.MALE) {
+    if (actor.voice.type === VoiceType.FEMININE) return 'a voice that\'s strangely feminine';
+    if (actor.voice.type === VoiceType.HIGH) return 'a ridiculously high voice';
+
+    return 'a deep, manly voice';
+  }
+
+  if (actor.voice.type === VoiceType.HIGH) return 'a high, girly voice';
+  if (actor.voice.type === VoiceType.DEEP) return 'a deep, unfeminine voice';
+
+  return 'a pretty, feminine voice';
+}
+
+function voice(actor: Actor): string {
+  const { he } = actor.pronouns;
+
+  return `When ${he} speaks, ${he} does so in ${getVoiceType(actor)}.`;
+}
+
+function accent(actor: Actor): string {
+  // TODO:
+
+  return '';
+}
+
 function fuckdoll(slave: Slave): string {
   const { his } = slave.pronouns;
 
@@ -321,6 +349,8 @@ export default function mouth(actor: Actor): string {
     taste(actor),
     lipMods(actor),
     tongueMods(actor),
+    voice(actor),
+    accent(actor),
   );
 
   if (actor instanceof Slave && actor.isFuckdoll) text.push(fuckdoll(actor));

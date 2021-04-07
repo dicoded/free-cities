@@ -15,7 +15,7 @@ import BehavioralFlaws from '../../classes/actor/flaws/Behavioral';
 import Eyes from '../../classes/body/face/Eyes';
 import Ears, { EarShape } from '../../classes/body/face/Ears';
 import Nose from '../../classes/body/face/Nose';
-import Mouth, { TeethType, VoiceType } from '../../classes/body/face/Mouth';
+import Mouth, { TeethType, VoiceType, AccentType } from '../../classes/body/face/Mouth';
 import Face, { FaceShape } from '../../classes/body/face/Face';
 
 import Hair from '../../classes/body/upper/Hairs';
@@ -535,6 +535,15 @@ export function generateNose(): Nose {
   return nose;
 }
 
+function getTeethType(): TeethType {
+  const roll = Number().random(1, 100);
+
+  if (roll < 5) return TeethType.CROOKED;
+  if (roll < 10) return TeethType.GAPPED;
+
+  return TeethType.NORMAL;
+}
+
 function getLipSize(body: Body): number {
   return body.sex === Sex.MALE
     ? gaussian(0, 70, 1.5)
@@ -548,21 +557,21 @@ function getVoice(body: Body): VoiceType {
   return VoiceType.FEMININE;
 }
 
+// TODO:
+function getAccent(): AccentType | null {
+  return null;
+}
+
 export function generateMouth(body: Body): Mouth {
   const mouth = new Mouth();
-
-  const teethTypes = [
-    TeethType.NORMAL,
-    TeethType.CROOKED,
-    TeethType.GAPPED,
-  ];
 
   mouth.lips.color = BaseColor.PINK;
   mouth.lips.size = getLipSize(body);
   mouth.teeth.color = BaseColor.WHITE;
-  mouth.teeth.type = teethTypes[gaussian(0, 3, 2)];
+  mouth.teeth.type = getTeethType();
   mouth.throat.capacity = gaussian(1000, 4000, 4).round(200);
   mouth.throat.voice.type = getVoice(body);
+  mouth.throat.voice.accent = getAccent();
 
   return mouth;
 }

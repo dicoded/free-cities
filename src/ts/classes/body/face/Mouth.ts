@@ -69,10 +69,10 @@ interface IVoice {
     type: VoiceType;
 
     /** The type of accent the body has. */
-    accent: AccentType;
+    accent: AccentType | null;
 
     /** Whether the body has had their larynx altered and how. */
-    implant: null | VoiceImplant;
+    implant: VoiceImplant | null;
 }
 
 interface IThroat {
@@ -131,7 +131,7 @@ export default class Mouth implements IMouth {
       vocalCords: true,
       voice: {
         type: VoiceType.FEMININE,
-        accent: AccentType.ATTRACTIVE,
+        accent: null,
         implant: null,
       },
     };
