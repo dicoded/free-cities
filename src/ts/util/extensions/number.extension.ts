@@ -44,7 +44,7 @@ interface Number {
   /** Converts the given value to centimeters. */
   toCentimeters(): number;
 
-  /** Converts the given value to feet and inches. */
+  /** Converts the given value of inches to feet and inches. */
   toFeet(): string;
 
   /** Converts the given value to inches. */

@@ -61,10 +61,60 @@
 <Header>
   {slave.name.full}
 </Header>
+<div class="title text-center">{slave.title.capitalize()}</div>
 
-<span class="font-bold">{slave.name.full}</span> is a <span class={devotionColor(slave.devotion)}>{devotion(slave)},</span>
-<span class={trustColor(slave.trust)}>{trust(slave)}</span>
-<span class="title">{slave.title}.</span>
+<div class="flex">
+  <div class="m-2">
+    <div>
+      Devotion:
+      <span class={devotionColor(slave.devotion)}>{devotion(slave).capitalize()}</span>
+    </div>
+    <div>
+      Trust:
+      <span class={trustColor(slave.trust)}>{trust(slave).capitalize()}</span>
+    </div>
+  </div>
+  <div class="m-2">
+    <div>
+      Age:
+      {slave.age.actual} years
+    </div>
+    <div>
+      Birthday {slave.age.birthWeek === 51 ? 'next week' : `in ${52 - slave.age.birthWeek} weeks`}
+    </div>
+  </div>
+  <div class="m-2">
+    <div>
+      Health:
+      {slave.health.overall}
+    </div>
+    <div>
+      Injuries:
+      {slave.health.injury.major ?? 'none'}
+      {slave.health.injury.minor ?? ''}
+    </div>
+  </div>
+  <div class="m-2">
+    <div>
+      Intelligence:
+      {slave.intelligence}
+    </div>
+    <div>
+      Education:
+      {slave.education}
+    </div>
+  </div>
+  <div class="m-2">
+    <div>
+      Height:
+      {slave.height}cm ({slave.height.toInches().toFeet()})
+    </div>
+    <div>
+      Weight:
+      {slave.weight}kg
+    </div>
+  </div>
+</div>
 
 {name(slave)}
 {age(slave)}
@@ -79,7 +129,6 @@
 {skills(slave)}
 {family(slave)}
 {ears(slave)}
-{eyes(slave)}
 {face(slave)}
 {nose(slave)}
 {size(slave)}

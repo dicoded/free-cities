@@ -104,7 +104,7 @@ export default class Body implements IBody {
   }
 
   get height() {
-    return this.abstract.height;
+    return this.abstract.height.round(1);
   }
 
   get muscles() {
@@ -171,7 +171,7 @@ export default class Body implements IBody {
   }
 
   set voice(voice: {
-    type: VoiceType, accent: AccentType, implant: VoiceImplant | null
+    type: VoiceType, accent: AccentType | null, implant: VoiceImplant | null
   }) {
     this.upper.face.mouth.throat.voice = voice;
   }
