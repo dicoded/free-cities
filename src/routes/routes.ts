@@ -4,9 +4,9 @@ import Intro from './intro/Intro.svelte';
 import Main from './Main.svelte';
 import Start from './Start.svelte';
 import Event from './events/Event.svelte';
-import CreateSlave from './slaves/Create.svelte';
-import Acquisition from './slaves/Acquisition.svelte';
-import SlaveInteract from './slaves/Interact.svelte';
+import CreateSlave from './actors/Create.svelte';
+import Acquisition from './actors/Acquisition.svelte';
+import SlaveInteract from './actors/Interact.svelte';
 
 import Arcade from './facilities/Arcade.svelte';
 import Armory from './facilities/Armory.svelte';

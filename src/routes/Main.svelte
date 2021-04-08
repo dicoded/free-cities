@@ -5,7 +5,7 @@
 	import { week } from '../stores/global.store';
 
 	import Facilities from './facilities/Facilities.svelte';
-	import Slaves from './slaves/Slaves.svelte';
+	import Slaves from './actors/Slaves.svelte';
 
 	import Header from '../components/ui/Header.svelte';
 	import Body from '../components/ui/Body.svelte';

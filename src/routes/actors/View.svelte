@@ -116,7 +116,7 @@
   </div>
 </div>
 
-{name(slave)}
+<!-- {name(slave)}
 {age(slave)}
 {health(slave)}
 {mind(slave)}
@@ -159,7 +159,7 @@
 {score(slave)}
 {sex(slave)}
 {shoulders(slave)}
-{waist(slave)}
+{waist(slave)} -->
 
 <style lang="postcss">
   .title {
