@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Slave from '../../ts/classes/slave/Slave';
 
-	import View from './View.svelte';
+	import View from './view/View.svelte';
 
 	import activeSlave from '../../stores/active.store';
 
