@@ -56,6 +56,8 @@ import nationalities from './nationality';
 import names from './name';
 import { getMeanHeightByBody } from './heights';
 
+import '../extensions/array.extension';
+
 const races: string[] = [
   'Amerindian',
   'Asian',

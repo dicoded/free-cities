@@ -1,14 +1,16 @@
 <script lang="ts">
 	import Slave from '../../../ts/classes/slave/Slave';
 
-	import trust, { trustColor } from '../../../ts/util/slave/desc/trust';
-
 	import activeSlave from '../../../stores/active.store';
 
 	const slave: Slave = $activeSlave;
 </script>
 
 <div>
-	<span class="font-bold">Trust:</span>
-	<span class={trustColor(slave.trust)}>{trust(slave).capitalize()}</span>
+	Birthday
+	{#if slave.age.birthWeek === 51}
+		<span class="font-bold">next week</span>
+	{:else}
+		in <span class="font-bold">{52 - slave.age.birthWeek} weeks</span>
+	{/if}
 </div>
