@@ -7,6 +7,12 @@
   import Trust from './trust.svelte';
   import Age from './age.svelte';
   import Birthday from './birthday.svelte';
+  import Health from './health.svelte';
+  import Injuries from './injuries.svelte';
+  import Intelligence from './intelligence.svelte';
+  import Education from './education.svelte';
+  import Height from './height.svelte';
+  import Weight from './weight.svelte';
 
   import activeSlave from '../../../stores/active.store';
 
@@ -28,35 +34,16 @@
     <Birthday />
   </div>
   <div class="m-2">
-    <div>
-      Health:
-      {slave.health.overall}
-    </div>
-    <div>
-      Injuries:
-      {slave.health.injury.major ?? 'none'}
-      {slave.health.injury.minor ?? ''}
-    </div>
+    <Health />
+    <Injuries />
   </div>
   <div class="m-2">
-    <div>
-      Intelligence:
-      {slave.intelligence}
-    </div>
-    <div>
-      Education:
-      {slave.education}
-    </div>
+    <Intelligence />
+    <Education />
   </div>
   <div class="m-2">
-    <div>
-      Height:
-      {slave.height}cm ({slave.height.toInches().toFeet()})
-    </div>
-    <div>
-      Weight:
-      {slave.weight}kg
-    </div>
+    <Height />
+    <Weight />
   </div>
 </div>
 
