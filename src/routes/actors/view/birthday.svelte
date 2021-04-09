@@ -1,8 +1,4 @@
 <script lang="ts">
-	import { get } from 'svelte/store';
-
-	import { week } from '../../../stores/global.store';
-
 	import Slave from '../../../ts/classes/slave/Slave';
 
 	import activeSlave from '../../../stores/active.store';
