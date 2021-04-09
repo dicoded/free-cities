@@ -46,7 +46,9 @@ import Upper from '../../classes/body/upper/UpperBody';
 import Lower from '../../classes/body/lower/LowerBody';
 import Slave from '../../classes/slave/Slave';
 
-import { entityID, min, max } from '../../../stores/global.store';
+import {
+  entityID, min, max, year,
+} from '../../../stores/global.store';
 import see from '../../../stores/see.store';
 
 import {
@@ -57,6 +59,7 @@ import names from './name';
 import { getMeanHeightByBody } from './heights';
 
 import '../extensions/array.extension';
+import { getDays } from '../date';
 
 const races: string[] = [
   'Amerindian',
@@ -816,6 +819,14 @@ export function generateNationality(actor: Actor): string {
   return nationalities[index].random();
 }
 
+function getBirthMonth(): number {
+  return Number().random(1, 12);
+}
+
+function getBirthDay(month: number, _year: number): number {
+  return Number().random(1, getDays(month, _year));
+}
+
 export function generateAge(): Age {
   const age = new Age();
 
@@ -824,6 +835,10 @@ export function generateAge(): Age {
   age.actual = roll;
   age.physical = age.actual;
   age.visual = age.actual;
+
+  age.birthday.year = get(year) - roll;
+  age.birthday.month = getBirthMonth();
+  age.birthday.day = getBirthDay(age.birthday.month, age.birthday.year);
 
   return age;
 }
@@ -839,6 +854,7 @@ export function generateHealth(): Health {
   health.fatigue = gaussian(0, 25, 2.5);
   health.illness = gaussian(0, 15, 2.5);
 
+  // TODO:
   health.injury.major = Number().random(1, 100) <= 2 ? MajorInjury.BROKEN_ARM : null;
   health.injury.minor = Number().random(1, 100) <= 5 ? MinorInjury.BLACK_EYE : null;
 

@@ -1,4 +1,8 @@
 <script lang="ts">
+	import { get } from 'svelte/store';
+
+	import { week } from '../../../stores/global.store';
+
 	import Slave from '../../../ts/classes/slave/Slave';
 
 	import activeSlave from '../../../stores/active.store';
@@ -8,9 +12,9 @@
 
 <div>
 	Birthday
-	{#if slave.age.birthWeek === 51}
+	{#if slave.age.weeksUntilBirthday === 1}
 		<span class="font-bold">next week</span>
 	{:else}
-		in <span class="font-bold">{52 - slave.age.birthWeek} weeks</span>
+		in <span class="font-bold">{slave.age.weeksUntilBirthday} weeks</span>
 	{/if}
 </div>

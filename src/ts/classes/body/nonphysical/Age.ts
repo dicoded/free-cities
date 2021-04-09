@@ -1,3 +1,7 @@
+import { get } from 'svelte/store';
+
+import { year, week } from '../../../../stores/global.store';
+
 interface IBirthday {
   /** The year during which the body was born. */
   year: number;
@@ -41,20 +45,25 @@ export default class Age implements IAge {
       month: 1,
       day: 1,
     };
-    this.actual = (new Date().getFullYear() + 27) - this.birthday.year;
+    this.actual = get(year) - this.birthday.year;
     this.physical = this.actual;
     this.visual = this.actual;
-    this.weeks = 0;
+    this.weeks = Math.floor(this.actual * 52) + this.weeksUntilBirthday;
   }
 
+  /** During which week of the year the body's birthday is. */
   get birthWeek(): number {
-    let week: number = 0;
+    let wk: number = 0;
 
-    if (this.birthday.day < 28) week = 4;
-    if (this.birthday.day < 21) week = 3;
-    if (this.birthday.day < 14) week = 2;
-    if (this.birthday.day < 7) week = 1;
+    if (this.birthday.day < 28) wk = 4;
+    if (this.birthday.day < 21) wk = 3;
+    if (this.birthday.day < 14) wk = 2;
+    if (this.birthday.day < 7) wk = 1;
 
-    return this.birthday.month - 1 * 4 + week;
+    return this.birthday.month * 4 + wk;
+  }
+
+  get weeksUntilBirthday(): number {
+    return this.birthWeek - (get(week) % 52);
   }
 }
