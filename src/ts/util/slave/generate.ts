@@ -49,7 +49,6 @@ import Slave from '../../classes/slave/Slave';
 import {
   entityID, min, max, year,
 } from '../../../stores/global.store';
-import see from '../../../stores/see.store';
 
 import {
   SkinColor, HairColor, EyeColor, BaseColor,
@@ -339,25 +338,11 @@ function gaussian(minimum: number, maximum: number, skew: number = 1): number {
 export function generateID(): number {
   entityID.update((i) => i + 1);
 
-  return get(entityID);
+  return get(entityID) - 1;
 }
 
 export function generateSex(): Sex {
-  if (Number().random(1, 100) < get(see).dicks) {
-    return Sex.MALE;
-  }
-
-  if (get(see).dicks > 0) {
-    const femaleGenCount = 80;
-
-    if (Number().random(1, 100) > femaleGenCount && Number().random(0, 99) < get(see).dicks) {
-      return Sex.MALE;
-    }
-
-    return Sex.FEMALE;
-  }
-
-  return Sex.FEMALE;
+  return [Sex.MALE, Sex.FEMALE].random();
 }
 
 export function generateGenes(body: Body): Genes {
