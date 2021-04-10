@@ -1,4 +1,4 @@
-import Pregnancy from '../../actor/Pregnancy';
+import Pregnancy from '@classes/actor/Pregnancy';
 
 interface IBelly {
   /**
