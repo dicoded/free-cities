@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Button from '../../../components/ui/Button.svelte';
-	import Choice from '../../../components/ui/Choice.svelte';
-	import Response from '../../../components/ui/Response.svelte';
-	import Section from '../../../components/ui/Section.svelte';
+	import Button from '@components/ui/Button.svelte';
+	import Choice from '@components/ui/Choice.svelte';
+	import Response from '@components/ui/Response.svelte';
+	import Section from '@components/ui/Section.svelte';
 
-	import PC from '../../../stores/player.store';
-	import Markings, { MarkingsType } from '../../../ts/classes/body/nonphysical/skin/Markings';
+	import PC from '@stores/player.store';
+	import Markings, { MarkingsType } from '@classes/body/nonphysical/skin/Markings';
 
 	// TODO: expand this
 </script>

@@ -2,5 +2,16 @@
   "extends": "@snowpack/app-scripts-svelte",
   "exclude": [
     "/dev"
-  ]
+  ],
+  "alias": {
+    "@app": "./src",
+    "@components": "./src/components",
+    "@data": "./src/data",
+    "@routes": "./src/routes",
+    "@stores": "./src/stores",
+    "@test": "./src/test",
+    "@classes": "./src/ts/classes",
+    "@util": "./src/ts/util",
+    "@extensions": "./src/ts/util/extensions"
+  }
  }

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Button from '../../../components/ui/Button.svelte';
-	import Choice from '../../../components/ui/Choice.svelte';
-	import Response from '../../../components/ui/Response.svelte';
-	import Section from '../../../components/ui/Section.svelte';
+	import Button from '@components/ui/Button.svelte';
+	import Choice from '@components/ui/Choice.svelte';
+	import Response from '@components/ui/Response.svelte';
+	import Section from '@components/ui/Section.svelte';
 
-	import arcology from '../../../stores/arcology.store';
-	import { Location } from '../../../ts/classes/arcology/Arcology';
+	import arcology from '@stores/arcology.store';
+	import { Location } from '@classes/arcology/Arcology';
 
 	// TODO: remove some of these locations
 </script>

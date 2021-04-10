@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Button from '../../../components/ui/Button.svelte';
-	import Choice from '../../../components/ui/Choice.svelte';
-	import Response from '../../../components/ui/Response.svelte';
-	import Section from '../../../components/ui/Section.svelte';
+	import Button from '@components/ui/Button.svelte';
+	import Choice from '@components/ui/Choice.svelte';
+	import Response from '@components/ui/Response.svelte';
+	import Section from '@components/ui/Section.svelte';
 
-	import PC from '../../../stores/player.store';
-	import { Acquisition } from '../../../ts/classes/player/Player';
+	import PC from '@stores/player.store';
+	import { Acquisition } from '@classes/player/Player';
 </script>
 
 <Section>

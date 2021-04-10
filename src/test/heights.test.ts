@@ -2,12 +2,12 @@ import {
   getMeanHeightByBody,
   getMeanHeightByNationality,
   getMeanHeightBySex,
-} from '../ts/util/slave/heights';
+} from '@util/slave/heights';
 
-import '../ts/util/extensions/number.extension';
+import '@extensions/number.extension';
 
-import Actor from '../ts/classes/actor/Actor';
-import { Sex } from '../ts/classes/body/nonphysical/Nonphysical';
+import Actor from '@classes/actor/Actor';
+import { Sex } from '@classes/body/nonphysical/Nonphysical';
 
 describe('getMeanHeightByActor', () => {
   it('returns a height based on the actor\'s sex and genes', () => {

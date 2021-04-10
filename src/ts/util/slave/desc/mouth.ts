@@ -1,15 +1,15 @@
 import { get } from 'svelte/store';
 
-import Actor from '../../../classes/actor/Actor';
-import Slave from '../../../classes/slave/Slave';
+import Actor from '@classes/actor/Actor';
+import Slave from '@classes/slave/Slave';
 
-import { Sex } from '../../../classes/body/nonphysical/Nonphysical';
-import { TeethType, VoiceType } from '../../../classes/body/face/Mouth';
-import { FaceShape } from '../../../classes/body/face/Face';
-import { Piercing } from '../../../classes/actor/Piercings';
-import { Tattoo } from '../../../classes/actor/Tattoos';
+import { Sex } from '@classes/body/nonphysical/Nonphysical';
+import { TeethType, VoiceType } from '@classes/body/face/Mouth';
+import { FaceShape } from '@classes/body/face/Face';
+import { Piercing } from '@classes/actor/Piercings';
+import { Tattoo } from '@classes/actor/Tattoos';
 
-import pc from '../../../../stores/player.store';
+import pc from '@stores/player.store';
 
 const PC = get(pc);
 

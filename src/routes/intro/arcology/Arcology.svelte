@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Link from '../../../components/ui/Link.svelte';
-	import Header from '../../../components/ui/Header.svelte';
-	import Body from '../../../components/ui/Body.svelte';
+	import Link from '@components/ui/Link.svelte';
+	import Header from '@components/ui/Header.svelte';
+	import Body from '@components/ui/Body.svelte';
 
 	import FutureSocieties from './FutureSocieties.svelte';
 	import Language from './Language.svelte';
@@ -10,8 +10,8 @@
 	import Target from './Target.svelte';
 	import Terrain from './Terrain.svelte';
 
-	import see from '../../../stores/see.store';
-	import arcology from '../../../stores/arcology.store';
+	import see from '@stores/see.store';
+	import arcology from '@stores/arcology.store';
 
 	$see.nav = false;
 </script>

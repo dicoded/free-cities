@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import Player from '../ts/classes/player/Player';
+import Player from '@classes/player/Player';
 
 const PC = writable(new Player());
 

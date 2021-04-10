@@ -1,7 +1,7 @@
-import BehavioralQuirks from '../../../classes/actor/quirks/Behavioral';
-import SexualQuirks from '../../../classes/actor/quirks/Sexual';
+import BehavioralQuirks from '@classes/actor/quirks/Behavioral';
+import SexualQuirks from '@classes/actor/quirks/Sexual';
 
-import Slave from '../../../classes/slave/Slave';
+import Slave from '@classes/slave/Slave';
 
 function getQuirkAdoresMen(slave: Slave): string {
   const { He } = slave.pronouns;

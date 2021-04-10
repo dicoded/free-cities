@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Button from '../../../components/ui/Button.svelte';
-	import Choice from '../../../components/ui/Choice.svelte';
-	import Response from '../../../components/ui/Response.svelte';
-	import Section from '../../../components/ui/Section.svelte';
+	import Button from '@components/ui/Button.svelte';
+	import Choice from '@components/ui/Choice.svelte';
+	import Response from '@components/ui/Response.svelte';
+	import Section from '@components/ui/Section.svelte';
 
 	import Markings from './Markings.svelte';
-	import { SkinColor } from '../../../ts/util/color';
+	import { SkinColor } from '@util/color';
 
-	import PC from '../../../stores/player.store';
+	import PC from '@stores/player.store';
 </script>
 
 <Section>

@@ -1,18 +1,18 @@
 <script lang="ts">
-  import Header from '../../components/ui/Header.svelte';
-  import Body from '../../components/ui/Body.svelte';
-  import Button from '../../components/ui/Button.svelte';
-  import Link from '../../components/ui/Link.svelte';
+  import Header from '@components/ui/Header.svelte';
+  import Body from '@components/ui/Body.svelte';
+  import Button from '@components/ui/Button.svelte';
+  import Link from '@components/ui/Link.svelte';
 
-  import PC from '../../stores/player.store';
-  import see from '../../stores/see.store';
-  import { slaves } from '../../stores/actors.store';
-  import { link, components } from '../../stores/nav.store';
-  import { makeDicks } from '../../stores/global.store';
+  import PC from '@stores/player.store';
+  import see from '@stores/see.store';
+  import { slaves } from '@stores/actors.store';
+  import { link, components } from '@stores/nav.store';
+  import { makeDicks } from '@stores/global.store';
 
-  import { generateSlave } from '../../ts/util/slave/generate';
-  import { Career } from '../../ts/classes/player/Player';
-  import Slave from '../../ts/classes/slave/Slave';
+  import { generateSlave } from '@util/slave/generate';
+  import { Career } from '@classes/player/Player';
+  import Slave from '@classes/slave/Slave';
 
   import Cash from './Cash.svelte';
   import Edit from './Edit.svelte';

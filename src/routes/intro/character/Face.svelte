@@ -1,15 +1,15 @@
 
 <script lang="ts">
-  import Button from '../../../components/ui/Button.svelte';
-  import Choice from '../../../components/ui/Choice.svelte';
-  import Response from '../../../components/ui/Response.svelte';
-  import Section from '../../../components/ui/Section.svelte';
+  import Button from '@components/ui/Button.svelte';
+  import Choice from '@components/ui/Choice.svelte';
+  import Response from '@components/ui/Response.svelte';
+  import Section from '@components/ui/Section.svelte';
 
   import Eyes from './Eyes.svelte';
   import Hair from './Hair.svelte';
 
-  import { FaceShape } from '../../../ts/classes/body/face/Face';
-  import PC from '../../../stores/player.store';
+  import { FaceShape } from '@classes/body/face/Face';
+  import PC from '@stores/player.store';
 </script>
 
 <Section>

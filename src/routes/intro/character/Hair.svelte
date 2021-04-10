@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Button from '../../../components/ui/Button.svelte';
-	import Choice from '../../../components/ui/Choice.svelte';
-	import Input from '../../../components/ui/Input.svelte';
-	import Response from '../../../components/ui/Response.svelte';
-	import Section from '../../../components/ui/Section.svelte';
+	import Button from '@components/ui/Button.svelte';
+	import Choice from '@components/ui/Choice.svelte';
+	import Input from '@components/ui/Input.svelte';
+	import Response from '@components/ui/Response.svelte';
+	import Section from '@components/ui/Section.svelte';
 
-	import { HairColor } from '../../../ts/util/color';
-	import PC from '../../../stores/player.store';
+	import { HairColor } from '@util/color';
+	import PC from '@stores/player.store';
 
 	// TODO: add beards, mustaches
 </script>

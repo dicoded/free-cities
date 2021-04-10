@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Slave from '../../../ts/classes/slave/Slave';
+	import Slave from '@classes/slave/Slave';
 
-	import trust, { trustColor } from '../../../ts/util/slave/desc/trust';
+	import trust, { trustColor } from '@util/slave/desc/trust';
 
-	import activeSlave from '../../../stores/active.store';
+	import activeSlave from '@stores/active.store';
 
 	const slave: Slave = $activeSlave;
 </script>

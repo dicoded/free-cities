@@ -1,6 +1,6 @@
-import Actor from '../../../classes/actor/Actor';
+import Actor from '@classes/actor/Actor';
 
-import { HipSize } from '../../../classes/body/lower/Hips';
+import { HipSize } from '@classes/body/lower/Hips';
 
 const isExtremelyObese = (actor: Actor): boolean => actor.isMorbidlyObese && actor.weight > 190;
 const isVeryObese = (actor: Actor): boolean => actor.isObese && actor.weight > 160;

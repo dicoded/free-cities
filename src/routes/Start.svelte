@@ -1,7 +1,7 @@
 <script lang="ts">
-  import see from '../stores/see.store';
+  import see from '@stores/see.store';
 
-  import Link from '../components/ui/Link.svelte';
+  import Link from '@components/ui/Link.svelte';
 </script>
 
 <main class="flex items-center flex-col h-screen">

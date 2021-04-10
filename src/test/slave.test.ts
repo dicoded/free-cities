@@ -1,35 +1,35 @@
 // TODO: these tests could probably use some expanding
 
-import Hair from '../ts/classes/body/upper/Hairs';
-import Eyes from '../ts/classes/body/face/Eyes';
-import Ears from '../ts/classes/body/face/Ears';
-import Nose from '../ts/classes/body/face/Nose';
-import Mouth from '../ts/classes/body/face/Mouth';
-import Face from '../ts/classes/body/face/Face';
-import Shoulders from '../ts/classes/body/upper/Shoulders';
-import Chest from '../ts/classes/body/upper/Chest';
-import Belly from '../ts/classes/body/upper/Belly';
+import Hair from '@classes/body/upper/Hairs';
+import Eyes from '@classes/body/face/Eyes';
+import Ears from '@classes/body/face/Ears';
+import Nose from '@classes/body/face/Nose';
+import Mouth from '@classes/body/face/Mouth';
+import Face from '@classes/body/face/Face';
+import Shoulders from '@classes/body/upper/Shoulders';
+import Chest from '@classes/body/upper/Chest';
+import Belly from '@classes/body/upper/Belly';
 
-import Waist from '../ts/classes/body/lower/Waist';
-import Hips from '../ts/classes/body/lower/Hips';
-import Crotch from '../ts/classes/body/lower/crotch/Crotch';
-import Butt from '../ts/classes/body/lower/Butt';
-import Legs from '../ts/classes/body/lower/Legs';
+import Waist from '@classes/body/lower/Waist';
+import Hips from '@classes/body/lower/Hips';
+import Crotch from '@classes/body/lower/crotch/Crotch';
+import Butt from '@classes/body/lower/Butt';
+import Legs from '@classes/body/lower/Legs';
 
-import Skin from '../ts/classes/body/nonphysical/skin/Skin';
-import Scarring from '../ts/classes/body/nonphysical/skin/Scars';
-import Markings from '../ts/classes/body/nonphysical/skin/Markings';
-import Health from '../ts/classes/body/nonphysical/Health';
-import Genetics from '../ts/classes/body/nonphysical/Genetics';
-import Counter from '../ts/classes/body/nonphysical/counter/Counter';
-import Personality from '../ts/classes/actor/Personality';
+import Skin from '@classes/body/nonphysical/skin/Skin';
+import Scarring from '@classes/body/nonphysical/skin/Scars';
+import Markings from '@classes/body/nonphysical/skin/Markings';
+import Health from '@classes/body/nonphysical/Health';
+import Genetics from '@classes/body/nonphysical/Genetics';
+import Counter from '@classes/body/nonphysical/counter/Counter';
+import Personality from '@classes/actor/Personality';
 
-import Abstract, { Sex } from '../ts/classes/body/nonphysical/Nonphysical';
-import Upper from '../ts/classes/body/upper/UpperBody';
-import Lower from '../ts/classes/body/lower/LowerBody';
-import Slave from '../ts/classes/slave/Slave';
+import Abstract, { Sex } from '@classes/body/nonphysical/Nonphysical';
+import Upper from '@classes/body/upper/UpperBody';
+import Lower from '@classes/body/lower/LowerBody';
+import Slave from '@classes/slave/Slave';
 
-import '../ts/util/extensions/array.extension';
+import '@extensions/array.extension';
 
 import {
   generateID,
@@ -68,7 +68,7 @@ import {
   generateUpper,
   generateLower,
   generateSlave,
-} from '../ts/util/slave/generate';
+} from '@util/slave/generate';
 
 declare global {
   namespace jest {

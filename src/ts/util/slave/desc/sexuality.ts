@@ -1,4 +1,4 @@
-import Slave from '../../../classes/slave/Slave';
+import Slave from '@classes/slave/Slave';
 
 function getDrive(slave: Slave): string {
   const { He } = slave.pronouns;

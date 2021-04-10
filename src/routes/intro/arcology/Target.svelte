@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Button from '../../../components/ui/Button.svelte';
-	import Choice from '../../../components/ui/Choice.svelte';
-	import Note from '../../../components/ui/Note.svelte';
-	import Response from '../../../components/ui/Response.svelte';
-	import Section from '../../../components/ui/Section.svelte';
+	import Button from '@components/ui/Button.svelte';
+	import Choice from '@components/ui/Choice.svelte';
+	import Note from '@components/ui/Note.svelte';
+	import Response from '@components/ui/Response.svelte';
+	import Section from '@components/ui/Section.svelte';
 
-	import PC from '../../../stores/player.store';
-	import arcology from '../../../stores/arcology.store';
-	import { Acquisition, Career } from '../../../ts/classes/player/Player';
+	import PC from '@stores/player.store';
+	import arcology from '@stores/arcology.store';
+	import { Acquisition, Career } from '@classes/player/Player';
 
 	// TODO: fix this to update when player acquisition changes
 

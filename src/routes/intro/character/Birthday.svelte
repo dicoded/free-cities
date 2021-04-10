@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Datepicker from '../../../components/ui/date/Datepicker.svelte';
+	import Datepicker from '@components/ui/date/Datepicker.svelte';
 
-  import Choice from '../../../components/ui/Choice.svelte';
-  import Response from '../../../components/ui/Response.svelte';
-	import Section from '../../../components/ui/Section.svelte';
+  import Choice from '@components/ui/Choice.svelte';
+  import Response from '@components/ui/Response.svelte';
+	import Section from '@components/ui/Section.svelte';
 
-	import PC from '../../../stores/player.store';
+	import PC from '@stores/player.store';
 
 	let dateChosen;
 

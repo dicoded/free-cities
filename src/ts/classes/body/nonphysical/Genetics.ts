@@ -1,4 +1,4 @@
-import { EyeColor } from '../../../util/color';
+import { EyeColor } from '@util/color';
 
 interface IQuirks {
   /**

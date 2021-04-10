@@ -1,6 +1,6 @@
-import Actor from '../../../classes/actor/Actor';
+import Actor from '@classes/actor/Actor';
 
-import { getMeanHeightByNationality } from '../../../util/slave/heights';
+import { getMeanHeightByNationality } from '@util/slave/heights';
 
 // TODO: this
 export default function height(actor: Actor): string {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Slave from '../../../ts/classes/slave/Slave';
+  import Slave from '@classes/slave/Slave';
 
   import Name from './name.svelte';
   import Title from './title.svelte';
@@ -14,7 +14,7 @@
   import Height from './height.svelte';
   import Weight from './weight.svelte';
 
-  import activeSlave from '../../../stores/active.store';
+  import activeSlave from '@stores/active.store';
 
   const slave: Slave = $activeSlave;
 

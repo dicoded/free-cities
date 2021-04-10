@@ -40,6 +40,14 @@ interface IFoo {
   baz: boolean;
 }
 
+// bad
+interface IFoo {
+  /** does something */
+  bar: number;
+  /** does something else */
+  baz: boolean;
+}
+
 // good
 interface IFoo {
   /** Does something. */

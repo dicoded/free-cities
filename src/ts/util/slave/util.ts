@@ -1,9 +1,9 @@
 import { get } from 'svelte/store';
 
-import Actor from '../../classes/actor/Actor';
-import Slave from '../../classes/slave/Slave';
+import Actor from '@classes/actor/Actor';
+import Slave from '@classes/slave/Slave';
 
-import { actors, slaves } from '../../../stores/actors.store';
+import { actors, slaves } from '@stores/actors.store';
 
 export function getActor(ID: number): Actor | undefined {
   return get(actors).find((a) => a.ID === ID);

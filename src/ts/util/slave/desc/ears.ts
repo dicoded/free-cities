@@ -1,6 +1,6 @@
-import Actor from '../../../classes/actor/Actor';
-import { Earwear } from '../../../classes/actor/Accessories';
-import { EarShape } from '../../../classes/body/face/Ears';
+import Actor from '@classes/actor/Actor';
+import { Earwear } from '@classes/actor/Accessories';
+import { EarShape } from '@classes/body/face/Ears';
 
 function getNoEars(actor: Actor): string {
   const { He, his } = actor.pronouns;

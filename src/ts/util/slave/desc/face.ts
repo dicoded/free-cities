@@ -1,10 +1,10 @@
-import Actor from '../../../classes/actor/Actor';
-import Slave from '../../../classes/slave/Slave';
+import Actor from '@classes/actor/Actor';
+import Slave from '@classes/slave/Slave';
 
-import { FaceShape } from '../../../classes/body/face/Face';
-import { Makeup } from '../../../classes/actor/Accessories';
-import { Tattoo } from '../../../classes/actor/Tattoos';
-import { MarkingsType } from '../../../classes/body/nonphysical/skin/Markings';
+import { FaceShape } from '@classes/body/face/Face';
+import { Makeup } from '@classes/actor/Accessories';
+import { Tattoo } from '@classes/actor/Tattoos';
+import { MarkingsType } from '@classes/body/nonphysical/skin/Markings';
 
 function getFaceShapeMasculine(actor: Actor): string {
   const { his, him } = actor.pronouns;

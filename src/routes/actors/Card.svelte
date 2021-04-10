@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Slave from '../../ts/classes/slave/Slave';
+	import Slave from '@classes/slave/Slave';
 
-	import Link from '../../components/ui/Link.svelte'
-	import Button from '../../components/ui/Button.svelte';
-	import Modal from '../../components/ui/Modal.svelte'
+	import Link from '@components/ui/Link.svelte'
+	import Button from '@components/ui/Button.svelte';
+	import Modal from '@components/ui/Modal.svelte'
 
 	import Interact from './Interact.svelte';
 
-	import activeSlave from '../../stores/active.store';
+	import activeSlave from '@stores/active.store';
 
 	export let slave: Slave;
 </script>

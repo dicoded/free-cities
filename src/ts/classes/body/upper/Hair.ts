@@ -1,4 +1,4 @@
-import { HairColor } from '../../../util/color';
+import { HairColor } from '@util/color';
 
 export enum HairStyle {
   SHAVED = 'shaved',

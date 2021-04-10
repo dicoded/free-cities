@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
-import { formatDate } from '../ts/util/date';
-import '../ts/util/extensions/number.extension';
+import { formatDate } from '@util/date';
+import '@extensions/number.extension';
 
 export enum TradeType {
   GLOBAL = 'global',

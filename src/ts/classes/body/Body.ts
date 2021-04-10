@@ -11,8 +11,8 @@ import { HipSize } from '../body/lower/Hips';
 import { TesticlesType } from '../body/lower/crotch/Testicles';
 import { LabiaType } from '../body/lower/crotch/Vagina';
 
-import { formatDate } from '../../util/date';
-import { EyeColor } from '../../util/color';
+import { formatDate } from '@util/date';
+import { EyeColor } from '@util/color';
 
 export enum Alteration {
   NARROW = 'narrow',

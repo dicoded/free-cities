@@ -1,11 +1,11 @@
 <script lang="ts">
-  import Button from '../../../components/ui/Button.svelte';
-  import Header from '../../../components/ui/Header.svelte';
-  import Body from '../../../components/ui/Body.svelte';
+  import Button from '@components/ui/Button.svelte';
+  import Header from '@components/ui/Header.svelte';
+  import Body from '@components/ui/Body.svelte';
 
   import Attitude from './Attitude.svelte';
 
-	import see from '../../../stores/see.store';
+	import see from '@stores/see.store';
 </script>
 
 {#if $see.trade}

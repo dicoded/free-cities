@@ -1,6 +1,6 @@
-import Actor from '../../../classes/actor/Actor';
+import Actor from '@classes/actor/Actor';
 
-import '../../extensions/array.extension';
+import '@extensions/array.extension';
 
 function damage(actor: Actor): string {
   const { he } = actor.pronouns;

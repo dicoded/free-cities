@@ -1,5 +1,5 @@
 <script lang="ts">
-	import view from '../../stores/view.store';
+	import view from '@stores/view.store';
 
 	export let to: string;
 	export let handler: (() => any) | null = null;

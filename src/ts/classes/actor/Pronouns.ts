@@ -1,5 +1,5 @@
 import Actor from './Actor';
-import '../../util/extensions/string.extension';
+import '@extensions/string.extension';
 
 interface IPronouns {
   /** The actor to whom the pronouns are assigned. */

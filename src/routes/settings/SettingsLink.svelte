@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Modal from '../../components/ui/Modal.svelte'
-	import Button from '../../components/ui/Button.svelte';
+  import Modal from '@components/ui/Modal.svelte'
+	import Button from '@components/ui/Button.svelte';
 
 	import Settings from '../settings/Settings.svelte';
 </script>

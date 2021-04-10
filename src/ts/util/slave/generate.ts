@@ -1,54 +1,54 @@
 import { get } from 'svelte/store';
 
-import Name from '../../classes/actor/Name';
-import Personality from '../../classes/actor/Personality';
-import Quirks from '../../classes/actor/quirks/Quirks';
-import Flaws from '../../classes/actor/flaws/Flaws';
-import Fetish, { FetishType } from '../../classes/actor/Fetish';
-import Attraction from '../../classes/actor/Attraction';
+import Name from '@classes/actor/Name';
+import Personality from '@classes/actor/Personality';
+import Quirks from '@classes/actor/quirks/Quirks';
+import Flaws from '@classes/actor/flaws/Flaws';
+import Fetish, { FetishType } from '@classes/actor/Fetish';
+import Attraction from '@classes/actor/Attraction';
 
-import SexualQuirks from '../../classes/actor/quirks/Sexual';
-import BehavioralQuirks from '../../classes/actor/quirks/Behavioral';
-import SexualFlaws from '../../classes/actor/flaws/Sexual';
-import BehavioralFlaws from '../../classes/actor/flaws/Behavioral';
+import SexualQuirks from '@classes/actor/quirks/Sexual';
+import BehavioralQuirks from '@classes/actor/quirks/Behavioral';
+import SexualFlaws from '@classes/actor/flaws/Sexual';
+import BehavioralFlaws from '@classes/actor/flaws/Behavioral';
 
-import Eyes from '../../classes/body/face/Eyes';
-import Ears, { EarShape } from '../../classes/body/face/Ears';
-import Nose from '../../classes/body/face/Nose';
-import Mouth, { TeethType, VoiceType, AccentType } from '../../classes/body/face/Mouth';
-import Face, { FaceShape } from '../../classes/body/face/Face';
+import Eyes from '@classes/body/face/Eyes';
+import Ears, { EarShape } from '@classes/body/face/Ears';
+import Nose from '@classes/body/face/Nose';
+import Mouth, { TeethType, VoiceType, AccentType } from '@classes/body/face/Mouth';
+import Face, { FaceShape } from '@classes/body/face/Face';
 
-import Hair from '../../classes/body/upper/Hairs';
-import Shoulders, { ShouldersType } from '../../classes/body/upper/Shoulders';
-import Chest from '../../classes/body/upper/Chest';
-import Belly from '../../classes/body/upper/Belly';
+import Hair from '@classes/body/upper/Hairs';
+import Shoulders, { ShouldersType } from '@classes/body/upper/Shoulders';
+import Chest from '@classes/body/upper/Chest';
+import Belly from '@classes/body/upper/Belly';
 
-import Waist from '../../classes/body/lower/Waist';
-import Hips, { HipSize } from '../../classes/body/lower/Hips';
-import Crotch from '../../classes/body/lower/crotch/Crotch';
-import Penis from '../../classes/body/lower/crotch/Penis';
-import Vagina from '../../classes/body/lower/crotch/Vagina';
-import Butt from '../../classes/body/lower/Butt';
-import Legs from '../../classes/body/lower/Legs';
+import Waist from '@classes/body/lower/Waist';
+import Hips, { HipSize } from '@classes/body/lower/Hips';
+import Crotch from '@classes/body/lower/crotch/Crotch';
+import Penis from '@classes/body/lower/crotch/Penis';
+import Vagina from '@classes/body/lower/crotch/Vagina';
+import Butt from '@classes/body/lower/Butt';
+import Legs from '@classes/body/lower/Legs';
 
-import Abstract, { Sex, Genes, Race } from '../../classes/body/nonphysical/Nonphysical';
-import Age from '../../classes/body/nonphysical/Age';
-import Skin from '../../classes/body/nonphysical/skin/Skin';
-import Scars, { Scarring } from '../../classes/body/nonphysical/skin/Scars';
-import Markings, { MarkingsType } from '../../classes/body/nonphysical/skin/Markings';
-import Health, { MajorInjury, MinorInjury } from '../../classes/body/nonphysical/Health';
-import Genetics from '../../classes/body/nonphysical/Genetics';
-import Counter from '../../classes/body/nonphysical/counter/Counter';
+import Abstract, { Sex, Genes, Race } from '@classes/body/nonphysical/Nonphysical';
+import Age from '@classes/body/nonphysical/Age';
+import Skin from '@classes/body/nonphysical/skin/Skin';
+import Scars, { Scarring } from '@classes/body/nonphysical/skin/Scars';
+import Markings, { MarkingsType } from '@classes/body/nonphysical/skin/Markings';
+import Health, { MajorInjury, MinorInjury } from '@classes/body/nonphysical/Health';
+import Genetics from '@classes/body/nonphysical/Genetics';
+import Counter from '@classes/body/nonphysical/counter/Counter';
 
-import Actor from '../../classes/actor/Actor';
-import Body from '../../classes/body/Body';
-import Upper from '../../classes/body/upper/UpperBody';
-import Lower from '../../classes/body/lower/LowerBody';
-import Slave from '../../classes/slave/Slave';
+import Actor from '@classes/actor/Actor';
+import Body from '@classes/body/Body';
+import Upper from '@classes/body/upper/UpperBody';
+import Lower from '@classes/body/lower/LowerBody';
+import Slave from '@classes/slave/Slave';
 
 import {
   entityID, min, max, year,
-} from '../../../stores/global.store';
+} from '@stores/global.store';
 
 import {
   SkinColor, HairColor, EyeColor, BaseColor,
@@ -57,7 +57,7 @@ import nationalities from './nationality';
 import names from './name';
 import { getMeanHeightByBody } from './heights';
 
-import '../extensions/array.extension';
+import '@extensions/array.extension';
 import { getDays } from '../date';
 
 const races: string[] = [

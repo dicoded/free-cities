@@ -1,7 +1,7 @@
 import { name as getFuckdollName } from './fuckdoll';
 
-import Actor from '../../../classes/actor/Actor';
-import Slave from '../../../classes/slave/Slave';
+import Actor from '@classes/actor/Actor';
+import Slave from '@classes/slave/Slave';
 
 const hasSlaveName = (actor: Actor): boolean => actor.name.fullSlave !== '';
 const hasBirthName = (actor: Actor): boolean => actor.name.fullBirth !== '';

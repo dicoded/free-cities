@@ -1,4 +1,4 @@
-import { BaseColor, EyeColor } from '../../../util/color';
+import { BaseColor, EyeColor } from '@util/color';
 
 export enum EyeType {
   NORMAL = 'normal',
