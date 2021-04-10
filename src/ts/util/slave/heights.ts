@@ -1,4 +1,4 @@
-import heights from '../../../data/nationalities/heights.json';
+import heights from '@data/nationalities/heights.json';
 
 import { Sex, Genes } from '../../classes/body/nonphysical/Nonphysical';
 
