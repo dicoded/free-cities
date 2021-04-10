@@ -6,10 +6,17 @@
 		"node_modules/*"
 	],
 	"compilerOptions": {
-		"baseUrl": ".",
+		"baseUrl": "./",
 		"paths": {
-			"app": ["src/*"],
-			"components": ["src/components"],
+			"@app": ["src/*"],
+			"@components": ["src/components/*"],
+			"@data": ["src/data/*"],
+			"@routes": ["src/routes/*"],
+			"@stores": ["src/stores/*"],
+			"@test": ["src/test/*"],
+			"@classes": ["src/ts/classes/*"],
+			"@util": ["src/ts/util/*"],
+			"@extensions": ["src/ts/util/extensions/*"]
 		},
 		"target": "es2019",
 		"types": [
