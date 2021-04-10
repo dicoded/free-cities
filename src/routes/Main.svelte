@@ -7,9 +7,9 @@
 	import Facilities from './facilities/Facilities.svelte';
 	import Slaves from './actors/Slaves.svelte';
 
-	import Header from '../components/ui/Header.svelte';
-	import Body from '../components/ui/Body.svelte';
-	import Sidebar from '../components/arcology/Sidebar.svelte';
+	import Header from '@components/ui/Header.svelte';
+	import Body from '@components/ui/Body.svelte';
+	import Sidebar from '@components/arcology/Sidebar.svelte';
 	import Settings from './settings/SettingsLink.svelte';
 
 	$link = {

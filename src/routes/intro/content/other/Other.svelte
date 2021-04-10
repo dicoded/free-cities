@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Section from '../../../../components/ui/Section.svelte';
+	import Section from '@components/ui/Section.svelte';
 
 	import Broodmothers from './Broodmothers.svelte';
 	import Animals from './Animals.svelte';

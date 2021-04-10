@@ -6,7 +6,7 @@
 	import Slave from '../../ts/classes/slave/Slave';
 
 	import Card from './Card.svelte';
-	import Button from '../../components/ui/Button.svelte';
+	import Button from '@components/ui/Button.svelte';
 
 	function addSlave(slave: Slave) {
 		$slaves.push(slave);

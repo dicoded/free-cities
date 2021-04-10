@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Header from '../../components/ui/Header.svelte';
-	import Toggle from '../../components/ui/Toggle.svelte';
-	import Link from '../../components/ui/Link.svelte';
+	import Header from '@components/ui/Header.svelte';
+	import Toggle from '@components/ui/Toggle.svelte';
+	import Link from '@components/ui/Link.svelte';
 
 	import { debug } from '@stores/global.store';
 </script>

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Button from '../../../components/ui/Button.svelte';
-	import Header from '../../../components/ui/Header.svelte';
-  import Body from '../../../components/ui/Body.svelte';
+  import Button from '@components/ui/Button.svelte';
+	import Header from '@components/ui/Header.svelte';
+  import Body from '@components/ui/Body.svelte';
 
   import Level from './Level.svelte';
   import Rate from './Rate.svelte';

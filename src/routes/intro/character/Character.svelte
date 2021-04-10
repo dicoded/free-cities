@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Button from '../../../components/ui/Button.svelte';
-  import Header from '../../../components/ui/Header.svelte';
-  import Body from '../../../components/ui/Body.svelte';
-  import Link from '../../../components/ui/Link.svelte'
+  import Button from '@components/ui/Button.svelte';
+  import Header from '@components/ui/Header.svelte';
+  import Body from '@components/ui/Body.svelte';
+  import Link from '@components/ui/Link.svelte'
 
   import Acquisition from './Acquisition.svelte';
   import Birthday from './Birthday.svelte';

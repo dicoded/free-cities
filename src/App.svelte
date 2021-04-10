@@ -7,8 +7,8 @@
 
   import Router from './routes/Router.svelte';
 
-  import Navbar from './components/nav/Navbar.svelte';
-  import Sidebar from './components/nav/Sidebar.svelte';
+  import Navbar from '@components/nav/Navbar.svelte';
+  import Sidebar from '@components/nav/Sidebar.svelte';
 
   let open: boolean = false;
 

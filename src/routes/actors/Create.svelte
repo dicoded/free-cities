@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Header from '../../components/ui/Header.svelte';
-  import Body from '../../components/ui/Body.svelte';
-  import Button from '../../components/ui/Button.svelte';
-  import Link from '../../components/ui/Link.svelte';
+  import Header from '@components/ui/Header.svelte';
+  import Body from '@components/ui/Body.svelte';
+  import Button from '@components/ui/Button.svelte';
+  import Link from '@components/ui/Link.svelte';
 
   import PC from '@stores/player.store';
   import see from '@stores/see.store';

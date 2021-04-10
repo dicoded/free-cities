@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Choice from '../../../components/ui/Choice.svelte';
-	import Number from '../../../components/ui/Number.svelte';
-	import Response from '../../../components/ui/Response.svelte';
-	import Section from '../../../components/ui/Section.svelte';
+	import Choice from '@components/ui/Choice.svelte';
+	import Number from '@components/ui/Number.svelte';
+	import Response from '@components/ui/Response.svelte';
+	import Section from '@components/ui/Section.svelte';
 
 	import arcology from '@stores/arcology.store';
 </script>

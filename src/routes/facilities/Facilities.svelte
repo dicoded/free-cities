@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Link from '../../components/ui/Link.svelte';
+	import Link from '@components/ui/Link.svelte';
 </script>
 
 <div>

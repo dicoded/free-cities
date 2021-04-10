@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Link from '../../../components/ui/Link.svelte';
-	import Header from '../../../components/ui/Header.svelte';
-	import Body from '../../../components/ui/Body.svelte';
+	import Link from '@components/ui/Link.svelte';
+	import Header from '@components/ui/Header.svelte';
+	import Body from '@components/ui/Body.svelte';
 
 	import FutureSocieties from './FutureSocieties.svelte';
 	import Language from './Language.svelte';

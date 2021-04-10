@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Slave from '../../../ts/classes/slave/Slave';
 
-	import Header from '../../../components/ui/Header.svelte';
+	import Header from '@components/ui/Header.svelte';
 
 	import activeSlave from '@stores/active.store';
 
