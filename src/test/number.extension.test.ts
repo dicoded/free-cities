@@ -1,4 +1,4 @@
-import '../ts/util/extensions/number.extension';
+import '@extensions/number.extension';
 
 describe('between', () => {
   it('returns a number between two given numbers', () => {
