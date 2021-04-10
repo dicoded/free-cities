@@ -1,9 +1,11 @@
-import Slave from '../../../classes/slave/Slave';
+import Actor from '../../../classes/actor/Actor';
 
 // TODO:
 
-export default function limbs(slave: Slave): string {
+export default function limbs(actor: Actor): string {
   const text: string[] = [];
+
+  if (!actor) throw new Error();
 
   return text.join(' ');
 }

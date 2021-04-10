@@ -321,6 +321,8 @@ function voice(actor: Actor): string {
 function accent(actor: Actor): string {
   // TODO:
 
+  if (!actor) throw new Error();
+
   return '';
 }
 
