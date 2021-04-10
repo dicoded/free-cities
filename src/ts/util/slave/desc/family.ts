@@ -392,22 +392,25 @@ function playerSiblings(actor: Actor): string {
 function playerGrandparents(actor: Actor): string {
   const { He, himself } = actor.pronouns;
 
-  const PCFather = getActor(PC.father);
-  const PCMother = getActor(PC.mother);
+  const PCFather = getActor(PC.father) ?? null;
+  const PCMother = getActor(PC.mother) ?? null;
+
+  const isActorGrandfather = PCFather?.father === actor.ID || PCMother?.father === actor.ID;
+  const isActorGrandmother = PCFather?.mother === actor.ID || PCMother?.mother === actor.ID;
 
   if (PC.isMomDad) {
     if (PC.isChildOf(actor) && actor.isMomDad) return `${He} is your sole grandparent. ${He} impregnated ${himself} with your sole parent ${PCFather?.name.first} who in turn impregnated themselves with you.`;
-    if (PCFather?.father === actor.ID) return `${He} is your sole grandfather. ${He} fathered to ${PCFather.name.first} who in turn impregnated themselves with you.`;
-    if (PCMother?.mother === actor.ID) return `${He} is your sole grandmother. ${He} gave birth to ${PCMother.name.first} who in turn impregnated themselves with you.`;
+    if (isActorGrandfather) return `${He} is your sole grandfather. ${He} fathered ${PCFather?.name.first} who in turn impregnated themselves with you.`;
+    if (isActorGrandmother) return `${He} is your sole grandmother. ${He} gave birth to ${PCMother?.name.first} who in turn impregnated themselves with you.`;
   }
 
-  if (PCFather?.father === PCMother?.father) return `${He} is your sole grandfather. ${He} fathered both of your parents, ${PCFather?.name.first} and ${PCMother?.name.first}.`;
-  if (PCFather?.mother === PCMother?.mother) return `${He} is your sole grandmother. ${He} gave birth to both of your parents, ${PCMother?.name.first} and ${PCFather?.name.first}.`;
+  if (PCFather?.father === PCMother?.father && isActorGrandfather) return `${He} is your sole grandfather. ${He} fathered both of your parents, ${PCFather?.name.first} and ${PCMother?.name.first}.`;
+  if (PCFather?.mother === PCMother?.mother && isActorGrandmother) return `${He} is your sole grandmother. ${He} gave birth to both of your parents, ${PCMother?.name.first} and ${PCFather?.name.first}.`;
 
-  if (PCFather?.father) return `${He} is your paternal grandfather.`;
-  if (PCMother?.father) return `${He} is your maternal grandfather.`;
-  if (PCFather?.mother) return `${He} is your paternal grandmother.`;
-  if (PCMother?.mother) return `${He} is your maternal grandmother.`;
+  if (PCFather?.father === actor.ID) return `${He} is your paternal grandfather.`;
+  if (PCMother?.father === actor.ID) return `${He} is your maternal grandfather.`;
+  if (PCFather?.mother === actor.ID) return `${He} is your paternal grandmother.`;
+  if (PCMother?.mother === actor.ID) return `${He} is your maternal grandmother.`;
 
   return '';
 }

@@ -6,5 +6,7 @@ export default function career(actor: Actor): string {
   // TODO: all of this
   // TODO: create JSON database for careers
 
+  if (!actor) throw new Error();
+
   return text.join(' ');
 }

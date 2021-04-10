@@ -1,0 +1,1344 @@
+{
+	"a Fuckdoll suit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"conservative clothing": {
+		"flats": "a pair of comfortable sandals.",
+		"boots": "a pair of nice leather boots.",
+		"heels": "a pair of comfortable heels.",
+		"pumps": "a pair of comfortable pumps.",
+		"extreme heels": "a pair of daringly high heels.",
+		"platform shoes": "a pair of comfortable platform shoes.",
+		"platform heels": "a pair of comfortable platform heels.",
+		"extreme platform heels": "a pair of daringly high heels with equally thrilling platforms.",
+		"none": "nothing on ${his} bare ${feet}."
+	},
+
+	"chains": {
+		"flats": "buckled sandals that incorporate shackles at each ankle.",
+		"boots": "utility boots with a shackle at each ankle.",
+		"heels": "sturdy heels, secured by metal buckles, with shackles at each ankle.",
+		"pumps": "stout pumps, secured with a tight chain that winds around each ankle.",
+		"extreme heels": "painfully high metal heels, secured by buckles, with shackles at each ankle.",
+		"platform shoes": "metal platform shoes that incorporate shackles at each ankle.",
+		"platform heels": "sturdy platform heels, secured by metal buckles, with shackles at each ankle.",
+		"extreme platform heels": "painfully high metal heels with terrifyingly tall platforms, secured by buckles and shackled to each ankle",
+		"none": "nothing."
+	},
+
+	"Western clothing": {
+		"flats": "soft leather moccasins.",
+		"boots": "tooled leather cowboy boots.",
+		"heels": "high heeled cowboy boots.",
+		"pumps": "pump-shaped cowboy boots.",
+		"extreme heels": "thigh-high tooled leather cowboy boots with dangerously high heels.",
+		"platform shoes": "platformed cowboy boots.",
+		"platform heels": "high heeled cowboy boots with a platform base.",
+		"extreme platform heels": "tooled leather cowboy boots with ridiculously tall platform heels that force ${him} to walk bow-legged.",
+		"none": "bare cowpoke feet."
+	},
+
+	"body oil": {
+		"flats": "a pair of trainers ready for a workout.",
+		"boots": "thigh-high stripper boots, since they're ${his} only way to dress up.",
+		"heels": "heeled trainers, to look athletic and sexy at the same time.",
+		"pumps": "pump-shaped trainers, for a slutty athletic look.",
+		"extreme heels": "ankle-supporting high heels to force ${him} as high as possible without damage.",
+		"platform shoes": "a pair of trainers with a sturdy platform fit for a workout.",
+		"platform heels": "ankle-supporting platform heels to protect ${him} from sprains.",
+		"extreme platform heels": "extremely tall, but ankle-supporting, platform heels",
+		"none": "nothing but a fine layer of oil on the tops of ${his} bare ${feet}."
+	},
+
+	"a toga": {
+		"flats": "a pair of leather sandals with a mirror image of the words \"FUCK ME\" embossed into the soles, so that if ${he} walks on sand the message will be visible in ${his} footprints.",
+		"boots": "high leather boot sandals that remain comfortable after walking all day.",
+		"heels": "heeled sandals with a mirror image of the words \"POUND ME\" embossed into the soles, so that if ${he} walks on sand the message will be visible in ${his} footprints.",
+		"pumps": "pump-like sandals with a mirror image of the words \"BREED ME\" embossed into the soles, so that if ${he} walks on sand the message will be visible in ${his} footprints.",
+		"extreme heels": "extremely tall heels with a mirror image of the words \"FUCK ME\" embossed into the soles, so that if ${he} walks on sand the message will be visible in ${his} footprints.",
+		"platform shoes": "a pair of platform sandals with a mirror image of the words \"MOUNT ME\" embossed into the soles, so that if ${he} walks on sand the message will be visible in ${his} footprints.",
+		"platform heels": "platform heels with a mirror image of the words \"FUCK ME\" embossed into the soles, so that if ${he} walks on sand the message will be visible in ${his} footprints.",
+		"extreme platform heels": "extremely tall platform heels with a penis embossed into the soles and a pair of lips in the heels, so that if ${he} walks on sand, oral sex will follow in ${his} footprints.",
+		"none": "bare feet."
+	},
+
+	"a huipil": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a slutty qipao": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"spats and a tank top": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"uncomfortable straps": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"shibari ropes": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"restrictive latex": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a latex catsuit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"attractive lingerie": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"attractive lingerie for a pregnant woman": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"kitty lingerie": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a maternity dress": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"stretch pants and a crop-top": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a succubus outfit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a fallen nuns habit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a chattel habit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a penitent nuns habit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a string bikini": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a scalemail bikini": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"striped panties": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a cheerleader outfit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"clubslut netting": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"cutoffs and a t-shirt": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a slave gown": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"slutty business attire": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"nice business attire": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a ball gown": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a halter top dress": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a mini dress": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a comfortable bodysuit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a leotard": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a monokini": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"an apron": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"overalls": {
+		"flats": "aside from a pair of mudproof sneakers.",
+		"boots": "aside from a pair of utilitarian leather boots.",
+		"heels": "aside from a pair of simple leather heels.",
+		"pumps": "aside from a pair of mudproof pumps.",
+		"extreme heels": "aside from a pair of extremely tall leather heels.",
+		"platform shoes": "aside from a pair of durable platform shoes.",
+		"platform heels": "aside from a pair of sturdy platform heels.",
+		"extreme platform heels": "aside from a pair of extremely tall platform heels.",
+		"none": "down to ${his} ${feet}."
+	},
+
+	"a cybersuit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a tight Imperial bodysuit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"battlearmor": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"Imperial Plate": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a bunny outfit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a slutty maid outfit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a nice maid outfit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a slutty nurse outfit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a nice nurse outfit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a schoolgirl outfit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a kimono": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a dirndl": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a long qipao": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"lederhosen": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a biyelgee costume": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a hanbok": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a burkini": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a hijab and blouse": {
+		"flats": "a pair of comfortable sandals.",
+		"boots": "a pair of nice leather boots.",
+		"heels": "a pair of comfortable heels.",
+		"pumps": "a pair of comfortable pumps.",
+		"extreme heels": "a pair of daringly high heels.",
+		"platform shoes": "a pair of comfortable platform shoes.",
+		"platform heels": "a pair of comfortable platform heels.",
+		"extreme platform heels": "a pair of daringly high heels with equally thrilling platforms.",
+		"none": "nothing on ${his} bare ${feet}."
+	},
+
+	"a hijab and abaya": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a niqab and abaya": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a klan robe": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a burqa": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a police uniform": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a gothic lolita dress": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a one-piece swimsuit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a nice pony outfit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a slutty pony outfit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a button-up shirt and panties": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a button-up shirt": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a sweater": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a t-shirt": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a tank-top": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a nice over-sizes shirt": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a tube top": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"an oversized t-shirt": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a bra": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a sports bra": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a striped bra": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"pasties": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a tube top and thong": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a sweater and panties": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a slutty klan robe": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a tank-top and panties": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a t-shirt and thong": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"an oversized t-shirt and boyshorts": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"sport shorts and a t-shirt": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"sport shorts and a sports bra": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a t-shirt and panties": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"striped underwear": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a thong": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a skimpy loincloth": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"boyshorts": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"panties": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"panties and pasties": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"cutoffs": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"sport shorts": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a sweater and cutoffs": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"leather pants and a tube top": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a t-shirt and jeans": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"leather pants and pasties": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"leather pants": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"jeans": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a military uniform": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a schutzstaffel uniform": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a slutty schutzstaffel uniform": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a red army uniform": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"battledress": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a mounty outfit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"harem gauze": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"slutty jewelry": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a Santa dress": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a bimbo outfit": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": "",
+		"none": ""
+	},
+
+	"a courtesan dress": {
+		"flats": "",
+		"boots": "",
+		"heels": "",
+		"pumps": "",
+		"extreme heels": "",
+		"platform shoes": "",
+		"platform heels": "",
+		"extreme platform heels": ""
+	}
+}

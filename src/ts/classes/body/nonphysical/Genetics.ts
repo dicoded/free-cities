@@ -1,124 +1,138 @@
+import { EyeColor } from '../../../util/color';
+
 interface IQuirks {
   /**
      * Oversized breasts. Increased growth rate, reduced shrink rate.
      * Breasts try to return to oversized state if reduced.
      */
-  macromastia: number,
+  macromastia: boolean;
 
   /**
    * Greatly oversized breasts. Increased growth rate, reduced shrink rate.
    * Breasts try to return to oversized state if reduced.
    *
    * .`macromastia` + `gigantomastia`: Breasts never stop growing. Increased growth rate, no shrink rate. */
-  gigantomastia: number,
+  gigantomastia: boolean;
 
   /** How prone the body is to having twins. Shorter pregnancy recovery rate. */
-  fertility: number,
+  fertility: boolean;
 
   /** How prone the body is to having multiples, much shorter pregnancy recovery rate.
    *
    * `.fertility` + `.hyperFertility`: will have multiples, even shorter pregnancy recovery rate. */
-  hyperFertility: number,
+  hyperFertility: boolean;
 
   /** Pregnancy does not block ovulation; body can become pregnant while pregnant. */
-  superfetation: number,
+  superfetation: boolean;
 
   /** Abnormal production of amniotic fluid.
    *
    *  Only affects fetuses.
    */
-  polyhydramnios: number,
+  polyhydramnios: boolean;
 
   /**
    * Pleasurable pregnancy and orgasmic birth. Wider hips, looser and wetter vagina.
    * High pregnancy adaptation and low birth damage.
    */
-  uterineHypersensitivity: number,
+  uterineHypersensitivity: boolean;
 
   /** Lactation unrelated to pregnancy. */
-  galactorrhea: number,
+  galactorrhea: boolean;
 
   /**
    * Body is abnormally tall.
    *
    * `.gigantism` + `.dwarfism`: body's height is very average.
   */
-  gigantism: number,
+  gigantism: boolean;
 
   /**
    * Body is abnormally short.
    *
    * `.gigantism` + `.dwarfism`: body's height is very average.
   */
-  dwarfism: number,
+  dwarfism: boolean;
 
-  /** Body retains childlike characteristics. */
-  neoteny: number,
+  /**
+   * Body retains childlike characteristics.
+   *
+   * `.neoteny` * `progeria`: progeria wins
+   */
+  neoteny: boolean;
 
   /** Body undergoes rapid aging.
    *
-   * `.neoteny` + `.progeria`: progeria wins. */
-  progeria: number,
+   * `.neoteny` + `.progeria`: progeria wins.
+   */
+  progeria: boolean;
 
   /**
    * Body has a flawless face.
    *
    * `.pFace` + `.uFace`: Depends on carrier status, may swing between average and above/below depending.
    */
-  pFace: number,
+  pFace: boolean;
 
   /**
    * Body has a hideous face.
    *
    * `.pFace` + `.uFace`: Depends on carrier status, may swing between average and above/below depending.
    */
-  uFace: number,
+  uFace: boolean;
 
   /** Body has pale skin, white hair and red eyes. */
-  albinism: number,
+  albinism: boolean;
 
   /**
-   * Body may have mismatched eyes.
+   * Body has mismatched eyes.
    *
    * The eye color stored here is always the left eye.
    */
-  heterochromia: number | string,
+  heterochromia: boolean | EyeColor;
 
   /** Body's butt never stops growing. Increased growth rate, reduced shrink rate. */
-  rearLipedema: number,
+  rearLipedema: boolean;
 
   /** Body has (or will have) a large penis. */
-  wellHung: number,
+  wellHung: boolean;
 
   /**
    * Body constantly gains weight unless dieting, easier to gain weight.
    *
-   * `.wGain` + `.wLoss`: weight gain/loss fluctuates randomly. */
-  wGain: number,
+   * `.wGain` + `.wLoss`: weight gain/loss fluctuates randomly.
+   */
+  wGain: boolean;
 
   /**
    * Body constantly loses weight unless gaining, easier to lose weight.
    *
-   * `.wGain` + `.wLoss`: weight gain/loss fluctuates randomly. */
-  wLoss: number,
+   * `.wGain` + `.wLoss`: weight gain/loss fluctuates randomly.
+   */
+  wLoss: boolean;
 
   /**
    * Body constantly gains muscle mass, easier to gain muscle.
    *
-   * `.mGain` + `.mLoss`: muscle gain/loss amplified, body loses muscle unless actively building. */
-  mGain: number,
+   * `.mGain` + `.mLoss`: muscle gain/loss amplified, body loses muscle unless actively building.
+   */
+  mGain: boolean;
 
   /**
    * Body constantly loses muscle mass, easier to gain muscle.
    *
-   * `.mGain` + `.mLoss`: muscle gain/loss amplified, body loses muscle unless actively building. */
-  mLoss: number,
+   * `.mGain` + `.mLoss`: muscle gain/loss amplified, body loses muscle unless actively building.
+   */
+  mLoss: boolean;
+
+  /** Body can only ever birth boys. */
+  boysOnly: boolean;
 
   /** Body can only ever birth girls. */
-  girlsOnly: number;
+  girlsOnly: boolean;
 
   /** Body attempts to normalize to an androgynous state. */
-  androgyny: number,
+  androgyny: boolean;
 }
 
 interface IMods {
@@ -139,95 +153,51 @@ interface IGenetics {
   mods: IMods;
 }
 
+export function getQuirks() {
+  return {
+    macromastia: false,
+    gigantomastia: false,
+    fertility: false,
+    hyperFertility: false,
+    superfetation: false,
+    polyhydramnios: false,
+    uterineHypersensitivity: false,
+    galactorrhea: false,
+    gigantism: false,
+    dwarfism: false,
+    neoteny: false,
+    progeria: false,
+    pFace: false,
+    uFace: false,
+    albinism: false,
+    heterochromia: false,
+    rearLipedema: false,
+    wellHung: false,
+    wGain: false,
+    wLoss: false,
+    mGain: false,
+    mLoss: false,
+    boysOnly: false,
+    girlsOnly: false,
+    androgyny: false,
+  };
+}
+
+export function getMods() {
+  return {
+    NCS: false,
+    rapidCellGrowth: false,
+    immortality: false,
+  };
+}
+
 export default class Genetics implements IGenetics {
-  quirks: {
-    macromastia: number;
+  quirks: IQuirks;
 
-    gigantomastia: number;
-
-    fertility: number;
-
-    hyperFertility: number;
-
-    superfetation: number;
-
-    polyhydramnios: number;
-
-    uterineHypersensitivity: number;
-
-    galactorrhea: number;
-
-    gigantism: number;
-
-    dwarfism: number;
-
-    neoteny: number;
-
-    progeria: number;
-
-    pFace: number;
-
-    uFace: number;
-
-    albinism: number;
-
-    heterochromia: number;
-
-    rearLipedema: number;
-
-    wellHung: number;
-
-    wGain: number;
-
-    wLoss: number;
-
-    mGain: number;
-
-    mLoss: number;
-
-    girlsOnly: number;
-
-    androgyny: number;
-  }
-
-  mods: {
-    NCS: boolean;
-    rapidCellGrowth: boolean;
-    immortality: boolean;
-  }
+  mods: IMods
 
   constructor() {
-    this.quirks = {
-      macromastia: 0,
-      gigantomastia: 0,
-      fertility: 0,
-      hyperFertility: 0,
-      superfetation: 0,
-      polyhydramnios: 0,
-      uterineHypersensitivity: 0,
-      galactorrhea: 0,
-      gigantism: 0,
-      dwarfism: 0,
-      neoteny: 0,
-      progeria: 0,
-      pFace: 0,
-      uFace: 0,
-      albinism: 0,
-      heterochromia: 0,
-      rearLipedema: 0,
-      wellHung: 0,
-      wGain: 0,
-      wLoss: 0,
-      mGain: 0,
-      mLoss: 0,
-      girlsOnly: 0,
-      androgyny: 0,
-    };
-
-    this.mods = {
-      NCS: false,
-      rapidCellGrowth: false,
-      immortality: false,
-    };
+    this.quirks = getQuirks();
+    this.mods = getMods();
   }
 }

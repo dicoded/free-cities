@@ -54,7 +54,7 @@ function neoteny(actor: Actor): string {
 
   let hasNeoteny: boolean = false;
 
-  if (actor.genetics.quirks.neoteny === 2
+  if (actor.genetics.quirks.neoteny
     && actor.age.physical > actor.age.actual
     && (get(purchased).upgrades.geneticMapping > 0
       || actor.age.physical > actor.age.actual + 5)) {
@@ -196,7 +196,7 @@ export default function age(actor: Actor): string {
   if (actor.age.actual !== actor.age.physical) {
     text.push(`However, ${he} has the body of a ${actor.age.physical}-year-old;`);
 
-    if (actor.genetics.quirks.progeria === 2
+    if (actor.genetics.quirks.progeria
       && actor.age.physical > actor.age.actual
       && (get(purchased).upgrades.geneticMapping > 0
         || (actor.age.physical > actor.age.actual + 20))) {

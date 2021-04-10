@@ -4,7 +4,7 @@ import Lower from './lower/LowerBody';
 
 import { FaceShape } from '../body/face/Face';
 import {
-  VoiceImplant, VoiceType, AccentType, LipSize,
+  VoiceImplant, VoiceType, AccentType, TeethType,
 } from '../body/face/Mouth';
 import { ShouldersType } from '../body/upper/Shoulders';
 import { HipSize } from '../body/lower/Hips';
@@ -104,7 +104,7 @@ export default class Body implements IBody {
   }
 
   get height() {
-    return this.abstract.height;
+    return this.abstract.height.round(1);
   }
 
   get muscles() {
@@ -113,10 +113,6 @@ export default class Body implements IBody {
 
   get hair() {
     return this.upper.hair.main;
-  }
-
-  set hair(hair) {
-    this.hair = hair;
   }
 
   get eyebrows() {
@@ -175,7 +171,7 @@ export default class Body implements IBody {
   }
 
   set voice(voice: {
-    type: VoiceType, accent: AccentType, implant: VoiceImplant | null
+    type: VoiceType, accent: AccentType | null, implant: VoiceImplant | null
   }) {
     this.upper.face.mouth.throat.voice = voice;
   }
@@ -270,6 +266,10 @@ export default class Body implements IBody {
     return this.abstract.counter;
   }
 
+  get BMI() {
+    return this.weight / this.height ** 2;
+  }
+
   // Checkers
 
   get canAchieveErection(): boolean {
@@ -291,6 +291,10 @@ export default class Body implements IBody {
 
   get canSee(): boolean {
     return !(this.upper.face.eyes.left.blind && this.upper.face.eyes.right.blind);
+  }
+
+  get canTalk(): boolean {
+    return !this.upper.face.mouth.mute;
   }
 
   get isTrueVirgin() {
@@ -409,7 +413,7 @@ export default class Body implements IBody {
   }
 
   get isBimbo(): boolean {
-    return this.isFemale && this.lips.size > LipSize.PLUSH && this.chest.size > 2000 && this.butt.size > 1200;
+    return this.isFemale && this.lips.size > 41 && this.chest.size > 2000 && this.butt.size > 1200;
   }
 
   get isHourglass(): boolean {
@@ -465,7 +469,7 @@ export default class Body implements IBody {
   }
 
   get isAlbino(): boolean {
-    return this.genetics.quirks.albinism === 2;
+    return this.genetics.quirks.albinism;
   }
 
   get isLactating(): boolean {
@@ -569,5 +573,46 @@ export default class Body implements IBody {
 
   get isNull(): boolean {
     return !this.penis && !this.vagina;
+  }
+
+  get isUnderweight(): boolean {
+    return this.BMI < 19;
+  }
+
+  get isHealthyWeight(): boolean {
+    return this.BMI.between(19, 24);
+  }
+
+  get isOverweight(): boolean {
+    return this.BMI.between(25, 29);
+  }
+
+  get isObese(): boolean {
+    return this.BMI.between(30, 39);
+  }
+
+  get isMorbidlyObese(): boolean {
+    return this.BMI > 39;
+  }
+
+  get hasAnyArms(): boolean {
+    return this.arms.left !== null || this.arms.right !== null;
+  }
+
+  get hasAnyLegs(): boolean {
+    return this.legs.left !== null || this.legs.right !== null;
+  }
+
+  get hasBothArms(): boolean {
+    return this.arms.left !== null && this.arms.right !== null;
+  }
+
+  get hasBothLegs(): boolean {
+    return this.legs.left !== null && this.legs.right !== null;
+  }
+
+  get hasLisp(): boolean {
+    return this.canTalk
+      && (this.lips.size > 70 || this.mouth.teeth.type === TeethType.GAPPED);
   }
 }

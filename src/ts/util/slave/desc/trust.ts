@@ -20,11 +20,12 @@ export default function trust(slave: Slave): string {
  * <span class={trustColor(slave.trust)}>{trust(slave)}</span>
  */
 export function trustColor(val: number): string {
-  if (val < -95) return 'text-yellow-700';
-  if (val < -50) return 'text-yellow-500';
-  if (val < -20) return 'text-yellow-300';
-  if (val <= 20) return 'text-gray-400';
-  if (val <= 50) return 'text-green-300';
-  if (val <= 95) return 'text-green-500';
-  return 'text-green-700';
+  if (val < -95) return 'text-yellow-800 dark:text-yellow-700';
+  if (val < -50) return 'text-yellow-600 dark:text-yellow-500';
+  if (val < -20) return 'text-yellow-400 dark:text-yellow-300';
+  if (val <= 20) return 'text-gray-600 dark:text-gray-400';
+  if (val <= 50) return 'text-green-400 dark:text-green-300';
+  if (val <= 95) return 'text-green-600 dark:text-green-500';
+
+  return 'text-green-800 dark:text-green-700';
 }

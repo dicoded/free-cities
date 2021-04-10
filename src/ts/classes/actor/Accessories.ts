@@ -2,7 +2,6 @@ import Piercings from './Piercings';
 import Tattoos from './Tattoos';
 
 export enum Eyewear {
-
   GLASSES = 'glasses',
   BLURRING_GLASSES = 'blurring glasses',
   CORRECTIVE_GLASSES = 'corrective glasses',
@@ -11,14 +10,12 @@ export enum Eyewear {
 }
 
 export enum Earwear {
-
   HEARING_AIDS = 'hearing aids',
   MUFFLING_EAR_PLUGS = 'muffling ear plugs',
   DEAFENING_EAR_PLUGS = 'deafening ear plugs',
 }
 
 export enum BellyWear {
-
   SMALL_EMPATHY_BELLY = 'a small empathy belly',
   MEDIUM_EMPATHY_BELLY = 'a medium empathy belly',
   LARGE_EMPATHY_BELLY = 'a large empathy belly',
@@ -29,7 +26,6 @@ export enum BellyWear {
 }
 
 export enum Makeup {
-
   NONE = 'none',
   MINIMAL = 'minimal',
   LUXURIOUS = 'expensive, luxurious',
@@ -54,7 +50,33 @@ export enum Nails {
   COLOR_COORDINATED_METALLIC = 'color-coordinated metallic',
 }
 
+interface IClothing {
+  /** Any headwear the slave is wearing. */
+  head: string | null;
+
+  /** Any chest clothing the slave is wearing. */
+  chest: string | null;
+
+  /** Any armwear the slave is wearing. */
+  arms: string | null;
+
+  /** Any handwear the slave is wearing. */
+  hands: string | null;
+
+  /** Any crotch clothing the slave is wearing. */
+  crotch: string | null;
+
+  /** Any legwear the slave is wearing. */
+  legs: string | null;
+
+  /** Any footwear the slave is wearing. */
+  feet: string | null;
+}
+
 interface IAccessories {
+  /** Properties pertaining to any clothing the slave is wearing. */
+  clothing: IClothing | null;
+
   /** Any eyewear the slave is wearing. */
   eyewear: Eyewear | null;
 
@@ -72,6 +94,7 @@ interface IAccessories {
 
   /** Any accessories the slave has on their nipples. */
   nipples: string | null;
+
   /** Any accessories the slave is wearing on their stomach. */
   bellyWear: BellyWear | null;
 
@@ -87,6 +110,8 @@ interface IAccessories {
 
 export default class Accessories implements IAccessories {
   brand: string | null;
+
+  clothing: IClothing | null;
 
   earImplant: boolean;
 
@@ -108,6 +133,7 @@ export default class Accessories implements IAccessories {
 
   constructor() {
     this.brand = null;
+    this.clothing = null;
     this.earImplant = false;
     this.earwear = null;
     this.eyewear = null;

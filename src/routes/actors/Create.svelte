@@ -15,8 +15,8 @@
   import Slave from '../../ts/classes/slave/Slave';
 
   import Cash from './Cash.svelte';
-  import View from './View.svelte';
   import Edit from './Edit.svelte';
+  import View from './view/View.svelte';
 
   let slave: Slave = generateSlave();
 
@@ -35,7 +35,7 @@
     to start the game. Slaves created here will be <span class="text-green-500">much cheaper</span> than if they were
     purchased on the market.
 
-    {#if $PC.penis && $PC.vagina && ($see.dicks || $makeDicks)}
+    {#if $PC.penis && $PC.vagina && makeDicks}
       You've obviously had access to a source of advanced surgery and organ farming, seeing as you have both a penis and
       a vagina yourself. Slaves get a <span class="text-green-500">smaller cost increase</span> here for having both
       penises and vaginas, and for having both testicles and ovaries.

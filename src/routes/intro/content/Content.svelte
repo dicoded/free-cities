@@ -4,7 +4,6 @@
   import Body from '../../../components/ui/Body.svelte';
 
   import Age from './Age.svelte';
-  import Gender from './Gender.svelte';
   import Extreme from './Extreme.svelte';
   import Other from './other/Other.svelte';
 
@@ -20,16 +19,13 @@
 
     <Extreme />
     {#if $see.extreme !== null}
-      <Gender />
-      {#if $see.dicks !== null}
-        <Age />
-        {#if $min.age}
-          <Other />
-          {#if $see.incest !== null}
-            <div class="flex mt-8">
-              <Button handler={() => { $see.arcology = true }}>Finish Content Customization</Button>
-            </div>
-          {/if}
+      <Age />
+      {#if $min.age}
+        <Other />
+        {#if $see.incest !== null}
+          <div class="flex mt-8">
+            <Button handler={() => { $see.arcology = true }}>Finish Content Customization</Button>
+          </div>
         {/if}
       {/if}
     {/if}

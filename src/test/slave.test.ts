@@ -24,7 +24,7 @@ import Genetics from '../ts/classes/body/nonphysical/Genetics';
 import Counter from '../ts/classes/body/nonphysical/counter/Counter';
 import Personality from '../ts/classes/actor/Personality';
 
-import Abstract from '../ts/classes/body/nonphysical/Nonphysical';
+import Abstract, { Sex } from '../ts/classes/body/nonphysical/Nonphysical';
 import Upper from '../ts/classes/body/upper/UpperBody';
 import Lower from '../ts/classes/body/lower/LowerBody';
 import Slave from '../ts/classes/slave/Slave';
@@ -124,7 +124,7 @@ describe('generateGenes', () => {
 
 describe('generateGenetics', () => {
   it('returns a new genetics instance', () => {
-    expect(generateGenetics()).toBeInstanceOf(Genetics);
+    expect(generateGenetics(new Slave())).toBeInstanceOf(Genetics);
   });
 });
 
@@ -198,16 +198,16 @@ describe('generateBelly', () => {
 
 describe('generateWaist', () => {
   it('returns a waist instance based on the given body\'s properties', () => {
-    expect(generateWaist()).toBeInstanceOf(Waist);
-    expect(generateWaist().size).toBeGreaterThanOrEqual(-100);
-    expect(generateWaist().size).toBeLessThanOrEqual(100);
+    expect(generateWaist(new Slave())).toBeInstanceOf(Waist);
+    expect(generateWaist(new Slave()).size).toBeGreaterThanOrEqual(-100);
+    expect(generateWaist(new Slave()).size).toBeLessThanOrEqual(100);
   });
 });
 
 describe('generateHips', () => {
   it('returns a hips instance based on the given body\'s properties', () => {
-    expect(generateHips()).toBeInstanceOf(Hips);
-    expect(generateHips().size).toBeTruthy();
+    expect(generateHips(new Slave())).toBeInstanceOf(Hips);
+    expect(generateHips(new Slave()).size).toBeTruthy();
   });
 });
 
@@ -222,8 +222,8 @@ describe('generateCrotch', () => {
 
 describe('generateButt', () => {
   it('returns a butt instance based on the given body\'s properties', () => {
-    expect(generateButt()).toBeInstanceOf(Butt);
-    expect(generateButt().size).toBeGreaterThanOrEqual(0);
+    expect(generateButt(new Slave())).toBeInstanceOf(Butt);
+    expect(generateButt(new Slave()).size).toBeGreaterThanOrEqual(0);
   });
 });
 
@@ -297,7 +297,11 @@ describe('generateWeight', () => {
 
 describe('generateHeight', () => {
   it('returns a random height', () => {
-    expect(generateHeight()).toBeGreaterThan(0);
+    const slave = new Slave();
+    slave.sex = Sex.MALE;
+    slave.nationality = 'American';
+
+    expect(generateHeight(slave)).toBeGreaterThan(0);
   });
 });
 

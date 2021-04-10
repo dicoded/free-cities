@@ -11,60 +11,20 @@ import Family from './Family';
 import Relationship from './Relationship';
 import Rivalry from './Rivalry';
 
+import Accessories from '../actor/Accessories';
+
 import { Sex } from '../body/nonphysical/Nonphysical';
+import { Piercing } from '../actor/Piercings';
 
 import { getActor } from '../../util/slave/util';
 
 interface IActor extends Entity, Body {
-/**
- * How intelligent the actor is.
- *
- * | **Range**     | **Description**     |
- * |--------------:|:--------------------|
- * | *-100 - -96* | Borderline retarded |
- * | *-95 - -51*  | Very slow           |
- * | *-50 - -16*  | Slow                |
- * | *-15 - 15*   | Average             |
- * | *16 - 50*    | Smart               |
- * | *51 - 95*    | Very smart          |
- * | *96 - 100*   | Brilliant           |
- */
-  intelligence: number;
-
-  /**
-   * How much education the actor has had.
-   *
-   * | **Range**  | **Description** |
-   * |-----------:|:----------------|
-   * | *0*        | Uneducated      |
-   * | *1 - 15*   | Educated        |
-   * | *16 - 30*  | Well educated   |
-   */
-  education: number;
 
   /** Properties pertaining to the actor's name. */
   name: Name;
 
-  /** Where the actor is from. */
-  nationality: string;
-
-  /** Properties pertaining to the actor's pronouns. */
-  pronouns: Pronouns;
-
-  /** A list of the IDs of everyone the actor has had a sexual encounter with. */
-  partners: Set<number>
-
-  /** The actor's personality. */
-  personality: Personality;
-
-  /** Any quirks the actor has. */
-  quirks: Quirks;
-
-  /** Any flaws the actor has. */
-  flaws: Flaws;
-
-  /** Any fetish the actor has. */
-  fetish: Fetish | null;
+  /** Any accessories the slave is wearing. */
+  accessories: Accessories;
 
   /** Who the actor is and isn't attracted to. */
   attraction: Attraction;
@@ -83,6 +43,53 @@ interface IActor extends Entity, Body {
    */
   drive: number;
 
+  /** Any fetish the actor has. */
+  fetish: Fetish | null;
+
+  /** Any flaws the actor has. */
+  flaws: Flaws;
+
+  /**
+   * How intelligent the actor is.
+   *
+   * | **Range**     | **Description**     |
+   * |--------------:|:--------------------|
+   * | *-100 - -96* | Borderline retarded |
+   * | *-95 - -51*  | Very slow           |
+   * | *-50 - -16*  | Slow                |
+   * | *-15 - 15*   | Average             |
+   * | *16 - 50*    | Smart               |
+   * | *51 - 95*    | Very smart          |
+   * | *96 - 100*   | Brilliant           |
+   */
+  intelligence: number;
+
+  /**
+   * How much education the actor has had.
+   *
+   * | **Range**  | **Description** |
+   * |-----------:|:----------------|
+   * | *0*        | Uneducated      |
+   * | *1 - 15*   | Educated        |
+   * | *16 - 30*  | Well educated   |
+   */
+  education: number;
+
+  /** Where the actor is from. */
+  nationality: string;
+
+  /** Properties pertaining to the actor's pronouns. */
+  pronouns: Pronouns;
+
+  /** A list of the IDs of everyone the actor has had a sexual encounter with. */
+  partners: Set<number>
+
+  /** The actor's personality. */
+  personality: Personality;
+
+  /** Any quirks the actor has. */
+  quirks: Quirks;
+
   /** Any relationship the actor is in, if any. */
   relationship: Relationship;
 
@@ -93,6 +100,8 @@ interface IActor extends Entity, Body {
 /** A basic human actor. */
 export default class Actor extends Body implements IActor {
   ID: number;
+
+  accessories: Accessories;
 
   intelligence: number;
 
@@ -122,11 +131,12 @@ export default class Actor extends Body implements IActor {
 
   rivalry: Rivalry;
 
-  constructor(ID: number) {
+  constructor() {
     super();
 
-    this.ID = ID;
+    this.ID = 0;
     this.name = new Name();
+    this.accessories = new Accessories();
     this.intelligence = 0;
     this.education = 0;
     this.nationality = '';
@@ -304,8 +314,8 @@ export default class Actor extends Body implements IActor {
   }
 
   get isMomDad(): boolean {
-    return this.family.father !== undefined
-      && this.family.mother !== undefined
+    return this.family.father !== 0
+      && this.family.mother !== 0
       && this.family.father === this.family.mother;
   }
 
@@ -340,5 +350,11 @@ export default class Actor extends Body implements IActor {
   get isGay(): boolean {
     return (this.sex === Sex.MALE && this.attraction.male > 65)
       || (this.sex === Sex.FEMALE && this.attraction.female > 65);
+  }
+
+  get hasLisp(): boolean {
+    return super.hasLisp
+      || (this.accessories.piercings?.lips === Piercing.LIGHT && this.accessories.piercings?.tongue === Piercing.HEAVY)
+      || (this.accessories.piercings?.lips === Piercing.HEAVY && this.accessories.piercings?.tongue === Piercing.LIGHT);
   }
 }

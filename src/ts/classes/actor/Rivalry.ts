@@ -15,7 +15,7 @@ interface IRivalry {
    */
   target: number;
 
-  /** THe type of rivalry. */
+  /** The type of rivalry. */
   type: RivalryType;
 }
 

@@ -44,6 +44,9 @@ interface Number {
   /** Converts the given value to centimeters. */
   toCentimeters(): number;
 
+  /** Converts the given value of inches to feet and inches. */
+  toFeet(): string;
+
   /** Converts the given value to inches. */
   toInches(): number;
 
@@ -192,6 +195,12 @@ Number.prototype.toCash = function toCash(this: number): string {
 
 Number.prototype.toCentimeters = function toCentimeters(this: number): number {
   return this * 2.54;
+};
+
+Number.prototype.toFeet = function toFeet(this: number): string {
+  if (this < 12) return `${this}"`;
+
+  return `${Math.trunc(this / 12)}' ${Math.round(this % 12)}"`;
 };
 
 Number.prototype.toInches = function toInches(this: number): number {
