@@ -29,7 +29,7 @@ import Upper from '@classes/body/upper/UpperBody';
 import Lower from '@classes/body/lower/LowerBody';
 import Slave from '@classes/slave/Slave';
 
-import '@util/extensions/array.extension';
+import '@extensions/array.extension';
 
 import {
   generateID,

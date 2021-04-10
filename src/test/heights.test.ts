@@ -4,7 +4,7 @@ import {
   getMeanHeightBySex,
 } from '@util/slave/heights';
 
-import '@util/extensions/number.extension';
+import '@extensions/number.extension';
 
 import Actor from '@classes/actor/Actor';
 import { Sex } from '@classes/body/nonphysical/Nonphysical';
