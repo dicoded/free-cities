@@ -8,4 +8,4 @@ We are not currently utilizing unit tests for `.svelte` files. However, if you w
 
 ## TypeScript files
 
-Files that export general-purpose (i.e., not used for one specific task) should have a corresponding `.test.ts` file. Import the modules and create your tests here.
+Files that export general-purpose (i.e., not used for one specific task) functions should have a corresponding `.test.ts` file. Import the modules and create your tests here.
