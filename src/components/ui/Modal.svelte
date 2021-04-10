@@ -5,7 +5,7 @@
 </script>
 
 <script lang="ts">
-	import modalStore from '../../stores/modal.store';
+	import modalStore from '@storesal.store';
 
 	import Button from './Button.svelte';
 

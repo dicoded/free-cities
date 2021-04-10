@@ -9,7 +9,7 @@ import { FaceShape } from '../../../classes/body/face/Face';
 import { Piercing } from '../../../classes/actor/Piercings';
 import { Tattoo } from '../../../classes/actor/Tattoos';
 
-import pc from '../../../../stores/player.store';
+import pc from '@stores/player.store';
 
 const PC = get(pc);
 

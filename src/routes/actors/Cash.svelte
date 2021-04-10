@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cash } from '../../stores/global.store';
+  import { cash } from '@storesbal.store';
 
   export let cost: number = 0;
 </script>

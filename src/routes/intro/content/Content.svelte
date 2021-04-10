@@ -7,8 +7,8 @@
   import Extreme from './Extreme.svelte';
   import Other from './other/Other.svelte';
 
-  import see from '../../../stores/see.store';
-  import { min } from '../../../stores/global.store';
+  import see from '@stores/see.store';
+  import { min } from '@stores/global.store';
 </script>
 
 {#if $see.content}

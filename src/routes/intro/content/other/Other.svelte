@@ -6,7 +6,7 @@
 	import Watersports from './Watersports.svelte';
 	import Incest from './Incest.svelte';
 
-	import see from '../../../../stores/see.store';
+	import see from '@stores/see.store';
 </script>
 
 <Section>

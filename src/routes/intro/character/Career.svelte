@@ -5,7 +5,7 @@
 	import Input from '../../../components/ui/Input.svelte';
 	import Choice from '../../../components/ui/Choice.svelte';
 
-	import PC from '../../../stores/player.store';
+	import PC from '@stores/player.store';
 	import { Career } from '../../../ts/classes/player/Player';
 </script>
 

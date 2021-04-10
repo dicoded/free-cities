@@ -4,7 +4,7 @@
 	import Response from '../../../components/ui/Response.svelte';
 	import Section from '../../../components/ui/Section.svelte';
 
-	import PC from '../../../stores/player.store';
+	import PC from '@stores/player.store';
 	import Markings, { MarkingsType } from '../../../ts/classes/body/nonphysical/skin/Markings';
 
 	// TODO: expand this

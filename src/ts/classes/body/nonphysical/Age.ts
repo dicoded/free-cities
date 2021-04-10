@@ -1,6 +1,6 @@
 import { get } from 'svelte/store';
 
-import { year, week } from '../../../../stores/global.store';
+import { year, week } from '@stores/global.store';
 
 interface IBirthday {
   /** The year during which the body was born. */

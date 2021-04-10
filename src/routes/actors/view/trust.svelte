@@ -3,7 +3,7 @@
 
 	import trust, { trustColor } from '../../../ts/util/slave/desc/trust';
 
-	import activeSlave from '../../../stores/active.store';
+	import activeSlave from '@stores/active.store';
 
 	const slave: Slave = $activeSlave;
 </script>

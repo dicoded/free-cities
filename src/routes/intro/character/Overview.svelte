@@ -2,7 +2,7 @@
 	import Response from '../../../components/ui/Response.svelte';
 	import Section from '../../../components/ui/Section.svelte';
 
-	import PC from '../../../stores/player.store';
+	import PC from '@stores/player.store';
 
 	let acquisition: string;
 	let age: number;

@@ -48,7 +48,7 @@ import Slave from '../../classes/slave/Slave';
 
 import {
   entityID, min, max, year,
-} from '../../../stores/global.store';
+} from '@stores/global.store';
 
 import {
   SkinColor, HairColor, EyeColor, BaseColor,

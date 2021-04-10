@@ -4,7 +4,7 @@
 	import Section from '../../../components/ui/Section.svelte';
 	import Button from '../../../components/ui/Button.svelte';
 
-	import { trade, TradeType } from '../../../stores/global.store';
+	import { trade, TradeType } from '@stores/global.store';
 </script>
 
 <Section>

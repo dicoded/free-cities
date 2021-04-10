@@ -6,7 +6,7 @@
 	import Section from '../../../components/ui/Section.svelte';
 
 	import { EyeColor } from '../../../ts/util/color';
-	import PC from '../../../stores/player.store';
+	import PC from '@stores/player.store';
 </script>
 
 <Section>

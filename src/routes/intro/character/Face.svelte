@@ -9,7 +9,7 @@
   import Hair from './Hair.svelte';
 
   import { FaceShape } from '../../../ts/classes/body/face/Face';
-  import PC from '../../../stores/player.store';
+  import PC from '@stores/player.store';
 </script>
 
 <Section>

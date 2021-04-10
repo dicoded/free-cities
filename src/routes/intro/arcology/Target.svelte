@@ -5,8 +5,8 @@
 	import Response from '../../../components/ui/Response.svelte';
 	import Section from '../../../components/ui/Section.svelte';
 
-	import PC from '../../../stores/player.store';
-	import arcology from '../../../stores/arcology.store';
+	import PC from '@stores/player.store';
+	import arcology from '@stores/arcology.store';
 	import { Acquisition, Career } from '../../../ts/classes/player/Player';
 
 	// TODO: fix this to update when player acquisition changes

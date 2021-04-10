@@ -5,7 +5,7 @@
 	import Response from '../../../components/ui/Response.svelte';
 	import Section from '../../../components/ui/Section.svelte';
 
-	import { min } from '../../../stores/global.store';
+	import { min } from '@stores/global.store';
 </script>
 
 <Section>

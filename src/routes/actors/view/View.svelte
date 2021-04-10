@@ -14,7 +14,7 @@
   import Height from './height.svelte';
   import Weight from './weight.svelte';
 
-  import activeSlave from '../../../stores/active.store';
+  import activeSlave from '@stores/active.store';
 
   const slave: Slave = $activeSlave;
 

@@ -4,7 +4,7 @@
 	import Response from '../../../components/ui/Response.svelte';
 	import Section from '../../../components/ui/Section.svelte';
 
-	import PC from '../../../stores/player.store';
+	import PC from '@stores/player.store';
 	import { Acquisition } from '../../../ts/classes/player/Player';
 </script>
 

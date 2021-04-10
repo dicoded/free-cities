@@ -4,7 +4,7 @@
 	import Response from '../../../components/ui/Response.svelte';
 	import Section from '../../../components/ui/Section.svelte';
 
-	import arcology from '../../../stores/arcology.store';
+	import arcology from '@stores/arcology.store';
 	import { Location } from '../../../ts/classes/arcology/Arcology';
 
 	// TODO: remove some of these locations

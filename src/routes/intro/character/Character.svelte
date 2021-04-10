@@ -15,8 +15,8 @@
   import Skin from './Skin.svelte';
   import Overview from './Overview.svelte';
 
-  import PC from '../../../stores/player.store';
-  import see from '../../../stores/see.store';
+  import PC from '@stores/player.store';
+  import see from '@stores/see.store';
 
   // TODO: add scrolling effects
   // TODO: add sections

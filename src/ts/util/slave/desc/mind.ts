@@ -6,7 +6,7 @@ import sexuality from './sexuality';
 import Actor from '../../../classes/actor/Actor';
 import Slave from '../../../classes/slave/Slave';
 
-import player from '../../../../stores/player.store';
+import player from '@stores/player.store';
 import { Sex } from '../../../classes/body/nonphysical/Nonphysical';
 
 const PC = get(player);

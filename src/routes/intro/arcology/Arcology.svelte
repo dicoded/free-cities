@@ -10,8 +10,8 @@
 	import Target from './Target.svelte';
 	import Terrain from './Terrain.svelte';
 
-	import see from '../../../stores/see.store';
-	import arcology from '../../../stores/arcology.store';
+	import see from '@stores/see.store';
+	import arcology from '@stores/arcology.store';
 
 	$see.nav = false;
 </script>

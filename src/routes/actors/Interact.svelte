@@ -3,7 +3,7 @@
 
 	import View from './view/View.svelte';
 
-	import activeSlave from '../../stores/active.store';
+	import activeSlave from '@storesive.store';
 
 	const slave: Slave = $activeSlave;
 </script>

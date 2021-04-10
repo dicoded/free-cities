@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { slaves } from '../../stores/actors.store';
+	import { slaves } from '@storesors.store';
 
 	import { generateSlave } from '../../ts/util/slave/generate';
 

@@ -6,7 +6,7 @@
 
 	import { Race } from '../../../ts/classes/body/nonphysical/Nonphysical';
 
-	import PC from '../../../stores/player.store';
+	import PC from '@stores/player.store';
 </script>
 
 <Section>

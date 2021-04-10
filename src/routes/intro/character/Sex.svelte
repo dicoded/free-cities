@@ -8,8 +8,8 @@
   import Penis from '../../../ts/classes/body/lower/crotch/Penis';
   import Vagina, { LabiaType } from '../../../ts/classes/body/lower/crotch/Vagina';
 
-  import PC from '../../../stores/player.store';
-  import see from '../../../stores/see.store';
+  import PC from '@stores/player.store';
+  import see from '@stores/see.store';
 
   $see.sex = false;
 </script>
