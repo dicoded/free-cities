@@ -5,7 +5,7 @@
 	import Section from '@components/ui/Section.svelte';
 
 	import PC from '@stores/player.store';
-	import Markings, { MarkingsType } from '../../../ts/classes/body/nonphysical/skin/Markings';
+	import Markings, { MarkingsType } from '@classes/body/nonphysical/skin/Markings';
 
 	// TODO: expand this
 </script>

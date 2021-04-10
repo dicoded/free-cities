@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Slave from '../../ts/classes/slave/Slave';
+	import Slave from '@classes/slave/Slave';
 
 	import Link from '@components/ui/Link.svelte'
 	import Button from '@components/ui/Button.svelte';

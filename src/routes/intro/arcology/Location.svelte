@@ -5,7 +5,7 @@
 	import Section from '@components/ui/Section.svelte';
 
 	import arcology from '@stores/arcology.store';
-	import { Location } from '../../../ts/classes/arcology/Arcology';
+	import { Location } from '@classes/arcology/Arcology';
 
 	// TODO: remove some of these locations
 </script>

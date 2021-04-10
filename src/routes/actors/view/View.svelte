@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Slave from '../../../ts/classes/slave/Slave';
+  import Slave from '@classes/slave/Slave';
 
   import Name from './name.svelte';
   import Title from './title.svelte';

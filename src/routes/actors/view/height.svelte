@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Slave from '../../../ts/classes/slave/Slave';
+	import Slave from '@classes/slave/Slave';
 
 	import activeSlave from '@stores/active.store';
 

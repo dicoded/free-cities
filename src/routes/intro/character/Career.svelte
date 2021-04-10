@@ -6,7 +6,7 @@
 	import Choice from '@components/ui/Choice.svelte';
 
 	import PC from '@stores/player.store';
-	import { Career } from '../../../ts/classes/player/Player';
+	import { Career } from '@classes/player/Player';
 </script>
 
 <Section>

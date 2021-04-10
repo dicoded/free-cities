@@ -5,7 +5,7 @@
 	import Section from '@components/ui/Section.svelte';
 
 	import arcology from '@stores/arcology.store';
-	import { Terrain } from '../../../ts/classes/arcology/Arcology';
+	import { Terrain } from '@classes/arcology/Arcology';
 </script>
 
 <Section>

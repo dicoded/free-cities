@@ -11,8 +11,8 @@
   import { makeDicks } from '@stores/global.store';
 
   import { generateSlave } from '@util/slave/generate';
-  import { Career } from '../../ts/classes/player/Player';
-  import Slave from '../../ts/classes/slave/Slave';
+  import { Career } from '@classes/player/Player';
+  import Slave from '@classes/slave/Slave';
 
   import Cash from './Cash.svelte';
   import Edit from './Edit.svelte';

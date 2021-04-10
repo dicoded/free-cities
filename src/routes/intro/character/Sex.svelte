@@ -4,9 +4,9 @@
   import Response from '@components/ui/Response.svelte';
   import Section from '@components/ui/Section.svelte';
 
-  import { Sex } from '../../../ts/classes/body/nonphysical/Nonphysical';
-  import Penis from '../../../ts/classes/body/lower/crotch/Penis';
-  import Vagina, { LabiaType } from '../../../ts/classes/body/lower/crotch/Vagina';
+  import { Sex } from '@classes/body/nonphysical/Nonphysical';
+  import Penis from '@classes/body/lower/crotch/Penis';
+  import Vagina, { LabiaType } from '@classes/body/lower/crotch/Vagina';
 
   import PC from '@stores/player.store';
   import see from '@stores/see.store';

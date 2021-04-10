@@ -4,7 +4,7 @@
 	import Response from '@components/ui/Response.svelte';
 	import Section from '@components/ui/Section.svelte';
 
-	import { Race } from '../../../ts/classes/body/nonphysical/Nonphysical';
+	import { Race } from '@classes/body/nonphysical/Nonphysical';
 
 	import PC from '@stores/player.store';
 </script>

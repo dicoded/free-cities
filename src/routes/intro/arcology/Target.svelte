@@ -7,7 +7,7 @@
 
 	import PC from '@stores/player.store';
 	import arcology from '@stores/arcology.store';
-	import { Acquisition, Career } from '../../../ts/classes/player/Player';
+	import { Acquisition, Career } from '@classes/player/Player';
 
 	// TODO: fix this to update when player acquisition changes
 
