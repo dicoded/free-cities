@@ -1,4 +1,4 @@
-import { BaseColor } from '../../../util/color';
+import { BaseColor } from '@util/color';
 
 export enum TeethType {
   NORMAL = 'normal',

@@ -5,7 +5,7 @@
   import Difficulty from './difficulty/Difficulty.svelte';
   import Trade from './trade/Trade.svelte';
 
-  import see from '@stores.store';
+  import see from '@stores/see.store';
 </script>
 
 {#if $see.character}

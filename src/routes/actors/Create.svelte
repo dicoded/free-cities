@@ -4,13 +4,13 @@
   import Button from '../../components/ui/Button.svelte';
   import Link from '../../components/ui/Link.svelte';
 
-  import PC from '@storesyer.store';
-  import see from '@stores.store';
-  import { slaves } from '@storesors.store';
-  import { link, components } from '@stores.store';
-  import { makeDicks } from '@storesbal.store';
+  import PC from '@stores/player.store';
+  import see from '@stores/see.store';
+  import { slaves } from '@stores/actors.store';
+  import { link, components } from '@stores/nav.store';
+  import { makeDicks } from '@stores/global.store';
 
-  import { generateSlave } from '../../ts/util/slave/generate';
+  import { generateSlave } from '@util/slave/generate';
   import { Career } from '../../ts/classes/player/Player';
   import Slave from '../../ts/classes/slave/Slave';
 

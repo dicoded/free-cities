@@ -4,9 +4,9 @@
 	import Month from "./Month.svelte";
 	import NavBar from "./Navbar.svelte";
 	import Popover from "./Popover.svelte";
-	import { getMonths } from "../../../ts/util/date";
+	import { getMonths } from "@util/date";
 	import { formatDate, internationalize } from "timeUtils";
-	import { keyCodes, keyCodesArray } from "../../../ts/util/keycodes";
+	import { keyCodes, keyCodesArray } from "@util/keycodes";
 	import { onMount, createEventDispatcher } from "svelte";
 
 	const dispatch = createEventDispatcher();

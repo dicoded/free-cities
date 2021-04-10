@@ -7,7 +7,7 @@
 
 	import Interact from './Interact.svelte';
 
-	import activeSlave from '@storesive.store';
+	import activeSlave from '@stores/active.store';
 
 	export let slave: Slave;
 </script>

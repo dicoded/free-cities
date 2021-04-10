@@ -7,7 +7,7 @@ import { getMelaninLevel } from '../../../classes/body/nonphysical/skin/Skin';
 import { MarkingsType } from '../../../classes/body/nonphysical/skin/Markings';
 import Tan from '../../../classes/body/nonphysical/skin/Tan';
 
-import { HairColor } from '../../../util/color';
+import { HairColor } from '@util/color';
 
 function freckled(actor: Actor): string {
   const attractive = getMelaninLevel(actor.skin.color).between(5, 10) && actor.hair.color === HairColor.RED

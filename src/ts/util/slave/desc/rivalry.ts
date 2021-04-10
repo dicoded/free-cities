@@ -1,7 +1,7 @@
 import Actor from '../../../classes/actor/Actor';
 
 import { RivalryType } from '../../../classes/actor/Rivalry';
-import { getActor } from '../../../util/slave/util';
+import { getActor } from '@util/slave/util';
 
 export default function rivalry(actor: Actor): string {
   const { He } = actor.pronouns;

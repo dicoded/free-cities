@@ -1,5 +1,5 @@
 <!-- <script lang="ts">
-	import { getDateRows, uuid, noop } from '../ts/util/date';
+	import { getDateRows, uuid, noop } from '@util/date';
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();

@@ -1,7 +1,7 @@
 import Actor from '../../../classes/actor/Actor';
 
 import { RelationshipType } from '../../../classes/actor/Relationship';
-import { getActor } from '../../../util/slave/util';
+import { getActor } from '@util/slave/util';
 
 export default function relationship(actor: Actor): string {
   const { He, his } = actor.pronouns;

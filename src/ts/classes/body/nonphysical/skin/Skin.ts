@@ -2,7 +2,7 @@ import Scars from './Scars';
 import Markings from './Markings';
 import Tan from './Tan';
 
-import { SkinColor } from '../../../../util/color';
+import { SkinColor } from '@util/color';
 
 export function getMelaninLevel(color: SkinColor): number {
   const melanin = {

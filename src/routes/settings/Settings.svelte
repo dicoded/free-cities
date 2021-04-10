@@ -3,7 +3,7 @@
 	import Toggle from '../../components/ui/Toggle.svelte';
 	import Link from '../../components/ui/Link.svelte';
 
-	import { debug } from '@storesbal.store';
+	import { debug } from '@stores/global.store';
 </script>
 
 <main class="items-center flex-col m-2 p-2">

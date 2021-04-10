@@ -5,7 +5,7 @@
 	import Response from '../../../components/ui/Response.svelte';
 	import Section from '../../../components/ui/Section.svelte';
 
-	import { EyeColor } from '../../../ts/util/color';
+	import { EyeColor } from '@util/color';
 	import PC from '@stores/player.store';
 </script>
 

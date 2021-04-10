@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Slave from '../../../ts/classes/slave/Slave';
 
-	import devotion, { devotionColor } from '../../../ts/util/slave/desc/devotion';
+	import devotion, { devotionColor } from '@util/slave/desc/devotion';
 
 	import activeSlave from '@stores/active.store';
 

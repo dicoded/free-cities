@@ -1,7 +1,7 @@
 <script>
 	// Taken from https://github.com/6eDesign/svelte-calendar as importing as module wasn't working
 
-  import { areDatesEquivalent } from '../../../ts/util/date';
+  import { areDatesEquivalent } from '@util/date';
   import { fly, fade } from 'svelte/transition';
   import { createEventDispatcher } from 'svelte';
 

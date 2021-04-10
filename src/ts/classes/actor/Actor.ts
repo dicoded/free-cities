@@ -16,7 +16,7 @@ import Accessories from '../actor/Accessories';
 import { Sex } from '../body/nonphysical/Nonphysical';
 import { Piercing } from '../actor/Piercings';
 
-import { getActor } from '../../util/slave/util';
+import { getActor } from '@util/slave/util';
 
 interface IActor extends Entity, Body {
 

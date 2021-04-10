@@ -8,7 +8,7 @@ import {
   // getDayPropsHandler,
   getMonths,
   // areDatesEquivalent,
-} from '../ts/util/date';
+} from '@util/date';
 
 describe('formatMonth', () => {
   const error = 'Input must be an integer between 0 and 11.';

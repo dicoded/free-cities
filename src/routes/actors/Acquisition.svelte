@@ -2,8 +2,8 @@
   import Body from '../../components/ui/Body.svelte';
   import Link from '../../components/ui/Link.svelte';
 
-	import arcology from '@storesology.store';
-	import player from '@storesyer.store';
+	import arcology from '@stores/arcology.store';
+	import player from '@stores/player.store';
 </script>
 
 <Body>

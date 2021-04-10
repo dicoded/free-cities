@@ -1,7 +1,7 @@
 import { get } from 'svelte/store';
 
 import Actor from '../../../classes/actor/Actor';
-import { getActor } from '../util';
+import { getActor } from '@util';
 
 import player from '@stores/player.store';
 import { actors } from '@stores/actors.store';

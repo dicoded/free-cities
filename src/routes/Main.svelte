@@ -1,8 +1,8 @@
 <script lang="ts">
-	import arcology from '@/stores/arcology.store';
-	import { slaves } from '@/stores/actors.store';
-	import { link, components } from '@/stores/nav.store';
-	import { week } from '@/stores/global.store';
+	import arcology from '@stores/arcology.store';
+	import { slaves } from '@stores/actors.store';
+	import { link, components } from '@stores/nav.store';
+	import { week } from '@stores/global.store';
 
 	import Facilities from './facilities/Facilities.svelte';
 	import Slaves from './actors/Slaves.svelte';
