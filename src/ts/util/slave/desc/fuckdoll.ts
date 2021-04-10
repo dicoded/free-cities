@@ -1,6 +1,6 @@
 import Slave from '@classes/slave/Slave';
 
-import '../../extensions/array.extension';
+import '@extensions/array.extension';
 
 function shortTermDamage(val: number): string {
   if (val > 100) return 'critically damaged';

@@ -57,7 +57,7 @@ import nationalities from './nationality';
 import names from './name';
 import { getMeanHeightByBody } from './heights';
 
-import '../extensions/array.extension';
+import '@extensions/array.extension';
 import { getDays } from '../date';
 
 const races: string[] = [
