@@ -46,7 +46,7 @@
     @apply cursor-not-allowed;
   }
 
-  @screen dark {
+  @dark {
     .selected {
       @apply bg-gray-700;
     }
@@ -66,7 +66,7 @@
       @apply bg-gray-200 border-gray-300 border-2;
     }
 
-    @screen dark {
+    @dark {
       .item {
           @apply bg-gray-800 border-gray-700;
       }

@@ -8,13 +8,13 @@
 	{slave.title.capitalize()}
 </div>
 
-<style lang="postcss">
+<style>
   .title {
     @apply font-bold;
     @apply text-red-600;
   }
 
-  @screen dark {
+  @dark {
     .title {
       @apply text-red-400;
     }

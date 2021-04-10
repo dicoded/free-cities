@@ -1,4 +1,6 @@
 <script lang="ts">
+	import type { SvelteComponent } from 'svelte';
+
 	import Link from '../ui/Link.svelte';
 
 	import type { ILink } from '@stores/nav.store';
@@ -11,7 +13,7 @@
 
 	export let open: boolean = false;
 	export let link: ILink | null = defaultLink;
-	export let components: any = [];
+	export let components: SvelteComponent[] = [];
 	export let props: IProp[] = [];
 
 	const handleOuterClick = () => open = !open;
