@@ -1,7 +1,7 @@
 import { get } from 'svelte/store';
 
-import Actor from '../../../classes/actor/Actor';
-import Slave from '../../../classes/slave/Slave';
+import Actor from '@classes/actor/Actor';
+import Slave from '@classes/slave/Slave';
 
 import purchased from '@stores/purchased.store';
 

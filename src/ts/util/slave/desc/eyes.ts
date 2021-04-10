@@ -1,4 +1,4 @@
-import Actor from '../../../classes/actor/Actor';
+import Actor from '@classes/actor/Actor';
 
 // TODO: `actor.eyes` below will need to be reworked to work with multicolored eyes
 

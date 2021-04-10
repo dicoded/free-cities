@@ -1,9 +1,9 @@
 import heights from '@data/nationalities/heights.json';
 
-import { Sex, Genes } from '../../classes/body/nonphysical/Nonphysical';
+import { Sex, Genes } from '@classes/body/nonphysical/Nonphysical';
 
-import Body from '../../classes/body/Body';
-import Actor from '../../classes/actor/Actor';
+import Body from '@classes/body/Body';
+import Actor from '@classes/actor/Actor';
 
 export const { male, female } = heights;
 

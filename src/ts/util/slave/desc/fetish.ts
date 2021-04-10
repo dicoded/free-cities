@@ -1,8 +1,8 @@
-import { FetishType } from '../../../classes/actor/Fetish';
-import BehavioralFlaws from '../../../classes/actor/flaws/Behavioral';
-import SexualFlaws from '../../../classes/actor/flaws/Sexual';
+import { FetishType } from '@classes/actor/Fetish';
+import BehavioralFlaws from '@classes/actor/flaws/Behavioral';
+import SexualFlaws from '@classes/actor/flaws/Sexual';
 
-import Slave from '../../../classes/slave/Slave';
+import Slave from '@classes/slave/Slave';
 
 function getFetishBoobs(slave: Slave): string {
   const { She, hers } = slave.pronouns;

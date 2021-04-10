@@ -1,7 +1,7 @@
-import BehavioralFlaws from '../../../classes/actor/flaws/Behavioral';
-import SexualFlaws from '../../../classes/actor/flaws/Sexual';
+import BehavioralFlaws from '@classes/actor/flaws/Behavioral';
+import SexualFlaws from '@classes/actor/flaws/Sexual';
 
-import Slave from '../../../classes/slave/Slave';
+import Slave from '@classes/slave/Slave';
 
 function getFlawAnorexic(slave: Slave): string {
   const { He } = slave.pronouns;

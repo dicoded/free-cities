@@ -1,4 +1,4 @@
-import Actor from '../../../classes/actor/Actor';
+import Actor from '@classes/actor/Actor';
 
 export default function nose(actor: Actor): string {
   const { He, His, his } = actor.pronouns;

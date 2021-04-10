@@ -1,6 +1,6 @@
-import Actor from '../../../classes/actor/Actor';
+import Actor from '@classes/actor/Actor';
 
-import { Sex } from '../../../classes/body/nonphysical/Nonphysical';
+import { Sex } from '@classes/body/nonphysical/Nonphysical';
 
 function mpreg(actor: Actor): string {
   const { He, his } = actor.pronouns;
