@@ -3,9 +3,7 @@
 
 	import devotion, { devotionColor } from '@util/slave/desc/devotion';
 
-	import activeSlave from '@stores/active.store';
-
-	const slave: Slave = $activeSlave;
+	export let slave: Slave;
 </script>
 
 <div>

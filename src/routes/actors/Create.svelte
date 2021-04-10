@@ -20,6 +20,8 @@
 
   let slave: Slave = generateSlave();
 
+  $: slave;
+
   $link = null;
   $components = [
     Cash,
@@ -73,6 +75,6 @@
     </div>
   </div>
 
-  <View />
+  <View {slave}/>
   <Edit />
 </Body>
