@@ -1,11 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  import see from './stores/see.store';
-  import { link, components, props } from './stores/nav.store';
-  import view from './stores/view.store';
+  import see from '@stores/see.store';
+  import { link, components, props } from '@stores/nav.store';
+  import view from '@stores/view.store';
 
-  import Router from './routes/Router.svelte';
+  import Router from '@routes/Router.svelte';
 
   import Navbar from '@components/nav/Navbar.svelte';
   import Sidebar from '@components/nav/Sidebar.svelte';
