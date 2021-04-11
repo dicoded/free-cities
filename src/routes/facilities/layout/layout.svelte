@@ -1,8 +1,20 @@
 <script lang="ts">
+	import Apartment from '../Apartment.svelte';
 	import Arcade from '../Arcade.svelte';
+	import Armory from '../Armory.svelte';
+	import Brothel from '../Brothel.svelte';
+	import Cellblock from '../Cellblock.svelte';
+	import Club from '../Club.svelte';
+	import Farmyard from '../Farmyard.svelte';
+	import Incubator from '../Incubator.svelte';
+	import MasterSuite from '../MasterSuite.svelte';
+	import Nursery from '../Nursery.svelte';
 	import Penthouse from '../Penthouse.svelte';
+	import Pit from '../Pit.svelte';
+	import Schoolroom from '../Schoolroom.svelte';
+	import ServantsQuarters from '../ServantsQuarters.svelte';
+	import Spa from '../Spa.svelte';
 
-	import Link from '@components/ui/Link.svelte';
 	import Cell from './Cell.svelte';
 </script>
 
@@ -12,56 +24,28 @@
 	</div>
 	<div class="row">
 		<Cell facility={Arcade}>Arcade</Cell>
-		<div class="cell">
-			<Link to=""/>
-		</div>
+		<Cell facility={Armory}>Armory</Cell>
 	</div>
 	<div class="row">
-		<div class="cell">
-			<Link to=""/>
-		</div>
-		<div class="cell">
-			<Link to=""/>
-		</div>
+		<Cell facility={Brothel}>Brothel</Cell>
+		<Cell facility={Cellblock}>Cellblock</Cell>
 	</div>
 	<div class="row">
-		<div class="cell">
-			<Link to=""/>
-		</div>
-		<div class="cell">
-			<Link to=""/>
-		</div>
-		<div class="cell">
-			<Link to=""/>
-		</div>
+		<Cell facility={Cellblock}>Cellblock</Cell>
+		<Cell facility={Club}>Club</Cell>
+		<Cell facility={Farmyard}>Farmyard</Cell>
 	</div>
 	<div class="row">
-		<div class="cell">
-			<Link to=""/>
-		</div>
-		<div class="cell">
-			<Link to=""/>
-		</div>
-		<div class="cell">
-			<Link to=""/>
-		</div>
-		<div class="cell">
-			<Link to=""/>
-		</div>
+		<Cell facility={Incubator}>Incubator</Cell>
+		<Cell facility={MasterSuite}>Master Suite</Cell>
+		<Cell facility={Nursery}>Nursery</Cell>
+		<Cell facility={Pit}>Pit</Cell>
 	</div>
 	<div class="row">
-		<div class="cell">
-			<Link to=""/>
-		</div>
-		<div class="cell">
-			<Link to=""/>
-		</div>
-		<div class="cell">
-			<Link to=""/>
-		</div>
-		<div class="cell">
-			<Link to=""/>
-		</div>
+		<Cell facility={Schoolroom}>Schoolroom</Cell>
+		<Cell facility={ServantsQuarters}>Servants' Quarters</Cell>
+		<Cell facility={Spa}>Spa</Cell>
+		<Cell facility={Apartment}>Apartment</Cell>
 	</div>
 </div>
 

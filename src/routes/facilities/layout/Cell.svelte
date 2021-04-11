@@ -10,7 +10,7 @@
 
 <div class="flex h-16 w-{width}">
 	<Modal>
-		<div class="flex" slot="trigger" let:open>
+		<div slot="trigger" let:open>
 			<Button handler={() => {
 				open();
 			}}>
