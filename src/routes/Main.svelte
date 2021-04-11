@@ -5,6 +5,7 @@
 	import { week } from '@stores/global.store';
 
 	import Facilities from './facilities/Facilities.svelte';
+	import Layout from './facilities/layout.svelte';
 	import Slaves from './actors/Slaves.svelte';
 
 	import Header from '@components/ui/Header.svelte';
@@ -27,6 +28,6 @@
 
 <Body>
 	<Header>{$arcology.name}</Header>
-	<Facilities />
+	<Layout />
 	<Slaves />
 </Body>
