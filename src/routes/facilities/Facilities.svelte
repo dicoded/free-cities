@@ -2,7 +2,7 @@
 	import Link from '@components/ui/Link.svelte';
 </script>
 
-<div>
+<div class="mt-8">
 	<div class="flex">
 		<Link to="arcade">
 			Arcade
