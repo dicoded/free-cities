@@ -19,7 +19,7 @@
 	const handleOuterClick = () => open = !open;
 </script>
 
-<aside id="aside" class="transition-all ease-in-out duration-500 fixed h-screen p-8 w-1/5 dark:bg-gray-800 dark:border-gray-700 border-r-2 shadow-lg" class:open>
+<aside id="aside" class="backdrop-filter backdrop-blur-lg bg-opacity-75 transition-all ease-in-out duration-500 fixed h-screen p-8 w-1/5 dark:bg-gray-800 dark:border-gray-700 border-r-2 shadow-lg -left-full" class:open>
 	{#if link}
 		<nav class="my-8 text-xl flex">
 			<Link to={link.href} handler={link.handler}>{link.text}</Link>
@@ -39,12 +39,6 @@
 {/if}
 
 <style>
-	aside {
-		left: -100%;
-		backdrop-filter: blur(16px);
-		@apply bg-opacity-75;
-	}
-
 	.open {
 		left: 0;
 	}

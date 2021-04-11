@@ -14,7 +14,7 @@
 	<span class="ml-2 cursor-pointer">{text}</span>
 </label>
 
-<style lang="postcss">
+<style>
   .switch {
     @apply relative inline-block align-middle cursor-pointer select-none bg-transparent;
   }

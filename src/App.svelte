@@ -38,46 +38,28 @@
 
   @tailwind utilities;
 
+  @tailwind screens;
+
   .selected {
-    @apply bg-gray-400;
+    @apply bg-gray-300 dark:bg-gray-700;
   }
 
   .disabled {
     @apply cursor-not-allowed;
   }
 
-  @dark {
-    .selected {
-      @apply bg-gray-700;
-    }
-  }
-
   @layer components {
     .item {
-      @apply bg-gray-300 border-gray-400;
+      @apply bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-700;
       @apply border-2 w-full h-auto rounded-lg text-center m-2 p-2;
     }
 
     .hover:hover {
-      @apply bg-gray-100;
+      @apply bg-gray-100 dark:bg-gray-600;
     }
 
     .bg {
-      @apply bg-gray-200 border-gray-300 border-2;
-    }
-
-    @dark {
-      .item {
-          @apply bg-gray-800 border-gray-700;
-      }
-
-      .hover:hover {
-        @apply bg-gray-600;
-      }
-
-      .bg {
-        @apply bg-gray-900 border-gray-800;
-      }
+      @apply bg-gray-100 border-gray-200 border-2 dark:bg-gray-900 dark:border-gray-800;
     }
   }
 </style>
