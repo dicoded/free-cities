@@ -6,4 +6,4 @@
 	$link = defaultLink;
 </script>
 
-<Header>Arcade</Header>
+<Header>Penthouse</Header>
