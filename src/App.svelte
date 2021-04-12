@@ -55,7 +55,7 @@
     }
 
     .hover:hover {
-      @apply bg-gray-100 dark:bg-gray-600;
+      @apply bg-white dark:bg-gray-600;
     }
 
     .bg {

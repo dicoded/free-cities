@@ -9,17 +9,19 @@
 </script>
 
 <div class="flex h-16 w-{width}">
-	<Modal>
-		<div slot="trigger" let:open>
-			<Button handler={() => {
-				open();
-			}}>
-			<slot></slot>
+	<div class="w-full m-1">
+		<Modal>
+			<div slot="trigger" let:open>
+				<Button handler={() => {
+					open();
+					}}>
+				<slot></slot>
 			</Button>
 		</div>
 
-		<div slot="content" let:store={{close}}>
-			<svelte:component this={facility} />
-		</div>
-	</Modal>
+			<div slot="content" let:store={{close}}>
+				<svelte:component this={facility} />
+			</div>
+		</Modal>
+	</div>
 </div>

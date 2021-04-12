@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Apartment from '../Apartment.svelte';
+	import Apartments from '../Apartments.svelte';
 	import Arcade from '../Arcade.svelte';
 	import Armory from '../Armory.svelte';
 	import Brothel from '../Brothel.svelte';
@@ -15,7 +15,7 @@
 	import ServantsQuarters from '../ServantsQuarters.svelte';
 	import Spa from '../Spa.svelte';
 
-	import Cell from './Cell.svelte';
+	import Cell from './cell.svelte';
 </script>
 
 <div class="mt-8">
@@ -45,7 +45,7 @@
 		<Cell facility={Schoolroom}>Schoolroom</Cell>
 		<Cell facility={ServantsQuarters}>Servants' Quarters</Cell>
 		<Cell facility={Spa}>Spa</Cell>
-		<Cell facility={Apartment}>Apartment</Cell>
+		<Cell facility={Apartments}>Apartments</Cell>
 	</div>
 </div>
 
