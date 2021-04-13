@@ -9,6 +9,7 @@
 	import Incubator from '../Incubator.svelte';
 	import MasterSuite from '../MasterSuite.svelte';
 	import Manufacturing from '../manufacturing.svelte';
+	import Markets from '../markets.svelte';
 	import Nursery from '../Nursery.svelte';
 	import Penthouse from '../Penthouse.svelte';
 	import Pit from '../Pit.svelte';
@@ -40,10 +41,10 @@
 		<Cell facility={Shops}>Shops</Cell>
 	</div>
 	<div class="row" id="markets">
-		<Cell facility={Apartments}>Apartments</Cell>
-		<Cell facility={MasterSuite}>Apartments</Cell>
-		<Cell facility={Apartments}>Apartments</Cell>
-		<Cell facility={Apartments}>Apartments</Cell>
+		<Cell facility={Markets}>Markets</Cell>
+		<Cell facility={Markets}>Markets</Cell>
+		<Cell facility={Markets}>Markets</Cell>
+		<Cell facility={Markets}>Markets</Cell>
 	</div>
 	<div class="row" id="apartments">
 		<Cell facility={Apartments}>Apartments</Cell>
