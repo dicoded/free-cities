@@ -14,36 +14,34 @@
   import Height from './height.svelte';
   import Weight from './weight.svelte';
 
-  import activeSlave from '@stores/active.store';
-
-  const slave: Slave = $activeSlave;
+  export let slave: Slave;
 
   console.log(slave);
 </script>
 
-<Name />
-<Title />
+<Name {slave}/>
+<Title {slave}/>
 
 <div class="flex">
   <div class="m-2">
-    <Devotion />
-    <Trust />
+    <Devotion {slave}/>
+    <Trust {slave}/>
   </div>
   <div class="m-2">
-    <Age />
-    <Birthday />
+    <Age {slave}/>
+    <Birthday {slave}/>
   </div>
   <div class="m-2">
-    <Health />
-    <Injuries />
+    <Health {slave}/>
+    <Injuries {slave}/>
   </div>
   <div class="m-2">
-    <Intelligence />
-    <Education />
+    <Intelligence {slave}/>
+    <Education {slave}/>
   </div>
   <div class="m-2">
-    <Height />
-    <Weight />
+    <Height {slave}/>
+    <Weight {slave}/>
   </div>
 </div>
 

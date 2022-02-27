@@ -14,7 +14,7 @@
 	<span class="ml-2 cursor-pointer">{text}</span>
 </label>
 
-<style lang="postcss">
+<style>
   .switch {
     @apply relative inline-block align-middle cursor-pointer select-none bg-transparent;
   }
@@ -45,6 +45,6 @@
 
   input[type='checkbox']:focus + .track,
   input[type='checkbox']:active + .track {
-    @apply shadow-outline;
+    @apply ring;
   }
 </style>

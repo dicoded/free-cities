@@ -1,22 +1,20 @@
 <script lang="ts">
 	import Slave from '@classes/slave/Slave';
 
-	import activeSlave from '@stores/active.store';
-
-	const slave: Slave = $activeSlave;
+  export let slave: Slave;
 </script>
 
 <div class="title text-center">
 	{slave.title.capitalize()}
 </div>
 
-<style lang="postcss">
+<style>
   .title {
     @apply font-bold;
     @apply text-red-600;
   }
 
-  @screen dark {
+  @dark {
     .title {
       @apply text-red-400;
     }

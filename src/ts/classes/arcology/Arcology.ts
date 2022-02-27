@@ -38,18 +38,25 @@ export enum Location {
 interface IArcology {
   /** What continent the arcology is located in. */
   continent: Continent;
+
   /** The number of future societies the arcology can have. */
   futureSocieties: number;
+
   /** The lingua franca of the arcology. */
   language: string;
+
   /** The actual location of the arcology. */
   location: Location;
+
   /** The arcology's name. */
   name: string;
+
   /** The number of neighbors the arcology has. */
   neighbors: number;
+
   /** The type of arcology the player targets during setup. */
   target: string;
+
   /** The type of terrain the arcology is located on. */
   terrain: Terrain;
 }
@@ -89,12 +96,6 @@ export default class Arcology implements IArcology {
   }
 
   set futureSocieties(count: number) {
-    let tempCount = count;
-
-    if (tempCount) {
-      tempCount = tempCount.clamp(1, 7);
-    }
-
-    this.futureSocietiesCount = tempCount;
+    this.futureSocietiesCount = count.clamp(1, 7);
   }
 }

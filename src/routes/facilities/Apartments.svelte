@@ -2,4 +2,4 @@
 	import Header from '@components/ui/Header.svelte';
 </script>
 
-<Header>Dairy</Header>
+<Header>Apartments</Header>

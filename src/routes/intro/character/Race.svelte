@@ -27,9 +27,9 @@
 				Asian
 			</Button>
 			<Button
-				selected={$PC.race === Race.LATINO}
-				handler={() => { $PC.race = Race.LATINO }}>
-				Latino
+				selected={$PC.race === Race.LATIN_AMERICAN}
+				handler={() => { $PC.race = Race.LATIN_AMERICAN}}>
+				Latin American
 			</Button>
 			<Button
 				selected={$PC.race === Race.MIDDLE_EASTERN}
@@ -50,9 +50,9 @@
 				Semitic
 			</Button>
 			<Button
-				selected={$PC.race === Race.EUROPEAN}
-				handler={() => { $PC.race = Race.EUROPEAN }}>
-				European
+				selected={$PC.race === Race.SOUTHERN_EUROPEAN}
+				handler={() => { $PC.race = Race.SOUTHERN_EUROPEAN }}>
+				Southern European
 			</Button>
 			<Button
 				selected={$PC.race === Race.INDO_ARYAN}

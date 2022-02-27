@@ -3,17 +3,13 @@ module.exports = {
     './src/**/*.svelte',
     './public/*.html'
   ],
+  darkMode: 'media',
   theme: {
     extend: {
       fontFamily: {
         'title': ['Lato-Light', 'Arial', 'sans-serif'],
         'note': ['Lato-Italic', 'Arial', 'sans-serif'],
         'montserrat': ['Montserrat-Light', 'Arial', 'sans-serif'],
-      },
-      screens: {
-        dark: {
-          raw: '(prefers-color-scheme: dark)'
-        },
       },
     },
     minHeight: {
@@ -24,10 +20,8 @@ module.exports = {
     'full': '100%',
     },
   },
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [],
-  future: {
-    purgeLayersByDefault: true,
-    removeDeprecatedGapUtilities: true,
-  }
 };
